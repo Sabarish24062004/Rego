@@ -1,0 +1,1803 @@
+/* ================================================================
+   REGO – AUTOMATED CONTROLS LIFECYCLE MANAGEMENT PAGE STYLESHEET
+   File: css/automated-controls-lifecycle-management.css
+   Prefix: rego_clm_
+   Purpose: Page-specific styles for the Controls Lifecycle Management page.
+   Load order: common.css → header.css → footer.css → this file
+================================================================ */
+
+/* ================================================================
+   HERO SECTION – Dark gradient with 2-col layout
+================================================================ */
+.rego_clm_hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_clm_hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 50%, rgba(74,86,158,0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 85% 30%, rgba(132,37,115,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.rego_clm_hero_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_clm_hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_clm_hero_h1 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.rego_clm_hero_gradient {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rego_clm_hero_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.rego_clm_hero_actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   LIFECYCLE CARD – Hero visual element
+================================================================ */
+.rego_clm_lifecycle_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+  max-width: 480px;
+}
+
+.rego_clm_card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rego_clm_card_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.rego_clm_card_badge {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 222, 128, 0.30);
+}
+
+/* Phase bar with lifecycle stages */
+.rego_clm_phase_bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.rego_clm_phase_pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.rego_clm_phase_pill.design {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.rego_clm_phase_pill.implement {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.rego_clm_phase_pill.test {
+  background: rgba(234, 179, 8, 0.2);
+  color: #eab308;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.rego_clm_phase_pill.monitor {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.rego_clm_phase_pill.retire {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.rego_clm_phase_arrow {
+  color: rgba(255, 255, 255, 0.30);
+  font-size: 12px;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+/* Control rows in lifecycle card */
+.rego_clm_control_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_clm_control_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background-color var(--rego-transition);
+}
+
+.rego_clm_control_row:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.rego_clm_ctrl_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rego_clm_ctrl_dot.design { background: #60a5fa; }
+.rego_clm_ctrl_dot.implement { background: #a78bfa; }
+.rego_clm_ctrl_dot.test { background: #eab308; }
+.rego_clm_ctrl_dot.monitor { background: #4ade80; }
+.rego_clm_ctrl_dot.retire { background: #94a3b8; }
+
+.rego_clm_ctrl_id {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+  color: #a78bfa;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+
+.rego_clm_ctrl_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  flex: 1;
+  min-width: 0;
+}
+
+.rego_clm_ctrl_phase {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rego_clm_ctrl_time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rego_clm_card_footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.40);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================================================================
+   PAIN POINTS SECTION
+================================================================ */
+.rego_clm_pain_section {
+  padding: var(--rego-section-py) 0;
+  background: #ffffff;
+}
+
+.rego_clm_section_head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.rego_clm_section_head h2 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  color: var(--rego-dark);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.rego_clm_section_head p {
+  font-size: 16px;
+  color: var(--rego-text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.rego_clm_pain_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.rego_clm_pain_card {
+  background: #fff;
+  border: 1.5px solid #e9eef6;
+  border-radius: 14px;
+  padding: 28px 24px;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition), border-color var(--rego-transition);
+}
+
+.rego_clm_pain_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(74, 86, 158, 0.10);
+  border-color: var(--rego-primary);
+}
+
+.rego_clm_pain_icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(74, 86, 158, 0.10), rgba(132, 37, 115, 0.07));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--rego-primary);
+  font-size: 24px;
+}
+
+.rego_clm_pain_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--rego-dark);
+  margin-bottom: 8px;
+}
+
+.rego_clm_pain_desc {
+  font-size: 14px;
+  color: var(--rego-text-muted);
+  line-height: 1.6;
+}
+
+/* ================================================================
+   HOW IT WORKS SECTION – Pipeline
+================================================================ */
+.rego_clm_how {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: var(--rego-section-py) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_clm_how .rego_pipeline {
+  background: transparent;
+  padding: 0;
+}
+
+.rego_clm_how .rego_section_py h2 {
+  color: #ffffff;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.rego_clm_how .rego_pipeline_item {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ================================================================
+   DESIGN CONTROL CARD
+================================================================ */
+.rego_clm_design_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 48px;
+}
+
+.rego_clm_design_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.rego_clm_input_row {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.60);
+  margin-bottom: 12px;
+}
+
+.rego_clm_fw_chips {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.rego_clm_fw_chip {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rego_clm_fw_chip::before {
+  content: '✓';
+  font-weight: 900;
+}
+
+/* ================================================================
+   TEST CONTROL CARD
+================================================================ */
+.rego_clm_test_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 48px;
+}
+
+.rego_clm_test_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.rego_clm_test_row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rego_clm_test_row:last-child {
+  border-bottom: none;
+}
+
+.rego_clm_test_name {
+  flex: 1;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.rego_clm_test_result_pass {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.rego_clm_test_result_fail {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.rego_clm_test_result_warn {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* ================================================================
+   TRACKER CARD
+================================================================ */
+.rego_clm_tracker_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+}
+
+.rego_clm_tracker_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.rego_clm_tracker_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.rego_clm_tracker_row:last-child {
+  border-bottom: none;
+}
+
+.rego_clm_tracker_label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+/* ================================================================
+   STATS SECTION – Dark background
+================================================================ */
+.rego_clm_stats_section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_clm_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.rego_clm_stat_block {
+  position: relative;
+}
+
+.rego_clm_stat_value {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.rego_clm_stat_label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.70);
+  font-weight: 600;
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION
+================================================================ */
+.rego_clm_testimonial_section {
+  background: #ffffff;
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_clm_quote_card {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--rego-bg-light);
+  border-radius: 20px;
+  padding: 48px;
+  border-left: 5px solid transparent;
+  border-image: linear-gradient(180deg, #4a569e, #842573) 1;
+  position: relative;
+}
+
+.rego_clm_quote_text {
+  font-size: clamp(17px, 2vw, 21px);
+  font-style: italic;
+  color: var(--rego-dark);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.rego_clm_quote_author {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rego-dark);
+  margin-bottom: 4px;
+}
+
+.rego_clm_quote_title {
+  font-size: 13px;
+  color: var(--rego-text-muted);
+}
+
+/* ================================================================
+   CTA SECTION – Dark background
+================================================================ */
+.rego_clm_cta_section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_clm_cta_inner {
+  position: relative;
+  z-index: 1;
+}
+
+.rego_clm_cta_inner h2 {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.rego_clm_cta_inner p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.60);
+  margin-bottom: 36px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rego_clm_cta_actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN
+================================================================ */
+@media (max-width: 1024px) {
+  .rego_clm_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_clm_pain_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_clm_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .rego_clm_design_card,
+  .rego_clm_test_card,
+  .rego_clm_tracker_card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_clm_hero {
+    padding: 60px 0 50px;
+  }
+
+  .rego_clm_pain_grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .rego_clm_design_card,
+  .rego_clm_test_card,
+  .rego_clm_tracker_card {
+    margin-bottom: 32px;
+  }
+
+  .rego_clm_tracker_row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .rego_clm_cta_section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .rego_clm_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .rego_clm_cta_actions {
+    flex-direction: column;
+  }
+
+  .rego_clm_quote_card {
+    padding: 32px 24px;
+  }
+
+  .rego_clm_phase_bar {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+}
+
+
+/* ===== Extracted inline styles ===== */
+.rego_automated_controls_lifecycle_management_is_1 { background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%); }
+.rego_automated_controls_lifecycle_management_is_2 { background:linear-gradient(90deg,#4a569e,#842573);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.rego_automated_controls_lifecycle_management_is_3 { background: rgba(13,17,23,0.85); border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; padding: 24px; }
+.rego_automated_controls_lifecycle_management_is_4 { background:#4a569e; }
+.rego_automated_controls_lifecycle_management_is_5 { background:#842573; }
+.rego_automated_controls_lifecycle_management_is_6 { background: var(--rego-bg-light); }
+.rego_automated_controls_lifecycle_management_is_7 { text-align: center; margin-bottom: 60px; }
+.rego_automated_controls_lifecycle_management_is_8 { margin-bottom: 16px; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
+.rego_automated_controls_lifecycle_management_is_9 { width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; color: #fff; font-size: 13px; margin-bottom: 16px; }
+.rego_automated_controls_lifecycle_management_is_10 { margin-bottom: 16px; }
+.rego_automated_controls_lifecycle_management_is_11 { font-size: 12px; color: #999; text-transform: uppercase; display: block; margin-bottom: 8px; }
+.rego_automated_controls_lifecycle_management_is_12 { display: flex; gap: 8px; flex-wrap: wrap; }
+.rego_automated_controls_lifecycle_management_is_13 { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(74,86,158,0.2); border: 1px solid rgba(74,86,158,0.4); border-radius: 6px; font-size: 12px; }
+.rego_automated_controls_lifecycle_management_is_14 { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(74,86,158,0.15); border: 1px solid rgba(74,86,158,0.3); border-radius: 6px; font-size: 12px; }
+.rego_automated_controls_lifecycle_management_is_15 { width: 100%; padding: 10px; background: linear-gradient(135deg, #4a569e, #842573); border: none; border-radius: 8px; color: #fff; font-weight: 500; cursor: pointer; font-size: 13px; }
+.rego_automated_controls_lifecycle_management_is_16 { display: flex; flex-direction: column; gap: 12px; }
+.rego_automated_controls_lifecycle_management_is_17 { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #4a9d6f; }
+.rego_automated_controls_lifecycle_management_is_18 { flex: 1; }
+.rego_automated_controls_lifecycle_management_is_19 { font-size: 12px; color: #999; }
+.rego_automated_controls_lifecycle_management_is_20 { font-size: 13px; color: #fff; margin-top: 2px; }
+.rego_automated_controls_lifecycle_management_is_21 { padding: 4px 10px; background: #4a9d6f; border-radius: 4px; font-size: 11px; color: #fff; font-weight: 500; }
+.rego_automated_controls_lifecycle_management_is_22 { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #d04c4c; }
+.rego_automated_controls_lifecycle_management_is_23 { padding: 4px 10px; background: #d04c4c; border-radius: 4px; font-size: 11px; color: #fff; font-weight: 500; }
+.rego_automated_controls_lifecycle_management_is_24 { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #d4a74d; }
+.rego_automated_controls_lifecycle_management_is_25 { padding: 4px 10px; background: #d4a74d; border-radius: 4px; font-size: 11px; color: #fff; font-weight: 500; }
+.rego_automated_controls_lifecycle_management_is_26 { display: flex; flex-direction: column; gap: 10px; }
+.rego_automated_controls_lifecycle_management_is_27 { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px; }
+.rego_automated_controls_lifecycle_management_is_28 { color: #ccc; }
+.rego_automated_controls_lifecycle_management_is_29 { padding: 3px 10px; background: rgba(74,150,111,0.2); border-radius: 4px; color: #4a9d6f; font-size: 11px; }
+.rego_automated_controls_lifecycle_management_is_30 { color: #999; text-align: right; min-width: 40px; }
+.rego_automated_controls_lifecycle_management_is_31 { padding: 3px 10px; background: rgba(74,86,158,0.2); border-radius: 4px; color: #4a569e; font-size: 11px; }
+.rego_automated_controls_lifecycle_management_is_32 { padding: 3px 10px; background: rgba(132,37,115,0.2); border-radius: 4px; color: #842573; font-size: 11px; }
+.rego_automated_controls_lifecycle_management_is_33 { padding: 3px 10px; background: rgba(212,167,77,0.2); border-radius: 4px; color: #d4a74d; font-size: 11px; }
+.rego_automated_controls_lifecycle_management_is_34 { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-size: 12px; }
+.rego_automated_controls_lifecycle_management_is_35 { padding: 3px 10px; background: rgba(128,128,128,0.2); border-radius: 4px; color: #999; font-size: 11px; }
+.rego_automated_controls_lifecycle_management_is_36 { text-align: center; margin-bottom: 50px; color: #fff; }
+.rego_automated_controls_lifecycle_management_is_37 { font-size: 0.6em; }
+.rego_automated_controls_lifecycle_management_is_38 { font-size: 18px; color: #1a1a1a; margin-bottom: 20px; line-height: 1.6; font-weight: 500; position: relative; padding-left: 24px; }
+.rego_automated_controls_lifecycle_management_is_39 { position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #4a569e, #842573); border-radius: 2px; }
+.rego_automated_controls_lifecycle_management_is_40 { color: #666; font-size: 14px; }
+.rego_automated_controls_lifecycle_management_is_41 { max-width: 700px; margin: 0 auto; text-align: center; }
+.rego_automated_controls_lifecycle_management_is_42 { margin-bottom: 12px; }
+.rego_automated_controls_lifecycle_management_is_43 { margin-bottom: 30px; color: rgba(255,255,255,0.7); }
+.rego_automated_controls_lifecycle_management_is_44 { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* ================================================================
+   HERO DASHBOARD (mimics RegO compliance dashboard)
+================================================================ */
+.rego_clm_dashboard {
+  width: 100%;
+  max-width: 640px;
+  margin-left: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  font-size: 12px;
+  color: #0d0f1e;
+}
+.rego_clm_dash_side {
+  background: #f4f7fb;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rego_clm_dash_side_item {
+  padding: 10px 14px;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 12px;
+  border-left: 3px solid transparent;
+}
+.rego_clm_dash_side_item_active {
+  background: #fb923c;
+  color: #ffffff;
+  border-left-color: #f97316;
+}
+.rego_clm_dash_main {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rego_clm_dash_topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: #4b5563;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.08);
+}
+.rego_clm_dash_topbar > span:first-child {
+  color: #4a569e;
+  font-weight: 800;
+  font-size: 13px;
+}
+.rego_clm_dash_topbar_ws {
+  font-weight: 500;
+}
+.rego_clm_dash_topbar_avatar {
+  margin-left: auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a569e, #842573);
+}
+.rego_clm_dash_tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7280;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.08);
+}
+.rego_clm_dash_tab_active {
+  color: #4a569e;
+  border-bottom: 2px solid #4a569e;
+  padding-bottom: 4px;
+  margin-bottom: -6px;
+}
+.rego_clm_dash_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.rego_clm_dash_card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 15, 30, 0.08);
+  border-radius: 8px;
+  padding: 12px;
+}
+.rego_clm_dash_card_full {
+  grid-column: 1 / -1;
+}
+.rego_clm_dash_card h5 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0d0f1e;
+}
+.rego_clm_dash_compliance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.06);
+}
+.rego_clm_dash_compliance_label {
+  font-size: 10px;
+  color: #6b7280;
+}
+.rego_clm_dash_compliance_gauge {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.rego_clm_dash_compliance_fill {
+  display: block;
+  height: 100%;
+  width: 27%;
+  background: linear-gradient(90deg, #ef4444, #fb923c);
+  border-radius: 999px;
+}
+.rego_clm_dash_compliance_val {
+  font-weight: 800;
+  font-size: 13px;
+  color: #4a569e;
+}
+.rego_clm_dash_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 11px;
+  color: #4b5563;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.04);
+}
+.rego_clm_dash_row:last-child {
+  border-bottom: 0;
+}
+.rego_clm_dash_badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.rego_clm_dash_badge_orange { background: #f97316; }
+.rego_clm_dash_badge_blue { background: #4a569e; }
+
+/* Chart bars */
+.rego_clm_dash_chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 80px;
+  padding: 4px 4px 0;
+}
+.rego_clm_dash_bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+}
+.rego_clm_dash_bar_1 { height: 50%; background: #fb923c; }
+.rego_clm_dash_bar_2 { height: 28%; background: #4a569e; }
+.rego_clm_dash_bar_3 { height: 70%; background: #ef4444; }
+.rego_clm_dash_bar_4 { height: 42%; background: #8b5cf6; }
+.rego_clm_dash_chart_labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 9px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Visualizations */
+.rego_clm_dash_viz {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rego_clm_dash_viz_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rego_clm_dash_viz_label {
+  font-size: 10px;
+  color: #4b5563;
+  font-weight: 600;
+  min-width: 140px;
+}
+.rego_clm_dash_viz_bar {
+  flex: 1;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.rego_clm_dash_viz_bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+.rego_clm_dash_viz_donut_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rego_clm_dash_viz_donut {
+  margin-left: auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: conic-gradient(#4a569e 0 72%, #e5e7eb 72% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.rego_clm_dash_viz_donut::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+.rego_clm_dash_viz_donut > span {
+  position: relative;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0d0f1e;
+}
+
+/* Comments */
+.rego_clm_dash_comments {
+  background: #f7f8fc;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.rego_clm_dash_comments_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.rego_clm_dash_comments_head h5 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+.rego_clm_dash_comments_head a {
+  font-size: 10px;
+  color: #4a569e;
+  text-decoration: none;
+  font-weight: 700;
+}
+.rego_clm_dash_comment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(13, 15, 30, 0.04);
+}
+.rego_clm_dash_avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #60a5fa, #4a569e);
+  flex-shrink: 0;
+}
+.rego_clm_dash_comment > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  font-size: 10px;
+}
+.rego_clm_dash_comment strong {
+  color: #0d0f1e;
+  font-size: 11px;
+}
+.rego_clm_dash_comment_time {
+  color: #6b7280;
+  font-size: 9px;
+}
+.rego_clm_dash_reply {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: none;
+  background: #f97316;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .rego_clm_dashboard {
+    grid-template-columns: 100px 1fr;
+    font-size: 11px;
+  }
+  .rego_clm_dash_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================================
+   TRUSTED BY — Infinite marquee
+================================================================ */
+.rego_clm_trusted_section {
+  background: #ffffff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.rego_clm_trusted_title {
+  text-align: center;
+  color: #4b5563;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 40px;
+}
+.rego_clm_marquee {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.rego_clm_marquee_track {
+  display: flex;
+  gap: 64px;
+  width: max-content;
+  animation: rego_clm_scroll 40s linear infinite;
+}
+.rego_clm_marquee:hover .rego_clm_marquee_track {
+  animation-play-state: paused;
+}
+@keyframes rego_clm_scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.rego_clm_logo {
+  flex-shrink: 0;
+  min-width: 160px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a569e;
+  letter-spacing: 0.02em;
+  background: #f7f8fc;
+  border: 1px solid rgba(74, 86, 158, 0.10);
+  border-radius: 10px;
+  padding: 0 24px;
+  white-space: nowrap;
+  transition: all .2s ease;
+}
+.rego_clm_logo:hover {
+  color: #842573;
+  border-color: rgba(132, 37, 115, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ================================================================
+   INTRO SECTION
+================================================================ */
+.rego_clm_intro_section {
+  background: #f4f7fb;
+}
+.rego_clm_intro_title {
+  font-size: clamp(28px, 3.6vw, 42px);
+  font-weight: 800;
+  color: #0d0f1e;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.rego_clm_intro_desc {
+  max-width: 820px;
+  margin: 0 auto;
+  color: #4b5563;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ================================================================
+   FEATURE SPLITS
+================================================================ */
+.rego_clm_feature_section {
+  background: #f4f7fb;
+}
+.rego_clm_split {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 72px;
+  align-items: center;
+  margin-bottom: 96px;
+}
+.rego_clm_split:last-child {
+  margin-bottom: 0;
+}
+.rego_clm_split_reverse {
+  grid-template-columns: 1fr 1.05fr;
+}
+.rego_clm_split_reverse .rego_clm_split_copy {
+  order: 1;
+}
+.rego_clm_split_reverse .rego_clm_split_visual {
+  order: 2;
+}
+
+.rego_clm_split_title {
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 800;
+  color: #0d0f1e;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+.rego_clm_split_desc {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+.rego_clm_split_desc + .rego_clm_split_desc {
+  margin-top: -4px;
+}
+.rego_clm_split_btn {
+  margin-top: 20px;
+  display: inline-flex;
+  border-radius: 999px;
+  border-width: 2px;
+}
+
+/* Visual panel + decorative orbs */
+.rego_clm_split_visual {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rego_clm_split_orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.rego_clm_split_orb_blue {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, #4a569e, #1e2040);
+  bottom: 10px;
+  right: 20px;
+  opacity: 0.85;
+}
+.rego_clm_split_orb_cyan {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #60a5fa, #6ee7d3);
+  top: 30%;
+  left: 6%;
+}
+.rego_clm_split_orb_cyan_sm {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #60a5fa, #6ee7d3);
+  bottom: 10%;
+  right: 20%;
+}
+.rego_clm_split_orb_orange {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: conic-gradient(from 200deg, #fb923c, #f97316, #fb923c 80%, transparent 80%);
+  bottom: -30px;
+  left: 0;
+  opacity: 0.8;
+  mask: radial-gradient(circle, transparent 55%, #000 56%);
+  -webkit-mask: radial-gradient(circle, transparent 55%, #000 56%);
+}
+
+/* Split card (dashboard mock) */
+.rego_clm_split_card {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 460px);
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(13, 15, 30, 0.06);
+  box-shadow: 0 20px 50px rgba(13, 15, 30, 0.12);
+  padding: 28px 26px 22px;
+}
+.rego_clm_split_card_logo {
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #60a5fa, #4a569e, #842573, #60a5fa);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 22px;
+  box-shadow: 0 6px 16px rgba(74, 86, 158, 0.30);
+  border: 4px solid #ffffff;
+}
+.rego_clm_split_card_logo_tr {
+  left: auto;
+  right: -24px;
+}
+.rego_clm_split_card_logo_sm {
+  position: static;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+.rego_clm_split_card_title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0d0f1e;
+}
+
+/* Build Program gauge */
+.rego_clm_split_card_stat_label,
+.rego_clm_split_card_row_label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.rego_clm_split_card_gauge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.06);
+  margin-bottom: 12px;
+}
+.rego_clm_split_card_gauge_num {
+  font-size: 32px;
+  font-weight: 800;
+  color: #4a569e;
+}
+.rego_clm_split_card_nums {
+  display: flex;
+  gap: 16px;
+  color: #6b7280;
+  font-weight: 600;
+}
+.rego_clm_split_bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+.rego_clm_split_bar_1 > span { display: block; width: 70%; height: 100%; background: #4a569e; border-radius: 999px; }
+.rego_clm_split_bar_2 > span { display: block; width: 40%; height: 100%; background: #fb923c; border-radius: 999px; }
+.rego_clm_split_bar_3 > span { display: block; width: 55%; height: 100%; background: #60a5fa; border-radius: 999px; }
+
+/* Collecting Evidence card */
+.rego_clm_split_tabs {
+  display: flex;
+  gap: 18px;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.08);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  flex-wrap: wrap;
+}
+.rego_clm_split_tab {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+.rego_clm_split_tab_active {
+  color: #4a569e;
+  border-bottom: 2px solid #4a569e;
+  padding-bottom: 6px;
+}
+.rego_clm_split_upload {
+  background: #f7f8fc;
+  border: 1px dashed #c7cfe6;
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  color: #4a569e;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.rego_clm_split_file_row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #4b5563;
+  padding: 8px 0;
+  border-top: 1px solid rgba(13, 15, 30, 0.06);
+}
+.rego_clm_split_file_size {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Assess Program card */
+.rego_clm_assess_header {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 0.9fr 0.5fr;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.06);
+}
+.rego_clm_assess_row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 0.9fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.04);
+}
+.rego_clm_assess_line {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+.rego_clm_status_pill {
+  justify-self: start;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.rego_clm_status_complete { background: #d1fae5; color: #047857; }
+.rego_clm_status_canceled { background: #fee2e2; color: #b91c1c; }
+.rego_clm_status_progress { background: #dbeafe; color: #1d4ed8; }
+.rego_clm_assess_bar {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.rego_clm_assess_bar > span {
+  display: block;
+  height: 100%;
+  width: 85%;
+  background: linear-gradient(90deg, #4a569e, #60a5fa);
+  border-radius: 999px;
+}
+.rego_clm_assess_bar_half > span { width: 55%; background: linear-gradient(90deg, #f87171, #4a569e); }
+.rego_clm_assess_bar_mid > span { width: 70%; }
+
+/* Fix Problems card */
+.rego_clm_split_legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+.rego_clm_legend_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.rego_clm_legend_dot_orange { background: #f97316; }
+.rego_clm_legend_dot_gray { background: #9ca3af; margin-left: 6px; }
+.rego_clm_split_fix_layout {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+.rego_clm_split_donut {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: conic-gradient(#60a5fa 0 76%, #f97316 76% 96%, #e5e7eb 96% 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.rego_clm_split_donut::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+.rego_clm_split_donut_total,
+.rego_clm_split_donut_num {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.rego_clm_split_donut_total { font-size: 11px; color: #6b7280; }
+.rego_clm_split_donut_num { font-size: 22px; font-weight: 800; color: #0d0f1e; }
+.rego_clm_split_issues_table {
+  font-size: 12px;
+}
+.rego_clm_split_issues_head {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.06);
+  margin-bottom: 4px;
+}
+.rego_clm_split_issues_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  color: #4b5563;
+}
+.rego_clm_split_issues_row span:last-child {
+  font-weight: 700;
+  color: #0d0f1e;
+}
+
+/* Manage Risk card */
+.rego_clm_risk_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.rego_clm_risk_label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.rego_clm_risk_savings {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0d0f1e;
+  margin-bottom: 4px;
+}
+.rego_clm_risk_trend {
+  font-size: 11px;
+  color: #10b981;
+  font-weight: 700;
+  margin-left: 6px;
+}
+.rego_clm_risk_pie {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(#f97316 0 35%, #4a569e 35% 70%, #60a5fa 70% 100%);
+  margin-top: 10px;
+}
+.rego_clm_risk_bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 90px;
+  margin-top: 8px;
+}
+.rego_clm_risk_bars > span {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+}
+.rego_clm_risk_bars > span:nth-child(1) { height: 80%; background: #f97316; }
+.rego_clm_risk_bars > span:nth-child(2) { height: 55%; background: #4a569e; }
+.rego_clm_risk_bars > span:nth-child(3) { height: 65%; background: #60a5fa; }
+.rego_clm_risk_bars > span:nth-child(4) { height: 85%; background: #f97316; }
+
+/* Health Check card */
+.rego_clm_health_row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #6b7280;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.rego_clm_health_stop {
+  background: #f97316;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.rego_clm_health_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px 10px;
+  font-size: 11px;
+  color: #4b5563;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(13, 15, 30, 0.06);
+}
+.rego_clm_health_grid_2 {
+  border-bottom: 0;
+}
+.rego_clm_health_head {
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.06em;
+  font-size: 10px;
+}
+.rego_clm_health_ok {
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* ================================================================
+   ACCELERATE CTA
+================================================================ */
+.rego_clm_accelerate_section {
+  background: #ffffff;
+}
+.rego_clm_accelerate_card {
+  background: linear-gradient(135deg, #1e40af 0%, #4a569e 55%, #5b21b6 100%);
+  border-radius: 18px;
+  padding: 64px 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  box-shadow: 0 24px 64px rgba(30, 64, 175, 0.25);
+}
+.rego_clm_accelerate_visual {
+  display: flex;
+  justify-content: center;
+}
+.rego_clm_accelerate_dashboard {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.20);
+}
+.rego_clm_accelerate_dash_header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #0d0f1e;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.rego_clm_accelerate_tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.rego_clm_accelerate_tile {
+  background: #f4f7fb;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+  color: #4b5563;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.rego_clm_accelerate_tile strong {
+  color: #0d0f1e;
+  font-size: 13px;
+}
+.rego_clm_accelerate_title {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+.rego_clm_accelerate_accent {
+  color: #fb923c;
+}
+.rego_clm_accelerate_desc {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 22px;
+}
+.rego_clm_accelerate_btn {
+  background: #f97316;
+  border-color: #f97316;
+  border-radius: 999px;
+  padding: 14px 32px;
+}
+.rego_clm_accelerate_btn:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+}
+
+/* ================================================================
+   RELATED RESOURCES
+================================================================ */
+.rego_clm_resources_section {
+  background: #f4f7fb;
+}
+.rego_clm_resources_title {
+  text-align: center;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  color: #0d0f1e;
+  margin: 0 0 44px;
+}
+.rego_clm_resources_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.rego_clm_resource_card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(13, 15, 30, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+.rego_clm_resource_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(74, 86, 158, 0.18);
+}
+.rego_clm_resource_thumb {
+  position: relative;
+  padding: 28px 24px 30px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+}
+.rego_clm_resource_thumb_1 {
+  background: linear-gradient(135deg, #1e40af, #4a569e);
+}
+.rego_clm_resource_thumb_2 {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+.rego_clm_resource_thumb_3 {
+  background: linear-gradient(135deg, #7e1d58, #4a1055);
+}
+.rego_clm_resource_pill {
+  display: inline-flex;
+  background: #f97316;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+  border-radius: 4px;
+  align-self: flex-start;
+  text-transform: uppercase;
+}
+.rego_clm_resource_pill_blog {
+  background: #ffffff;
+  color: #4a569e;
+}
+.rego_clm_resource_hero {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 18px 0 0;
+}
+.rego_clm_resource_hero em {
+  font-style: italic;
+  font-weight: 600;
+  opacity: 0.85;
+}
+.rego_clm_resource_body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+.rego_clm_resource_tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+}
+.rego_clm_resource_card_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d0f1e;
+  line-height: 1.4;
+  margin: 0;
+  flex-grow: 1;
+}
+.rego_clm_resource_link {
+  color: #4a569e;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform .2s ease, color .2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+}
+.rego_clm_resource_link:hover {
+  color: #842573;
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 1024px) {
+  .rego_clm_split,
+  .rego_clm_split_reverse {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 72px;
+  }
+  .rego_clm_split_reverse .rego_clm_split_copy { order: 1; }
+  .rego_clm_split_reverse .rego_clm_split_visual { order: 2; }
+  .rego_clm_accelerate_card {
+    grid-template-columns: 1fr;
+    padding: 44px 28px;
+    gap: 36px;
+  }
+  .rego_clm_resources_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .rego_clm_logo {
+    min-width: 130px;
+    font-size: 15px;
+  }
+  .rego_clm_split_card {
+    padding: 24px 20px 18px;
+  }
+  .rego_clm_split_card_logo,
+  .rego_clm_split_card_logo_tr {
+    left: 16px;
+    right: auto;
+    top: -22px;
+  }
+}
