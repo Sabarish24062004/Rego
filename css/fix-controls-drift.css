@@ -1,0 +1,780 @@
+/* ================================================================
+   REGO – FIX CONTROLS DRIFT PAGE STYLESHEET
+   File: css/fix-controls-drift.css
+   Prefix: rego_fcd_
+   Purpose: Page-specific styles for the Fix Controls Drift page.
+   Load order: common.css → header.css → footer.css → this file
+================================================================ */
+
+/* ================================================================
+   HERO SECTION – Dark gradient with 2-col layout
+================================================================ */
+.rego_fcd_hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_fcd_hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 50%, rgba(74,86,158,0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 85% 30%, rgba(132,37,115,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.rego_fcd_hero_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_fcd_hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_fcd_hero_h1 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.rego_fcd_hero_gradient {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rego_fcd_hero_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.rego_fcd_hero_actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   DRIFT DETECTION CARD – Hero visual
+================================================================ */
+.rego_fcd_drift_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+  max-width: 480px;
+}
+
+.rego_fcd_drift_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rego_fcd_drift_label {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.rego_fcd_alert_badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(239, 68, 68, 0.30);
+}
+
+.rego_fcd_alert_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Drift rows */
+.rego_fcd_drift_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.rego_fcd_drift_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: border-color var(--rego-transition), background-color var(--rego-transition);
+}
+
+.rego_fcd_drift_row.critical {
+  border-left-color: #ef4444;
+}
+
+.rego_fcd_drift_row.warn {
+  border-left-color: #eab308;
+}
+
+.rego_fcd_drift_row.low {
+  border-left-color: #4ade80;
+}
+
+.rego_fcd_drift_row:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.rego_fcd_severity_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rego_fcd_severity_dot.critical { background: #ef4444; }
+.rego_fcd_severity_dot.warn { background: #eab308; }
+.rego_fcd_severity_dot.low { background: #4ade80; }
+
+.rego_fcd_drift_ctrl {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+  color: #a78bfa;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+
+.rego_fcd_drift_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  flex: 1;
+  min-width: 0;
+}
+
+.rego_fcd_drift_type {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.rego_fcd_fix_btn {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(74, 86, 158, 0.25);
+  border: 1px solid rgba(74, 86, 158, 0.40);
+  color: #a78bfa;
+  cursor: pointer;
+  transition: background-color var(--rego-transition), border-color var(--rego-transition);
+  flex-shrink: 0;
+}
+
+.rego_fcd_fix_btn:hover {
+  background: rgba(74, 86, 158, 0.35);
+  border-color: rgba(74, 86, 158, 0.60);
+}
+
+/* Progress strip */
+.rego_fcd_progress_strip {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.rego_fcd_progress_label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.50);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.rego_fcd_progress_track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.rego_fcd_progress_fill {
+  height: 100%;
+  width: 67%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  transition: width var(--rego-transition);
+}
+
+.rego_fcd_card_footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.40);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================================================================
+   DRIFT TYPES SECTION
+================================================================ */
+.rego_fcd_types_section {
+  background: #ffffff;
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_fcd_section_head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.rego_fcd_section_head h2 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  color: var(--rego-dark);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.rego_fcd_section_head p {
+  font-size: 16px;
+  color: var(--rego-text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.rego_fcd_type_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rego_fcd_type_card {
+  background: #fff;
+  border: 1.5px solid #e9eef6;
+  border-radius: 14px;
+  padding: 28px 24px;
+  border-left: 5px solid transparent;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+}
+
+.rego_fcd_type_card.config {
+  border-left-color: #60a5fa;
+}
+
+.rego_fcd_type_card.deployment {
+  border-left-color: #a78bfa;
+}
+
+.rego_fcd_type_card.permission {
+  border-left-color: #eab308;
+}
+
+.rego_fcd_type_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(74, 86, 158, 0.10);
+}
+
+.rego_fcd_type_icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(74, 86, 158, 0.10), rgba(132, 37, 115, 0.07));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--rego-primary);
+  font-size: 24px;
+}
+
+.rego_fcd_type_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--rego-dark);
+  margin-bottom: 8px;
+}
+
+.rego_fcd_type_desc {
+  font-size: 14px;
+  color: var(--rego-text-muted);
+  line-height: 1.6;
+}
+
+/* ================================================================
+   LIVE DRIFT FEED CARD
+================================================================ */
+.rego_fcd_feed_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 48px;
+}
+
+.rego_fcd_feed_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.rego_fcd_feed_row {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1.5fr 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  align-items: center;
+}
+
+.rego_fcd_feed_row:last-child {
+  border-bottom: none;
+}
+
+.rego_fcd_feed_time {
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 11px;
+}
+
+.rego_fcd_feed_control {
+  color: #a78bfa;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.rego_fcd_feed_message {
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.rego_fcd_feed_action {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+/* ================================================================
+   WORKFLOW CARD
+================================================================ */
+.rego_fcd_workflow_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 48px;
+}
+
+.rego_fcd_workflow_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.rego_fcd_workflow_boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.rego_fcd_workflow_box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.rego_fcd_workflow_step {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  margin-bottom: 8px;
+}
+
+.rego_fcd_workflow_desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.rego_fcd_workflow_arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.30);
+  font-size: 18px;
+  grid-column: auto;
+}
+
+/* ================================================================
+   HISTORY/TIMELINE CARD
+================================================================ */
+.rego_fcd_history_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+}
+
+.rego_fcd_history_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.rego_fcd_timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+.rego_fcd_timeline_entry {
+  position: relative;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rego_fcd_timeline_entry:last-child {
+  border-bottom: none;
+}
+
+.rego_fcd_timeline_dot {
+  position: absolute;
+  left: -40px;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4a569e;
+  border: 2px solid rgba(13, 17, 23, 0.85);
+}
+
+.rego_fcd_timeline_line {
+  position: absolute;
+  left: -34px;
+  top: 12px;
+  width: 2px;
+  height: calc(100% + 12px);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.rego_fcd_timeline_entry:last-child .rego_fcd_timeline_line {
+  display: none;
+}
+
+.rego_fcd_timeline_time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.40);
+  margin-bottom: 4px;
+}
+
+.rego_fcd_timeline_event {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  font-weight: 600;
+}
+
+.rego_fcd_timeline_detail {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.50);
+  margin-top: 4px;
+}
+
+/* ================================================================
+   STATS SECTION
+================================================================ */
+.rego_fcd_stats_section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_fcd_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.rego_fcd_stat_block {
+  position: relative;
+}
+
+.rego_fcd_stat_value {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.rego_fcd_stat_label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.70);
+  font-weight: 600;
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION
+================================================================ */
+.rego_fcd_testimonial_section {
+  background: #ffffff;
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_fcd_quote_card {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--rego-bg-light);
+  border-radius: 20px;
+  padding: 48px;
+  border-left: 5px solid transparent;
+  border-image: linear-gradient(180deg, #4a569e, #842573) 1;
+  position: relative;
+}
+
+.rego_fcd_quote_text {
+  font-size: clamp(17px, 2vw, 21px);
+  font-style: italic;
+  color: var(--rego-dark);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.rego_fcd_quote_author {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rego-dark);
+  margin-bottom: 4px;
+}
+
+.rego_fcd_quote_title {
+  font-size: 13px;
+  color: var(--rego-text-muted);
+}
+
+/* ================================================================
+   CTA SECTION
+================================================================ */
+.rego_fcd_cta_section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_fcd_cta_inner {
+  position: relative;
+  z-index: 1;
+}
+
+.rego_fcd_cta_inner h2 {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.rego_fcd_cta_inner p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.60);
+  margin-bottom: 36px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rego_fcd_cta_actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN
+================================================================ */
+@media (max-width: 1024px) {
+  .rego_fcd_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_fcd_type_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_fcd_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .rego_fcd_workflow_boxes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .rego_fcd_workflow_arrow {
+    display: none;
+  }
+
+  .rego_fcd_feed_row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_fcd_hero {
+    padding: 60px 0 50px;
+  }
+
+  .rego_fcd_type_grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .rego_fcd_feed_card,
+  .rego_fcd_workflow_card,
+  .rego_fcd_history_card {
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .rego_fcd_cta_section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .rego_fcd_stats_grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .rego_fcd_type_grid {
+    gap: 12px;
+  }
+
+  .rego_fcd_cta_actions {
+    flex-direction: column;
+  }
+
+  .rego_fcd_quote_card {
+    padding: 32px 24px;
+  }
+
+  .rego_fcd_drift_rows {
+    gap: 8px;
+  }
+
+  .rego_fcd_feed_row {
+    font-size: 11px;
+  }
+}
+
+
+/* ===== Extracted inline styles ===== */
+.rego_fix_controls_drift_is_1 { background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%); }
+.rego_fix_controls_drift_is_2 { background:linear-gradient(90deg,#4a569e,#842573);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.rego_fix_controls_drift_is_3 { background: rgba(13,17,23,0.85); border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; padding: 24px; }
+.rego_fix_controls_drift_is_4 { background: #d04c4c; }
+.rego_fix_controls_drift_is_5 { flex: 1; }
+.rego_fix_controls_drift_is_6 { font-size: 12px; color: #ccc; }
+.rego_fix_controls_drift_is_7 { font-size: 11px; color: #999; }
+.rego_fix_controls_drift_is_8 { font-size: 10px; color: #999; }
+.rego_fix_controls_drift_is_9 { padding: 4px 10px; background: rgba(208,76,76,0.2); border: 1px solid rgba(208,76,76,0.4); border-radius: 4px; color: #d04c4c; font-size: 10px; cursor: pointer; }
+.rego_fix_controls_drift_is_10 { background: #d4a74d; }
+.rego_fix_controls_drift_is_11 { padding: 4px 10px; background: rgba(212,167,77,0.2); border: 1px solid rgba(212,167,77,0.4); border-radius: 4px; color: #d4a74d; font-size: 10px; cursor: pointer; }
+.rego_fix_controls_drift_is_12 { background: #4a9d6f; }
+.rego_fix_controls_drift_is_13 { padding: 4px 10px; background: rgba(74,157,111,0.2); border: 1px solid rgba(74,157,111,0.4); border-radius: 4px; color: #4a9d6f; font-size: 10px; cursor: pointer; }
+.rego_fix_controls_drift_is_14 { font-size: 11px; color: #999; display: block; margin-bottom: 8px; }
+.rego_fix_controls_drift_is_15 { width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+.rego_fix_controls_drift_is_16 { width: 67%; height: 100%; background: linear-gradient(90deg, #4a569e, #4a9d6f); border-radius: 3px; animation: progress 2s ease-in-out infinite; }
+.rego_fix_controls_drift_is_17 { text-align: center; margin-bottom: 60px; }
+.rego_fix_controls_drift_is_18 { margin-bottom: 16px; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
+.rego_fix_controls_drift_is_19 { display: flex; flex-direction: column; gap: 10px; }
+.rego_fix_controls_drift_is_20 { padding: 10px; background: rgba(255,255,255,0.03); border-radius: 6px; border-left: 3px solid #d04c4c; font-size: 11px; }
+.rego_fix_controls_drift_is_21 { color: #fff; margin-bottom: 2px; }
+.rego_fix_controls_drift_is_22 { color: #999; }
+.rego_fix_controls_drift_is_23 { padding: 10px; background: rgba(255,255,255,0.03); border-radius: 6px; border-left: 3px solid #d4a74d; font-size: 11px; }
+.rego_fix_controls_drift_is_24 { padding: 10px; background: rgba(255,255,255,0.03); border-radius: 6px; border-left: 3px solid #4a9d6f; font-size: 11px; }
+.rego_fix_controls_drift_is_25 { display: flex; flex-direction: column; gap: 16px; }
+.rego_fix_controls_drift_is_26 { display: flex; align-items: center; gap: 12px; }
+.rego_fix_controls_drift_is_27 { width: 32px; height: 32px; background: rgba(74,86,158,0.2); border: 1px solid rgba(74,86,158,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4a569e; font-weight: 600; font-size: 12px; }
+.rego_fix_controls_drift_is_28 { font-size: 12px; color: #fff; margin-bottom: 2px; }
+.rego_fix_controls_drift_is_29 { border-left: 2px solid rgba(74,86,158,0.2); margin-left: 15px; padding-left: 16px; padding-bottom: 0; }
+.rego_fix_controls_drift_is_30 { border-left: 2px solid rgba(74,86,158,0.2); margin-left: 15px; padding-left: 16px; }
+.rego_fix_controls_drift_is_31 { display: flex; flex-direction: column; gap: 12px; font-size: 11px; }
+.rego_fix_controls_drift_is_32 { padding: 10px; background: rgba(255,255,255,0.03); border-radius: 6px; }
+.rego_fix_controls_drift_is_33 { display: flex; justify-content: space-between; margin-bottom: 3px; }
+.rego_fix_controls_drift_is_34 { color: #fff; font-weight: 500; }
+.rego_fix_controls_drift_is_35 { color: #666; }
+.rego_fix_controls_drift_is_36 { padding: 10px; background: rgba(255,255,255,0.03); border-radius: 6px; border-left: 3px solid #4a9d6f; }
+.rego_fix_controls_drift_is_37 { background: var(--rego-bg-light); }
+.rego_fix_controls_drift_is_38 { text-align: center; margin-bottom: 50px; }
+.rego_fix_controls_drift_is_39 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.rego_fix_controls_drift_is_40 { padding: 24px; background: #fff; border-radius: 12px; border: 1px solid #e0e0e0; }
+.rego_fix_controls_drift_is_41 { width: 40px; height: 40px; background: rgba(74,86,158,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.rego_fix_controls_drift_is_42 { margin-bottom: 8px; color: #1a1a1a; }
+.rego_fix_controls_drift_is_43 { color: #666; font-size: 14px; }
+.rego_fix_controls_drift_is_44 { width: 40px; height: 40px; background: rgba(132,37,115,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.rego_fix_controls_drift_is_45 { width: 40px; height: 40px; background: rgba(212,167,77,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.rego_fix_controls_drift_is_46 { width: 40px; height: 40px; background: rgba(74,157,111,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.rego_fix_controls_drift_is_47 { width: 40px; height: 40px; background: rgba(208,76,76,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.rego_fix_controls_drift_is_48 { width: 40px; height: 40px; background: rgba(130,130,130,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.rego_fix_controls_drift_is_49 { text-align: center; margin-bottom: 50px; color: #fff; }
+.rego_fix_controls_drift_is_50 { font-size: 0.6em; }
+.rego_fix_controls_drift_is_51 { font-size: 18px; color: #1a1a1a; margin-bottom: 20px; line-height: 1.6; font-weight: 500; position: relative; padding-left: 24px; }
+.rego_fix_controls_drift_is_52 { position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #4a569e, #842573); border-radius: 2px; }
+.rego_fix_controls_drift_is_53 { max-width: 700px; margin: 0 auto; text-align: center; }
+.rego_fix_controls_drift_is_54 { margin-bottom: 12px; }
+.rego_fix_controls_drift_is_55 { margin-bottom: 30px; color: rgba(255,255,255,0.7); }
+.rego_fix_controls_drift_is_56 { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }

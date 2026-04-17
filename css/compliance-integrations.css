@@ -1,0 +1,681 @@
+/* RegO Compliance Integrations Page — prefix: rego_ci_ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.rego_ci_hero {
+  position: relative;
+  min-height: 540px;
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 24px;
+}
+
+.rego_ci_hero::before,
+.rego_ci_hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.rego_ci_hero::before {
+  width: 400px;
+  height: 400px;
+  background: var(--rego-purple);
+  top: -100px;
+  left: -150px;
+}
+
+.rego_ci_hero::after {
+  width: 500px;
+  height: 500px;
+  background: var(--rego-magenta);
+  bottom: -200px;
+  right: -200px;
+}
+
+.rego_ci_hero_content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+}
+
+.rego_ci_hero h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rego_ci_hero p {
+  font-size: 16px;
+  color: rgba(232, 234, 240, 0.85);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.rego_ci_connector_preview {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 28px;
+  margin-top: 32px;
+  display: inline-block;
+}
+
+.rego_ci_preview_row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.rego_ci_preview_row:last-child {
+  margin-bottom: 0;
+}
+
+.rego_ci_preview_pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  font-size: 13px;
+  color: rgba(232, 234, 240, 0.8);
+}
+
+.rego_ci_preview_pill::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rego_ci_preview_pill.rego_ci_pp_crm::before {
+  background: #4a569e;
+}
+
+.rego_ci_preview_pill.rego_ci_pp_iam::before {
+  background: #842573;
+}
+
+.rego_ci_preview_pill.rego_ci_pp_dev::before {
+  background: #10b981;
+}
+
+.rego_ci_preview_pill.rego_ci_pp_cloud::before {
+  background: #06b6d4;
+}
+
+/* ============================================
+   CATEGORY CARDS SECTION
+   ============================================ */
+.rego_ci_categories {
+  background: white;
+  padding: 60px 24px;
+}
+
+.rego_ci_categories_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rego_ci_categories_heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.rego_ci_categories_heading h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #1a1d2e;
+  margin-bottom: 8px;
+}
+
+.rego_ci_categories_heading p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.rego_ci_categories_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rego_ci_cat_card {
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 28px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.rego_ci_cat_card:hover {
+  border-color: var(--rego-purple);
+  box-shadow: 0 8px 24px rgba(74, 86, 158, 0.12);
+}
+
+.rego_ci_count_badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 24px;
+  background: var(--rego-purple);
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rego_ci_cat_icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a569e, #842573);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: white;
+}
+
+.rego_ci_cat_card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1d2e;
+  margin-bottom: 16px;
+}
+
+.rego_ci_cat_card p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.rego_ci_tool_pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rego_ci_tool_pill {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #f1f3f9;
+  border-radius: 16px;
+  font-size: 12px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* ============================================
+   INTEGRATION LOGO GRID
+   ============================================ */
+.rego_ci_logo_grid {
+  background: #0d1117;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_ci_logo_grid::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--rego-purple);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.1;
+  top: -100px;
+  left: -100px;
+}
+
+.rego_ci_logo_grid_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_ci_logo_heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.rego_ci_logo_heading h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+}
+
+.rego_ci_badges_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.rego_ci_int_badge {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(232, 234, 240, 0.8);
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.rego_ci_int_badge:hover {
+  border-color: #842573;
+  box-shadow: 0 0 20px rgba(132, 37, 115, 0.3);
+}
+
+/* ============================================
+   PIPELINE SECTION (uses .rego_pipeline from common.css)
+   ============================================ */
+.rego_ci_pipeline_section {
+  background: white;
+  padding: 60px 24px;
+}
+
+.rego_ci_pipeline_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rego_ci_pipeline_heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.rego_ci_pipeline_heading h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #1a1d2e;
+  margin-bottom: 8px;
+}
+
+/* ============================================
+   FEATURE SPLITS
+   ============================================ */
+.rego_ci_feature_section {
+  background: #0d1117;
+  padding: 60px 24px;
+}
+
+.rego_ci_feature_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rego_ci_feature_split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.rego_ci_feature_split.rego_ci_split_reverse {
+  direction: rtl;
+}
+
+.rego_ci_feature_split.rego_ci_split_reverse > * {
+  direction: ltr;
+}
+
+.rego_ci_feature_text h3 {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.rego_ci_feature_text p {
+  font-size: 15px;
+  color: rgba(232, 234, 240, 0.75);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.rego_ci_feature_text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rego_ci_feature_text li {
+  font-size: 14px;
+  color: rgba(232, 234, 240, 0.7);
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.rego_ci_feature_text li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+.rego_ci_evidence_card,
+.rego_ci_sync_card,
+.rego_ci_flow_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 32px;
+}
+
+/* Evidence card — connector rows */
+.rego_ci_evidence_row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rego_ci_evidence_row:last-child {
+  border-bottom: none;
+}
+
+.rego_ci_evidence_label {
+  flex: 1;
+  font-size: 14px;
+  color: rgba(232, 234, 240, 0.8);
+}
+
+.rego_ci_status_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+/* Sync card — sync status feed */
+.rego_ci_sync_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rego_ci_sync_row:last-child {
+  border-bottom: none;
+}
+
+.rego_ci_sync_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+}
+
+.rego_ci_sync_info {
+  flex: 1;
+}
+
+.rego_ci_sync_tool {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.rego_ci_sync_time {
+  font-size: 12px;
+  color: rgba(232, 234, 240, 0.5);
+}
+
+/* Flow card — bidirectional arrows */
+.rego_ci_flow_boxes {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+}
+
+.rego_ci_flow_box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(232, 234, 240, 0.8);
+  min-width: 100px;
+}
+
+.rego_ci_flow_arrow {
+  font-size: 20px;
+  color: var(--rego-purple);
+}
+
+/* ============================================
+   STATS ROW (uses .rego_stat_block from common.css)
+   ============================================ */
+.rego_ci_stats_section {
+  background: white;
+  padding: 60px 24px;
+}
+
+.rego_ci_stats_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rego_ci_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ============================================
+   TESTIMONIAL
+   ============================================ */
+.rego_ci_testimonial_section {
+  background: #0d1117;
+  padding: 80px 24px;
+}
+
+.rego_ci_testimonial_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rego_ci_testimonial {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 48px;
+}
+
+.rego_ci_quote {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(232, 234, 240, 0.9);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.rego_ci_quote::before {
+  content: '"';
+  font-size: 40px;
+  color: var(--rego-purple);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.rego_ci_author_name {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.rego_ci_author_title {
+  font-size: 13px;
+  color: rgba(232, 234, 240, 0.5);
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.rego_ci_cta_section {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.rego_ci_cta_container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rego_ci_cta_heading {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.rego_ci_cta_text {
+  font-size: 16px;
+  color: rgba(232, 234, 240, 0.75);
+  margin-bottom: 32px;
+}
+
+.rego_ci_cta_buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .rego_ci_categories_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_ci_badges_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .rego_ci_feature_split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .rego_ci_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_ci_categories_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ci_badges_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rego_ci_hero {
+    min-height: 480px;
+    padding: 60px 20px;
+  }
+
+  .rego_ci_preview_row {
+    gap: 12px;
+  }
+
+  .rego_ci_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .rego_ci_cta_buttons {
+    flex-direction: column;
+  }
+
+  .rego_ci_testimonial {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rego_ci_hero {
+    min-height: 400px;
+    padding: 40px 16px;
+  }
+
+  .rego_ci_hero h1 {
+    margin-bottom: 12px;
+  }
+
+  .rego_ci_badges_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .rego_ci_cat_card {
+    padding: 20px;
+  }
+
+  .rego_ci_stats_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ci_flow_boxes {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .rego_ci_testimonial {
+    padding: 24px;
+  }
+
+  .rego_ci_quote {
+    font-size: 16px;
+  }
+}

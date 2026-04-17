@@ -1,0 +1,672 @@
+/* ================================================================
+   REGO – CONFIGURE CONTROLS PAGE STYLESHEET
+   File: css/configure-controls.css
+   Prefix: rego_ctrl_
+   Purpose: Page-specific styles for control configuration tool.
+   Load order: common.css → header.css → footer.css → this file
+================================================================ */
+
+/* ================================================================
+   HERO SECTION – 2-col layout with builder card
+================================================================ */
+.rego_ctrl_hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--rego-section-py);
+  min-height: 620px;
+}
+
+.rego_ctrl_orb_1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.15;
+  top: -150px;
+  left: -100px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_ctrl_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #d95ec2;
+  opacity: 0.12;
+  bottom: -80px;
+  right: -50px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_ctrl_hero_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_ctrl_hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_ctrl_hero_h1 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.rego_ctrl_hero_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.rego_ctrl_hero_actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   BUILDER CARD – Dark glass form card
+================================================================ */
+.rego_ctrl_builder_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  max-width: 460px;
+}
+
+.rego_ctrl_card_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.rego_ctrl_form_group {
+  margin-bottom: 12px;
+}
+
+.rego_ctrl_form_label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.50);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rego_ctrl_input_mock {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.rego_ctrl_input_mock.monospace {
+  font-family: 'Courier New', monospace;
+}
+
+.rego_ctrl_select_mock {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.rego_ctrl_select_mock::after {
+  content: '▼';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.40);
+  pointer-events: none;
+}
+
+/* Framework chips */
+.rego_ctrl_fw_chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.rego_ctrl_fw_chip {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all var(--rego-transition);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rego_ctrl_fw_chip.active {
+  background: rgba(74, 86, 158, 0.20);
+  border-color: rgba(74, 86, 158, 0.40);
+  color: #a78bfa;
+}
+
+.rego_ctrl_fw_chip.inactive {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.rego_ctrl_chip_check {
+  font-size: 10px;
+  margin-right: 4px;
+}
+
+/* Textarea mock */
+.rego_ctrl_textarea_mock {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  width: 100%;
+  font-style: italic;
+  min-height: 60px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Save button */
+.rego_ctrl_save_btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all var(--rego-transition);
+}
+
+.rego_ctrl_save_btn:hover {
+  opacity: 0.95;
+}
+
+/* Card footer */
+.rego_ctrl_card_footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ================================================================
+   CONFIG CARDS GRID – 4-col
+================================================================ */
+.rego_ctrl_config_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ================================================================
+   LIBRARY CARD – Dark glass with search and control rows
+================================================================ */
+.rego_ctrl_library_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.rego_ctrl_search_bar {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.40);
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.rego_ctrl_lib_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_ctrl_lib_row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rego_ctrl_lib_row:last-child {
+  border-bottom: none;
+}
+
+.rego_ctrl_ctrl_id {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #a78bfa;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.rego_ctrl_ctrl_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  flex: 1;
+}
+
+.rego_ctrl_fw_count_badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(74, 86, 158, 0.20);
+  color: #a78bfa;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   CROSSWALK CARD – Dark glass with center control & framework connections
+================================================================ */
+.rego_ctrl_crosswalk_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rego_ctrl_center_control {
+  background: rgba(74, 86, 158, 0.20);
+  border: 1px solid rgba(74, 86, 158, 0.40);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.rego_ctrl_center_control_id {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #a78bfa;
+}
+
+.rego_ctrl_fw_connections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.rego_ctrl_fw_connection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.rego_ctrl_fw_connector_pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.70);
+  text-transform: uppercase;
+}
+
+.rego_ctrl_connector_dash {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.30);
+}
+
+/* ================================================================
+   TEST RUNNER CARD – Dark glass with test rows
+================================================================ */
+.rego_ctrl_test_runner_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.rego_ctrl_test_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_ctrl_test_row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+}
+
+.rego_ctrl_test_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  flex: 1;
+}
+
+.rego_ctrl_freq_badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.rego_ctrl_next_run {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.50);
+  min-width: 100px;
+  text-align: right;
+}
+
+.rego_ctrl_result_badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.rego_ctrl_result_pass {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+.rego_ctrl_result_fail {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* ================================================================
+   CONTROL TYPE CARDS – 3x2 grid
+================================================================ */
+.rego_ctrl_type_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.rego_ctrl_type_card {
+  background: var(--rego-bg-light);
+  border: 1.5px solid var(--rego-border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: box-shadow var(--rego-transition), transform var(--rego-transition);
+}
+
+.rego_ctrl_type_card:hover {
+  box-shadow: 0 4px 12px rgba(74, 86, 158, 0.10);
+  transform: translateY(-2px);
+}
+
+.rego_ctrl_type_icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.rego_ctrl_type_name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rego-text);
+  margin-bottom: 8px;
+}
+
+.rego_ctrl_type_desc {
+  font-size: 12px;
+  color: var(--rego-text-muted);
+  line-height: 1.5;
+}
+
+/* ================================================================
+   STATS SECTION – Dark gradient, 4-col grid
+================================================================ */
+.rego_ctrl_stats {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_ctrl_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION
+================================================================ */
+.rego_ctrl_testimonial {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_ctrl_testimonial_card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--rego-bg-light);
+  border-left: 4px solid;
+  border-image: linear-gradient(180deg, #4a569e, #842573) 1;
+  border-radius: 8px;
+}
+
+.rego_ctrl_testimonial_quote {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--rego-text);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.rego_ctrl_testimonial_author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rego-text);
+}
+
+.rego_ctrl_testimonial_role {
+  font-size: 13px;
+  color: var(--rego-text-muted);
+}
+
+/* ================================================================
+   CTA SECTION – Dark, centered with orbs
+================================================================ */
+.rego_ctrl_cta {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_ctrl_cta_orb_1 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: var(--rego-primary);
+  opacity: 0.12;
+  top: -100px;
+  right: 10%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_ctrl_cta_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.10;
+  bottom: -80px;
+  left: 5%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_ctrl_cta_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rego_ctrl_cta_title {
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.rego_ctrl_cta_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 28px;
+}
+
+.rego_ctrl_cta_actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+================================================================ */
+
+/* Tablet / Small Desktop */
+@media (max-width: 1024px) {
+  .rego_ctrl_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_ctrl_config_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_ctrl_type_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_ctrl_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Tablet */
+@media (max-width: 768px) {
+  .rego_ctrl_config_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ctrl_type_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ctrl_stats_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ctrl_hero_h1 {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+
+  .rego_ctrl_cta_title {
+    font-size: clamp(20px, 4vw, 32px);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .rego_ctrl_hero_actions {
+    flex-direction: column;
+  }
+
+  .rego_ctrl_cta_actions {
+    flex-direction: column;
+  }
+
+  .rego_ctrl_builder_card {
+    max-width: 100%;
+  }
+
+  .rego_ctrl_testimonial_card {
+    padding: 20px;
+  }
+}
+
+
+/* ===== Extracted inline styles ===== */
+.rego_configure_controls_is_1 { background:linear-gradient(90deg,#4a569e,#842573);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.rego_configure_controls_is_2 { margin-top: 16px; }
+.rego_configure_controls_is_3 { color: #3b82f6; }
+.rego_configure_controls_is_4 { color: #6366f1; }
+.rego_configure_controls_is_5 { color: #a855f7; }
+.rego_configure_controls_is_6 { color: #ec4899; }

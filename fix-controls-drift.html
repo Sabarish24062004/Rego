@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RegO automatically detects when controls drift from their intended state and triggers remediation workflows before drift becomes a finding.">
+  <title>Fix Controls Drift – RegO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/fix-controls-drift.css"/>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER – Sticky navigation with mega dropdowns
+  ============================================================ -->
+  <div id="rego_header_mount"></div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="rego_page_hero rego_fcd_hero rego_fix_controls_drift_is_1" aria-label="Controls drift hero">
+      <div class="rego_container">
+        <div class="rego_hero_grid">
+          <div class="rego_fcd_hero_copy">
+            <div class="rego_tag_group">
+              <span class="rego_tag rego_tag_primary">Controls Drift</span>
+              <span class="rego_tag rego_tag_orange">Auto-Remediation</span>
+            </div>
+            <h1 class="rego_fcd_hero_h1">Stop Drift Before It <span class="rego_fix_controls_drift_is_2">Becomes a Finding</span></h1>
+            <p class="rego_fcd_hero_sub">Controls drift from their intended state after implementation — RegO detects it instantly and triggers automated fix workflows before auditors find it.</p>
+            <div class="rego_hero_cta">
+              <a href="#" class="rego_btn rego_btn_primary">Detect Drift Now</a>
+              <a href="#" class="rego_btn rego_btn_outline_dark">View Documentation</a>
+            </div>
+          </div>
+          <div class="rego_fcd_hero_visual rego_reveal">
+            <div class="rego_fcd_drift_card rego_fix_controls_drift_is_3">
+              <div class="rego_fcd_card_header">
+                <h3>Drift Detection</h3>
+                <span class="rego_fcd_pulsing_dot"></span>
+                <span class="rego_fcd_drift_count">3 Active Drifts</span>
+              </div>
+              <div class="rego_fcd_drift_alerts">
+                <div class="rego_fcd_drift_row rego_fcd_severity_high">
+                  <span class="rego_fcd_severity_indicator rego_fix_controls_drift_is_4"></span>
+                  <div class="rego_fix_controls_drift_is_5">
+                    <div class="rego_fix_controls_drift_is_6">AC-2.1 | Account Management</div>
+                    <div class="rego_fix_controls_drift_is_7">Config Changed</div>
+                  </div>
+                  <span class="rego_fix_controls_drift_is_8">5m ago</span>
+                  <button class="rego_fix_controls_drift_is_9">Fix Now</button>
+                </div>
+                <div class="rego_fcd_drift_row rego_fcd_severity_medium">
+                  <span class="rego_fcd_severity_indicator rego_fix_controls_drift_is_10"></span>
+                  <div class="rego_fix_controls_drift_is_5">
+                    <div class="rego_fix_controls_drift_is_6">AU-2 | Audit Events</div>
+                    <div class="rego_fix_controls_drift_is_7">Evidence Expired</div>
+                  </div>
+                  <span class="rego_fix_controls_drift_is_8">12m ago</span>
+                  <button class="rego_fix_controls_drift_is_11">Fix Now</button>
+                </div>
+                <div class="rego_fcd_drift_row rego_fcd_severity_low">
+                  <span class="rego_fcd_severity_indicator rego_fix_controls_drift_is_12"></span>
+                  <div class="rego_fix_controls_drift_is_5">
+                    <div class="rego_fix_controls_drift_is_6">SC-7.1 | Boundary</div>
+                    <div class="rego_fix_controls_drift_is_7">Owner Unassigned</div>
+                  </div>
+                  <span class="rego_fix_controls_drift_is_8">28m ago</span>
+                  <button class="rego_fix_controls_drift_is_13">Fix Now</button>
+                </div>
+              </div>
+              <div class="rego_fcd_remediation_progress">
+                <label class="rego_fix_controls_drift_is_14">Auto-remediation in progress</label>
+                <div class="rego_fix_controls_drift_is_15">
+                  <div class="rego_fix_controls_drift_is_16"></div>
+                </div>
+              </div>
+              <div class="rego_fcd_card_footer">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M2 12h6m6 0h6m-1.78 7.78l-4.24-4.24m-6.08 0l-4.24 4.24"/></svg>
+                47 drifts auto-resolved this week
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS CONTROLS DRIFT -->
+    <section class="rego_section_py" aria-labelledby="fcd_what_h2">
+      <div class="rego_container">
+        <div class="rego_section_center_header">
+          <h2 id="fcd_what_h2">Controls Drift Is Inevitable — Auto-Fix Is Not</h2>
+          <p>Systems change, people leave, frameworks update. RegO catches drift in real time and fixes it automatically.</p>
+        </div>
+        <div class="rego_icon_card_grid">
+          <div class="rego_icon_card rego_reveal">
+            <div class="rego_icon_card_icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6m-1.78 7.78l-4.24-4.24m-6.08 0l-4.24 4.24"/>
+              </svg>
+            </div>
+            <h3>Config Drift</h3>
+            <p>System configurations change post-implementation, breaking control assumptions.</p>
+          </div>
+          <div class="rego_icon_card rego_reveal">
+            <div class="rego_icon_card_icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="1"/><path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6m-1.78 7.78l-4.24-4.24m-6.08 0l-4.24 4.24"/>
+              </svg>
+            </div>
+            <h3>Evidence Expiry</h3>
+            <p>Evidence goes stale as systems and implementations change over time.</p>
+          </div>
+          <div class="rego_icon_card rego_reveal">
+            <div class="rego_icon_card_icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="M16 11h6"/>
+              </svg>
+            </div>
+            <h3>Owner Changes</h3>
+            <p>Accountability gaps when team members leave or responsibilities shift.</p>
+          </div>
+          <div class="rego_icon_card rego_reveal">
+            <div class="rego_icon_card_icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z"/>
+              </svg>
+            </div>
+            <h3>Policy Updates</h3>
+            <p>Framework updates make existing controls orphaned or non-compliant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW DETECTION WORKS - PIPELINE -->
+    <section class="rego_section_py rego_fix_controls_drift_is_1" aria-labelledby="fcd_howitworks_h2">
+      <div class="rego_container">
+        <div class="rego_section_center_header">
+          <h2 id="fcd_howitworks_h2">How Drift Detection Works</h2>
+          <p>Continuous monitoring, instant detection, automated remediation.</p>
+        </div>
+        <div class="rego_pipeline">
+          <div class="rego_pipeline_step rego_reveal">
+            <div class="rego_pipeline_number">1</div>
+            <h3>Monitor State</h3>
+            <p>Continuously poll systems and compare against baseline configuration.</p>
+          </div>
+          <div class="rego_pipeline_arrow"></div>
+          <div class="rego_pipeline_step rego_reveal">
+            <div class="rego_pipeline_number">2</div>
+            <h3>Detect Deviation</h3>
+            <p>Identify when control state deviates from intended configuration.</p>
+          </div>
+          <div class="rego_pipeline_arrow"></div>
+          <div class="rego_pipeline_step rego_reveal">
+            <div class="rego_pipeline_number">3</div>
+            <h3>Classify Drift</h3>
+            <p>Categorize drift type (config, evidence, owner, policy) and severity.</p>
+          </div>
+          <div class="rego_pipeline_arrow"></div>
+          <div class="rego_pipeline_step rego_reveal">
+            <div class="rego_pipeline_number">4</div>
+            <h3>Trigger Workflow</h3>
+            <p>Launch automated or manual remediation based on severity and type.</p>
+          </div>
+          <div class="rego_pipeline_arrow"></div>
+          <div class="rego_pipeline_step rego_reveal">
+            <div class="rego_pipeline_number">5</div>
+            <h3>Confirm Resolution</h3>
+            <p>Validate drift is resolved and update control status accordingly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES - SPLITS -->
+    <section class="rego_section_py" aria-labelledby="fcd_features_h2">
+      <div class="rego_container">
+        <h2 class="rego_fix_controls_drift_is_17" id="fcd_features_h2">Key Features</h2>
+
+        <!-- Split A: Detection -->
+        <div class="rego_split rego_reveal">
+          <div class="rego_split_copy">
+            <div class="rego_tag_group">
+              <span class="rego_tag rego_tag_primary">Detection</span>
+              <span class="rego_tag rego_tag_secondary">Real-Time</span>
+            </div>
+            <h3>Real-Time Drift Detection</h3>
+            <p>Detect deviations from your control baseline in real time. Every state change is logged with a timestamp, severity classification, and recommended action.</p>
+            <ul class="rego_bullets">
+              <li>Sub-minute detection latency</li>
+              <li>Severity-based classification</li>
+              <li>Automatic alerting &amp; escalation</li>
+              <li>Full drift event history</li>
+            </ul>
+          </div>
+          <div class="rego_split_visual">
+            <div class="rego_fcd_detection_card rego_reveal rego_fix_controls_drift_is_3">
+              <h4 class="rego_fix_controls_drift_is_18">Live Drift Feed</h4>
+              <div class="rego_fix_controls_drift_is_19">
+                <div class="rego_fix_controls_drift_is_20">
+                  <div class="rego_fix_controls_drift_is_21">AC-2.1: SSH root login enabled</div>
+                  <div class="rego_fix_controls_drift_is_22">Detected 2 min ago • HIGH severity</div>
+                </div>
+                <div class="rego_fix_controls_drift_is_23">
+                  <div class="rego_fix_controls_drift_is_21">AU-2: Log retention reduced to 7 days</div>
+                  <div class="rego_fix_controls_drift_is_22">Detected 8 min ago • MEDIUM severity</div>
+                </div>
+                <div class="rego_fix_controls_drift_is_24">
+                  <div class="rego_fix_controls_drift_is_21">SC-7.1: Firewall rule exemption added</div>
+                  <div class="rego_fix_controls_drift_is_22">Detected 15 min ago • LOW severity</div>
+                </div>
+                <div class="rego_fix_controls_drift_is_20">
+                  <div class="rego_fix_controls_drift_is_21">SI-4: Monitor service auto-disabled</div>
+                  <div class="rego_fix_controls_drift_is_22">Detected 24 min ago • HIGH severity</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Split B: Remediation (Reverse) -->
+        <div class="rego_split rego_split_reverse rego_reveal">
+          <div class="rego_split_copy">
+            <div class="rego_tag_group">
+              <span class="rego_tag rego_tag_primary">Remediation</span>
+              <span class="rego_tag rego_tag_secondary">Automation</span>
+            </div>
+            <h3>Automated Remediation Workflows</h3>
+            <p>Trigger automated fix workflows for common drift types. Manual workflows require approval before execution. All changes are logged and auditable.</p>
+            <ul class="rego_bullets">
+              <li>Automated &amp; manual workflow modes</li>
+              <li>Approval chains for critical changes</li>
+              <li>Rollback capability if needed</li>
+              <li>Complete audit trail of all fixes</li>
+            </ul>
+          </div>
+          <div class="rego_split_visual">
+            <div class="rego_fcd_remediation_card rego_reveal rego_fix_controls_drift_is_3">
+              <h4 class="rego_fix_controls_drift_is_18">Remediation Workflow</h4>
+              <div class="rego_fix_controls_drift_is_25">
+                <div class="rego_fix_controls_drift_is_26">
+                  <div class="rego_fix_controls_drift_is_27">1</div>
+                  <div class="rego_fix_controls_drift_is_5">
+                    <div class="rego_fix_controls_drift_is_28">Drift Detected</div>
+                    <div class="rego_fix_controls_drift_is_8">AC-2.1 config mismatch</div>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4a9d6f" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="rego_fix_controls_drift_is_29">
+                  <div class="rego_fix_controls_drift_is_26">
+                    <div class="rego_fix_controls_drift_is_27">2</div>
+                    <div class="rego_fix_controls_drift_is_5">
+                      <div class="rego_fix_controls_drift_is_28">Owner Notified</div>
+                      <div class="rego_fix_controls_drift_is_8">Email + Slack alert sent</div>
+                    </div>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4a9d6f" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                </div>
+                <div class="rego_fix_controls_drift_is_30">
+                  <div class="rego_fix_controls_drift_is_26">
+                    <div class="rego_fix_controls_drift_is_27">3</div>
+                    <div class="rego_fix_controls_drift_is_5">
+                      <div class="rego_fix_controls_drift_is_28">Fix Applied</div>
+                      <div class="rego_fix_controls_drift_is_8">Auto-remediation completed</div>
+                    </div>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4a9d6f" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Split C: History -->
+        <div class="rego_split rego_reveal">
+          <div class="rego_split_copy">
+            <div class="rego_tag_group">
+              <span class="rego_tag rego_tag_primary">Audit</span>
+              <span class="rego_tag rego_tag_secondary">History</span>
+            </div>
+            <h3>Drift History &amp; Audit Trail</h3>
+            <p>Full timeline of every drift event, detection, and remediation action per control. Export for auditor review and compliance reporting.</p>
+            <ul class="rego_bullets">
+              <li>Complete event timeline per control</li>
+              <li>Drift cause &amp; remediation details</li>
+              <li>Actor &amp; timestamp for all actions</li>
+              <li>Exportable audit reports</li>
+            </ul>
+          </div>
+          <div class="rego_split_visual">
+            <div class="rego_fcd_history_card rego_reveal rego_fix_controls_drift_is_3">
+              <h4 class="rego_fix_controls_drift_is_18">Event Timeline</h4>
+              <div class="rego_fix_controls_drift_is_31">
+                <div class="rego_fix_controls_drift_is_32">
+                  <div class="rego_fix_controls_drift_is_33">
+                    <span class="rego_fix_controls_drift_is_34">Config drift detected</span>
+                    <span class="rego_fix_controls_drift_is_22">Today, 2:45 PM</span>
+                  </div>
+                  <div class="rego_fix_controls_drift_is_35">AC-2.1 SSH root login re-enabled</div>
+                </div>
+                <div class="rego_fix_controls_drift_is_32">
+                  <div class="rego_fix_controls_drift_is_33">
+                    <span class="rego_fix_controls_drift_is_34">Alert sent to owner</span>
+                    <span class="rego_fix_controls_drift_is_22">Today, 2:46 PM</span>
+                  </div>
+                  <div class="rego_fix_controls_drift_is_35">Email &amp; Slack notification</div>
+                </div>
+                <div class="rego_fix_controls_drift_is_32">
+                  <div class="rego_fix_controls_drift_is_33">
+                    <span class="rego_fix_controls_drift_is_34">Fix approved</span>
+                    <span class="rego_fix_controls_drift_is_22">Today, 2:47 PM</span>
+                  </div>
+                  <div class="rego_fix_controls_drift_is_35">Approved by Sarah Chen (Security)</div>
+                </div>
+                <div class="rego_fix_controls_drift_is_36">
+                  <div class="rego_fix_controls_drift_is_33">
+                    <span class="rego_fix_controls_drift_is_34">Remediation completed</span>
+                    <span class="rego_fix_controls_drift_is_22">Today, 2:48 PM</span>
+                  </div>
+                  <div class="rego_fix_controls_drift_is_35">SSH root login disabled, config synced</div>
+                </div>
+                <div class="rego_fix_controls_drift_is_32">
+                  <div class="rego_fix_controls_drift_is_33">
+                    <span class="rego_fix_controls_drift_is_34">Drift resolved</span>
+                    <span class="rego_fix_controls_drift_is_22">Today, 2:49 PM</span>
+                  </div>
+                  <div class="rego_fix_controls_drift_is_35">Control returned to baseline state</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRIFT CATEGORIES -->
+    <section class="rego_section_py rego_fix_controls_drift_is_37" aria-labelledby="fcd_categories_h2">
+      <div class="rego_container">
+        <h2 class="rego_fix_controls_drift_is_38" id="fcd_categories_h2">Types of Drift RegO Detects</h2>
+        <div class="rego_fix_controls_drift_is_39">
+          <div class="rego_reveal rego_fix_controls_drift_is_40">
+            <div class="rego_fix_controls_drift_is_41">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a569e" stroke-width="2"><path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6m-1.78 7.78l-4.24-4.24m-6.08 0l-4.24 4.24"/></svg>
+            </div>
+            <h4 class="rego_fix_controls_drift_is_42">Configuration Drift</h4>
+            <p class="rego_fix_controls_drift_is_43">System configurations change after control implementation, breaking baseline expectations.</p>
+          </div>
+          <div class="rego_reveal rego_fix_controls_drift_is_40">
+            <div class="rego_fix_controls_drift_is_44">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#842573" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <h4 class="rego_fix_controls_drift_is_42">Evidence Drift</h4>
+            <p class="rego_fix_controls_drift_is_43">Collected evidence becomes stale and out-of-date as system states change.</p>
+          </div>
+          <div class="rego_reveal rego_fix_controls_drift_is_40">
+            <div class="rego_fix_controls_drift_is_45">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a74d" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+            </div>
+            <h4 class="rego_fix_controls_drift_is_42">Ownership Drift</h4>
+            <p class="rego_fix_controls_drift_is_43">Control owners leave or change roles, creating accountability gaps.</p>
+          </div>
+          <div class="rego_reveal rego_fix_controls_drift_is_40">
+            <div class="rego_fix_controls_drift_is_46">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a9d6f" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z"/></svg>
+            </div>
+            <h4 class="rego_fix_controls_drift_is_42">Policy Drift</h4>
+            <p class="rego_fix_controls_drift_is_43">Framework or internal policy updates make controls non-compliant.</p>
+          </div>
+          <div class="rego_reveal rego_fix_controls_drift_is_40">
+            <div class="rego_fix_controls_drift_is_47">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d04c4c" stroke-width="2"><path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6m-1.78 7.78l-4.24-4.24m-6.08 0l-4.24 4.24"/></svg>
+            </div>
+            <h4 class="rego_fix_controls_drift_is_42">Implementation Drift</h4>
+            <p class="rego_fix_controls_drift_is_43">Control implementation details diverge from specifications and deployment plans.</p>
+          </div>
+          <div class="rego_reveal rego_fix_controls_drift_is_40">
+            <div class="rego_fix_controls_drift_is_48">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#828282" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 1 0 4 0m0 0a2 2 0 1 0-4 0"/></svg>
+            </div>
+            <h4 class="rego_fix_controls_drift_is_42">Integration Drift</h4>
+            <p class="rego_fix_controls_drift_is_43">Third-party integrations or APIs change, breaking control dependencies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="rego_section_py rego_fix_controls_drift_is_1" aria-labelledby="fcd_stats_h2">
+      <div class="rego_container">
+        <h2 class="rego_fix_controls_drift_is_49" id="fcd_stats_h2">The Impact of Drift Detection &amp; Remediation</h2>
+        <div class="rego_stat_grid">
+          <div class="rego_stat_block rego_reveal">
+            <div class="rego_stat_number">&lt;5<span class="rego_fix_controls_drift_is_50">min</span></div>
+            <div class="rego_stat_label">Mean time to detect drift</div>
+          </div>
+          <div class="rego_stat_block rego_reveal">
+            <div class="rego_stat_number">85<span class="rego_fix_controls_drift_is_50">%</span></div>
+            <div class="rego_stat_label">Of drifts auto-resolved</div>
+          </div>
+          <div class="rego_stat_block rego_reveal">
+            <div class="rego_stat_number">73<span class="rego_fix_controls_drift_is_50">%</span></div>
+            <div class="rego_stat_label">Reduction in audit findings</div>
+          </div>
+          <div class="rego_stat_block rego_reveal">
+            <div class="rego_stat_number">100<span class="rego_fix_controls_drift_is_50">%</span></div>
+            <div class="rego_stat_label">Controls continuously monitored</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="rego_section_py" aria-labelledby="fcd_testimonial_h2">
+      <div class="rego_container">
+        <div class="rego_testimonial_card rego_reveal">
+          <div class="rego_fix_controls_drift_is_51" id="fcd_testimonial_h2">
+            <div class="rego_fix_controls_drift_is_52"></div>
+            "Drift detection saved our team from a critical audit finding. We can now sleep knowing that RegO is catching control drift before auditors do."
+          </div>
+          <div class="rego_fix_controls_drift_is_43">— Michael Torres, VP of Security, InsureCorp</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="rego_section_py rego_fix_controls_drift_is_1" aria-labelledby="fcd_cta_h2">
+      <div class="rego_container">
+        <div class="rego_fix_controls_drift_is_53">
+          <h2 class="rego_fix_controls_drift_is_54" id="fcd_cta_h2">Detect and Fix Controls Drift Today</h2>
+          <p class="rego_fix_controls_drift_is_55">Stop drift before it becomes an audit finding. Get real-time detection and automatic remediation for your entire control portfolio.</p>
+          <div class="rego_fix_controls_drift_is_56">
+            <a href="#" class="rego_btn rego_btn_primary">Start Detection</a>
+            <a href="#" class="rego_btn rego_btn_outline_light">Explore Documentation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <div id="rego_footer_mount"></div>
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/fix-controls-drift.js"></script>
+
+</body>
+</html>

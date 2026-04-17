@@ -1,0 +1,801 @@
+/* ================================================================
+   REGO – GOVERNMENT INDUSTRY PAGE STYLESHEET
+   File: css/industry-government.css
+   Prefix: rego_gov_
+   Purpose: Page-specific styles for government/defense industry.
+   Load order: common.css → header.css → footer.css → this file
+================================================================ */
+
+/* ================================================================
+   HERO SECTION – 2-col layout with dark gradient, orbs, and mission card
+================================================================ */
+.rego_gov_hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--rego-section-py);
+  min-height: 620px;
+}
+
+.rego_gov_orb_1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.15;
+  top: -150px;
+  left: -100px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_gov_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #d95ec2;
+  opacity: 0.12;
+  bottom: -80px;
+  right: -50px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_gov_hero_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_gov_hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_gov_hero_h1 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.rego_gov_hero_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.rego_gov_hero_actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+/* ================================================================
+   TRUST STRIP – badges below actions
+================================================================ */
+.rego_gov_trust_strip {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rego_gov_trust_badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rego_gov_trust_badge::before {
+  content: '✓';
+  color: #4ade80;
+}
+
+/* ================================================================
+   MISSION CARD – Dark glass card with metrics & framework rows
+================================================================ */
+.rego_gov_mission_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  max-width: 480px;
+}
+
+.rego_gov_card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rego_gov_card_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ================================================================
+   METRIC TILES – 3-col grid with gradient text values
+================================================================ */
+.rego_gov_metric_tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.rego_gov_metric_tile {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.rego_gov_metric_val {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.rego_gov_metric_val.active {
+  color: #4ade80;
+  -webkit-text-fill-color: #4ade80;
+  background: none;
+}
+
+.rego_gov_metric_label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+
+/* ================================================================
+   FRAMEWORK ROWS – compliance progress bars
+================================================================ */
+.rego_gov_fw_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_gov_fw_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+}
+
+.rego_gov_fw_name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  min-width: 120px;
+}
+
+.rego_gov_fw_bar_track {
+  flex: 1;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 3px;
+}
+
+.rego_gov_fw_bar_fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+}
+
+.rego_gov_fw_score {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.70);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Status badges */
+.rego_gov_status_auth {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.rego_gov_status_active {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* ================================================================
+   CARD FOOTER
+================================================================ */
+.rego_gov_card_footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.40);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================================================================
+   WHO WE SERVE – 3x2 grid
+================================================================ */
+.rego_gov_serve_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rego_gov_serve_card {
+  background: #ffffff;
+  border: 1.5px solid var(--rego-border);
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: box-shadow var(--rego-transition), transform var(--rego-transition);
+}
+
+.rego_gov_serve_card:hover {
+  box-shadow: 0 8px 32px rgba(74, 86, 158, 0.12);
+  transform: translateY(-4px);
+}
+
+/* ================================================================
+   PAIN CARDS GRID – 4-col
+================================================================ */
+.rego_gov_pain_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.rego_gov_pain_card {
+  background: #ffffff;
+  border: 1.5px solid var(--rego-border);
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: box-shadow var(--rego-transition), transform var(--rego-transition);
+}
+
+.rego_gov_pain_card:hover {
+  box-shadow: 0 8px 32px rgba(74, 86, 158, 0.12);
+  transform: translateY(-4px);
+}
+
+.rego_gov_pain_icon {
+  font-size: 52px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* ================================================================
+   HOW IT WORKS / PIPELINE SECTION – Dark bg
+================================================================ */
+.rego_gov_how {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_gov_how .rego_pipeline_step_label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_gov_how .rego_pipeline_step_title {
+  color: #ffffff;
+}
+
+/* ================================================================
+   ATO PHASES CARD – Dark glass with phase progress bars
+================================================================ */
+.rego_gov_ato_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.rego_gov_ato_phase {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rego_gov_ato_phase:last-child {
+  border-bottom: none;
+}
+
+.rego_gov_ato_phase_name {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.80);
+  min-width: 80px;
+}
+
+.rego_gov_ato_phase_track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 4px;
+}
+
+.rego_gov_ato_phase_fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+}
+
+.rego_gov_ato_phase_pct {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.70);
+  min-width: 32px;
+  text-align: right;
+}
+
+/* ================================================================
+   CMMC GAUGE CARD – Dark glass with large percentage & domain rows
+================================================================ */
+.rego_gov_cmmc_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.rego_gov_cmmc_gauge_wrap {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rego_gov_cmmc_pct {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.rego_gov_cmmc_label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 4px;
+}
+
+.rego_gov_cmmc_domains {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_gov_cmmc_domain {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+}
+
+.rego_gov_cmmc_domain_name {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.80);
+  flex: 1;
+}
+
+.rego_gov_cmmc_practice_badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(74, 86, 158, 0.20);
+  color: #a78bfa;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.rego_gov_cmmc_readiness_bar {
+  flex: 1;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 3px;
+}
+
+.rego_gov_cmmc_readiness_fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+}
+
+/* ================================================================
+   CONTINUOUS MONITORING CARD – Dark glass with event rows
+================================================================ */
+.rego_gov_conmon_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.rego_gov_monitor_events {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_gov_monitor_event {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rego_gov_monitor_event:last-child {
+  border-bottom: none;
+}
+
+.rego_gov_severity_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rego_gov_severity_high {
+  background: #ef4444;
+}
+
+.rego_gov_severity_medium {
+  background: #f97316;
+}
+
+.rego_gov_severity_low {
+  background: #eab308;
+}
+
+.rego_gov_control_id {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #a78bfa;
+  min-width: 60px;
+}
+
+.rego_gov_event_type {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.80);
+  flex: 1;
+}
+
+.rego_gov_event_time {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.40);
+  min-width: 70px;
+  text-align: right;
+}
+
+/* ================================================================
+   FRAMEWORK BADGES – 6-col grid with colored pills
+================================================================ */
+.rego_gov_fw_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.rego_gov_fw_badge_card {
+  background: #ffffff;
+  border: 1.5px solid var(--rego-border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: box-shadow var(--rego-transition), transform var(--rego-transition);
+}
+
+.rego_gov_fw_badge_card:hover {
+  box-shadow: 0 4px 12px rgba(74, 86, 158, 0.10);
+  transform: translateY(-2px);
+}
+
+.rego_gov_fw_badge_icon {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+.rego_gov_fw_badge_fed {
+  background: #2563eb;
+}
+
+.rego_gov_fw_badge_nist {
+  background: #4f46e5;
+}
+
+.rego_gov_fw_badge_cmmc {
+  background: #7c3aed;
+}
+
+.rego_gov_fw_badge_stig {
+  background: #ea580c;
+}
+
+.rego_gov_fw_badge_il {
+  background: #dc2626;
+}
+
+.rego_gov_fw_badge_rmf {
+  background: #0891b2;
+}
+
+.rego_gov_fw_badge_name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rego-text);
+}
+
+/* ================================================================
+   STATS SECTION – Dark gradient, 4-col grid
+================================================================ */
+.rego_gov_stats {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_gov_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION
+================================================================ */
+.rego_gov_testimonial {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_gov_testimonial_card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--rego-bg-light);
+  border-left: 4px solid;
+  border-image: linear-gradient(180deg, #4a569e, #842573) 1;
+  border-radius: 8px;
+}
+
+.rego_gov_testimonial_quote {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--rego-text);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.rego_gov_testimonial_author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rego-text);
+}
+
+.rego_gov_testimonial_role {
+  font-size: 13px;
+  color: var(--rego-text-muted);
+}
+
+/* ================================================================
+   CTA SECTION – Dark, centered with orbs
+================================================================ */
+.rego_gov_cta {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_gov_cta_orb_1 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: var(--rego-primary);
+  opacity: 0.12;
+  top: -100px;
+  right: 10%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_gov_cta_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.10;
+  bottom: -80px;
+  left: 5%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_gov_cta_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rego_gov_cta_title {
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.rego_gov_cta_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 28px;
+}
+
+.rego_gov_cta_actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+================================================================ */
+
+/* Tablet / Small Desktop */
+@media (max-width: 1024px) {
+  .rego_gov_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_gov_fw_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rego_gov_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_gov_serve_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Tablet */
+@media (max-width: 768px) {
+  .rego_gov_pain_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_gov_fw_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_gov_stats_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_gov_serve_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_gov_hero_h1 {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+
+  .rego_gov_cta_title {
+    font-size: clamp(20px, 4vw, 32px);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .rego_gov_fw_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_gov_hero_actions {
+    flex-direction: column;
+  }
+
+  .rego_gov_cta_actions {
+    flex-direction: column;
+  }
+
+  .rego_gov_mission_card {
+    max-width: 100%;
+  }
+
+  .rego_gov_pain_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_gov_testimonial_card {
+    padding: 20px;
+  }
+}
+
+
+/* ===== Extracted inline styles ===== */
+.rego_industry_government_is_1 { background:linear-gradient(90deg,#4a569e,#842573);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.rego_industry_government_is_2 { width: 98%; }
+.rego_industry_government_is_3 { width: 96%; }
+.rego_industry_government_is_4 { width: 99%; }
+.rego_industry_government_is_5 { width: 94%; }
+.rego_industry_government_is_6 { width: 100%; background: #10b981; }
+.rego_industry_government_is_7 { width: 87%; background: #3b82f6; }
+.rego_industry_government_is_8 { width: 62%; background: #8b5cf6; }
+.rego_industry_government_is_9 { width: 35%; background: #ec4899; }
+.rego_industry_government_is_10 { width: 76%; height: 100%; }
+.rego_industry_government_is_11 { color: #3b82f6; }
+.rego_industry_government_is_12 { color: #6366f1; }
+.rego_industry_government_is_13 { color: #a855f7; }
+.rego_industry_government_is_14 { color: #f97316; }
+.rego_industry_government_is_15 { color: #ef4444; }
+.rego_industry_government_is_16 { color: #06b6d4; }

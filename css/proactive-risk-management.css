@@ -1,0 +1,681 @@
+/* ================================================================
+   REGO – PROACTIVE RISK MANAGEMENT PAGE STYLESHEET
+   File: css/proactive-risk-management.css
+   Prefix: rego_prm_
+   Purpose: Page-specific styles for the proactive risk management page.
+   Load order: common.css → header.css → footer.css → this file
+================================================================ */
+
+/* ================================================================
+   HERO SECTION – 2-col layout with risk intelligence feed
+================================================================ */
+.rego_prm_hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--rego-section-py);
+  min-height: 620px;
+}
+
+.rego_prm_orb_1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.15;
+  top: -150px;
+  left: -100px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_prm_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #d95ec2;
+  opacity: 0.12;
+  bottom: -80px;
+  right: -50px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_prm_hero_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.rego_prm_hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_prm_hero_h1 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.rego_prm_hero_gradient {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rego_prm_hero_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.rego_prm_hero_actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RISK INTELLIGENCE FEED CARD
+================================================================ */
+.rego_prm_feed_card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  max-width: 420px;
+}
+
+.rego_prm_feed_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rego_prm_feed_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rego_prm_live_badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.10);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.rego_prm_live_dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
+  animation: rego_prm_pulse 2s infinite;
+}
+
+@keyframes rego_prm_pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.rego_prm_signal_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_prm_signal_row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rego_prm_signal_row:last-child {
+  border-bottom: none;
+}
+
+.rego_prm_severity_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.rego_prm_dot_critical {
+  background: #ef4444;
+}
+
+.rego_prm_dot_high {
+  background: #f97316;
+}
+
+.rego_prm_dot_medium {
+  background: #eab308;
+}
+
+.rego_prm_dot_low {
+  background: #22c55e;
+}
+
+.rego_prm_signal_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rego_prm_signal_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_prm_signal_detail {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.rego_prm_signal_time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.40);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.rego_prm_trend_bar {
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rego_prm_trend_label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.50);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.rego_prm_trend_value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+/* ================================================================
+   REACTIVE VS PROACTIVE COMPARISON SECTION – Light bg
+================================================================ */
+.rego_prm_compare {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_prm_compare_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.rego_prm_compare_card {
+  background: var(--rego-white);
+  border: 1px solid var(--rego-border-light);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.rego_prm_compare_header {
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rego_prm_compare_header.reactive {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.rego_prm_compare_header.proactive {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.rego_prm_compare_icon {
+  font-size: 20px;
+}
+
+.rego_prm_compare_body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rego_prm_compare_row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--rego-text);
+  line-height: 1.6;
+}
+
+.rego_prm_compare_row::before {
+  content: '✗';
+  font-weight: 800;
+  font-size: 16px;
+  color: #ef4444;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+.rego_prm_compare_row.good::before {
+  content: '✓';
+  color: #16a34a;
+}
+
+/* ================================================================
+   HOW IT WORKS SECTION – Dark bg, pipeline from common.css
+================================================================ */
+.rego_prm_how {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_prm_how .rego_pipeline_step_label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_prm_how .rego_pipeline_step_title {
+  color: #ffffff;
+}
+
+/* ================================================================
+   FEATURES SECTION – White bg, 3 alternating splits
+================================================================ */
+.rego_prm_features {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_prm_connector_grid,
+.rego_prm_score_gauge,
+.rego_prm_workflow_steps {
+  background: linear-gradient(135deg, rgba(13, 17, 23, 0.8) 0%, rgba(22, 27, 46, 0.8) 50%, rgba(30, 16, 64, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Connector Grid */
+.rego_prm_connector_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.rego_prm_connector_pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all var(--rego-transition);
+}
+
+.rego_prm_connector_pill:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+.rego_prm_connector_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Score Gauge */
+.rego_prm_score_gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.rego_prm_gauge_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.rego_prm_gauge_ring {
+  width: 140px;
+  height: 140px;
+  position: relative;
+}
+
+.rego_prm_gauge_value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.rego_prm_factor_list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 16px;
+}
+
+.rego_prm_factor_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.rego_prm_factor_name {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_prm_factor_value {
+  font-weight: 700;
+  color: #4ade80;
+}
+
+/* Workflow Steps */
+.rego_prm_workflow_steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rego_prm_workflow_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rego_prm_workflow_step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.rego_prm_step_number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a569e, #842573);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.rego_prm_step_content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rego_prm_step_title {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_prm_step_desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.60);
+}
+
+/* ================================================================
+   STATS SECTION – Dark gradient, 4-col grid
+================================================================ */
+.rego_prm_stats {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_prm_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION – White bg, centered quote
+================================================================ */
+.rego_prm_testimonial {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_prm_testimonial_card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--rego-bg-light);
+  border-left: 4px solid;
+  border-image: linear-gradient(180deg, #4a569e, #842573) 1;
+  border-radius: 8px;
+}
+
+.rego_prm_testimonial_quote {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--rego-text);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.rego_prm_testimonial_author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rego-text);
+}
+
+.rego_prm_testimonial_role {
+  font-size: 13px;
+  color: var(--rego-text-muted);
+}
+
+/* ================================================================
+   CTA SECTION – Dark, centered with orbs
+================================================================ */
+.rego_prm_cta {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_prm_cta_orb_1 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: var(--rego-primary);
+  opacity: 0.12;
+  top: -100px;
+  right: 10%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_prm_cta_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.10;
+  bottom: -80px;
+  left: 5%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_prm_cta_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rego_prm_cta_title {
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.rego_prm_cta_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 28px;
+}
+
+.rego_prm_cta_actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+================================================================ */
+
+@media (max-width: 1024px) {
+  .rego_prm_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_prm_compare_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_prm_connector_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_prm_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_prm_connector_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_prm_stats_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_prm_hero_h1 {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+
+  .rego_prm_cta_title {
+    font-size: clamp(20px, 4vw, 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .rego_prm_hero_actions {
+    flex-direction: column;
+  }
+
+  .rego_prm_cta_actions {
+    flex-direction: column;
+  }
+
+  .rego_prm_feed_card {
+    max-width: 100%;
+  }
+
+  .rego_prm_testimonial_card {
+    padding: 20px;
+  }
+
+  .rego_prm_workflow_step {
+    margin-bottom: 8px;
+  }
+}
+
+
+/* ===== Extracted inline styles ===== */
+.rego_proactive_risk_management_is_1 { color: #dc2626; }
+.rego_proactive_risk_management_is_2 { color: #ea580c; }
+.rego_proactive_risk_management_is_3 { color: #f59e0b; }
+.rego_proactive_risk_management_is_4 { background: #f8f9fc; }
+.rego_proactive_risk_management_is_5 { background: linear-gradient(135deg, #0d1117, #161b2e, #1e1040); color: #fff; }
+.rego_proactive_risk_management_is_6 { color: #fff; }
+.rego_proactive_risk_management_is_7 { background: #fff; }
+.rego_proactive_risk_management_is_8 { margin: 0 auto; display: block; }
+.rego_proactive_risk_management_is_9 { background: linear-gradient(135deg, #0d1117, #161b2e, #1e1040); color: #fff; position: relative; overflow: hidden; }
+.rego_proactive_risk_management_is_10 { position: absolute; top: -100px; left: 50px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(74, 86, 158, 0.15), transparent); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.rego_proactive_risk_management_is_11 { position: absolute; bottom: -50px; right: 100px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(132, 37, 115, 0.15), transparent); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.rego_proactive_risk_management_is_12 { position: relative; z-index: 1; }
+.rego_proactive_risk_management_is_13 { justify-content: center; gap: 16px; }

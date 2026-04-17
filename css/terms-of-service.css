@@ -1,0 +1,159 @@
+/* Terms of Service Page Styles */
+
+/* Hero Section */
+.rego_tos_hero {
+  background: linear-gradient(135deg, #f5f7ff, #eef0ff);
+  padding: 120px 24px 48px;
+  text-align: center;
+}
+
+.rego_tos_hero h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #1a1d2e;
+  margin: 0 0 16px;
+}
+
+.rego_tos_hero .rego_tos_subhead {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Content Wrapper */
+.rego_tos_content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.rego_tos_section {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.rego_tos_section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.rego_tos_section h2 {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  color: #1a1d2e;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  margin-top: 0;
+}
+
+.rego_tos_section p {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.rego_tos_section dl {
+  margin: 16px 0;
+}
+
+.rego_tos_section dt {
+  font-weight: 600;
+  color: #1a1d2e;
+  font-size: 15px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.rego_tos_section dd {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-left: 0;
+  padding-left: 20px;
+  border-left: 2px solid #e0e3f0;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+.rego_tos_section a {
+  color: #4a569e;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.rego_tos_section a:hover {
+  color: #842573;
+}
+
+.rego_tos_section ul,
+.rego_tos_section ol {
+  padding-left: 24px;
+  margin: 12px 0;
+}
+
+.rego_tos_section li {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+
+/* Contact Box */
+.rego_tos_contact {
+  background: #f5f7ff;
+  border: 1px solid #e0e3f0;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-top: 48px;
+  text-align: center;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.rego_tos_contact a {
+  color: #4a569e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.rego_tos_contact a:hover {
+  color: #842573;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .rego_tos_hero {
+    padding: 80px 16px 32px;
+  }
+
+  .rego_tos_hero h1 {
+    font-size: 28px;
+  }
+
+  .rego_tos_content {
+    padding: 32px 16px 60px;
+  }
+
+  .rego_tos_section {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+  }
+
+  .rego_tos_section h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_tos_hero {
+    padding: 100px 24px 40px;
+  }
+
+  .rego_tos_content {
+    padding: 40px 24px 70px;
+  }
+}

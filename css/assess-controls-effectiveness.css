@@ -1,0 +1,1032 @@
+/* ================================================================
+   REGO – ASSESS CONTROLS EFFECTIVENESS PAGE STYLESHEET
+   File: css/assess-controls-effectiveness.css
+   Prefix: rego_ace_
+   Purpose: Page-specific styles for the Assess Controls Effectiveness page.
+   Load order: common.css → header.css → footer.css → this file
+================================================================ */
+
+/* ================================================================
+   HERO SECTION – Dark gradient with 2-col layout
+================================================================ */
+.rego_ace_hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_ace_hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 50%, rgba(74,86,158,0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 85% 30%, rgba(132,37,115,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.rego_ace_hero_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_ace_hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_ace_hero_h1 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.rego_ace_hero_gradient {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rego_ace_hero_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.rego_ace_hero_actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   IMPACT SLIDESHOW
+================================================================ */
+.rego_ace_slider {
+  position: relative;
+  max-width: 1120px;
+  margin: 40px auto 0;
+  padding: 0 56px;
+}
+.rego_ace_slider_track {
+  position: relative;
+  min-height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+.rego_ace_slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  padding: 56px 56px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(24px);
+  transition: opacity .5s ease, transform .5s ease, visibility .5s;
+  align-items: center;
+}
+.rego_ace_slide.rego_ace_slide_active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  position: relative;
+}
+.rego_ace_slide_title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+.rego_ace_slide_accent {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.rego_ace_slide_desc {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+.rego_ace_slide_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+.rego_ace_slide_btn:hover {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  border-color: transparent;
+}
+.rego_ace_slide_stat {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+.rego_ace_slide_stat_icon {
+  color: #fbbf24;
+  margin-bottom: 14px;
+  display: inline-flex;
+}
+.rego_ace_slide_stat_number {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.rego_ace_slide_stat_label {
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.rego_ace_slider_arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease;
+  z-index: 2;
+}
+.rego_ace_slider_arrow:hover {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  border-color: transparent;
+}
+.rego_ace_slider_arrow_prev { left: 4px; }
+.rego_ace_slider_arrow_next { right: 4px; }
+
+.rego_ace_slider_dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+.rego_ace_slider_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: all .2s ease;
+}
+.rego_ace_slider_dot.rego_ace_slider_dot_active {
+  width: 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+}
+
+@media (max-width: 768px) {
+  .rego_ace_slider { padding: 0 12px; }
+  .rego_ace_slide {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+  .rego_ace_slide_title { font-size: 24px; }
+  .rego_ace_slider_arrow { display: none; }
+}
+
+/* ================================================================
+   HERO IMAGE
+================================================================ */
+.rego_ace_hero_image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 640px;
+  margin-left: auto;
+}
+
+/* ================================================================
+   EFFECTIVENESS DASHBOARD CARD
+================================================================ */
+.rego_ace_effectiveness_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+  max-width: 480px;
+}
+
+.rego_ace_card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rego_ace_card_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.rego_ace_live_badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.15);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 222, 128, 0.30);
+}
+
+.rego_ace_live_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Score grid */
+.rego_ace_score_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rego_ace_score_tile {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.rego_ace_score_label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.50);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.rego_ace_score_pass {
+  color: #4ade80;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.rego_ace_score_fail {
+  color: #ef4444;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.rego_ace_overall_score {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+/* Effectiveness rows */
+.rego_ace_eff_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rego_ace_eff_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.rego_ace_eff_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  flex: 1;
+  min-width: 0;
+}
+
+.rego_ace_eff_bar_track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.rego_ace_eff_bar_fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  transition: width var(--rego-transition);
+}
+
+.rego_ace_eff_score {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  min-width: 36px;
+  text-align: right;
+}
+
+.rego_ace_trend_up {
+  font-size: 12px;
+  color: #4ade80;
+  margin-left: 4px;
+}
+
+.rego_ace_trend_down {
+  font-size: 12px;
+  color: #ef4444;
+  margin-left: 4px;
+}
+
+/* ================================================================
+   WHY SECTION – Icon cards
+================================================================ */
+.rego_ace_why_section {
+  background: #ffffff;
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_ace_section_head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.rego_ace_section_head h2 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  color: var(--rego-dark);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.rego_ace_section_head p {
+  font-size: 16px;
+  color: var(--rego-text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.rego_ace_why_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rego_ace_icon_card {
+  background: #ffffff;
+  border: 1.5px solid #e9eef6;
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition), border-color var(--rego-transition);
+}
+
+.rego_ace_icon_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(74, 86, 158, 0.10);
+  border-color: var(--rego-primary);
+}
+
+.rego_ace_icon_wrap {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(74, 86, 158, 0.10), rgba(132, 37, 115, 0.07));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--rego-primary);
+  font-size: 24px;
+}
+
+.rego_ace_icon_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--rego-dark);
+  margin-bottom: 8px;
+}
+
+.rego_ace_icon_desc {
+  font-size: 14px;
+  color: var(--rego-text-muted);
+  line-height: 1.6;
+}
+
+/* ================================================================
+   HOW IT WORKS SECTION – Pipeline (4-step)
+================================================================ */
+.rego_ace_how_section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: var(--rego-section-py) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_ace_how_section .rego_pipeline {
+  background: transparent;
+  padding: 0;
+}
+
+.rego_ace_how_section .rego_section_py h2 {
+  color: #ffffff;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+/* ================================================================
+   SCORING CARD – Feature visual
+================================================================ */
+.rego_ace_scoring_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 48px;
+}
+
+.rego_ace_scoring_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 28px;
+}
+
+.rego_ace_scoring_inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.rego_ace_overall_ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: conic-gradient(#4a569e 0deg 315deg, rgba(255, 255, 255, 0.10) 315deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.rego_ace_ring_inner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(13, 17, 23, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rego_ace_ring_value {
+  font-size: 28px;
+  font-weight: 900;
+  color: #4a569e;
+}
+
+.rego_ace_ring_label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.50);
+  font-weight: 600;
+  text-align: center;
+}
+
+.rego_ace_scoring_factors {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rego_ace_factor_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rego_ace_factor_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  min-width: 100px;
+}
+
+.rego_ace_factor_track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.rego_ace_factor_fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+}
+
+.rego_ace_factor_value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ================================================================
+   SCHEDULE CARD
+================================================================ */
+.rego_ace_schedule_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 48px;
+}
+
+.rego_ace_schedule_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.rego_ace_schedule_row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 0.8fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  align-items: center;
+}
+
+.rego_ace_schedule_row:last-child {
+  border-bottom: none;
+}
+
+.rego_ace_sched_name {
+  color: rgba(255, 255, 255, 0.80);
+  font-weight: 600;
+}
+
+.rego_ace_sched_frequency {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.rego_ace_sched_date {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+.rego_ace_sched_status {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+/* ================================================================
+   GAP CARD
+================================================================ */
+.rego_ace_gap_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 48px;
+}
+
+.rego_ace_gap_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.rego_ace_gap_row {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1.5fr 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  align-items: center;
+}
+
+.rego_ace_gap_row:last-child {
+  border-bottom: none;
+}
+
+.rego_ace_gap_severity {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.rego_ace_gap_severity.high {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.rego_ace_gap_severity.medium {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.rego_ace_gap_severity.low {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+.rego_ace_gap_desc {
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.rego_ace_gap_action {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+.rego_ace_gap_owner {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+/* ================================================================
+   FRAMEWORK STRIP
+================================================================ */
+.rego_ace_fw_section {
+  background: #ffffff;
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_ace_fw_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.rego_ace_fw_badge {
+  background: var(--rego-bg-light);
+  border: 1.5px solid #e9eef6;
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+}
+
+.rego_ace_fw_badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 86, 158, 0.08);
+  border-color: var(--rego-primary);
+}
+
+.rego_ace_fw_icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: var(--rego-primary);
+}
+
+.rego_ace_fw_name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--rego-dark);
+}
+
+/* ================================================================
+   STATS SECTION
+================================================================ */
+.rego_ace_stats_section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_ace_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.rego_ace_stat_block {
+  position: relative;
+}
+
+.rego_ace_stat_value {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.rego_ace_stat_label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.70);
+  font-weight: 600;
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION
+================================================================ */
+.rego_ace_testimonial_section {
+  background: #ffffff;
+  padding: var(--rego-section-py) 0;
+}
+
+.rego_ace_quote_card {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--rego-bg-light);
+  border-radius: 20px;
+  padding: 48px;
+  border-left: 5px solid transparent;
+  border-image: linear-gradient(180deg, #4a569e, #842573) 1;
+  position: relative;
+}
+
+.rego_ace_quote_text {
+  font-size: clamp(17px, 2vw, 21px);
+  font-style: italic;
+  color: var(--rego-dark);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.rego_ace_quote_author {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rego-dark);
+  margin-bottom: 4px;
+}
+
+.rego_ace_quote_title {
+  font-size: 13px;
+  color: var(--rego-text-muted);
+}
+
+/* ================================================================
+   CTA SECTION
+================================================================ */
+.rego_ace_cta_section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_ace_cta_inner {
+  position: relative;
+  z-index: 1;
+}
+
+.rego_ace_cta_inner h2 {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.rego_ace_cta_inner p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.60);
+  margin-bottom: 36px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rego_ace_cta_actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN
+================================================================ */
+@media (max-width: 1024px) {
+  .rego_ace_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_ace_why_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rego_ace_fw_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rego_ace_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .rego_ace_scoring_inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .rego_ace_schedule_row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .rego_ace_gap_row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_ace_hero {
+    padding: 60px 0 50px;
+  }
+
+  .rego_ace_why_grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .rego_ace_fw_grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .rego_ace_scoring_card,
+  .rego_ace_schedule_card,
+  .rego_ace_gap_card {
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .rego_ace_cta_section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .rego_ace_stats_grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .rego_ace_fw_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .rego_ace_fw_name {
+    font-size: 11px;
+  }
+
+  .rego_ace_cta_actions {
+    flex-direction: column;
+  }
+
+  .rego_ace_quote_card {
+    padding: 32px 24px;
+  }
+
+  .rego_ace_score_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== Extracted inline styles ===== */
+.rego_assess_controls_effectiveness_is_1 { background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%); }
+.rego_assess_controls_effectiveness_is_2 { background:linear-gradient(90deg,#4a569e,#842573);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.rego_assess_controls_effectiveness_is_3 { background: rgba(13,17,23,0.85); border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; padding: 24px; }
+.rego_assess_controls_effectiveness_is_4 { color: #4a9d6f; }
+.rego_assess_controls_effectiveness_is_5 { color: #d04c4c; }
+.rego_assess_controls_effectiveness_is_6 { width: 92%; height: 100%; background: linear-gradient(90deg, #4a569e, #4a9d6f); border-radius: 2px; }
+.rego_assess_controls_effectiveness_is_7 { width: 74%; height: 100%; background: linear-gradient(90deg, #d4a74d, #d04c4c); border-radius: 2px; }
+.rego_assess_controls_effectiveness_is_8 { width: 88%; height: 100%; background: linear-gradient(90deg, #4a569e, #4a9d6f); border-radius: 2px; }
+.rego_assess_controls_effectiveness_is_9 { width: 65%; height: 100%; background: linear-gradient(90deg, #d4a74d, #d04c4c); border-radius: 2px; }
+.rego_assess_controls_effectiveness_is_10 { background: var(--rego-bg-light); }
+.rego_assess_controls_effectiveness_is_11 { text-align: center; margin-bottom: 60px; }
+.rego_assess_controls_effectiveness_is_12 { margin-bottom: 20px; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
+.rego_assess_controls_effectiveness_is_13 { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.rego_assess_controls_effectiveness_is_14 { flex-shrink: 0; position: relative; width: 80px; height: 80px; }
+.rego_assess_controls_effectiveness_is_15 { transform: rotate(-90deg); }
+.rego_assess_controls_effectiveness_is_16 { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+.rego_assess_controls_effectiveness_is_17 { font-size: 20px; font-weight: 700; color: #fff; }
+.rego_assess_controls_effectiveness_is_18 { flex: 1; }
+.rego_assess_controls_effectiveness_is_19 { font-size: 12px; color: #999; margin-bottom: 12px; text-transform: uppercase; }
+.rego_assess_controls_effectiveness_is_20 { display: flex; flex-direction: column; gap: 8px; }
+.rego_assess_controls_effectiveness_is_21 { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 12px; }
+.rego_assess_controls_effectiveness_is_22 { color: #ccc; }
+.rego_assess_controls_effectiveness_is_23 { color: #999; }
+.rego_assess_controls_effectiveness_is_24 { width: 100%; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+.rego_assess_controls_effectiveness_is_25 { width: 90%; height: 100%; background: linear-gradient(90deg, #4a569e, #4a9d6f); }
+.rego_assess_controls_effectiveness_is_26 { width: 65%; height: 100%; background: linear-gradient(90deg, #d4a74d, #d04c4c); }
+.rego_assess_controls_effectiveness_is_27 { width: 80%; height: 100%; background: linear-gradient(90deg, #4a569e, #4a9d6f); }
+.rego_assess_controls_effectiveness_is_28 { width: 60%; height: 100%; background: linear-gradient(90deg, #d4a74d, #d04c4c); }
+.rego_assess_controls_effectiveness_is_29 { margin-bottom: 16px; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
+.rego_assess_controls_effectiveness_is_30 { display: flex; flex-direction: column; gap: 12px; }
+.rego_assess_controls_effectiveness_is_31 { padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #4a569e; }
+.rego_assess_controls_effectiveness_is_32 { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.rego_assess_controls_effectiveness_is_33 { font-size: 12px; font-weight: 500; color: #fff; }
+.rego_assess_controls_effectiveness_is_34 { font-size: 10px; background: rgba(74,86,158,0.3); padding: 3px 8px; border-radius: 3px; color: #4a569e; }
+.rego_assess_controls_effectiveness_is_35 { display: flex; justify-content: space-between; font-size: 11px; color: #999; }
+.rego_assess_controls_effectiveness_is_36 { padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #842573; }
+.rego_assess_controls_effectiveness_is_37 { font-size: 10px; background: rgba(132,37,115,0.3); padding: 3px 8px; border-radius: 3px; color: #842573; }
+.rego_assess_controls_effectiveness_is_38 { padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #d4a74d; }
+.rego_assess_controls_effectiveness_is_39 { font-size: 10px; background: rgba(212,167,77,0.3); padding: 3px 8px; border-radius: 3px; color: #d4a74d; }
+.rego_assess_controls_effectiveness_is_40 { padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #d04c4c; }
+.rego_assess_controls_effectiveness_is_41 { display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px; }
+.rego_assess_controls_effectiveness_is_42 { font-size: 10px; background: rgba(208,76,76,0.3); padding: 3px 8px; border-radius: 3px; color: #d04c4c; font-weight: 500; }
+.rego_assess_controls_effectiveness_is_43 { font-size: 11px; color: #999; margin-bottom: 6px; }
+.rego_assess_controls_effectiveness_is_44 { font-size: 10px; color: #666; }
+.rego_assess_controls_effectiveness_is_45 { font-size: 10px; background: rgba(212,167,77,0.3); padding: 3px 8px; border-radius: 3px; color: #d4a74d; font-weight: 500; }
+.rego_assess_controls_effectiveness_is_46 { padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #4a9d6f; }
+.rego_assess_controls_effectiveness_is_47 { font-size: 10px; background: rgba(74,157,111,0.3); padding: 3px 8px; border-radius: 3px; color: #4a9d6f; font-weight: 500; }
+.rego_assess_controls_effectiveness_is_48 { text-align: center; margin-bottom: 50px; color: #fff; }
+.rego_assess_controls_effectiveness_is_49 { font-size: 0.6em; }
+.rego_assess_controls_effectiveness_is_50 { text-align: center; margin-bottom: 40px; }
+.rego_assess_controls_effectiveness_is_51 { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.rego_assess_controls_effectiveness_is_52 { padding: 10px 16px; background: #fff; border-radius: 8px; font-size: 13px; font-weight: 500; color: #1a1a1a; border: 1px solid #ddd; }
+.rego_assess_controls_effectiveness_is_53 { font-size: 18px; color: #1a1a1a; margin-bottom: 20px; line-height: 1.6; font-weight: 500; position: relative; padding-left: 24px; }
+.rego_assess_controls_effectiveness_is_54 { position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #4a569e, #842573); border-radius: 2px; }
+.rego_assess_controls_effectiveness_is_55 { color: #666; font-size: 14px; }
+.rego_assess_controls_effectiveness_is_56 { max-width: 700px; margin: 0 auto; text-align: center; }
+.rego_assess_controls_effectiveness_is_57 { margin-bottom: 12px; }
+.rego_assess_controls_effectiveness_is_58 { margin-bottom: 30px; color: rgba(255,255,255,0.7); }
+.rego_assess_controls_effectiveness_is_59 { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }

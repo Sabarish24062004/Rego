@@ -1,0 +1,831 @@
+/* ================================================================
+   REGO – EVIDENCE COLLECTION PAGE STYLESHEET
+   File: css/evidence-collection.css
+   Prefix: rego_ec_
+   Purpose: Page-specific styles for evidence collection feature.
+   Load order: common.css → header.css → footer.css → this file
+================================================================ */
+
+/* ================================================================
+   HERO SECTION – 2-col layout with collector card
+================================================================ */
+.rego_ec_hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--rego-section-py);
+  min-height: 620px;
+}
+
+.rego_ec_orb_1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.15;
+  top: -150px;
+  left: -100px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_ec_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #d95ec2;
+  opacity: 0.12;
+  bottom: -80px;
+  right: -50px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_ec_hero_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_ec_hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_ec_hero_h1 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.rego_ec_hero_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.rego_ec_hero_actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   COLLECTOR CARD – Dark glass with live connectors & evidence rows
+================================================================ */
+.rego_ec_collector_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  max-width: 480px;
+}
+
+.rego_ec_card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.rego_ec_card_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rego_ec_live_badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.10);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.rego_ec_live_dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
+  animation: rego_ec_pulse 2s infinite;
+}
+
+@keyframes rego_ec_pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Connector strip */
+.rego_ec_connector_strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rego_ec_connector_pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rego_ec_connector_github {
+  background: rgba(51, 51, 51, 0.60);
+  color: #f0f0f0;
+}
+
+.rego_ec_connector_aws {
+  background: rgba(255, 153, 0, 0.20);
+  color: #ffa500;
+}
+
+.rego_ec_connector_jira {
+  background: rgba(38, 132, 255, 0.20);
+  color: #2684ff;
+}
+
+.rego_ec_connector_servicenow {
+  background: rgba(129, 45, 153, 0.20);
+  color: #cf62d3;
+}
+
+.rego_ec_connector_azure {
+  background: rgba(0, 137, 214, 0.20);
+  color: #0089d6;
+}
+
+.rego_ec_connector_okta {
+  background: rgba(0, 108, 240, 0.20);
+  color: #006cf0;
+}
+
+/* Evidence rows */
+.rego_ec_evidence_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rego_ec_evidence_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rego_ec_evidence_row:last-child {
+  border-bottom: none;
+}
+
+.rego_ec_artifact_icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(74, 86, 158, 0.20);
+  color: #a78bfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.rego_ec_control_id {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #a78bfa;
+  min-width: 52px;
+}
+
+.rego_ec_artifact_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+  flex: 1;
+}
+
+.rego_ec_status_collected {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.rego_ec_status_collecting {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  animation: rego_ec_collecting_pulse 1.5s infinite;
+}
+
+@keyframes rego_ec_collecting_pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.rego_ec_status_queued {
+  background: rgba(148, 163, 184, 0.10);
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.rego_ec_timestamp {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.30);
+}
+
+.rego_ec_card_footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.40);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rego_ec_footer_live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rego_ec_footer_pulse_dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: rego_ec_pulse 2s infinite;
+}
+
+/* ================================================================
+   PAIN CARDS GRID – 4-col
+================================================================ */
+.rego_ec_pain_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.rego_ec_pain_card {
+  background: #ffffff;
+  border: 1.5px solid var(--rego-border);
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: box-shadow var(--rego-transition), transform var(--rego-transition);
+}
+
+.rego_ec_pain_card:hover {
+  box-shadow: 0 8px 32px rgba(74, 86, 158, 0.12);
+  transform: translateY(-4px);
+}
+
+.rego_ec_pain_icon {
+  font-size: 52px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* ================================================================
+   PIPELINE / HOW IT WORKS SECTION – 6-step
+================================================================ */
+.rego_ec_how {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_ec_how .rego_pipeline {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.rego_ec_how .rego_pipeline_step_label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_ec_how .rego_pipeline_step_title {
+  color: #ffffff;
+}
+
+/* ================================================================
+   CONNECTOR CATEGORIES SECTION – Light bg with 3x2 grid
+================================================================ */
+.rego_ec_connectors {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_ec_cat_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rego_ec_cat_card {
+  background: #ffffff;
+  border: 1.5px solid var(--rego-border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.rego_ec_cat_title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rego-primary);
+  margin-bottom: 12px;
+}
+
+.rego_ec_cat_pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rego_ec_cat_pill {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  background: var(--rego-bg-light);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  color: var(--rego-dark);
+}
+
+/* ================================================================
+   FRESHNESS CARD – Dark glass with artifact age badges
+================================================================ */
+.rego_ec_freshness_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.rego_ec_freshness_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_ec_freshness_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+}
+
+.rego_ec_artifact_name_fresh {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  flex: 1;
+}
+
+.rego_ec_source_pill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(74, 86, 158, 0.20);
+  color: #a78bfa;
+  text-transform: uppercase;
+}
+
+.rego_ec_age_badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.rego_ec_age_fresh {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+.rego_ec_age_warning {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.rego_ec_age_stale {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.rego_ec_status_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rego_ec_status_dot_active {
+  background: #4ade80;
+}
+
+.rego_ec_status_dot_inactive {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+/* ================================================================
+   MAPPING CARD – Dark glass with expandable evidence items
+================================================================ */
+.rego_ec_mapping_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.rego_ec_evidence_items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rego_ec_evidence_item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 12px;
+}
+
+.rego_ec_evidence_item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.rego_ec_evidence_header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background var(--rego-transition);
+}
+
+.rego_ec_evidence_header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.rego_ec_toggle_icon {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.50);
+  width: 16px;
+  text-align: center;
+}
+
+.rego_ec_evidence_name {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  flex: 1;
+}
+
+.rego_ec_control_mappings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: 24px;
+  margin-top: 8px;
+  padding-left: 8px;
+  border-left: 2px solid rgba(255, 255, 255, 0.10);
+}
+
+.rego_ec_mapping_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.rego_ec_mapping_ctrl_id {
+  font-family: 'Courier New', monospace;
+  color: #a78bfa;
+  font-weight: 700;
+  min-width: 60px;
+}
+
+.rego_ec_mapping_fw_badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(74, 86, 158, 0.20);
+  color: #a78bfa;
+  text-transform: uppercase;
+  min-width: 50px;
+  text-align: center;
+}
+
+.rego_ec_mapping_req {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.60);
+  flex: 1;
+}
+
+/* ================================================================
+   VALIDATION CARD – Dark glass with validation checkmarks
+================================================================ */
+.rego_ec_validation_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.rego_ec_validation_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_ec_validation_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+}
+
+.rego_ec_validation_name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  flex: 1;
+}
+
+.rego_ec_check_icons {
+  display: flex;
+  gap: 8px;
+}
+
+.rego_ec_check_icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.rego_ec_check_pass {
+  background: rgba(74, 222, 128, 0.20);
+  color: #4ade80;
+}
+
+.rego_ec_check_fail {
+  background: rgba(239, 68, 68, 0.20);
+  color: #ef4444;
+}
+
+/* ================================================================
+   STATS SECTION – Dark gradient, 4-col grid
+================================================================ */
+.rego_ec_stats {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_ec_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION
+================================================================ */
+.rego_ec_testimonial {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_ec_testimonial_card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--rego-bg-light);
+  border-left: 4px solid;
+  border-image: linear-gradient(180deg, #4a569e, #842573) 1;
+  border-radius: 8px;
+}
+
+.rego_ec_testimonial_quote {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--rego-text);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.rego_ec_testimonial_author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rego-text);
+}
+
+.rego_ec_testimonial_role {
+  font-size: 13px;
+  color: var(--rego-text-muted);
+}
+
+/* ================================================================
+   CTA SECTION – Dark, centered with orbs
+================================================================ */
+.rego_ec_cta {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_ec_cta_orb_1 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: var(--rego-primary);
+  opacity: 0.12;
+  top: -100px;
+  right: 10%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_ec_cta_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.10;
+  bottom: -80px;
+  left: 5%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_ec_cta_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rego_ec_cta_title {
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.rego_ec_cta_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 28px;
+}
+
+.rego_ec_cta_actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+================================================================ */
+
+/* Tablet / Small Desktop */
+@media (max-width: 1024px) {
+  .rego_ec_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_ec_cat_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_ec_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_ec_how .rego_pipeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Tablet */
+@media (max-width: 768px) {
+  .rego_ec_pain_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_ec_cat_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ec_stats_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ec_hero_h1 {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+
+  .rego_ec_cta_title {
+    font-size: clamp(20px, 4vw, 32px);
+  }
+
+  .rego_ec_how .rego_pipeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .rego_ec_hero_actions {
+    flex-direction: column;
+  }
+
+  .rego_ec_cta_actions {
+    flex-direction: column;
+  }
+
+  .rego_ec_collector_card {
+    max-width: 100%;
+  }
+
+  .rego_ec_pain_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ec_testimonial_card {
+    padding: 20px;
+  }
+
+  .rego_ec_how .rego_pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_ec_control_mappings {
+    margin-left: 16px;
+  }
+}
+
+
+/* ===== Extracted inline styles ===== */
+.rego_evidence_collection_is_1 { background:linear-gradient(90deg,#4a569e,#842573);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }

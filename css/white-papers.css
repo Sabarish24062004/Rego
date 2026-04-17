@@ -1,0 +1,424 @@
+/* White Papers Page Styles */
+
+/* Hero Section */
+.rego_wp_hero {
+  background: linear-gradient(135deg, #f5f7ff, #eef0ff);
+  padding: 120px 24px 48px;
+  text-align: center;
+}
+
+.rego_wp_hero h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #1a1d2e;
+  margin: 0 0 16px;
+}
+
+.rego_wp_hero p {
+  font-size: 16px;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tabs Navigation */
+.rego_wp_tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  background: white;
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  max-width: fit-content;
+  margin: 48px auto 0;
+}
+
+.rego_wp_tab {
+  background: #f1f3f9;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rego_wp_tab:hover {
+  background: #e8ecf8;
+}
+
+.rego_wp_tab_active {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  color: white;
+}
+
+/* Featured Section */
+.rego_wp_featured {
+  max-width: 1100px;
+  margin: 48px auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(74, 86, 158, 0.14);
+}
+
+.rego_wp_feat_panel {
+  background: linear-gradient(135deg, #1e1040, #4a569e);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.rego_wp_feat_content {
+  background: white;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rego_wp_feat_badge {
+  display: inline-block;
+  background: #f0f0ff;
+  color: #4a569e;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.rego_wp_featured h3 {
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 700;
+  color: #1a1d2e;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.rego_wp_feat_author {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 8px 0 16px;
+}
+
+.rego_wp_feat_desc {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.rego_wp_page_badge {
+  display: inline-block;
+  font-size: 12px;
+  background: #f5f7ff;
+  border: 1px solid #e0e3f0;
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: #4a569e;
+  margin-top: 20px;
+}
+
+/* Grid Section */
+.rego_wp_grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 48px 24px;
+}
+
+.rego_wp_card {
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.rego_wp_card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.rego_wp_card_thumb {
+  height: 140px;
+  position: relative;
+}
+
+.rego_wp_card_thumb:nth-child(1) {
+  background: linear-gradient(135deg, #4a569e, #6b7dcc);
+}
+
+.rego_wp_card_thumb:nth-child(2) {
+  background: linear-gradient(135deg, #842573, #b84fa0);
+}
+
+.rego_wp_card_thumb:nth-child(3) {
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
+}
+
+.rego_wp_card_thumb:nth-child(4) {
+  background: linear-gradient(135deg, #ec4899, #f472b6);
+}
+
+.rego_wp_card_thumb:nth-child(5) {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.rego_wp_card_thumb:nth-child(6) {
+  background: linear-gradient(135deg, #6b7280, #9ca3af);
+}
+
+.rego_wp_pages_badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.rego_wp_card_body {
+  padding: 20px;
+}
+
+.rego_wp_cat_badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.rego_wp_cat_badge.compliance {
+  background: #f0f0ff;
+  color: #4a569e;
+}
+
+.rego_wp_cat_badge.risk {
+  background: #fef3c7;
+  color: #ea580c;
+}
+
+.rego_wp_cat_badge.framework {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.rego_wp_cat_badge.technology {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.rego_wp_cat_badge.industry {
+  background: #ccfbf1;
+  color: #0d9488;
+}
+
+.rego_wp_card_body h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1d2e;
+  margin: 10px 0 6px;
+}
+
+.rego_wp_card_body p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.rego_wp_author_line {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.rego_wp_dl_link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a569e;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f0f2f8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.rego_wp_dl_link:hover {
+  color: #842573;
+}
+
+.rego_wp_hidden {
+  display: none;
+}
+
+/* Load More Button */
+.rego_wp_load_more {
+  display: flex;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.rego_wp_load_btn {
+  padding: 12px 32px;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rego_wp_load_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(74, 86, 158, 0.3);
+}
+
+/* Newsletter Section */
+.rego_wp_newsletter {
+  background: linear-gradient(135deg, #0d1117, #161b2e, #1e1040);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.rego_wp_newsletter h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: white;
+  margin: 0 0 16px;
+}
+
+.rego_wp_newsletter p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.rego_wp_newsletter_form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+  margin: 24px auto 0;
+}
+
+.rego_wp_newsletter_input {
+  flex: 1;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px 0 0 8px;
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.rego_wp_newsletter_input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.rego_wp_newsletter_input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.rego_wp_newsletter_btn {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rego_wp_newsletter_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(74, 86, 158, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .rego_wp_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_wp_featured {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_wp_featured {
+    margin: 32px 24px;
+  }
+
+  .rego_wp_feat_panel {
+    min-height: 200px;
+    padding: 32px;
+  }
+
+  .rego_wp_feat_content {
+    padding: 32px 24px;
+  }
+
+  .rego_wp_grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 32px 24px;
+  }
+
+  .rego_wp_tabs {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rego_wp_hero {
+    padding: 80px 16px 32px;
+  }
+
+  .rego_wp_grid {
+    padding: 24px 16px;
+  }
+
+  .rego_wp_newsletter {
+    padding: 60px 16px;
+  }
+
+  .rego_wp_newsletter_form {
+    flex-direction: column;
+  }
+
+  .rego_wp_newsletter_input {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .rego_wp_newsletter_btn {
+    border-radius: 0 0 8px 8px;
+  }
+}

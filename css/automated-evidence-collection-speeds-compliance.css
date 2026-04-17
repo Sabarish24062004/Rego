@@ -1,0 +1,692 @@
+/* ================================================================
+   REGO – AUTOMATED EVIDENCE COLLECTION PAGE STYLESHEET
+   File: css/automated-evidence-collection-speeds-compliance.css
+   Prefix: rego_aec_
+   Purpose: Page-specific styles for the automated evidence collection page.
+   Load order: common.css → header.css → footer.css → this file
+================================================================ */
+
+/* ================================================================
+   HERO SECTION – 2-col layout with evidence collector card
+================================================================ */
+.rego_aec_hero {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--rego-section-py);
+  min-height: 620px;
+}
+
+.rego_aec_orb_1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.15;
+  top: -150px;
+  left: -100px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_aec_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #d95ec2;
+  opacity: 0.12;
+  bottom: -80px;
+  right: -50px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_aec_hero_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.rego_aec_hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_aec_hero_h1 {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.rego_aec_hero_gradient {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rego_aec_hero_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.rego_aec_hero_actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   EVIDENCE COLLECTOR CARD
+================================================================ */
+.rego_aec_collector_card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  max-width: 440px;
+}
+
+.rego_aec_card_header {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rego_aec_connector_strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.rego_aec_connector_pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(74, 86, 158, 0.20);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a3b5f0;
+  border: 1px solid rgba(74, 86, 158, 0.30);
+}
+
+.rego_aec_evidence_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rego_aec_evidence_row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rego_aec_evidence_row:last-child {
+  border-bottom: none;
+}
+
+.rego_aec_control_id {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #a78bfa;
+  font-weight: 600;
+  min-width: 60px;
+}
+
+.rego_aec_evidence_content {
+  flex: 1;
+}
+
+.rego_aec_evidence_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.rego_aec_status_badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.rego_aec_status_collected {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.rego_aec_status_progress {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.rego_aec_status_pending {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.rego_aec_card_footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.40);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================================================================
+   MANUAL VS AUTOMATED COMPARISON SECTION – Light bg
+================================================================ */
+.rego_aec_compare {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_aec_compare_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.rego_aec_compare_col {
+  background: var(--rego-white);
+  border: 1px solid var(--rego-border-light);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.rego_aec_compare_header {
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rego_aec_compare_header.manual {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.rego_aec_compare_header.automatic {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.rego_aec_compare_rows {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rego_aec_compare_row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--rego-text);
+  line-height: 1.6;
+}
+
+.rego_aec_compare_row::before {
+  content: '✗';
+  font-weight: 800;
+  font-size: 16px;
+  color: #ef4444;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+.rego_aec_compare_row.good::before {
+  content: '✓';
+  color: #16a34a;
+}
+
+/* ================================================================
+   HOW IT WORKS SECTION – Dark bg, 6-step pipeline
+================================================================ */
+.rego_aec_how {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_aec_how .rego_pipeline_step_label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rego_aec_how .rego_pipeline_step_title {
+  color: #ffffff;
+}
+
+/* ================================================================
+   CONNECTORS SECTION – Light bg, 3x2 category grid
+================================================================ */
+.rego_aec_connectors {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_aec_section_head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rego_aec_section_head h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  color: var(--rego-text);
+  margin-bottom: 12px;
+}
+
+.rego_aec_section_head p {
+  font-size: 17px;
+  color: var(--rego-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rego_aec_connector_categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rego_aec_category_card {
+  background: var(--rego-white);
+  border: 1px solid var(--rego-border-light);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all var(--rego-transition);
+}
+
+.rego_aec_category_card:hover {
+  border-color: var(--rego-primary);
+  box-shadow: 0 8px 24px rgba(74, 86, 158, 0.12);
+}
+
+.rego_aec_category_title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--rego-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.rego_aec_category_pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rego_aec_category_pill {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  background: var(--rego-bg-light);
+  border: 1px solid var(--rego-border-light);
+  border-radius: 20px;
+  color: var(--rego-text);
+  transition: all var(--rego-transition);
+}
+
+.rego_aec_category_pill:hover {
+  background: linear-gradient(135deg, #4a569e, #842573);
+  color: white;
+  border-color: var(--rego-primary);
+}
+
+/* ================================================================
+   FEATURES SECTION – White bg, 2 alternating splits
+================================================================ */
+.rego_aec_features {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_aec_freshness_card,
+.rego_aec_mapping_card {
+  background: linear-gradient(135deg, rgba(13, 17, 23, 0.8) 0%, rgba(22, 27, 46, 0.8) 50%, rgba(30, 16, 64, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Freshness Card */
+.rego_aec_freshness_title,
+.rego_aec_mapping_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.rego_aec_freshness_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_aec_freshness_row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rego_aec_evidence_file {
+  flex: 1;
+}
+
+.rego_aec_file_name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+.rego_aec_file_type {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.rego_aec_age_badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.rego_aec_age_fresh {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.rego_aec_age_stale {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.rego_aec_age_old {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+/* Mapping Card */
+.rego_aec_mapping_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rego_aec_mapping_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.rego_aec_mapping_label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.60);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.rego_aec_mapping_item {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+}
+
+/* ================================================================
+   STATS SECTION – Dark gradient, 4-col grid
+================================================================ */
+.rego_aec_stats {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_aec_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION – White bg, centered quote
+================================================================ */
+.rego_aec_testimonial {
+  background: var(--rego-white);
+  padding-block: var(--rego-section-py);
+}
+
+.rego_aec_testimonial_card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--rego-bg-light);
+  border-left: 4px solid;
+  border-image: linear-gradient(180deg, #4a569e, #842573) 1;
+  border-radius: 8px;
+}
+
+.rego_aec_testimonial_quote {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--rego-text);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.rego_aec_testimonial_author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rego-text);
+}
+
+.rego_aec_testimonial_role {
+  font-size: 13px;
+  color: var(--rego-text-muted);
+}
+
+/* ================================================================
+   CTA SECTION – Dark, centered with orbs
+================================================================ */
+.rego_aec_cta {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 50%, #1e1040 100%);
+  padding-block: var(--rego-section-py);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_aec_cta_orb_1 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: var(--rego-primary);
+  opacity: 0.12;
+  top: -100px;
+  right: 10%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_aec_cta_orb_2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--rego-secondary);
+  opacity: 0.10;
+  bottom: -80px;
+  left: 5%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.rego_aec_cta_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rego_aec_cta_title {
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.rego_aec_cta_sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 28px;
+}
+
+.rego_aec_cta_actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+================================================================ */
+
+@media (max-width: 1024px) {
+  .rego_aec_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_aec_compare_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_aec_connector_categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_aec_stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_aec_connector_categories {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_aec_stats_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rego_aec_hero_h1 {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+
+  .rego_aec_cta_title {
+    font-size: clamp(20px, 4vw, 32px);
+  }
+
+  .rego_aec_mapping_row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .rego_aec_hero_actions {
+    flex-direction: column;
+  }
+
+  .rego_aec_cta_actions {
+    flex-direction: column;
+  }
+
+  .rego_aec_collector_card {
+    max-width: 100%;
+  }
+
+  .rego_aec_testimonial_card {
+    padding: 20px;
+  }
+
+  .rego_aec_connector_strip {
+    margin-bottom: 12px;
+  }
+
+  .rego_aec_category_pills {
+    gap: 6px;
+  }
+
+  .rego_aec_category_pill {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}
+
+
+/* ===== Extracted inline styles ===== */
+.rego_automated_evidence_collection_speeds_compliance_is_1 { background: #ff9900; }
+.rego_automated_evidence_collection_speeds_compliance_is_2 { background: #0078d4; }
+.rego_automated_evidence_collection_speeds_compliance_is_3 { background: #1d70b8; }
+.rego_automated_evidence_collection_speeds_compliance_is_4 { color: #10b981; }
+.rego_automated_evidence_collection_speeds_compliance_is_5 { color: #f59e0b; }
+.rego_automated_evidence_collection_speeds_compliance_is_6 { background: #f8f9fc; }
+.rego_automated_evidence_collection_speeds_compliance_is_7 { background: linear-gradient(135deg, #0d1117, #161b2e, #1e1040); color: #fff; }
+.rego_automated_evidence_collection_speeds_compliance_is_8 { color: #fff; }
+.rego_automated_evidence_collection_speeds_compliance_is_9 { background: #fff; }
+.rego_automated_evidence_collection_speeds_compliance_is_10 { background: #dcfce7; color: #166534; }
+.rego_automated_evidence_collection_speeds_compliance_is_11 { background: #fef3c7; color: #92400e; }
+.rego_automated_evidence_collection_speeds_compliance_is_12 { background: #fecaca; color: #7f1d1d; }
+.rego_automated_evidence_collection_speeds_compliance_is_13 { background: linear-gradient(135deg, #0d1117, #161b2e, #1e1040); color: #fff; position: relative; overflow: hidden; }
+.rego_automated_evidence_collection_speeds_compliance_is_14 { position: absolute; top: -100px; left: 50px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(74, 86, 158, 0.15), transparent); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.rego_automated_evidence_collection_speeds_compliance_is_15 { position: absolute; bottom: -50px; right: 100px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(132, 37, 115, 0.15), transparent); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.rego_automated_evidence_collection_speeds_compliance_is_16 { position: relative; z-index: 1; }
+.rego_automated_evidence_collection_speeds_compliance_is_17 { justify-content: center; gap: 16px; }

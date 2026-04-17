@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RegO Security – FedRAMP authorized, SOC 2 certified, and built on a zero-trust architecture. Learn about our compliance, certifications, and security practices." />
+  <title>Security & Compliance – RegO</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+  <!-- Site Stylesheets (load order matters) -->
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/layout.css" />      <!-- 1. Shared tokens, reset, buttons -->
+  <!-- 2. Sticky header & nav -->
+  <!-- 3. Footer layout -->
+  <link rel="stylesheet" href="css/security.css" />    <!-- 4. Security page sections -->
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER – Sticky navigation with mega dropdowns
+  ============================================================ -->
+  <div id="rego_header_mount"></div>
+
+  <main id="rego_main">
+
+    <!-- ============================================================
+         SECTION 1: HERO
+    ============================================================ -->
+    <section class="rego_sec_hero rego_page_hero rego_section_py">
+      <div class="rego_page_hero_bg">
+        <div class="rego_page_hero_orb rego_page_hero_orb_1"></div>
+        <div class="rego_page_hero_orb rego_page_hero_orb_2"></div>
+        <div class="rego_page_hero_grid"></div>
+      </div>
+      <div class="rego_container rego_page_hero_inner">
+        <div class="rego_breadcrumb">
+          <a href="/">Home</a>
+          <span class="rego_breadcrumb_sep">›</span>
+          <span class="rego_breadcrumb_current">Security</span>
+        </div>
+        <div class="rego_page_hero_label">
+          <span>🔒</span>
+          Trust & Security
+        </div>
+        <h1 class="rego_page_hero_title">Security is foundational, not optional</h1>
+        <p class="rego_page_hero_subtitle">
+          RegO is built on a zero-trust architecture with industry-leading certifications. We provide the transparency and controls you need to ensure your compliance data is always protected.
+        </p>
+        <div class="rego_sec_hero_ctas rego_security_is_1">
+          <a href="#" class="rego_btn rego_btn_primary rego_btn_lg">View Trust Center</a>
+          <a href="mailto:security@rego.com" class="rego_btn rego_btn_outline_light rego_btn_lg">Contact Security Team</a>
+        </div>
+      </div>
+      <div class="rego_page_hero_wave">
+        <svg viewBox="0 0 1200 48" preserveAspectRatio="none"><path d="M0,24 Q300,0 600,24 T1200,24 L1200,48 L0,48 Z" fill="white" /></svg>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: CERTIFICATIONS & COMPLIANCE
+    ============================================================ -->
+    <section class="rego_sec_certs rego_section_py rego_security_is_2">
+      <div class="rego_container">
+        <div class="rego_section_header rego_text_center">
+          <div>
+            <div class="rego_section_eyebrow">Verified Trust</div>
+            <h2 class="rego_section_title">Certifications & Compliance</h2>
+            <p class="rego_section_desc rego_section_desc_center">
+              RegO maintains industry-leading certifications and compliance authorizations, regularly audited by third-party firms to ensure the highest standards of security and operational excellence.
+            </p>
+          </div>
+        </div>
+
+        <div class="rego_sec_certs_grid rego_reveal">
+          <!-- FedRAMP Moderate -->
+          <div class="rego_sec_cert_card rego_reveal rego_reveal_delay_1">
+            <div class="rego_sec_cert_badge rego_sec_cert_badge_blue">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+                <path d="M14 20l3 3 9-10" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="rego_sec_cert_name">FedRAMP Moderate</h3>
+            <span class="rego_status_pill rego_status_blue">AUTHORIZED</span>
+            <p class="rego_sec_cert_desc">Full authorization under the FedRAMP Moderate baseline, enabling deployment in federal civilian and DoD systems.</p>
+            <a href="#" class="rego_sec_cert_link">View Report →</a>
+          </div>
+
+          <!-- SOC 2 Type II -->
+          <div class="rego_sec_cert_card rego_reveal rego_reveal_delay_2">
+            <div class="rego_sec_cert_badge rego_sec_cert_badge_green">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+                <path d="M14 20l3 3 9-10" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="rego_sec_cert_name">SOC 2 Type II</h3>
+            <span class="rego_status_pill rego_status_green">CERTIFIED ANNUALLY</span>
+            <p class="rego_sec_cert_desc">Independently audited controls over security, availability, processing integrity, confidentiality, and privacy.</p>
+            <a href="#" class="rego_sec_cert_link">View Report →</a>
+          </div>
+
+          <!-- ISO 27001 -->
+          <div class="rego_sec_cert_card rego_reveal rego_reveal_delay_3">
+            <div class="rego_sec_cert_badge rego_sec_cert_badge_purple">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+                <path d="M14 20l3 3 9-10" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="rego_sec_cert_name">ISO 27001</h3>
+            <span class="rego_status_pill rego_status_purple">CERTIFIED</span>
+            <p class="rego_sec_cert_desc">International standard for information security management systems, covering all aspects of data protection and risk management.</p>
+            <a href="#" class="rego_sec_cert_link">View Report →</a>
+          </div>
+
+          <!-- FIPS 140-2 -->
+          <div class="rego_sec_cert_card rego_reveal rego_reveal_delay_1">
+            <div class="rego_sec_cert_badge rego_sec_cert_badge_dark">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" fill="#e5e7eb" stroke="#374151" stroke-width="2"/>
+                <path d="M14 20l3 3 9-10" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="rego_sec_cert_name">FIPS 140-2</h3>
+            <span class="rego_status_pill rego_security_is_3">VALIDATED</span>
+            <p class="rego_sec_cert_desc">Cryptographic module validation for federal information processing, ensuring algorithm integrity at the highest level.</p>
+            <a href="#" class="rego_sec_cert_link">View Report →</a>
+          </div>
+
+          <!-- NIST CSF -->
+          <div class="rego_sec_cert_card rego_reveal rego_reveal_delay_2">
+            <div class="rego_sec_cert_badge rego_sec_cert_badge_primary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" fill="rgba(74,86,158,.15)" stroke="#4a569e" stroke-width="2"/>
+                <path d="M14 20l3 3 9-10" stroke="#4a569e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="rego_sec_cert_name">NIST CSF</h3>
+            <span class="rego_status_pill rego_security_is_4">ALIGNED</span>
+            <p class="rego_sec_cert_desc">Comprehensive cybersecurity framework covering identify, protect, detect, respond, and recover functions across all systems.</p>
+            <a href="#" class="rego_sec_cert_link">View Report →</a>
+          </div>
+
+          <!-- CMMC Level 2 -->
+          <div class="rego_sec_cert_card rego_reveal rego_reveal_delay_3">
+            <div class="rego_sec_cert_badge rego_sec_cert_badge_secondary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" fill="rgba(132,37,115,.15)" stroke="#842573" stroke-width="2"/>
+                <path d="M14 20l3 3 9-10" stroke="#842573" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="rego_sec_cert_name">CMMC Level 2</h3>
+            <span class="rego_status_pill rego_security_is_5">COMPLIANT</span>
+            <p class="rego_sec_cert_desc">Cybersecurity Maturity Model Certification for defense contractors, ensuring advanced incident response and access controls.</p>
+            <a href="#" class="rego_sec_cert_link">View Report →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: SECURITY PRACTICES
+    ============================================================ -->
+    <section class="rego_sec_practices rego_section_py rego_security_is_6">
+      <div class="rego_container">
+        <div class="rego_section_header rego_text_center">
+          <div>
+            <div class="rego_section_eyebrow">Built for Trust</div>
+            <h2 class="rego_section_title">Our Security Practices</h2>
+            <p class="rego_section_desc rego_section_desc_center">
+              Every layer of RegO is designed with security first. From data encryption to continuous monitoring, we implement industry best practices across our entire platform.
+            </p>
+          </div>
+        </div>
+
+        <div class="rego_sec_practices_grid rego_reveal">
+          <!-- Data Encryption -->
+          <div class="rego_icon_card rego_reveal rego_reveal_delay_1">
+            <div class="rego_icon_card_icon rego_security_is_7">🔐</div>
+            <h3 class="rego_icon_card_title">Data Encryption</h3>
+            <p class="rego_icon_card_desc">
+              AES-256 encryption at rest across all databases and storage. TLS 1.3 for all data in transit with perfect forward secrecy.
+            </p>
+          </div>
+
+          <!-- Zero Trust Architecture -->
+          <div class="rego_icon_card rego_reveal rego_reveal_delay_2">
+            <div class="rego_icon_card_icon rego_security_is_8">🛡️</div>
+            <h3 class="rego_icon_card_title">Zero Trust Architecture</h3>
+            <p class="rego_icon_card_desc">
+              No implicit trust in any user or system. Continuous verification of every access request with context-aware policies.
+            </p>
+          </div>
+
+          <!-- Penetration Testing -->
+          <div class="rego_icon_card rego_reveal rego_reveal_delay_3">
+            <div class="rego_icon_card_icon rego_security_is_9">🔍</div>
+            <h3 class="rego_icon_card_title">Penetration Testing</h3>
+            <p class="rego_icon_card_desc">
+              Quarterly third-party penetration tests by leading security firms. Full reports shared with enterprise customers.
+            </p>
+          </div>
+
+          <!-- Vulnerability Management -->
+          <div class="rego_icon_card rego_reveal rego_reveal_delay_4">
+            <div class="rego_icon_card_icon rego_security_is_10">⚠️</div>
+            <h3 class="rego_icon_card_title">Vulnerability Management</h3>
+            <p class="rego_icon_card_desc">
+              Continuous automated scanning across infrastructure. 24-hour SLA for critical vulnerabilities, 7-day for high severity.
+            </p>
+          </div>
+
+          <!-- Access Control -->
+          <div class="rego_icon_card rego_reveal rego_reveal_delay_1">
+            <div class="rego_icon_card_icon rego_security_is_11">🔑</div>
+            <h3 class="rego_icon_card_title">Access Control</h3>
+            <p class="rego_icon_card_desc">
+              Role-based access control (RBAC) with attribute-based extensions. Multi-factor authentication required for all accounts.
+            </p>
+          </div>
+
+          <!-- Incident Response -->
+          <div class="rego_icon_card rego_reveal rego_reveal_delay_2">
+            <div class="rego_icon_card_icon rego_security_is_12">🚨</div>
+            <h3 class="rego_icon_card_title">Incident Response</h3>
+            <p class="rego_icon_card_desc">
+              24/7 Security Operations Center monitoring. 1-hour response SLA for confirmed security incidents with formal playbooks.
+            </p>
+          </div>
+
+          <!-- Audit Logging -->
+          <div class="rego_icon_card rego_reveal rego_reveal_delay_3">
+            <div class="rego_icon_card_icon rego_security_is_3">📋</div>
+            <h3 class="rego_icon_card_title">Audit Logging</h3>
+            <p class="rego_icon_card_desc">
+              Immutable audit logs for all system and data access. Minimum 1-year retention with tamper-evident storage.
+            </p>
+          </div>
+
+          <!-- Backup & Recovery -->
+          <div class="rego_icon_card rego_reveal rego_reveal_delay_4">
+            <div class="rego_icon_card_icon rego_security_is_13">💾</div>
+            <h3 class="rego_icon_card_title">Backup & Recovery</h3>
+            <p class="rego_icon_card_desc">
+              Daily encrypted backups across multiple geographies. 4-hour RTO (Recovery Time Objective) for all critical systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: INFRASTRUCTURE SECURITY
+    ============================================================ -->
+    <section class="rego_sec_infra rego_section_py rego_security_is_2">
+      <div class="rego_container">
+        <div class="rego_split rego_reveal">
+          <div class="rego_split_content">
+            <div class="rego_split_eyebrow">Cloud Infrastructure</div>
+            <h2 class="rego_split_title">Infrastructure Security</h2>
+            <p class="rego_split_desc">
+              RegO runs on AWS GovCloud, the only AWS region meeting FedRAMP and US government requirements. Our architecture is built for scale, reliability, and security from the ground up.
+            </p>
+            <ul class="rego_split_list">
+              <li>
+                <svg class="rego_split_list_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Multi-AZ Deployment:</strong> Automatic failover across availability zones with zero data loss</span>
+              </li>
+              <li>
+                <svg class="rego_split_list_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Web Application Firewall:</strong> AWS WAF with managed rulesets and DDoS protection</span>
+              </li>
+              <li>
+                <svg class="rego_split_list_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Network Isolation:</strong> VPC with restricted security groups and network ACLs</span>
+              </li>
+              <li>
+                <svg class="rego_split_list_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Threat Detection:</strong> CloudTrail, VPC Flow Logs, and GuardDuty for continuous monitoring</span>
+              </li>
+            </ul>
+            <div class="rego_tag_group">
+              <span class="rego_tag rego_tag_blue">AWS GovCloud</span>
+              <span class="rego_tag rego_tag_blue">Multi-AZ</span>
+              <span class="rego_tag rego_tag_blue">WAF</span>
+              <span class="rego_tag rego_tag_blue">DDoS Protection</span>
+            </div>
+          </div>
+          <div class="rego_split_visual rego_reveal">
+            <div class="rego_split_visual_inner rego_sec_infra_terminal">
+              <div class="rego_security_is_14">
+                <div class="rego_sec_terminal_line">$ aws ec2 describe-instances</div>
+                <div class="rego_sec_terminal_line rego_security_is_15">Instances in us-east-1 (primary):</div>
+                <div class="rego_sec_terminal_line rego_security_is_16">  ✓ compute-1a (active)</div>
+                <div class="rego_sec_terminal_line rego_security_is_17">  ✓ compute-1b (active)</div>
+                <div class="rego_sec_terminal_line rego_security_is_15">Instances in us-west-2 (replica):</div>
+                <div class="rego_sec_terminal_line rego_security_is_16">  ✓ compute-2a (active)</div>
+                <div class="rego_sec_terminal_line rego_security_is_17">  ✓ compute-2b (active)</div>
+                <div class="rego_sec_terminal_line rego_security_is_18">Replication status: SYNCHRONIZED</div>
+                <div class="rego_sec_terminal_line rego_security_is_19">Health check: HEALTHY</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: DATA PROTECTION & PRIVACY
+    ============================================================ -->
+    <section class="rego_sec_data rego_section_py rego_security_is_6">
+      <div class="rego_container">
+        <div class="rego_split rego_split_reverse rego_reveal">
+          <div class="rego_split_content">
+            <div class="rego_split_eyebrow">Privacy First</div>
+            <h2 class="rego_split_title">Data Protection & Privacy</h2>
+            <p class="rego_split_desc">
+              We are GDPR and CCPA compliant. Your data is yours—we provide complete control, transparency, and the ability to access, modify, or delete your information at any time.
+            </p>
+            <ul class="rego_split_list">
+              <li>
+                <svg class="rego_split_list_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>GDPR Compliant:</strong> Data subject rights, legitimate basis assessment, and DPA support</span>
+              </li>
+              <li>
+                <svg class="rego_split_list_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>CCPA Compliant:</strong> Consumer privacy rights including access, deletion, and opt-out requests</span>
+              </li>
+              <li>
+                <svg class="rego_split_list_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Data Minimization:</strong> We collect only what's necessary and delete it when no longer needed</span>
+              </li>
+              <li>
+                <svg class="rego_split_list_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Secure Processing:</strong> End-to-end encryption, isolated workspaces, and data residency controls</span>
+              </li>
+            </ul>
+            <div class="rego_tag_group">
+              <span class="rego_tag rego_tag_green">AES-256</span>
+              <span class="rego_tag rego_tag_green">TLS 1.3</span>
+              <span class="rego_tag rego_tag_green">Key Rotation</span>
+              <span class="rego_tag rego_tag_green">Data Isolation</span>
+            </div>
+          </div>
+          <div class="rego_split_visual rego_reveal">
+            <div class="rego_split_visual_inner rego_sec_encryption_dashboard">
+              <div class="rego_security_is_20">
+                <div class="rego_security_is_21">
+                  <div class="rego_security_is_22">
+                    <span class="rego_security_is_23">Encryption Status</span>
+                    <span class="rego_security_is_24">ACTIVE</span>
+                  </div>
+                  <div class="rego_security_is_25">
+                    <div class="rego_security_is_26"></div>
+                  </div>
+                </div>
+
+                <div class="rego_security_is_21">
+                  <div class="rego_security_is_22">
+                    <span class="rego_security_is_23">Key Rotation</span>
+                    <span class="rego_security_is_27">QUARTERLY</span>
+                  </div>
+                  <div class="rego_security_is_25">
+                    <div class="rego_security_is_28"></div>
+                  </div>
+                </div>
+
+                <div class="rego_security_is_21">
+                  <div class="rego_security_is_22">
+                    <span class="rego_security_is_23">Compliance Coverage</span>
+                    <span class="rego_security_is_29">100%</span>
+                  </div>
+                  <div class="rego_security_is_25">
+                    <div class="rego_security_is_30"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="rego_security_is_22">
+                    <span class="rego_security_is_23">Backup Status</span>
+                    <span class="rego_security_is_31">LATEST</span>
+                  </div>
+                  <div class="rego_security_is_25">
+                    <div class="rego_security_is_32"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: THIRD-PARTY VALIDATION
+    ============================================================ -->
+    <section class="rego_sec_pentest rego_section_py rego_security_is_2">
+      <div class="rego_container">
+        <div class="rego_section_header rego_text_center">
+          <div>
+            <div class="rego_section_eyebrow">Independent Verification</div>
+            <h2 class="rego_section_title">Third-Party Validation</h2>
+            <p class="rego_section_desc rego_section_desc_center">
+              We believe in transparency. Our security posture is independently verified by industry-leading firms.
+            </p>
+          </div>
+        </div>
+
+        <div class="rego_security_is_33">
+          <!-- Bishop Fox Pen Test -->
+          <div class="rego_sec_pentest_card rego_reveal rego_reveal_delay_1">
+            <div class="rego_sec_pentest_logo_area">
+              <div class="rego_security_is_34">🛡️ Bishop Fox</div>
+            </div>
+            <h3 class="rego_security_is_35">Annual Pen Test</h3>
+            <p class="rego_security_is_36">
+              Comprehensive penetration testing covering all attack surfaces, from infrastructure to application layer, with detailed remediation guidance.
+            </p>
+            <a class="rego_security_is_37" href="#">
+              Latest Report <span class="rego_security_is_38">→</span>
+            </a>
+          </div>
+
+          <!-- HackerOne Bug Bounty -->
+          <div class="rego_sec_pentest_card rego_reveal rego_reveal_delay_2">
+            <div class="rego_sec_pentest_logo_area">
+              <div class="rego_security_is_39">🐛 HackerOne</div>
+            </div>
+            <h3 class="rego_security_is_35">Bug Bounty Program</h3>
+            <p class="rego_security_is_36">
+              Ongoing bug bounty program with competitive rewards. Researchers have found and helped us fix 47 vulnerabilities since 2023.
+            </p>
+            <a class="rego_security_is_40" href="#">
+              Join Program <span class="rego_security_is_38">→</span>
+            </a>
+          </div>
+
+          <!-- Deloitte SOC 2 Audit -->
+          <div class="rego_sec_pentest_card rego_reveal rego_reveal_delay_3">
+            <div class="rego_sec_pentest_logo_area">
+              <div class="rego_security_is_41">📊 Deloitte</div>
+            </div>
+            <h3 class="rego_security_is_35">SOC 2 Audit</h3>
+            <p class="rego_security_is_36">
+              Annual SOC 2 Type II audit covering security, availability, processing integrity, confidentiality, and privacy for 6+ months.
+            </p>
+            <a class="rego_security_is_42" href="#">
+              View Audit <span class="rego_security_is_38">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7: FAQ
+    ============================================================ -->
+    <section class="rego_sec_faq rego_section_py rego_security_is_6">
+      <div class="rego_container rego_container_narrow">
+        <div class="rego_section_header rego_text_center">
+          <div>
+            <div class="rego_section_eyebrow">Common Questions</div>
+            <h2 class="rego_section_title">Security FAQs</h2>
+          </div>
+        </div>
+
+        <div class="rego_sec_faq_accordion">
+          <!-- FAQ Item 1 -->
+          <div class="rego_sec_faq_item rego_reveal rego_reveal_delay_1">
+            <button class="rego_sec_faq_trigger" aria-expanded="false">
+              <span>Where is RegO data hosted?</span>
+              <svg class="rego_sec_faq_chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="rego_sec_faq_body">
+              <p>
+                RegO data is hosted exclusively in AWS GovCloud with replicas in us-east-1 (primary) and us-west-2 (secondary). We do not store customer data in commercial AWS regions or any other cloud providers. All data remains within the United States.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="rego_sec_faq_item rego_reveal rego_reveal_delay_2">
+            <button class="rego_sec_faq_trigger" aria-expanded="false">
+              <span>Is RegO FedRAMP authorized?</span>
+              <svg class="rego_sec_faq_chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="rego_sec_faq_body">
+              <p>
+                Yes. RegO achieved FedRAMP Moderate authorization in 2023 and maintains continuous compliance. This authorization allows us to be used by all federal civilian and DoD agencies for appropriate workloads. We are available on the FedRAMP Marketplace and GSA Schedule.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="rego_sec_faq_item rego_reveal rego_reveal_delay_3">
+            <button class="rego_sec_faq_trigger" aria-expanded="false">
+              <span>How is data encrypted?</span>
+              <svg class="rego_sec_faq_chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="rego_sec_faq_body">
+              <p>
+                We use AES-256 encryption for all data at rest, including databases, backups, and file storage. For data in transit, we enforce TLS 1.3 with perfect forward secrecy (PFS) on all communication channels. Customer-managed keys (CMK) are available for enterprise deployments.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="rego_sec_faq_item rego_reveal rego_reveal_delay_4">
+            <button class="rego_sec_faq_trigger" aria-expanded="false">
+              <span>What happens if there's a security incident?</span>
+              <svg class="rego_sec_faq_chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="rego_sec_faq_body">
+              <p>
+                Our Security Operations Center operates 24/7/365. Upon detection of a security incident, we follow our formal Incident Response playbook: immediate containment, forensic investigation, customer notification (1-hour SLA), and detailed post-incident analysis. Affected customers are notified within 1 hour of confirmation.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="rego_sec_faq_item rego_reveal rego_reveal_delay_1">
+            <button class="rego_sec_faq_trigger" aria-expanded="false">
+              <span>Can I get a copy of your security documentation?</span>
+              <svg class="rego_sec_faq_chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="rego_sec_faq_body">
+              <p>
+                Absolutely. We provide access to our Trust Center, security documentation, SOC 2 reports, and FedRAMP authorizations through our customer portal. Enterprise customers can request additional documentation (like System Security Plans) under NDA. Contact our security team for access.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="rego_sec_faq_item rego_reveal rego_reveal_delay_2">
+            <button class="rego_sec_faq_trigger" aria-expanded="false">
+              <span>Does RegO support SSO?</span>
+              <svg class="rego_sec_faq_chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="rego_sec_faq_body">
+              <p>
+                Yes. RegO supports SAML 2.0 and OpenID Connect (OIDC) for enterprise SSO. We have native integrations with Okta, Azure AD, and other major identity providers. All users can enable multi-factor authentication (MFA) via TOTP or hardware keys.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8: FINAL CTA
+    ============================================================ -->
+    <section class="rego_sec_cta rego_section_py rego_security_is_43">
+      <div class="rego_container rego_container_narrow">
+        <h2 class="rego_security_is_44">
+          Questions about our security posture?
+        </h2>
+        <p class="rego_security_is_45">
+          Our security team is here to discuss your compliance requirements and demonstrate how RegO helps you maintain enterprise-grade security controls.
+        </p>
+        <div class="rego_security_is_46">
+          <a href="#" class="rego_btn rego_btn_white rego_btn_lg">Request Security Documentation</a>
+          <a href="mailto:security@rego.com" class="rego_btn rego_btn_outline_light rego_btn_lg">Talk to Our Security Team</a>
+        </div>
+        <p class="rego_security_is_47">Average response time: 2 business hours</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <div id="rego_footer_mount"></div>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="js/security.js"></script>
+
+</body>
+</html>

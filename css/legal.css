@@ -1,0 +1,451 @@
+/* Legal Page Styles */
+
+/* Hero Section */
+.rego_legal_hero {
+  background: linear-gradient(135deg, #f5f7ff, #eef0ff);
+  padding: 120px 24px 48px;
+  text-align: center;
+}
+
+.rego_legal_hero h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #1a1d2e;
+  margin: 0 0 16px;
+}
+
+.rego_legal_hero p {
+  font-size: 16px;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Document Cards */
+.rego_legal_docs {
+  background: white;
+  padding: 80px 24px;
+}
+
+.rego_legal_docs h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: #1a1d2e;
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.rego_legal_doc_grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rego_legal_doc_card {
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: all 0.3s ease;
+}
+
+.rego_legal_doc_card:hover {
+  border-color: #4a569e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 86, 158, 0.1);
+}
+
+.rego_legal_doc_icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f0f0ff, #e8e0ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a569e;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.rego_legal_doc_card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1d2e;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.rego_legal_doc_card p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+.rego_legal_updated {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+
+.rego_legal_doc_link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a569e;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.rego_legal_doc_link:hover {
+  color: #842573;
+}
+
+/* Certification Cards */
+.rego_legal_certs {
+  background: linear-gradient(135deg, #0d1117, #161b2e, #1e1040);
+  padding: 80px 24px;
+}
+
+.rego_legal_certs h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.rego_legal_cert_grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rego_legal_cert_card {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 32px 28px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.rego_legal_cert_card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.rego_legal_cert_badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a569e, #842573);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+}
+
+.rego_legal_cert_card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.rego_legal_cert_card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.rego_legal_cert_link {
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+/* Data Residency */
+.rego_legal_residency {
+  background: white;
+  padding: 80px 24px;
+}
+
+.rego_legal_residency h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: #1a1d2e;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.rego_legal_residency > p {
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+  margin: 0 0 32px;
+  max-width: 600px;
+}
+
+.rego_legal_region_grid {
+  max-width: 800px;
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.rego_legal_region_card {
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.rego_legal_region_card:hover {
+  border-color: #4a569e;
+  box-shadow: 0 4px 12px rgba(74, 86, 158, 0.1);
+}
+
+.rego_legal_region_icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #f5f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 20px;
+}
+
+.rego_legal_region_card .region {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1d2e;
+  margin: 0 0 4px;
+}
+
+.rego_legal_region_card .location {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* FAQ Section */
+.rego_legal_faq {
+  background: #f9fafb;
+  padding: 80px 24px;
+}
+
+.rego_legal_faq h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: #1a1d2e;
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.rego_legal_faq_list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rego_legal_faq_item {
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.rego_legal_faq_item:hover {
+  border-color: #4a569e;
+}
+
+.rego_legal_faq_q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1d2e;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.rego_legal_faq_q:hover {
+  background: #f9fafb;
+}
+
+.rego_legal_faq_arrow {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a569e;
+  flex-shrink: 0;
+  margin-left: 12px;
+  transition: transform 0.3s ease;
+}
+
+.rego_legal_faq_open .rego_legal_faq_arrow {
+  transform: rotate(180deg);
+}
+
+.rego_legal_faq_a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 24px;
+}
+
+.rego_legal_faq_open .rego_legal_faq_a {
+  max-height: 200px;
+  padding: 0 24px 18px;
+}
+
+.rego_legal_faq_a p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Contact Footer */
+.rego_legal_contact {
+  background: #f5f7ff;
+  border: 1px solid #e0e3f0;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-top: 48px;
+  text-align: center;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.rego_legal_contact a {
+  color: #4a569e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.rego_legal_contact a:hover {
+  color: #842573;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .rego_legal_doc_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_legal_cert_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rego_legal_region_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rego_legal_docs {
+    padding: 60px 24px;
+  }
+
+  .rego_legal_certs {
+    padding: 60px 24px;
+  }
+
+  .rego_legal_residency {
+    padding: 60px 24px;
+  }
+
+  .rego_legal_faq {
+    padding: 60px 24px;
+  }
+
+  .rego_legal_doc_grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .rego_legal_cert_grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .rego_legal_region_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .rego_legal_hero {
+    padding: 80px 16px 32px;
+  }
+
+  .rego_legal_docs {
+    padding: 48px 16px;
+  }
+
+  .rego_legal_certs {
+    padding: 48px 16px;
+  }
+
+  .rego_legal_residency {
+    padding: 48px 16px;
+  }
+
+  .rego_legal_faq {
+    padding: 48px 16px;
+  }
+
+  .rego_legal_doc_grid {
+    gap: 16px;
+  }
+
+  .rego_legal_cert_grid {
+    gap: 16px;
+  }
+
+  .rego_legal_faq_q {
+    padding: 16px 20px;
+    font-size: 14px;
+  }
+
+  .rego_legal_faq_a {
+    padding: 0 20px;
+  }
+
+  .rego_legal_faq_open .rego_legal_faq_a {
+    padding: 0 20px 16px;
+  }
+}
