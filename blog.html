@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegO – Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+  <div id="rego_header_mount"></div>
+
+  <main class="rego_blog_main">
+    <!-- Page Hero -->
+    <section class="rego_page_hero rego_blog_hero rego_reveal">
+      <div class="rego_container">
+        <h1 class="rego_blog_hero_title">Compliance Insights from the Experts</h1>
+        <p class="rego_blog_hero_subhead">The latest thinking on GRC automation, risk management, and regulatory compliance.</p>
+      </div>
+    </section>
+
+    <!-- Filter: Types + Topics + Search -->
+    <section class="rego_blog_filters rego_reveal">
+      <div class="rego_container">
+        <div class="rego_blog_filter_row rego_blog_filter_types">
+          <button class="rego_blog_type_btn rego_blog_type_active" data-type="all">All Types</button>
+          <button class="rego_blog_type_btn rego_blog_type_highlight" data-type="blog">Blog</button>
+          <button class="rego_blog_type_btn" data-type="success">Success Stories</button>
+          <button class="rego_blog_type_btn" data-type="events">Events</button>
+          <button class="rego_blog_type_btn" data-type="knowledge">Knowledge Hub</button>
+          <button class="rego_blog_type_btn" data-type="news">News</button>
+          <button class="rego_blog_type_btn" data-type="briefs">Solution Briefs</button>
+          <button class="rego_blog_type_btn" data-type="papers">White Papers</button>
+          <button class="rego_blog_type_btn" data-type="webinars">Webinars</button>
+        </div>
+
+        <div class="rego_blog_filter_row rego_blog_filter_topics">
+          <button class="rego_blog_topic_btn rego_blog_topic_active">All Topics</button>
+          <button class="rego_blog_topic_btn">AI</button>
+          <button class="rego_blog_topic_btn">ATO</button>
+          <button class="rego_blog_topic_btn">Automation</button>
+          <button class="rego_blog_topic_btn">CCA</button>
+          <button class="rego_blog_topic_btn">CCM</button>
+          <button class="rego_blog_topic_btn">CMMC</button>
+          <button class="rego_blog_topic_btn">Company News</button>
+          <button class="rego_blog_topic_btn">Compliance</button>
+          <button class="rego_blog_topic_btn">Compliance as Code</button>
+          <button class="rego_blog_topic_btn">CRI</button>
+          <button class="rego_blog_topic_btn">CSRMC</button>
+          <button class="rego_blog_topic_btn">Customer Success</button>
+          <button class="rego_blog_topic_btn">Cybersecurity</button>
+          <button class="rego_blog_topic_btn">Defense</button>
+          <button class="rego_blog_topic_btn">DevSecOps</button>
+          <button class="rego_blog_topic_btn">Energy</button>
+          <button class="rego_blog_topic_btn">Federal</button>
+          <button class="rego_blog_topic_btn">FedRAMP</button>
+          <button class="rego_blog_topic_btn">Financial Services</button>
+          <button class="rego_blog_topic_btn">Government</button>
+          <button class="rego_blog_topic_btn">GRC</button>
+          <button class="rego_blog_topic_btn">Infrastructure</button>
+          <button class="rego_blog_topic_btn">ISO</button>
+          <button class="rego_blog_topic_btn">NERC-CIP</button>
+          <button class="rego_blog_topic_btn">NIST</button>
+          <button class="rego_blog_topic_btn">OCSF</button>
+          <button class="rego_blog_topic_btn">OSCAL</button>
+          <button class="rego_blog_topic_btn">Other</button>
+          <button class="rego_blog_topic_btn">PCI</button>
+          <button class="rego_blog_topic_btn">Public Sector</button>
+          <button class="rego_blog_topic_btn">RegO</button>
+          <button class="rego_blog_topic_btn">Risk Management</button>
+          <button class="rego_blog_topic_btn">RMF</button>
+          <button class="rego_blog_topic_btn">Security</button>
+          <button class="rego_blog_topic_btn">Shift Left</button>
+          <button class="rego_blog_topic_btn">SOC 2</button>
+        </div>
+
+        <form class="rego_blog_search" onsubmit="return false;">
+          <input type="text" class="rego_blog_search_input" placeholder="Search">
+          <button type="submit" class="rego_blog_search_btn" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Blog Featured Slideshow -->
+    <section class="rego_blog_slider_section rego_reveal" aria-label="Featured blog posts">
+      <div class="rego_container">
+        <h2 class="rego_blog_slider_heading">RegO <span class="rego_blog_slider_heading_accent">Blog</span></h2>
+
+        <div class="rego_blog_slider">
+          <div class="rego_blog_slider_track">
+
+            <article class="rego_blog_slide rego_blog_slide_active">
+              <div class="rego_blog_slide_visual rego_blog_slide_visual_purple">
+                <span class="rego_blog_slide_badge">BLOG</span>
+                <div class="rego_blog_slide_logo">
+                  <span class="rego_blog_slide_logo_mark" aria-hidden="true">R</span>
+                  <span>RegO</span>
+                </div>
+                <h3 class="rego_blog_slide_visual_title">The Spreadsheet Isn't the Problem. It's the Symptom.</h3>
+              </div>
+              <div class="rego_blog_slide_copy">
+                <span class="rego_blog_slide_tag">BLOG</span>
+                <h3 class="rego_blog_slide_title">The Spreadsheet Isn't the Problem. It's the Symptom</h3>
+                <a href="#" class="rego_blog_slide_link">READ MORE <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <article class="rego_blog_slide">
+              <div class="rego_blog_slide_visual rego_blog_slide_visual_blue">
+                <span class="rego_blog_slide_badge">BLOG</span>
+                <div class="rego_blog_slide_logo">
+                  <span class="rego_blog_slide_logo_mark" aria-hidden="true">R</span>
+                  <span>RegO</span>
+                </div>
+                <h3 class="rego_blog_slide_visual_title">Understanding the CISA Zero Trust Maturity Model: A Detailed Guide</h3>
+              </div>
+              <div class="rego_blog_slide_copy">
+                <span class="rego_blog_slide_tag">BLOG</span>
+                <h3 class="rego_blog_slide_title">Understanding the CISA Zero Trust Maturity Model</h3>
+                <a href="#" class="rego_blog_slide_link">READ MORE <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <article class="rego_blog_slide">
+              <div class="rego_blog_slide_visual rego_blog_slide_visual_navy">
+                <span class="rego_blog_slide_badge rego_blog_slide_badge_right">BLOG</span>
+                <div class="rego_blog_slide_logo rego_blog_slide_logo_lg">
+                  <span class="rego_blog_slide_logo_mark" aria-hidden="true">R</span>
+                  <span>RegScale</span>
+                </div>
+                <h3 class="rego_blog_slide_visual_title">We've Been Named a Representative Vendor in the 2026 Gartner<sup>®</sup> Market Guide for DevOps Continuous Compliance Automation Tools</h3>
+              </div>
+              <div class="rego_blog_slide_copy">
+                <span class="rego_blog_slide_tag">BLOG</span>
+                <h3 class="rego_blog_slide_title">RegO Recognized in the 2026 Gartner<sup>®</sup> Market Guide for DevOps Continuous Compliance Automation Tools</h3>
+                <a href="#" class="rego_blog_slide_link">READ MORE <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <article class="rego_blog_slide">
+              <div class="rego_blog_slide_visual rego_blog_slide_visual_teal">
+                <span class="rego_blog_slide_badge">BLOG</span>
+                <div class="rego_blog_slide_logo">
+                  <span class="rego_blog_slide_logo_mark" aria-hidden="true">R</span>
+                  <span>RegO</span>
+                </div>
+                <h3 class="rego_blog_slide_visual_title">The Ultimate Guide to Compliance Automation: Benefits, Implementation, and More</h3>
+              </div>
+              <div class="rego_blog_slide_copy">
+                <span class="rego_blog_slide_tag">BLOG</span>
+                <h3 class="rego_blog_slide_title">The Ultimate Guide to Compliance Automation: Benefits, Implementation, and More</h3>
+                <a href="#" class="rego_blog_slide_link">READ MORE <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+          </div>
+          <div class="rego_blog_slider_dots" role="tablist" aria-label="Select slide"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Cards Grid -->
+    <section class="rego_blog_grid_section rego_reveal">
+      <div class="rego_container">
+        <div class="rego_blog_grid">
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_purple">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">The Spreadsheet Isn't the Problem. It's the Symptom.</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">CCM</span>
+              <h3 class="rego_blog_card_title_v2">The Spreadsheet Isn't the Problem. It's the Symptom</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_blue">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">Understanding the CISA Zero Trust Maturity Model: A Detailed Guide</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">COMPLIANCE</span>
+              <h3 class="rego_blog_card_title_v2">Understanding the CISA Zero Trust Maturity Model</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_navy">
+              <span class="rego_blog_card_pill rego_blog_card_pill_right">BLOG</span>
+              <div class="rego_blog_card_logo rego_blog_card_logo_tl"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title rego_blog_card_hero_title_left">We've Been Named a Representative Vendor in the 2026 Gartner® Market Guide for DevOps Continuous Compliance Automation Tools</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">AI</span>
+              <h3 class="rego_blog_card_title_v2">RegO Recognized in the 2026 Gartner® Market Guide for DevOps Continuous Compliance Automation Tools</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_teal">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">The Ultimate Guide to Compliance Automation: Benefits, Implementation, and More</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">AUTOMATION</span>
+              <h3 class="rego_blog_card_title_v2">The Ultimate Guide to Compliance Automation: Benefits, Implementation, and More</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_blue2">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">Choosing the Right Risk Assessment Tool: A Guide for Enterprise GRC</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">RISK MANAGEMENT</span>
+              <h3 class="rego_blog_card_title_v2">Choosing the Right Risk Assessment Tool: A Guide for Enterprise GRC</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_darkblue">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">AI in GRC: Friend, Foe, or FOMO?</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">AI</span>
+              <h3 class="rego_blog_card_title_v2">AI in GRC: Friend, Foe, or FOMO?</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_teal2">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">Without ROI Reporting, Your Automation Strategy Is Flying Blind</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">CCM</span>
+              <h3 class="rego_blog_card_title_v2">Without ROI Reporting, Your Automation Strategy Is Flying Blind</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_teal3">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">The $3 Trillion Question: Why Aren't More Companies Automating GRC?</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">AUTOMATION</span>
+              <h3 class="rego_blog_card_title_v2">The $3 Trillion Question: Why Aren't More Companies Automating GRC?</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_teal4">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">Managing 10+ Compliance Frameworks? You're In Good Company</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">CCM</span>
+              <h3 class="rego_blog_card_title_v2">Managing 10+ Compliance Frameworks? You're In Good Company</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_purple2">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">RegO Partners with Leidos to Revolutionize Continuous ATO</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">AI</span>
+              <h3 class="rego_blog_card_title_v2">RegO Partners with Leidos to Revolutionize cATO</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_blue3">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO</span></div>
+              <h4 class="rego_blog_card_hero_title">2026 Predictions: Reshaping Defense, Compliance, and Risk</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">AI</span>
+              <h3 class="rego_blog_card_title_v2">2026 Predictions: Reshaping Defense, Compliance, and Risk</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="rego_blog_card_v2">
+            <div class="rego_blog_card_hero rego_blog_hero_darkblue2">
+              <span class="rego_blog_card_pill">BLOG</span>
+              <div class="rego_blog_card_logo"><span class="rego_blog_card_logo_mark">R</span><span>RegO + <em>OSCAL Hub</em></span></div>
+              <h4 class="rego_blog_card_hero_title">Introducing OSCAL Hub: The Industry Standard for Easier Authorization</h4>
+            </div>
+            <div class="rego_blog_card_body">
+              <span class="rego_blog_card_tag">ATO</span>
+              <h3 class="rego_blog_card_title_v2">Introducing OSCAL Hub: The Industry Standard for Easier Authorization</h3>
+              <a href="#" class="rego_blog_card_link_v2">Learn More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Pagination -->
+        <nav class="rego_blog_pagination" aria-label="Blog pagination">
+          <button class="rego_blog_page_btn rego_blog_page_active">1</button>
+          <button class="rego_blog_page_btn">2</button>
+          <button class="rego_blog_page_btn">3</button>
+          <span class="rego_blog_page_ellipsis">…</span>
+          <button class="rego_blog_page_btn">14</button>
+          <button class="rego_blog_page_next">Next <span aria-hidden="true">→</span></button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- More ways to stay up to date -->
+    <section class="rego_blog_updates rego_reveal" aria-label="More ways to stay up to date">
+      <div class="rego_container">
+        <h2 class="rego_blog_updates_title">More ways to <span class="rego_blog_updates_title_accent">stay up to date</span></h2>
+
+        <div class="rego_blog_updates_grid">
+          <div class="rego_blog_updates_col">
+
+            <article class="rego_blog_update_card">
+              <div class="rego_blog_update_thumb rego_blog_update_thumb_purple">
+                <span class="rego_blog_update_thumb_pill">BLOG</span>
+                <h4 class="rego_blog_update_thumb_title">The Spreadsheet Isn't the Problem. It's the Symptom.</h4>
+              </div>
+              <div class="rego_blog_update_body">
+                <span class="rego_blog_update_tag">BLOG</span>
+                <h3 class="rego_blog_update_title">The Spreadsheet Isn't the Problem. It's the Symptom</h3>
+              </div>
+            </article>
+
+            <article class="rego_blog_update_card">
+              <div class="rego_blog_update_thumb rego_blog_update_thumb_ebook">
+                <span class="rego_blog_update_thumb_pill rego_blog_update_thumb_pill_dark">E-BOOK</span>
+                <h4 class="rego_blog_update_thumb_title">Fast Track to Authorization</h4>
+                <p class="rego_blog_update_thumb_sub">A Federal Agency Guide to Modernizing ATO &amp; cATO</p>
+              </div>
+              <div class="rego_blog_update_body">
+                <span class="rego_blog_update_tag">EBOOK</span>
+                <h3 class="rego_blog_update_title">Fast-Track to Authorization: A Federal Agency Guide to Modernizing ATO &amp; cATO</h3>
+              </div>
+            </article>
+
+            <article class="rego_blog_update_card">
+              <div class="rego_blog_update_thumb rego_blog_update_thumb_blue">
+                <span class="rego_blog_update_thumb_pill">BLOG</span>
+                <h4 class="rego_blog_update_thumb_title">Understanding the CISA Zero Trust Maturity Model: A Detailed Guide</h4>
+              </div>
+              <div class="rego_blog_update_body">
+                <span class="rego_blog_update_tag">BLOG</span>
+                <h3 class="rego_blog_update_title">Understanding the CISA Zero Trust Maturity Model</h3>
+              </div>
+            </article>
+
+          </div>
+
+          <aside class="rego_blog_signup">
+            <h3 class="rego_blog_signup_title">Get insights delivered to your inbox</h3>
+            <p class="rego_blog_signup_desc">Receive platform tips, release updates, news and more</p>
+            <form class="rego_blog_signup_form" onsubmit="return false;">
+              <input type="text" placeholder="First Name*" class="rego_blog_signup_input" required>
+              <input type="text" placeholder="Last Name*" class="rego_blog_signup_input" required>
+              <input type="text" placeholder="Job title*" class="rego_blog_signup_input" required>
+              <input type="text" placeholder="Company*" class="rego_blog_signup_input" required>
+              <input type="email" placeholder="Email*" class="rego_blog_signup_input" required>
+              <label class="rego_blog_signup_consent">
+                <input type="checkbox" required>
+                <span>I consent to receive RegO emails. RegO may process my data and I may unsubscribe per their <a href="#">Privacy Policy</a>. *</span>
+              </label>
+              <button type="submit" class="rego_blog_signup_btn">Submit</button>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="rego_footer_mount"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>
