@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RegO automates GRC — mesh architecture and DevSecOps continuous compliance powered by AI, OSCAL, and continuous controls monitoring.">
+  <title>Compliance Automation | RegO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/compliance-automation.css"/>
+</head>
+<body>
+
+  <div id="rego_header_mount"></div>
+
+  <main id="rego_main">
+
+    <!-- HERO -->
+    <section class="rego_ca_hero rego_section_py">
+      <div class="rego_container">
+        <div class="rego_ca_hero_grid">
+          <div class="rego_ca_hero_copy">
+            <span class="rego_ca_hero_eyebrow">COMPLIANCE AUTOMATION</span>
+            <h1 class="rego_ca_hero_title">Mesh Architecture and DevSecOps Continuous <span class="rego_ca_hero_accent">Compliance Automation</span></h1>
+            <p class="rego_ca_hero_desc">Seamlessly plug and play our Continuous Controls Monitoring (CCM) platform into your organization's security stack. By consolidating data from across your organization, RegO enables you to continuously automate risk assessments and compliance workflows, generate self-updating paperwork, and enable compliance as code to replace manual, error-prone processes.</p>
+            <a href="#" class="rego_btn rego_btn_primary rego_ca_hero_btn">Get a Demo</a>
+          </div>
+
+          <div class="rego_ca_hero_visual" aria-hidden="true">
+            <div class="rego_ca_dashboard">
+              <div class="rego_ca_dash_topbar">
+                <div class="rego_ca_dash_brand">
+                  <img src="images/rego-logo.png" alt="RegO" class="rego_ca_dash_brand_logo">
+                </div>
+                <div class="rego_ca_dash_nav">
+                  <span>Workspace</span>
+                  <span>Status Boards ▾</span>
+                  <span>Modules ▾</span>
+                  <span>reports</span>
+                </div>
+                <div class="rego_ca_dash_user">
+                  <span class="rego_ca_dash_user_avatar"></span>
+                  <span class="rego_ca_dash_user_name">fwallace ▾</span>
+                </div>
+              </div>
+              <div class="rego_ca_dash_body">
+                <aside class="rego_ca_dash_side">
+                  <div class="rego_ca_dash_side_item rego_ca_dash_side_item_active">DHS MARS-E</div>
+                  <div class="rego_ca_dash_lines"><span></span><span></span><span></span></div>
+                  <div class="rego_ca_dash_side_item rego_ca_dash_side_item_explorer">Explorer</div>
+                  <div class="rego_ca_dash_lines"><span></span><span></span><span></span></div>
+                  <div class="rego_ca_dash_side_item rego_ca_dash_side_item_utilities">Utilities</div>
+                  <div class="rego_ca_dash_lines"><span></span><span></span></div>
+                </aside>
+                <div class="rego_ca_dash_main">
+                  <div class="rego_ca_dash_tabs">
+                    <span>Basic Info</span>
+                    <span class="rego_ca_dash_tab_active">Scorecard</span>
+                    <span>Gantt Chart</span>
+                    <span>Categorization</span>
+                    <span>Key Dates</span>
+                    <span>Integrations</span>
+                    <span>Profiles</span>
+                    <span>Custom Fields</span>
+                  </div>
+                  <div class="rego_ca_dash_tabs rego_ca_dash_tabs_sub">
+                    <span>Components</span>
+                    <span>Summary</span>
+                    <span>Ports and Protocols</span>
+                    <span>Stakeholders and Users</span>
+                    <span>CMMC</span>
+                    <span>Descriptions</span>
+                  </div>
+                  <div class="rego_ca_dash_grid">
+                    <div class="rego_ca_dash_card">
+                      <h5>Overall Compliance</h5>
+                      <div class="rego_ca_dash_row_stat">
+                        <span>Compliance Score</span>
+                        <span class="rego_ca_dash_gauge_bar"><span></span></span>
+                        <span class="rego_ca_dash_gauge_val">27%</span>
+                      </div>
+                      <div class="rego_ca_dash_row">
+                        <span>Total Controls</span>
+                        <span class="rego_ca_dash_badge rego_ca_dash_badge_cyan">1</span>
+                      </div>
+                      <div class="rego_ca_dash_row">
+                        <span>Total Assessments</span>
+                        <span class="rego_ca_dash_badge rego_ca_dash_badge_cyan">4</span>
+                      </div>
+                    </div>
+                    <div class="rego_ca_dash_card">
+                      <h5>Identify Critical Assets</h5>
+                      <div class="rego_ca_dash_chart">
+                        <span class="rego_ca_dash_yaxis">
+                          <span>20</span><span>15</span><span>10</span><span>5</span><span>0</span>
+                        </span>
+                        <div class="rego_ca_dash_bars">
+                          <div class="rego_ca_dash_bargroup">
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_a" style="height:45%"></span>
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_b" style="height:30%"></span>
+                          </div>
+                          <div class="rego_ca_dash_bargroup">
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_a" style="height:55%"></span>
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_b" style="height:38%"></span>
+                          </div>
+                          <div class="rego_ca_dash_bargroup">
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_a" style="height:75%"></span>
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_b" style="height:45%"></span>
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_c" style="height:60%"></span>
+                          </div>
+                          <div class="rego_ca_dash_bargroup">
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_a" style="height:50%"></span>
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_b" style="height:72%"></span>
+                            <span class="rego_ca_dash_bar rego_ca_dash_bar_c" style="height:65%"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rego_ca_dash_labels">
+                        <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+                      </div>
+                    </div>
+                    <div class="rego_ca_dash_card rego_ca_dash_card_full">
+                      <div class="rego_ca_dash_comments_head"><h5>Comments &amp; Message</h5><a href="#">See All</a></div>
+                      <div class="rego_ca_dash_comment">
+                        <span class="rego_ca_dash_comment_avatar"></span>
+                        <div><strong>Alfredo Torres</strong><span>1 Minute Ago</span></div>
+                        <button class="rego_ca_dash_reply">Reply</button>
+                      </div>
+                    </div>
+                    <div class="rego_ca_dash_card rego_ca_dash_card_full rego_ca_dash_viz">
+                      <h5>Visualizations</h5>
+                      <div class="rego_ca_dash_viz_row">
+                        <span class="rego_ca_dash_viz_label">By Status</span>
+                        <span class="rego_ca_dash_viz_bar"><span class="rego_ca_dash_viz_fill_1"></span></span>
+                      </div>
+                      <div class="rego_ca_dash_viz_row">
+                        <span class="rego_ca_dash_viz_label">By Last Assessments Status</span>
+                        <span class="rego_ca_dash_viz_bar"><span class="rego_ca_dash_viz_fill_2"></span></span>
+                      </div>
+                      <div class="rego_ca_dash_viz_row">
+                        <span class="rego_ca_dash_viz_label">By Owner</span>
+                        <div class="rego_ca_dash_viz_donut">
+                          <span>240</span>
+                        </div>
+                        <div class="rego_ca_dash_viz_legend">
+                          <span><em class="rego_ca_dash_legend_red"></em>Not Assessed</span>
+                          <span><em class="rego_ca_dash_legend_blue"></em>Not Implemented</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rego_ca_hero_badges" aria-hidden="true">
+                <span class="rego_ca_hero_badge rego_ca_hero_badge_1">FR</span>
+                <span class="rego_ca_hero_badge rego_ca_hero_badge_2">HIPAA</span>
+                <span class="rego_ca_hero_badge rego_ca_hero_badge_3">CCPA</span>
+                <span class="rego_ca_hero_badge rego_ca_hero_badge_4">SOX</span>
+                <span class="rego_ca_hero_badge rego_ca_hero_badge_5">PCI</span>
+                <span class="rego_ca_hero_badge rego_ca_hero_badge_6">ISO</span>
+                <span class="rego_ca_hero_badge rego_ca_hero_badge_7">NIST</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED BY -->
+    <section class="rego_section_py rego_ca_trusted_section">
+      <div class="rego_container">
+        <p class="rego_ca_trusted_title">Trusted by the most secure and compliant organizations on the planet</p>
+        <div class="rego_ca_trusted_logos">
+          <div class="rego_ca_logo">DHCF</div>
+          <div class="rego_ca_logo">DRAGOS</div>
+          <div class="rego_ca_logo">INL</div>
+          <div class="rego_ca_logo">KeyBank</div>
+          <div class="rego_ca_logo">LMI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POWER STATS -->
+    <section class="rego_section_py rego_ca_stats_section">
+      <div class="rego_container">
+        <h2 class="rego_ca_stats_title"><span class="rego_ca_hero_accent">The Power</span> of RegO CCM</h2>
+        <div class="rego_ca_stats_grid">
+          <div class="rego_ca_stat_card">
+            <div class="rego_ca_stat_num">60%</div>
+            <div class="rego_ca_stat_label">Faster audit prep &amp; response time</div>
+          </div>
+          <div class="rego_ca_stat_card">
+            <div class="rego_ca_stat_num">90 days</div>
+            <div class="rego_ca_stat_label">Submission of FedRAMP High package vs. 18 months</div>
+          </div>
+          <div class="rego_ca_stat_card">
+            <div class="rego_ca_stat_num">94%</div>
+            <div class="rego_ca_stat_label">Less effort to complete SOC 2 Type 2</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO: Easily add automations -->
+    <section class="rego_section_py rego_ca_intro_section">
+      <div class="rego_container">
+        <div class="rego_section_center_header">
+          <h2 class="rego_ca_intro_title">Easily add automations to all <span class="rego_ca_hero_accent">your compliance workflows</span></h2>
+          <p class="rego_ca_intro_desc">CCM is at the core of our modern mesh architecture that automates repetitive tasks and breaks down the silos that grind GRC programs to a crawl. Simplifying audit prep is just the beginning. This framework also solves many advanced security challenges by uniting multiple data sources so they can be centrally analyzed. Use our advanced AI to find your data and workflows, our APIs to integrate them, and our CCM platform to manage it all.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE SPLITS -->
+    <section class="rego_section_py rego_ca_features_section">
+      <div class="rego_container">
+
+        <!-- Split 1: Compliance As Code -->
+        <div class="rego_ca_split">
+          <div class="rego_ca_split_visual rego_ca_cac_visual">
+            <!-- Left card: Scanning Tools + Compliance -->
+            <div class="rego_ca_cac_card">
+              <div class="rego_ca_cac_header">
+                <span class="rego_ca_cac_dot"></span>
+                <h4 class="rego_ca_cac_title">Scanning Tools</h4>
+                <span class="rego_ca_cac_arrow">→</span>
+              </div>
+              <div class="rego_ca_cac_section">
+                <p class="rego_ca_cac_label">Compliance</p>
+                <p class="rego_ca_cac_sub_label">PASSED CHECKS</p>
+                <div class="rego_ca_cac_stat_row">
+                  <div class="rego_ca_cac_stat_bar rego_ca_cac_stat_bar_a"><span style="width: 50%"></span></div>
+                  <strong>25</strong>
+                </div>
+                <p class="rego_ca_cac_caption">25 PASSED OUT OF 51 CHECKS</p>
+                <div class="rego_ca_cac_stat_row">
+                  <div class="rego_ca_cac_stat_bar rego_ca_cac_stat_bar_a"><span style="width: 94%"></span></div>
+                  <strong>48</strong>
+                </div>
+                <p class="rego_ca_cac_caption">48 PASSED OUT OF 51 CHECKS</p>
+              </div>
+              <div class="rego_ca_cac_section">
+                <p class="rego_ca_cac_sub_label">COMPLIANCE POSTURE</p>
+                <div class="rego_ca_cac_stat_row">
+                  <div class="rego_ca_cac_stat_bar rego_ca_cac_stat_bar_b"><span style="width: 70%"></span></div>
+                  <strong>70%</strong>
+                </div>
+                <p class="rego_ca_cac_caption">70% AVERAGE COMPLIANCE POSTURE</p>
+                <div class="rego_ca_cac_stat_row">
+                  <div class="rego_ca_cac_stat_bar rego_ca_cac_stat_bar_b"><span style="width: 45%"></span></div>
+                  <strong>45%</strong>
+                </div>
+                <p class="rego_ca_cac_caption">45% AVERAGE COMPLIANCE POSTURE</p>
+              </div>
+            </div>
+
+            <!-- Center gear + shield -->
+            <div class="rego_ca_cac_gear" aria-hidden="true">
+              <div class="rego_ca_cac_gear_ring"></div>
+              <div class="rego_ca_cac_gear_shield">
+                <img src="images/rego-logo.png" alt="" class="rego_ca_cac_gear_logo">
+              </div>
+            </div>
+
+            <!-- Connector arrow -->
+            <span class="rego_ca_cac_connector" aria-hidden="true"></span>
+
+            <!-- Right code window -->
+            <div class="rego_ca_cac_code" aria-hidden="true">
+              <span class="rego_ca_cac_code_tag">&lt;/&gt; OSCAL</span>
+              <span class="rego_ca_cac_code_line" style="width: 78%"></span>
+              <span class="rego_ca_cac_code_line" style="width: 56%"></span>
+              <span class="rego_ca_cac_code_line" style="width: 86%"></span>
+              <span class="rego_ca_cac_code_line" style="width: 40%"></span>
+              <span class="rego_ca_cac_code_line" style="width: 72%"></span>
+              <span class="rego_ca_cac_code_line" style="width: 62%"></span>
+              <span class="rego_ca_cac_code_line" style="width: 48%"></span>
+            </div>
+
+            <!-- Floating doc icons -->
+            <div class="rego_ca_cac_docs" aria-hidden="true">
+              <span class="rego_ca_cac_doc rego_ca_cac_doc_word">W</span>
+              <span class="rego_ca_cac_doc rego_ca_cac_doc_excel">X</span>
+              <span class="rego_ca_cac_doc rego_ca_cac_doc_pdf">PDF</span>
+            </div>
+          </div>
+          <div class="rego_ca_split_copy">
+            <h3 class="rego_ca_split_title"><span class="rego_ca_hero_accent">Compliance As Code</span> Automates Documentation</h3>
+            <p class="rego_ca_split_desc">The RegO platform was built on the NIST OSCAL standard to generate machine-readable documentation for your compliance and certification processes. Future-proof your FedRAMP program and leverage more precise AI models to build a foundation for automating your security and compliance checks from the first line of code through deployment.</p>
+            <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_split_btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Split 2: Integrations (reversed) -->
+        <div class="rego_ca_split rego_ca_split_reverse">
+          <div class="rego_ca_split_copy">
+            <h3 class="rego_ca_split_title"><span class="rego_ca_hero_accent">Integrations</span> for Real-Time Self-Assessments</h3>
+            <p class="rego_ca_split_desc">RegO's compliance automation platform integrates with industry-leading tools, including ITIL ticketing systems, security tools, DevSecOps tools, and vulnerability scanners. This enables your tools to conduct self-assessments of your controls and log issues in real-time.</p>
+            <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_split_btn">Learn More</a>
+          </div>
+          <div class="rego_ca_split_visual rego_ca_hub_visual">
+            <!-- Dashed connector lines -->
+            <svg class="rego_ca_hub_lines" viewBox="0 0 500 500" aria-hidden="true">
+              <line x1="250" y1="250" x2="105" y2="170" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="220" y2="80"  stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="350" y2="80"  stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="430" y2="140" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="440" y2="290" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="410" y2="400" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="300" y2="440" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="180" y2="420" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="70"  y2="350" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="250" y1="250" x2="90"  y2="270" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            </svg>
+
+            <!-- Background decorative circles -->
+            <div class="rego_ca_hub_bg_big" aria-hidden="true"></div>
+            <div class="rego_ca_hub_bg_sm rego_ca_hub_bg_sm_teal" aria-hidden="true"></div>
+            <div class="rego_ca_hub_bg_sm rego_ca_hub_bg_sm_orange" aria-hidden="true"></div>
+
+            <!-- Center gear + RegO shield -->
+            <div class="rego_ca_hub_gear" aria-hidden="true">
+              <div class="rego_ca_hub_gear_ring"></div>
+              <div class="rego_ca_hub_gear_shield">
+                <img src="images/rego-logo.png" alt="" class="rego_ca_hub_gear_logo">
+              </div>
+            </div>
+
+            <!-- Tool nodes around the gear -->
+            <div class="rego_ca_hub_node rego_ca_hub_n_servicenow" aria-label="ServiceNow">
+              <span class="rego_ca_hub_servicenow">O</span>
+            </div>
+            <div class="rego_ca_hub_node rego_ca_hub_n_wiz" aria-label="Wiz">
+              <span class="rego_ca_hub_wiz">WIZ<sup>+</sup></span>
+            </div>
+            <div class="rego_ca_hub_node rego_ca_hub_n_excel" aria-label="Excel">
+              <span class="rego_ca_hub_excel">X</span>
+            </div>
+            <div class="rego_ca_hub_node rego_ca_hub_n_azure" aria-label="Azure">
+              <span class="rego_ca_hub_azure"></span>
+            </div>
+            <div class="rego_ca_hub_node rego_ca_hub_n_aws" aria-label="AWS">
+              <span class="rego_ca_hub_aws">aws</span>
+            </div>
+            <div class="rego_ca_hub_node rego_ca_hub_n_qualys" aria-label="Qualys">
+              <span class="rego_ca_hub_qualys">Q</span>
+            </div>
+            <div class="rego_ca_hub_node rego_ca_hub_n_jira" aria-label="Jira">
+              <span class="rego_ca_hub_jira"></span>
+            </div>
+            <div class="rego_ca_hub_node rego_ca_hub_n_sonar" aria-label="SonarQube">
+              <span class="rego_ca_hub_sonar"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STREAMLINE CTA -->
+    <section class="rego_section_py rego_ca_streamline_section">
+      <div class="rego_container">
+        <div class="rego_ca_streamline_card">
+          <div class="rego_ca_streamline_orb rego_ca_streamline_orb_blue" aria-hidden="true"></div>
+          <div class="rego_ca_streamline_orb rego_ca_streamline_orb_cyan" aria-hidden="true"></div>
+          <div class="rego_ca_streamline_inner">
+            <div class="rego_ca_streamline_copy">
+              <h2 class="rego_ca_streamline_title">See what RegO can <span class="rego_ca_hero_accent">streamline for you</span></h2>
+              <p class="rego_ca_streamline_desc">Book a demo now for a quick walkthrough of how our continuous controls monitoring can solve your security, risk, and compliance challenges.</p>
+            </div>
+            <a href="#" class="rego_btn rego_btn_primary rego_ca_streamline_btn">Get a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE SPLITS 2 -->
+    <section class="rego_section_py rego_ca_features_section">
+      <div class="rego_container">
+
+        <!-- Split 3: APIs and Graph -->
+        <div class="rego_ca_split">
+          <div class="rego_ca_split_visual">
+            <div class="rego_ca_split_orb rego_ca_split_orb_blue" aria-hidden="true"></div>
+            <div class="rego_ca_split_orb rego_ca_split_orb_cyan_sm" aria-hidden="true"></div>
+            <div class="rego_ca_api_card">
+              <div class="rego_ca_api_chart"></div>
+              <div class="rego_ca_api_bar"></div>
+              <span class="rego_ca_api_pill">1200+ APIs</span>
+            </div>
+          </div>
+          <div class="rego_ca_split_copy">
+            <h3 class="rego_ca_split_title"><span class="rego_ca_hero_accent">APIs and Graph</span> Enable Seamless Data Exchange</h3>
+            <p class="rego_ca_split_desc">RegO enables your compliance systems to interoperate seamlessly, with more than 1,300 APIs, a GraphQL (build your own API) architecture, and an advanced workflow automation platform that allows for seamless data exchange between systems.</p>
+            <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_split_btn">See Tech Docs</a>
+          </div>
+        </div>
+
+        <!-- Split 4: Self-Updating Documents (reversed) -->
+        <div class="rego_ca_split rego_ca_split_reverse">
+          <div class="rego_ca_split_copy">
+            <h3 class="rego_ca_split_title"><span class="rego_ca_hero_accent">Get Self-Updating Documents</span> in the Right Format</h3>
+            <p class="rego_ca_split_desc">RegO supports self-updating paperwork with the ability to auto-generate Microsoft Word and Excel documents in the exact formats expected by your regulators, board of directors, or other stakeholders.</p>
+            <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_split_btn">See Tech Docs</a>
+          </div>
+          <div class="rego_ca_split_visual">
+            <div class="rego_ca_split_orb rego_ca_split_orb_blue" aria-hidden="true"></div>
+            <div class="rego_ca_split_orb rego_ca_split_orb_cyan_sm" aria-hidden="true"></div>
+            <div class="rego_ca_dashboard rego_ca_dashboard_sm">
+              <aside class="rego_ca_dash_side">
+                <div class="rego_ca_dash_side_item rego_ca_dash_side_item_active">DHS MARS-E</div>
+                <div class="rego_ca_dash_side_item">Explorer</div>
+                <div class="rego_ca_dash_side_item">Utilities</div>
+              </aside>
+              <div class="rego_ca_dash_main">
+                <div class="rego_ca_dash_tabs">
+                  <span class="rego_ca_dash_tab_active">Scorecard</span>
+                  <span>Gantt Chart</span>
+                  <span>Categorization</span>
+                </div>
+                <div class="rego_ca_dash_card">
+                  <h5>Overall Compliance</h5>
+                  <div class="rego_ca_dash_row_stat">
+                    <span>Compliance Score</span>
+                    <span class="rego_ca_dash_gauge_bar"><span></span></span>
+                    <span class="rego_ca_dash_gauge_val">27%</span>
+                  </div>
+                  <div class="rego_ca_dash_row"><span>Total Controls</span><span class="rego_ca_dash_badge rego_ca_dash_badge_cyan">1</span></div>
+                  <div class="rego_ca_dash_row"><span>Total Assessments</span><span class="rego_ca_dash_badge rego_ca_dash_badge_cyan">4</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CUSTOMER SUCCESS SLIDESHOW -->
+    <section class="rego_section_py rego_ca_success_section" aria-label="Customer success stories">
+      <div class="rego_container">
+        <div class="rego_ca_slider">
+          <div class="rego_ca_slider_track">
+
+            <article class="rego_ca_slide rego_ca_slide_active">
+              <div class="rego_ca_slide_copy">
+                <h3 class="rego_ca_slide_title">Operation StormBreaker <span class="rego_ca_hero_accent">Enables Mission-Speed Technology Delivery</span></h3>
+                <p class="rego_ca_slide_desc">See how USMC-MCCS achieved 99.97% faster ATO with Agile ATO, rapid RMF automation, and continuous authorization to deliver mission-ready technology in minutes.</p>
+                <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_slide_btn">Read Success Story</a>
+              </div>
+              <div class="rego_ca_slide_stat">
+                <div class="rego_ca_slide_stat_icon">✓</div>
+                <div class="rego_ca_slide_stat_title">$100,000</div>
+                <div class="rego_ca_slide_stat_desc">Saved per system per month</div>
+              </div>
+            </article>
+
+            <article class="rego_ca_slide">
+              <div class="rego_ca_slide_copy">
+                <h3 class="rego_ca_slide_title">Government Services Provider <span class="rego_ca_hero_accent">Centralizes Control Management</span></h3>
+                <p class="rego_ca_slide_desc">See how a major government services company unified its control libraries, automated control inheritance, and eliminated manual mapping with RegO.</p>
+                <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_slide_btn">Read Success Story</a>
+              </div>
+              <div class="rego_ca_slide_stat">
+                <div class="rego_ca_slide_stat_icon">✓</div>
+                <div class="rego_ca_slide_stat_title">Streamlined documentation</div>
+                <div class="rego_ca_slide_stat_desc">Faster, more efficient security plan development</div>
+              </div>
+            </article>
+
+            <article class="rego_ca_slide">
+              <div class="rego_ca_slide_copy">
+                <h3 class="rego_ca_slide_title">Global Law Firm Streamlines Documentation and <span class="rego_ca_hero_accent">Centralizes Compliance with RegO</span></h3>
+                <p class="rego_ca_slide_desc">Learn how a global law firm eliminated scattered spreadsheets, automated customer security responses, and unified its framework management with RegO.</p>
+                <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_slide_btn">Read Success Story</a>
+              </div>
+              <div class="rego_ca_slide_stat">
+                <div class="rego_ca_slide_stat_icon">✓</div>
+                <div class="rego_ca_slide_stat_title">Reduced response time</div>
+                <div class="rego_ca_slide_stat_desc">Less manual work to respond to questionnaires and audits</div>
+              </div>
+            </article>
+
+            <article class="rego_ca_slide">
+              <div class="rego_ca_slide_copy">
+                <h3 class="rego_ca_slide_title">Major Healthcare Company Centralizes Compliance and <span class="rego_ca_hero_accent">Eliminates Manual Risk Tracking</span></h3>
+                <p class="rego_ca_slide_desc">See how a major healthcare company consolidated scattered compliance data into one platform, automated evidence collection, and gained real-time visibility across multiple frameworks.</p>
+                <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_slide_btn">Read Success Story</a>
+              </div>
+              <div class="rego_ca_slide_stat">
+                <div class="rego_ca_slide_stat_icon">✓</div>
+                <div class="rego_ca_slide_stat_title">One Platform</div>
+                <div class="rego_ca_slide_stat_desc">Single pane of glass for all compliance operations</div>
+              </div>
+            </article>
+
+            <article class="rego_ca_slide">
+              <div class="rego_ca_slide_copy">
+                <h3 class="rego_ca_slide_title">US Government Agency Automates Evidence Collection and <span class="rego_ca_hero_accent">Reduces Authorization Timelines</span></h3>
+                <p class="rego_ca_slide_desc">Learn how a US government agency eliminated manual evidence collection, integrated with CSAM, and achieved rapid security plan maintenance with RegO.</p>
+                <a href="#" class="rego_btn rego_btn_outline_dark rego_ca_slide_btn">Read Success Story</a>
+              </div>
+              <div class="rego_ca_slide_stat">
+                <div class="rego_ca_slide_stat_icon">✓</div>
+                <div class="rego_ca_slide_stat_title">Automated Evidence</div>
+                <div class="rego_ca_slide_stat_desc">Integration-driven collection from AWS and QRadar</div>
+              </div>
+            </article>
+
+          </div>
+          <div class="rego_ca_slider_dots" role="tablist" aria-label="Select slide"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTROLS LIFECYCLE CIRCLE -->
+    <section class="rego_section_py rego_ca_lifecycle_section">
+      <div class="rego_container">
+        <div class="rego_section_center_header">
+          <h2 class="rego_ca_lifecycle_title">Automated <span class="rego_ca_hero_accent">controls</span> lifecycle management</h2>
+          <p class="rego_ca_lifecycle_desc">Simplify and streamline your control lifecycle with advanced automation, industry-leading AI, and pre-built business processes based on decades of lessons learned in the industry. Rapidly configure to meet your unique business requirements and then ruthlessly automate every phase of the control lifecycle.</p>
+        </div>
+
+        <div class="rego_ca_lifecycle_grid">
+          <div class="rego_ca_lifecycle_wheel" aria-hidden="true">
+            <span class="rego_ca_wheel_segment rego_ca_wheel_build" data-label="Build">Build</span>
+            <span class="rego_ca_wheel_segment rego_ca_wheel_collect" data-label="Collect">Collect</span>
+            <span class="rego_ca_wheel_segment rego_ca_wheel_assess" data-label="Assess">Assess</span>
+            <span class="rego_ca_wheel_segment rego_ca_wheel_fix" data-label="Fix">Fix Issues</span>
+            <span class="rego_ca_wheel_segment rego_ca_wheel_manage" data-label="Manage">Manage Risk</span>
+            <span class="rego_ca_wheel_segment rego_ca_wheel_govern" data-label="Govern">Govern</span>
+            <div class="rego_ca_wheel_center">
+              <div class="rego_ca_wheel_logo">R</div>
+              <p>Controls lifecycle management</p>
+            </div>
+          </div>
+
+          <div class="rego_ca_lifecycle_panel">
+            <h4 class="rego_ca_lifecycle_panel_title">01: Build the Program</h4>
+            <div class="rego_ca_lifecycle_item">
+              <span>Fully Digitized Regulations</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="rego_ca_lifecycle_item">
+              <span>Control Mapping</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="rego_ca_lifecycle_item">
+              <span>Wizard-Driven Builders</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="rego_ca_lifecycle_item">
+              <span>AI Capabilities</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAST TRACK CTA -->
+    <section class="rego_section_py rego_ca_fasttrack_section">
+      <div class="rego_container">
+        <div class="rego_ca_fasttrack_grid">
+          <div class="rego_ca_fasttrack_copy">
+            <h2 class="rego_ca_fasttrack_title">Ready to fast track your compliance? <span class="rego_ca_hero_accent">Let us show you how it's done</span></h2>
+            <p class="rego_ca_fasttrack_desc">Reading can only get you so far. That's why we'd like to give you a quick live walkthrough of RegO to show you exactly what we can do for your organization.</p>
+            <a href="#" class="rego_btn rego_btn_primary rego_ca_fasttrack_btn">Get a Demo</a>
+          </div>
+          <div class="rego_ca_fasttrack_visual" aria-hidden="true">
+            <div class="rego_ca_fasttrack_card">
+              <div class="rego_ca_fasttrack_header">
+                <div class="rego_ca_fasttrack_logo"></div>
+                <span>RegO</span>
+              </div>
+              <div class="rego_ca_fasttrack_layout">
+                <aside>
+                  <div class="rego_ca_fasttrack_side">Build Program</div>
+                  <div class="rego_ca_fasttrack_side rego_ca_fasttrack_side_active">Assess Program</div>
+                  <div class="rego_ca_fasttrack_side">Fix Problems</div>
+                  <div class="rego_ca_fasttrack_side">Manage Risk</div>
+                </aside>
+                <div class="rego_ca_fasttrack_panels">
+                  <div class="rego_ca_fasttrack_panel">
+                    <h6>Build Program</h6>
+                    <div>COMPLIANCE SCORE: <strong>40%</strong></div>
+                  </div>
+                  <div class="rego_ca_fasttrack_panel">
+                    <h6>Fix Problems</h6>
+                    <div class="rego_ca_fasttrack_donut"><span>118</span></div>
+                  </div>
+                  <div class="rego_ca_fasttrack_panel">
+                    <h6>Manage Risk</h6>
+                    <div>POTENTIAL SAVINGS <strong>$0k</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAY UP TO DATE -->
+    <section class="rego_section_py rego_ca_updates_section">
+      <div class="rego_container">
+        <h2 class="rego_ca_updates_title">More ways to <span class="rego_ca_hero_accent">stay up to date</span></h2>
+        <div class="rego_ca_updates_grid">
+          <div class="rego_ca_updates_col">
+
+            <article class="rego_ca_update_card">
+              <div class="rego_ca_update_thumb rego_ca_thumb_cyan">
+                <span class="rego_ca_update_pill">BLOG</span>
+                <div class="rego_ca_update_logo"><span class="rego_ca_update_logo_mark">R</span>RegO</div>
+                <h4 class="rego_ca_update_hero_title">What is Continuous Controls Monitoring &amp; Its Impact on Cybersecurity?</h4>
+              </div>
+              <div class="rego_ca_update_body">
+                <span class="rego_ca_update_tag">BLOG</span>
+                <h3 class="rego_ca_update_title">What is Continuous Controls Monitoring &amp; Its Impact on Cybersecurity?</h3>
+              </div>
+            </article>
+
+            <article class="rego_ca_update_card">
+              <div class="rego_ca_update_thumb rego_ca_thumb_wp">
+                <span class="rego_ca_update_pill">WHITE PAPER</span>
+                <div class="rego_ca_update_logo rego_ca_update_logo_bl"><span class="rego_ca_update_logo_mark">R</span>RegO</div>
+                <h4 class="rego_ca_update_hero_title">Leveraging Continuous Controls Monitoring (CCM) for Compliance and Security</h4>
+              </div>
+              <div class="rego_ca_update_body">
+                <span class="rego_ca_update_tag">WHITE PAPER</span>
+                <h3 class="rego_ca_update_title">How Continuous Monitoring Streamlines Compliance &amp; Security</h3>
+              </div>
+            </article>
+
+            <article class="rego_ca_update_card">
+              <div class="rego_ca_update_thumb rego_ca_thumb_food">
+                <span class="rego_ca_update_pill rego_ca_update_pill_dark">SUCCESS STORY</span>
+                <h4 class="rego_ca_update_hero_title rego_ca_update_hero_title_food">FOOD SERVICE</h4>
+              </div>
+              <div class="rego_ca_update_body">
+                <span class="rego_ca_update_tag">SUCCESS STORY</span>
+                <h3 class="rego_ca_update_title">Company Streamlines Compliance via Automated Controls Mapping</h3>
+              </div>
+            </article>
+
+          </div>
+
+          <aside class="rego_ca_signup">
+            <h3 class="rego_ca_signup_title">Get insights delivered to your inbox</h3>
+            <p class="rego_ca_signup_desc">Receive platform tips, release updates, news and more</p>
+            <form class="rego_ca_signup_form" onsubmit="return false;">
+              <input type="text" placeholder="First Name*" class="rego_ca_signup_input" required>
+              <input type="text" placeholder="Last Name*" class="rego_ca_signup_input" required>
+              <input type="text" placeholder="Job title*" class="rego_ca_signup_input" required>
+              <input type="text" placeholder="Company*" class="rego_ca_signup_input" required>
+              <input type="email" placeholder="Email*" class="rego_ca_signup_input" required>
+              <label class="rego_ca_signup_consent">
+                <input type="checkbox" required>
+                <span>I consent to receive RegO emails. RegO may process my data and I may unsubscribe per their <a href="#">Privacy Policy</a>. *</span>
+              </label>
+              <button type="submit" class="rego_ca_signup_btn">Submit</button>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="rego_footer_mount"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/compliance-automation.js"></script>
+</body>
+</html>
