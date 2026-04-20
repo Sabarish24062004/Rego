@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RegO built on OSCAL. Machine-readable, interoperable compliance at scale with catalogs and profiles." />
+  <title>RegO – Compliance Catalogs &amp; Profiles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/compliance-catalogs-and-profiles.css" />
+</head>
+<body>
+
+  <div id="rego_header_mount"></div>
+
+  <main id="rego_main">
+    <section class="rego_ccp_intro">
+      <div class="rego_container rego_ccp_intro_inner">
+        <div class="rego_ccp_title_row">
+          <h1 class="rego_ccp_title">Catalogs and Profiles</h1>
+          <span class="rego_ccp_title_count" id="rego_ccp_total">74</span>
+        </div>
+
+        <p class="rego_ccp_intro_text">
+          From FedRAMP to PCI, from CMMC to ISO and CRI, the standards, laws, and regulations that we
+          support can be found in our library of digitized compliance catalogs and profiles.
+        </p>
+
+        <p class="rego_ccp_oscal_prompt">Looking for these catalogs in an OSCAL format?</p>
+        <div class="rego_ccp_oscal_cta_wrap">
+          <a href="#" class="rego_ccp_oscal_btn">Request OSCAL Format</a>
+        </div>
+        <p class="rego_ccp_terms">
+          Use of the catalogs provided herein are governed by the then-current RegO
+          <a href="#" class="rego_ccp_terms_link">Terms of Service</a> available here.
+        </p>
+      </div>
+    </section>
+
+    <section class="rego_ccp_browser">
+      <div class="rego_container">
+
+        <div class="rego_ccp_filters" role="tablist" aria-label="Catalog type filters">
+          <button class="rego_ccp_filter_btn rego_ccp_is_active" data-type="all" type="button">
+            All Types
+          </button>
+          <button class="rego_ccp_filter_btn" data-type="catalog" type="button">
+            Catalogs <span class="rego_ccp_filter_count">66</span>
+          </button>
+          <button class="rego_ccp_filter_btn" data-type="profile" type="button">
+            Profiles <span class="rego_ccp_filter_count">7</span>
+          </button>
+          <button class="rego_ccp_filter_btn" data-type="other" type="button">
+            Other <span class="rego_ccp_filter_count">1</span>
+          </button>
+
+          <div class="rego_ccp_sort">
+            <button class="rego_ccp_sort_btn" id="rego_ccp_sort_btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span id="rego_ccp_sort_label">Sort by Date</span>
+              <svg class="rego_ccp_sort_caret" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="rego_ccp_sort_menu" id="rego_ccp_sort_menu" role="listbox">
+              <li role="option" data-sort="date">Sort by Date</li>
+              <li role="option" data-sort="az">Sort A–Z</li>
+              <li role="option" data-sort="za">Sort Z–A</li>
+            </ul>
+          </div>
+        </div>
+
+        <nav class="rego_ccp_topics" aria-label="Topic filters">
+          <button class="rego_ccp_topic rego_ccp_is_active" data-topic="all" type="button">All Topics</button>
+          <button class="rego_ccp_topic" data-topic="ai" type="button">Artificial Intelligence</button>
+          <button class="rego_ccp_topic" data-topic="cyber" type="button">Cyber Security</button>
+          <button class="rego_ccp_topic" data-topic="defense" type="button">Defense</button>
+          <button class="rego_ccp_topic" data-topic="energy" type="button">Energy</button>
+          <button class="rego_ccp_topic" data-topic="financial" type="button">Financial</button>
+          <button class="rego_ccp_topic" data-topic="healthcare" type="button">Healthcare</button>
+          <button class="rego_ccp_topic" data-topic="privacy" type="button">Privacy</button>
+        </nav>
+
+        <div class="rego_ccp_search">
+          <input type="search" id="rego_ccp_search_input" class="rego_ccp_search_input" placeholder="Search" aria-label="Search catalogs" />
+          <button class="rego_ccp_search_btn" type="button" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="rego_ccp_grid" id="rego_ccp_grid">
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="cyber" data-date="2026-02-05" data-title="NIST 800-82-R3 - Moderate Impact - Guide to Operational Technology">
+            <header class="rego_ccp_card_cat">Cyber Security</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-82-R3 - Moderate Impact - Guide to Operational Technolog…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 02/05/2026</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="energy" data-date="2026-01-13" data-title="NRC RG 5.71 Rev. 1 Cyber Security Program for Nuclear">
+            <header class="rego_ccp_card_cat">Energy</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NRC RG 5.71 Rev. 1 — Cyber Security Program for Nuclear…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/13/2026</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="financial" data-date="2026-01-11" data-title="Federal Financial Institutions Examination Council FFIEC">
+            <header class="rego_ccp_card_cat">Financial</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Federal Financial Institutions Examination Council (FFIEC)…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/11/2026</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="cyber" data-date="2026-01-04" data-title="FedRAMP Key Security Indicators v2">
+            <header class="rego_ccp_card_cat">Cyber Security</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">FedRAMP Key Security Indicators v2</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/04/2026</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="financial" data-date="2025-12-16" data-title="Payment Card Industry Data Security Standard PCI DSS">
+            <header class="rego_ccp_card_cat">Financial</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Payment Card Industry Data Security Standard (PCI DSS)…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 12/16/2025</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="defense" data-date="2025-09-24" data-title="Canada CMMC">
+            <header class="rego_ccp_card_cat">Defense</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Canada CMMC</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 09/24/2025</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_request">Request Info</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="energy" data-date="2025-08-25" data-title="NERC CIP Reliability Standards">
+            <header class="rego_ccp_card_cat">Energy</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NERC CIP Reliability Standards</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 08/25/2025</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="cyber" data-date="2025-06-18" data-title="FedRAMP Key Security Indicators">
+            <header class="rego_ccp_card_cat">Cyber Security</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">FedRAMP Key Security Indicators</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 06/18/2025</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_request">Request Info</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="defense" data-date="2025-05-09" data-title="Zero Trust Architecture ZTA">
+            <header class="rego_ccp_card_cat">Defense</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Zero Trust Architecture (ZTA)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 05/09/2025</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_request">Request Info</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="cyber" data-date="2024-12-18" data-title="NIST 800-82-R3 High Impact Guide to Operational Technology">
+            <header class="rego_ccp_card_cat">Cyber Security</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-82-R3 – High Impact – Guide to Operational Technology…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 12/18/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="cyber" data-date="2024-12-18" data-title="NIST 800-82-R3 Low Impact Guide to Operational Technology">
+            <header class="rego_ccp_card_cat">Cyber Security</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-82-R3 – Low Impact – Guide to Operational Technology…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 12/18/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="1" data-topic="defense" data-date="2024-11-22" data-title="Cybersecurity Maturity Model Certification CMMC">
+            <header class="rego_ccp_card_cat">Defense</header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Cybersecurity Maturity Model Certification (CMMC)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 11/22/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_request">Request Info</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="2" data-topic="ai" data-date="2024-11-13" data-title="NIST Artificial Intelligence Risk Management Playbook AI RMF">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Artificial Intelligence</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST Artificial Intelligence Risk Management Playbook (AI RMF…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 11/13/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="2" data-topic="cyber" data-date="2024-11-07" data-title="South Australian Cyber Security Framework V1.1">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">South Australian Cyber Security Framework (V1.1)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 11/07/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="2" data-topic="financial" data-date="2024-10-18" data-title="Payment Card Industry PCI Data Security Standard DSS 4.0.1">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Financial</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Payment Card Industry (PCI) Data Security Standard (DSS) 4.0.1</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 10/18/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="2" data-topic="cyber" data-date="2024-10-10" data-title="Criminal Justice Information Services CJIS Security Policy">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Criminal Justice Information Services (CJIS) Security Policy…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 10/10/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="profile" data-page="2" data-topic="cyber" data-date="2024-08-09" data-title="NIST 800-53 Revision 5 High Baseline Profile">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 Revision 5 - High Baseline Profile</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge rego_ccp_badge_profile">PROFILE</span>
+              <span class="rego_ccp_updated">Updated: 08/09/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="profile" data-page="2" data-topic="cyber" data-date="2024-08-09" data-title="NIST 800-53 Revision 5 Low Baseline Profile">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 Revision 5 - Low Baseline Profile</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge rego_ccp_badge_profile">PROFILE</span>
+              <span class="rego_ccp_updated">Updated: 08/09/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="profile" data-page="2" data-topic="cyber" data-date="2024-08-09" data-title="NIST 800-53 Revision 5 Moderate Baseline Profile">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 Revision 5 - Moderate Baseline Profile</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge rego_ccp_badge_profile">PROFILE</span>
+              <span class="rego_ccp_updated">Updated: 08/09/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="profile" data-page="2" data-topic="privacy" data-date="2024-08-09" data-title="NIST 800-53 Revision 5 Privacy Baseline Profile">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Privacy</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 Revision 5 - Privacy Baseline Profile</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge rego_ccp_badge_profile">PROFILE</span>
+              <span class="rego_ccp_updated">Updated: 08/09/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="2" data-topic="cyber privacy" data-date="2024-08-09" data-title="NIST SP 800-53 Rev 5 Controls and SP 800-53A Rev 5 Assessment">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+              <span class="rego_ccp_tag_sep" aria-hidden="true">•</span>
+              <span class="rego_ccp_tag">Privacy</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST SP 800-53 Rev 5 Controls and SP 800-53A Rev 5 Assessment…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 08/09/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="2" data-topic="cyber" data-date="2024-07-31" data-title="ISO International Organization for Standardization All Catalogs">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">ISO - International Organization for Standardization (All Catalogs)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 07/31/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="2" data-topic="cyber privacy" data-date="2024-07-31" data-title="FedRAMP R5 High Baseline OSCAL Compliant">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+              <span class="rego_ccp_tag_sep" aria-hidden="true">•</span>
+              <span class="rego_ccp_tag">Privacy</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">FedRAMP R5 High Baseline (OSCAL Compliant)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 07/31/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="2" data-topic="cyber privacy" data-date="2024-07-31" data-title="FedRAMP R5 Moderate Baseline OSCAL Compliant">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+              <span class="rego_ccp_tag_sep" aria-hidden="true">•</span>
+              <span class="rego_ccp_tag">Privacy</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">FedRAMP R5 Moderate Baseline (OSCAL Compliant)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 07/31/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <!-- ==================== PAGE 3 ==================== -->
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="cyber privacy" data-date="2024-07-31" data-title="FedRAMP R5 Low Baseline OSCAL Compliant">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+              <span class="rego_ccp_tag_sep" aria-hidden="true">•</span>
+              <span class="rego_ccp_tag">Privacy</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">FedRAMP R5 Low Baseline (OSCAL Compliant)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 07/31/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="cyber" data-date="2024-07-12" data-title="General Data Protection Regulation GDPR">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">General Data Protection Regulation (GDPR)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 07/12/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="cyber privacy" data-date="2024-07-11" data-title="StateRAMP Rev 5 Moderate Impact Baseline">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+              <span class="rego_ccp_tag_sep" aria-hidden="true">•</span>
+              <span class="rego_ccp_tag">Privacy</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">StateRAMP - Rev. 5 Moderate Impact Baseline</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 07/11/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="cyber" data-date="2024-06-27" data-title="CSA Cloud Controls Matrix CCM Version 3.0.1">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">CSA Cloud Controls Matrix (CCM) Version 3.0.1</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 06/27/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="privacy" data-date="2024-06-23" data-title="California Consumer Privacy Act CCPA">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Privacy</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">California Consumer Privacy Act (CCPA)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 06/23/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="cyber" data-date="2024-06-17" data-title="NIST 800-82 Revision 2 Overlay Moderate Impact Baseline">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-82 Revision 2 Overlay - Moderate Impact Baseline - Guid…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 06/17/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="cyber" data-date="2024-06-17" data-title="SOC 2 Version 2020.3">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">SOC 2 Version 2020.3</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 06/17/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="profile" data-page="3" data-topic="cyber" data-date="2024-06-05" data-title="NIST 800-53 Revision 4 HIGH Baseline Profile">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 Revision 4 - HIGH Baseline Profile</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge rego_ccp_badge_profile">PROFILE</span>
+              <span class="rego_ccp_updated">Updated: 06/05/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="profile" data-page="3" data-topic="cyber" data-date="2024-06-05" data-title="NIST 800-53 Revision 4 MODERATE Baseline Profile">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 Revision 4 - MODERATE Baseline Profile</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge rego_ccp_badge_profile">PROFILE</span>
+              <span class="rego_ccp_updated">Updated: 06/05/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="profile" data-page="3" data-topic="cyber" data-date="2024-06-05" data-title="NIST 800-53 Revision 4 LOW Baseline Profile">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 Revision 4 - LOW Baseline Profile</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge rego_ccp_badge_profile">PROFILE</span>
+              <span class="rego_ccp_updated">Updated: 06/05/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="cyber" data-date="2024-06-03" data-title="NIST 800-53 Revision 4 Security and Privacy Controls for Federal">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 Revision 4: Security and Privacy Controls for Federal…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 06/03/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="3" data-topic="cyber" data-date="2024-06-03" data-title="NIST 800-82 Revision 2 Overlay High Impact Baseline">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-82 Revision 2 Overlay - High Impact Baseline - Guide to…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 06/03/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <!-- ==================== PAGE 4 ==================== -->
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="cyber" data-date="2024-06-03" data-title="NIST 800-82 Revision 2 Overlay Low Impact Baseline">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-82 Revision 2 Overlay - Low Impact Baseline - Guide to…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 06/03/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="financial" data-date="2024-04-11" data-title="Financial Services Sector Cybersecurity Profile FSSCP v1.0">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Financial</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Financial Services Sector Cybersecurity Profile (FSSCP) v1.0</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 04/11/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="cyber" data-date="2024-03-25" data-title="NIST 800-171 Rev 3 Protecting Controlled Unclassified">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-171 Rev. 3 - Protecting Controlled Unclassified…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 03/25/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="cyber" data-date="2024-03-20" data-title="OWASP Application Security Verification Standard ASVS 4.0.3">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">OWASP Application Security Verification Standard (ASVS) 4.0.3</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 03/20/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="cyber" data-date="2024-02-26" data-title="NIST Cybersecurity Framework CSF 2.0">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST Cybersecurity Framework (CSF) 2.0</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 02/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="cyber" data-date="2024-01-29" data-title="NIST Cybersecurity Framework Version 1.1">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST Cybersecurity Framework Version 1.1</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="financial" data-date="2024-01-29" data-title="H.R.3763 Sarbanes-Oxley Act of 2002">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Financial</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">H.R.3763 - Sarbanes-Oxley Act of 2002</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="cyber" data-date="2024-01-29" data-title="Minimum Viable Secure Product MVSP Version 1.0">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Minimum Viable Secure Product (MVSP Version 1.0-20211007)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="financial" data-date="2024-01-29" data-title="New York Department of Financial Services NYDFS">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Financial</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">New York Department of Financial Services (NYDFS)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="healthcare" data-date="2024-01-29" data-title="MARS-E Version 2.2">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Healthcare</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">MARS-E Version 2.2</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="cyber" data-date="2024-01-29" data-title="Security Controls Framework SCF Version 2022.2">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Security Controls Framework (SCF) Version 2022.2</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="4" data-topic="cyber" data-date="2024-01-29" data-title="DSS Electronic Communications Plan">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">DSS Electronic Communications Plan</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <!-- ==================== PAGE 5 ==================== -->
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="healthcare" data-date="2024-01-29" data-title="HIPAA">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Healthcare</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">HIPAA</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="cyber" data-date="2024-01-29" data-title="NIST SP 800-218 Secure Software Development Framework SSDF">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST SP 800-218 Secure Software Development Framework (SSDF)…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="cyber" data-date="2024-01-29" data-title="OMB M-22-09 Moving the US Government Toward Zero Trust">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">OMB M-22-09 - Moving the U.S. Government Toward Zero Trust…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="privacy" data-date="2024-01-29" data-title="NIST Privacy Framework A Tool for Improving Privacy">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Privacy</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST Privacy Framework: A Tool for Improving Privacy through…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/29/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="cyber" data-date="2024-01-26" data-title="NIST 800-171 Rev 2 Protecting Controlled Unclassified">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-171 Rev. 2 - Protecting Controlled Unclassified…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="financial" data-date="2024-01-26" data-title="Cyber Risk Institute CRI Profile v1.2 Tier 2">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Financial</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Cyber Risk Institute (CRI) Profile v1.2 Tier 2</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="cyber" data-date="2024-01-26" data-title="CIS Controls Version 8 Implementation Group 2">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">CIS Controls Version 8 - Implementation Group 2</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="cyber" data-date="2024-01-26" data-title="COBIT 2019">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">COBIT 2019</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="cyber" data-date="2024-01-26" data-title="Australian Information Security Manual ISM">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Australian Information Security Manual (ISM)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="healthcare" data-date="2024-01-26" data-title="CMS Acceptable Risk Safeguards ARS">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Healthcare</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">CMS Acceptable Risk Safeguards (ARS)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="cyber" data-date="2024-01-26" data-title="FedRAMP Rev 4 High Baseline">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">FedRAMP Rev 4 High Baseline</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="5" data-topic="cyber" data-date="2024-01-26" data-title="NIST 800-53 R4 Privacy Controls Appendix J">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST 800-53 R4 Privacy Controls (Appendix J)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <!-- ==================== PAGE 6 ==================== -->
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="CSA Cloud Controls Matrix CCM Version 4.0">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">CSA Cloud Controls Matrix (CCM) Version 4.0</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="financial" data-date="2024-01-26" data-title="Cyber Risk Institute CRI Profile v1.2 Tier 3">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Financial</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Cyber Risk Institute (CRI) Profile v1.2 Tier 3</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="Cyber Risk Institute CRI Profile v1.2 Tier 4">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Cyber Risk Institute (CRI) Profile v1.2 Tier 4</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="CIS Controls Version 8 Implementation Group 1">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">CIS Controls Version 8 - Implementation Group 1</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="FedRAMP Rev 4 Moderate Baseline">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">FedRAMP Rev 4 Moderate Baseline</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="DHS 4300A Sensitive Systems Handbook">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">DHS 4300A Sensitive Systems Handbook</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="FedRAMP Rev 4 Low Baseline">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">FedRAMP Rev 4 Low Baseline</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="CIS Controls Version 8 Implementation Group 3">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">CIS Controls Version 8 - Implementation Group 3</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_request">Request Info</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="Standardized Architecture for CIS AWS Foundations Benchmark">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Standardized Architecture for CIS AWS Foundations Benchmark,…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="Cyber Risk Institute CRI Profile v1.2 Tier 1">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Cyber Risk Institute (CRI) Profile v1.2 Tier 1</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="CISA CROSS-SECTOR CYBERSECURITY PERFORMANCE">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">CISA CROSS-SECTOR CYBERSECURITY PERFORMANCE…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="6" data-topic="cyber" data-date="2024-01-26" data-title="Cybersecurity Capability Maturity Model C2M2 Version 2.1">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Cybersecurity Capability Maturity Model (C2M2 Version 2.1)</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 01/26/2024</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <!-- ==================== PAGE 7 ==================== -->
+
+          <article class="rego_ccp_card" data-type="other" data-page="7" data-topic="cyber" data-date="2023-05-02" data-title="NIST SP 800-60 Vol 2 Rev 1 Guide for Mapping Types">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">NIST SP 800-60 Vol. 2 Rev. 1: Guide for Mapping Types of…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge rego_ccp_badge_other">OTHER</span>
+              <span class="rego_ccp_updated">Updated: 05/02/2023</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+          <article class="rego_ccp_card" data-type="catalog" data-page="7" data-topic="cyber" data-date="2021-10-01" data-title="Trusted Internet Connection TIC 3.0 Security Capabilities Catalog">
+            <header class="rego_ccp_card_cat">
+              <span class="rego_ccp_tag">Cyber Security</span>
+            </header>
+            <div class="rego_ccp_card_title_wrap">
+              <h3 class="rego_ccp_card_title">Trusted Internet Connection (TIC) 3.0 Security Capabilities Catalog…</h3>
+            </div>
+            <div class="rego_ccp_card_meta">
+              <span class="rego_ccp_badge">CATALOG</span>
+              <span class="rego_ccp_updated">Updated: 10/01/2021</span>
+            </div>
+            <footer class="rego_ccp_card_actions">
+              <a href="#" class="rego_ccp_learn">Learn More<span class="rego_ccp_arrow">→</span></a>
+              <a href="#" class="rego_ccp_action rego_ccp_action_download">Download</a>
+            </footer>
+          </article>
+
+        </div>
+
+        <p class="rego_ccp_empty" id="rego_ccp_empty" hidden>No matching catalogs or profiles found.</p>
+
+        <nav class="rego_ccp_pagination" id="rego_ccp_pagination" aria-label="Pagination">
+          <button class="rego_ccp_page_prev" id="rego_ccp_prev" type="button" hidden>
+            <span class="rego_ccp_arrow_left">←</span> Prev
+          </button>
+          <button class="rego_ccp_page rego_ccp_is_active" data-page="1" type="button">1</button>
+          <button class="rego_ccp_page" data-page="2" type="button">2</button>
+          <button class="rego_ccp_page" data-page="3" type="button">3</button>
+          <button class="rego_ccp_page" data-page="4" type="button">4</button>
+          <button class="rego_ccp_page" data-page="5" type="button">5</button>
+          <button class="rego_ccp_page" data-page="6" type="button">6</button>
+          <button class="rego_ccp_page" data-page="7" type="button">7</button>
+          <button class="rego_ccp_page_next" id="rego_ccp_next" type="button">
+            Next <span class="rego_ccp_arrow">→</span>
+          </button>
+        </nav>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="rego_footer_mount"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/compliance-catalogs-and-profiles.js"></script>
+
+</body>
+</html>
