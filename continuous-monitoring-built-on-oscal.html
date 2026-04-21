@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Continuous Controls Monitoring built on OSCAL — machine-readable support for NIST catalogs, profiles, SSPs, SAP/SAR, and POA&Ms." />
+  <title>Continuous Monitoring Built on OSCAL – Rego</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/continuous-monitoring-built-on-oscal.css" />
+</head>
+<body>
+
+  <div id="rego_header_mount"></div>
+
+  <main id="rego_main">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="rego_cm_hero">
+      <div class="rego_container rego_cm_hero_inner">
+        <div class="rego_cm_hero_text">
+          <span class="rego_cm_eyebrow">COMPLIANCE AS CODE / OSCAL</span>
+          <h1 class="rego_cm_hero_title">
+            Continuous Controls Monitoring
+            <span class="rego_cm_accent">That's Built on OSCAL</span>
+          </h1>
+          <p class="rego_cm_hero_desc">
+            Based on the NIST gold standard, Rego's platform is architected to provide full
+            machine-readable support for NIST OSCAL, including catalogs, profiles, security plans,
+            components, SAP/SAR, and POA&amp;Ms.
+          </p>
+          <a href="#" class="rego_cm_btn rego_cm_btn_primary">Get a Demo</a>
+        </div>
+
+        <div class="rego_cm_hero_visual" aria-hidden="true">
+          <div class="rego_cm_feat_orb rego_cm_feat_orb_blue"></div>
+          <div class="rego_cm_feat_orb rego_cm_feat_orb_purple"></div>
+          <div class="rego_cm_feat_orb rego_cm_feat_orb_teal"></div>
+          <div class="rego_cm_dash">
+            <div class="rego_cm_dash_head">
+              <span class="rego_cm_dash_brand"><img src="images/rego-logo.png" alt="Rego" />Rego</span>
+              <span class="rego_cm_dash_nav">Workspace · Status Boards · Modules · reports</span>
+            </div>
+            <div class="rego_cm_dash_row">
+              <span class="rego_cm_dash_side rego_cm_dash_side_g">MARS-E</span>
+              <div class="rego_cm_dash_tabs">
+                <span>Basic Info</span><span class="rego_cm_is_active">Scorecard</span>
+                <span>Gantt Chart</span><span>Categorization</span><span>Key Dates</span>
+              </div>
+            </div>
+            <div class="rego_cm_dash_body">
+              <div class="rego_cm_dash_left">
+                <strong>DHS MARS-E</strong>
+                <div class="rego_cm_dash_overall">
+                  <div class="rego_cm_dash_overall_title">Overall Compliance</div>
+                  <div class="rego_cm_dash_gauge_row">
+                    <span class="rego_cm_dash_gauge_label">Compliance Score</span>
+                    <svg viewBox="0 0 80 50" width="60" height="40">
+                      <path d="M8,42 A32,32 0 0 1 72,42" stroke="#e4e6f1" stroke-width="8" fill="none"/>
+                      <path d="M8,42 A32,32 0 0 1 52,13" stroke="#3db9e5" stroke-width="8" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <span class="rego_cm_dash_pct">27%</span>
+                  </div>
+                  <div class="rego_cm_dash_metric"><span>Total Controls</span><span class="rego_cm_dash_badge">1</span></div>
+                  <div class="rego_cm_dash_metric"><span>Total Assessments</span><span class="rego_cm_dash_badge rego_cm_dash_badge_t">4</span></div>
+                </div>
+                <div class="rego_cm_dash_chat">
+                  <strong>Comments &amp; Message</strong>
+                  <div class="rego_cm_dash_chat_row">
+                    <span class="rego_cm_dash_avatar"></span>
+                    <span>Alfredo Torres · 1 Minute Ago</span>
+                    <span class="rego_cm_dash_reply">Reply</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rego_cm_dash_right">
+                <div class="rego_cm_oscal_card">
+                  <span class="rego_cm_oscal_label">&lt;/&gt; OSCAL</span>
+                  <div class="rego_cm_oscal_lines">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="rego_cm_nist_badge">
+                  <span>NIST</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TRUSTED ==================== -->
+    <section class="rego_cm_trusted">
+      <div class="rego_container">
+        <p class="rego_cm_trusted_title">Trusted by the most secure and compliant organizations on the planet</p>
+      </div>
+      <div class="rego_cm_trusted_viewport">
+        <div class="rego_cm_trusted_marquee">
+          <div class="rego_cm_trusted_group">
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Brookhaven-National-Lab-Logo-300x132.png" alt="Brookhaven National Lab"/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Cornerstone-OnDemand-Inc-Logo-300x132.png" alt="Cornerstone"/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Department-of-Energy-Logo-300x132.png" alt="Department of Energy"/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/DHCF-Logo-300x132.png" alt="DHCF"/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Dragos-Logo-300x132.png" alt="Dragos"/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Idaho-National-Laboratory-Logo-300x132.png" alt="Idaho National Laboratory"/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/KeyBank-Logo-300x132.png" alt="KeyBank"/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Oak-Ridge-National-Lab-Logo-300x132.png" alt="Oak Ridge National Lab"/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/BMC-Logo-300x132.png" alt="BMC"/>
+          </div>
+          <div class="rego_cm_trusted_group" aria-hidden="true">
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Brookhaven-National-Lab-Logo-300x132.png" alt=""/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Cornerstone-OnDemand-Inc-Logo-300x132.png" alt=""/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Department-of-Energy-Logo-300x132.png" alt=""/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/DHCF-Logo-300x132.png" alt=""/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Dragos-Logo-300x132.png" alt=""/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Idaho-National-Laboratory-Logo-300x132.png" alt=""/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/KeyBank-Logo-300x132.png" alt=""/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Oak-Ridge-National-Lab-Logo-300x132.png" alt=""/>
+            <img class="rego_cm_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/BMC-Logo-300x132.png" alt=""/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== POWER OF CCM ==================== -->
+    <section class="rego_cm_power">
+      <div class="rego_container">
+        <h2 class="rego_cm_section_title rego_cm_center">
+          <span class="rego_cm_accent">The Power</span> of Rego CCM
+        </h2>
+        <div class="rego_cm_power_grid">
+          <div class="rego_cm_stat_card">
+            <div class="rego_cm_stat_value">60%</div>
+            <p class="rego_cm_stat_desc">Reduction in audit prep &amp;<br/>response time</p>
+          </div>
+          <div class="rego_cm_stat_card">
+            <div class="rego_cm_stat_value">90 days</div>
+            <p class="rego_cm_stat_desc">Submission of FedRAMP High<br/>package vs. 18 months</p>
+          </div>
+          <div class="rego_cm_stat_card">
+            <div class="rego_cm_stat_value">94%</div>
+            <p class="rego_cm_stat_desc">Reduction in effort to complete<br/>SOC 2 Type 2</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== REDUCES WORKLOAD ==================== -->
+    <section class="rego_cm_workload">
+      <div class="rego_container">
+        <h2 class="rego_cm_section_title rego_cm_center">
+          How compliance as code <span class="rego_cm_accent">reduces workload</span>
+        </h2>
+        <p class="rego_cm_section_desc rego_cm_center">
+          Rego brings the agile principles of DevOps to security, risk, and compliance — allowing
+          enterprises to enforce guardrails, identify and assess gaps in policies, audit security and
+          compliance, and manage issues and POA&amp;Ms across the product development and delivery
+          life cycles. Rego's OCSF- and OSCAL-native platform enables compliance as code to
+          efficiently and accurately identify GRC gaps and automatically manage remediation
+          workflows.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== OSCAL HUB ==================== -->
+    <section class="rego_cm_split_sec">
+      <div class="rego_container rego_cm_split">
+        <div class="rego_cm_feat_text">
+          <h2 class="rego_cm_section_title">
+            OSCAL Hub: The Industry Standard for
+            <span class="rego_cm_accent">Easier Continuous Monitoring</span>
+          </h2>
+          <p class="rego_cm_section_desc">
+            Explore OSCAL Hub, the comprehensive open-source platform that simplifies how
+            Authorizing Officials review packages and how organizations submit them.
+          </p>
+          <p class="rego_cm_section_desc">
+            Accelerate continuous monitoring, leverage compliance as code, and say goodbye to
+            authorization delays.
+          </p>
+          <a href="#" class="rego_cm_btn rego_cm_btn_outline">Get Access Now</a>
+        </div>
+
+        <div class="rego_cm_hub_visual">
+          <img class="rego_cm_section_img"
+               src="https://regscale.com/wp-content/uploads/2025/12/OSCAL-Hub-The-Path-Forward-close-768x648.png"
+               alt="OSCAL Hub — The Path Forward" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FULL STACK SUPPORT ==================== -->
+    <section class="rego_cm_split_sec rego_cm_split_sec_alt">
+      <div class="rego_container rego_cm_split">
+        <div class="rego_cm_fs_visual">
+          <img class="rego_cm_section_img"
+               src="https://regscale.com/wp-content/uploads/2024/03/Group-427320672-1.png"
+               alt="Full Stack OSCAL Support — POAMs, SAP, SOX, NIST, JSON" />
+        </div>
+
+        <div class="rego_cm_feat_text">
+          <h2 class="rego_cm_section_title">
+            Full Stack <span class="rego_cm_accent">Support</span>
+          </h2>
+          <p class="rego_cm_section_desc">
+            Rego supports the full OSCAL schema, including catalogs, profiles, security plans,
+            components, SAP/SAR, and POA&amp;Ms. Built from the ground up on OSCAL, no platform
+            offers better support for compliance as code.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== IMPORTS ==================== -->
+    <section class="rego_cm_split_sec">
+      <div class="rego_container rego_cm_split">
+        <div class="rego_cm_feat_text">
+          <h2 class="rego_cm_section_title"><span class="rego_cm_accent">Imports</span></h2>
+          <p class="rego_cm_section_desc">
+            Rego can easily ingest OSCAL System Security Plans (SSP) to allow for rapid
+            onboarding of customer data. In addition, Rego can import Word versions of SSPs and
+            convert them into OSCAL on demand.
+          </p>
+        </div>
+        <div class="rego_cm_io_visual">
+          <img class="rego_cm_section_img"
+               src="https://regscale.com/wp-content/uploads/2024/03/Group-427320674-1024x662.png"
+               alt="Rego Import — Files Upload dialog with DOCX, JSON, and PDF progress" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STREAMLINE CTA CARD ==================== -->
+    <section class="rego_cm_cardcta">
+      <div class="rego_container">
+        <div class="rego_cm_cardcta_card">
+          <div class="rego_cm_cardcta_orb rego_cm_cardcta_orb_orange"></div>
+          <div class="rego_cm_cardcta_orb rego_cm_cardcta_orb_blue"></div>
+          <div class="rego_cm_cardcta_orb rego_cm_cardcta_orb_teal"></div>
+          <div class="rego_cm_cardcta_inner">
+            <div class="rego_cm_cardcta_copy">
+              <h2 class="rego_cm_cardcta_title">
+                See what Rego can <span class="rego_cm_accent">streamline for you</span>
+              </h2>
+              <p class="rego_cm_cardcta_desc">
+                Book a demo now for a quick walkthrough of how our continuous controls monitoring
+                can solve your security, risk, and compliance challenges.
+              </p>
+            </div>
+            <a href="#" class="rego_cm_btn rego_cm_btn_primary">Get a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPORTS ==================== -->
+    <section class="rego_cm_split_sec rego_cm_split_sec_alt">
+      <div class="rego_container rego_cm_split">
+        <div class="rego_cm_io_visual">
+          <img class="rego_cm_section_img"
+               src="https://regscale.com/wp-content/uploads/2024/03/FedRamp-Export-2-1024x787.png"
+               alt="Rego Export dialog — JSON, OSCAL, FedRAMP SSP Export" />
+        </div>
+        <div class="rego_cm_feat_text">
+          <h2 class="rego_cm_section_title"><span class="rego_cm_accent">Exports</span></h2>
+          <p class="rego_cm_section_desc">
+            Rego can generate OSCAL versions of all ATO/RMF artifacts with the click of a button.
+            While working within our real-time compliance monitoring platform, you can also
+            generate audit-ready documentation on demand with our OSCAL export wizards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SAP/SAR ==================== -->
+    <section class="rego_cm_split_sec">
+      <div class="rego_container rego_cm_split">
+        <div class="rego_cm_feat_text">
+          <h2 class="rego_cm_section_title"><span class="rego_cm_accent">SAP/SAR</span></h2>
+          <p class="rego_cm_section_desc">
+            Rego provides full support for Third Party Assessing Organizations (3PAOs) to conduct
+            their audit services in Rego. This support includes one-button click generation of the
+            SAP/SAR in OSCAL to support an audit.
+          </p>
+        </div>
+        <div class="rego_cm_sap_visual" aria-hidden="true">
+          <span class="rego_cm_sap_orb rego_cm_sap_orb_blue"></span>
+          <span class="rego_cm_sap_orb rego_cm_sap_orb_purple"></span>
+          <span class="rego_cm_sap_orb rego_cm_sap_orb_teal"></span>
+
+          <div class="rego_cm_sap_dash">
+            <div class="rego_cm_sap_dash_head">
+              <span class="rego_cm_sap_dash_brand">
+                <img src="images/rego-logo.png" alt="" />Rego
+              </span>
+              <span class="rego_cm_sap_dash_pill">Security Plans</span>
+            </div>
+            <div class="rego_cm_sap_dash_title">Rego Governance, Risk, and Compliance Platform</div>
+            <div class="rego_cm_sap_dash_grid">
+              <div class="rego_cm_sap_dash_cell">
+                <span class="rego_cm_sap_dash_label">Build Program</span>
+                <div class="rego_cm_sap_dash_row">
+                  <span class="rego_cm_sap_dash_sub">COMPLIANCE</span>
+                  <span class="rego_cm_sap_dash_pct">78%</span>
+                  <span class="rego_cm_sap_dash_nums">5000</span>
+                </div>
+                <div class="rego_cm_sap_dash_bars">
+                  <span style="width:68%"></span>
+                  <span style="width:52%;background:linear-gradient(90deg,#842573,#c04da0)"></span>
+                  <span style="width:40%"></span>
+                </div>
+              </div>
+              <div class="rego_cm_sap_dash_cell">
+                <span class="rego_cm_sap_dash_label">Build Pr…</span>
+              </div>
+              <div class="rego_cm_sap_dash_cell rego_cm_sap_dash_cell_wide">
+                <span class="rego_cm_sap_dash_label">Assess Program</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rego_cm_sap_dialog">
+            <div class="rego_cm_sap_dialog_head">
+              <span>Export</span>
+              <span class="rego_cm_sap_dialog_x">×</span>
+            </div>
+            <div class="rego_cm_sap_dialog_body">
+              <h4 class="rego_cm_sap_dialog_h">Rego Options</h4>
+              <div class="rego_cm_sap_dialog_btns">
+                <button type="button" class="rego_cm_sap_btn">
+                  <span class="rego_cm_sap_btn_ico">⬇</span>Download JSON File
+                </button>
+                <button type="button" class="rego_cm_sap_btn">
+                  <span class="rego_cm_sap_btn_ico">⬇</span>Download OSCAL File
+                </button>
+              </div>
+              <h4 class="rego_cm_sap_dialog_h">Export SAP/SAR in OSCAL</h4>
+              <div class="rego_cm_sap_dialog_btns">
+                <button type="button" class="rego_cm_sap_btn rego_cm_sap_btn_full">
+                  <span class="rego_cm_sap_btn_ico">⬇</span>SAP/SAR Export
+                </button>
+              </div>
+              <button type="button" class="rego_cm_sap_close_btn">× CLOSE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CASE STUDY SLIDER ==================== -->
+    <section class="rego_cm_case">
+      <div class="rego_container">
+        <div class="rego_cm_case_slider">
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <defs>
+              <linearGradient id="rego_cm_case_grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4a569e"/>
+                <stop offset="100%" stop-color="#842573"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <article class="rego_cm_case_card rego_cm_case_active" data-slide="0">
+            <div class="rego_cm_case_copy">
+              <h2 class="rego_cm_case_title">Operation StormBreaker <span class="rego_cm_accent">Enables Mission-Speed Technology Delivery</span></h2>
+              <p class="rego_cm_case_desc">See how USMC-MCCS achieved 99.97% faster ATO with Agile ATO, rapid RMF automation, and continuous authorization to deliver mission-ready technology in minutes.</p>
+              <a href="#" class="rego_cm_btn rego_cm_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cm_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>$100,000</strong><p>Saved per system per month</p>
+            </div>
+          </article>
+
+          <article class="rego_cm_case_card" data-slide="1">
+            <div class="rego_cm_case_copy">
+              <h2 class="rego_cm_case_title">Government Services Provider <span class="rego_cm_accent">Centralizes Control Management and Enables Enterprise-Wide Collaboration</span></h2>
+              <p class="rego_cm_case_desc">See how a major government services company unified its control libraries, automated control inheritance, and eliminated manual mapping with Rego.</p>
+              <a href="#" class="rego_cm_btn rego_cm_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cm_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Streamlined documentation</strong><p>Faster, more efficient security plan development</p>
+            </div>
+          </article>
+
+          <article class="rego_cm_case_card" data-slide="2">
+            <div class="rego_cm_case_copy">
+              <h2 class="rego_cm_case_title">Global Law Firm Streamlines Documentation and <span class="rego_cm_accent">Centralizes Compliance with Rego</span></h2>
+              <p class="rego_cm_case_desc">Learn how a global law firm eliminated scattered spreadsheets, automated customer security responses, and unified its framework management with Rego.</p>
+              <a href="#" class="rego_cm_btn rego_cm_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cm_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Reduced response time</strong><p>Less manual work to respond to questionnaires and audits</p>
+            </div>
+          </article>
+
+          <article class="rego_cm_case_card" data-slide="3">
+            <div class="rego_cm_case_copy">
+              <h2 class="rego_cm_case_title">Major Healthcare Company Centralizes Compliance and <span class="rego_cm_accent">Eliminates Manual Risk Tracking</span></h2>
+              <p class="rego_cm_case_desc">See how a major healthcare company consolidated scattered compliance data into one platform, automated evidence collection, and gained real-time visibility across multiple frameworks.</p>
+              <a href="#" class="rego_cm_btn rego_cm_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cm_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>One Platform</strong><p>Single pane of glass for all compliance operations</p>
+            </div>
+          </article>
+
+          <article class="rego_cm_case_card" data-slide="4">
+            <div class="rego_cm_case_copy">
+              <h2 class="rego_cm_case_title">US Government Agency Automates Evidence Collection and <span class="rego_cm_accent">Reduces Authorization Timelines</span></h2>
+              <p class="rego_cm_case_desc">Learn how a US government agency eliminated manual evidence collection, integrated with CSAM, and achieved rapid security plan maintenance with Rego.</p>
+              <a href="#" class="rego_cm_btn rego_cm_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cm_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cm_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Automated Evidence</strong><p>Integration-driven collection from AWS and QRadar</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="rego_cm_case_dots">
+          <button class="rego_cm_case_dot rego_cm_case_dot_active" data-dot="0" type="button"></button>
+          <button class="rego_cm_case_dot" data-dot="1" type="button"></button>
+          <button class="rego_cm_case_dot" data-dot="2" type="button"></button>
+          <button class="rego_cm_case_dot" data-dot="3" type="button"></button>
+          <button class="rego_cm_case_dot" data-dot="4" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTROLS LIFECYCLE HEAD ==================== -->
+    <section class="rego_cm_lifecycle_head">
+      <div class="rego_container">
+        <h2 class="rego_cm_section_title rego_cm_center">
+          Automated <span class="rego_cm_accent">controls</span> lifecycle management
+        </h2>
+        <p class="rego_cm_section_desc rego_cm_center">
+          Simplify and streamline your control lifecycle with advanced automation, industry-leading AI,
+          and pre-built business processes based on decades of lessons learned in the industry.
+          Rapidly configure to meet your unique business requirements and then ruthlessly automate
+          every phase of the control lifecycle.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== LIFECYCLE WHEEL ==================== -->
+    <section class="rego_cm_lifecycle">
+      <div class="rego_container rego_cm_split">
+        <div class="rego_cm_wheel" aria-hidden="false">
+          <button class="rego_cm_wheel_seg rego_cm_wheel_build rego_cm_wheel_active" data-stage="build"><span>Build</span></button>
+          <button class="rego_cm_wheel_seg rego_cm_wheel_collect" data-stage="collect"><span>Collect</span></button>
+          <button class="rego_cm_wheel_seg rego_cm_wheel_assess" data-stage="assess"><span>Assess</span></button>
+          <button class="rego_cm_wheel_seg rego_cm_wheel_fix" data-stage="fix"><span>Fix Issues</span></button>
+          <button class="rego_cm_wheel_seg rego_cm_wheel_risk" data-stage="risk"><span>Manage Risk</span></button>
+          <button class="rego_cm_wheel_seg rego_cm_wheel_govern" data-stage="govern"><span>Govern</span></button>
+          <div class="rego_cm_wheel_center">
+            <img src="images/rego-logo.png" alt="Rego" />
+            <p>Controls lifecycle<br/>management</p>
+          </div>
+          <span class="rego_cm_wheel_arrow rego_cm_wheel_arrow_up">▲</span>
+          <span class="rego_cm_wheel_arrow rego_cm_wheel_arrow_right">▶</span>
+          <span class="rego_cm_wheel_arrow rego_cm_wheel_arrow_down">▼</span>
+          <span class="rego_cm_wheel_arrow rego_cm_wheel_arrow_left">◀</span>
+        </div>
+
+        <div class="rego_cm_panel">
+          <h3 class="rego_cm_panel_title" id="rego_cm_panel_title">01: Build the Program</h3>
+          <div class="rego_cm_panel_list" id="rego_cm_panel_list">
+            <button class="rego_cm_panel_item">Fully Digitized Regulations <span>v</span></button>
+            <button class="rego_cm_panel_item">Control Mapping <span>v</span></button>
+            <button class="rego_cm_panel_item">Wizard-Driven Builders <span>v</span></button>
+            <button class="rego_cm_panel_item">AI Capabilities <span>v</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="rego_cm_final_cta">
+      <div class="rego_container rego_cm_split">
+        <div class="rego_cm_feat_text">
+          <h2 class="rego_cm_section_title">
+            Ready to accelerate your compliance program?
+            <span class="rego_cm_accent">Let us show you how it's done</span>
+          </h2>
+          <p class="rego_cm_section_desc">
+            Reading can only get you so far. That's why we'd like to give you a quick live
+            walkthrough of Rego to show you exactly what we can do for your organization.
+          </p>
+          <a href="#" class="rego_cm_btn rego_cm_btn_primary">Get a Demo</a>
+        </div>
+        <div class="rego_cm_fcta_visual" aria-hidden="true">
+          <div class="rego_cm_feat_orb rego_cm_feat_orb_blue"></div>
+          <div class="rego_cm_feat_orb rego_cm_feat_orb_purple"></div>
+          <div class="rego_cm_feat_orb rego_cm_feat_orb_teal"></div>
+          <div class="rego_cm_fcta_dash">
+            <div class="rego_cm_dash_head">
+              <span class="rego_cm_dash_brand"><img src="images/rego-logo.png" alt="Rego" />Rego</span>
+            </div>
+            <div class="rego_cm_fcta_grid">
+              <div class="rego_cm_fcta_cell">
+                <strong>Build Program</strong>
+                <span class="rego_cm_dash_pct rego_cm_dash_pct_sm">0%</span>
+                <span class="rego_cm_fcta_nums">17  2443</span>
+                <div class="rego_cm_fcta_bars">
+                  <div style="width:70%"></div>
+                  <div style="width:45%;background:#842573"></div>
+                  <div style="width:55%"></div>
+                </div>
+              </div>
+              <div class="rego_cm_fcta_cell">
+                <strong>Fix Problems</strong>
+                <div class="rego_cm_fcta_ring"><span>Total<br/><strong>118</strong></span></div>
+                <div class="rego_cm_fcta_legend"><span>• Open 95%</span><span>• Closed 5%</span></div>
+              </div>
+              <div class="rego_cm_fcta_cell rego_cm_fcta_cell_wide">
+                <strong>Assess Program</strong>
+                <div class="rego_cm_fcta_rows">
+                  <div><span>ASSESSMENTS</span><span class="rego_cm_fcta_st">IN PROGRESS</span></div>
+                  <div><span>STATUS</span><span class="rego_cm_fcta_st">IN PROGRESS</span></div>
+                  <div><span>PROGRESS</span><span class="rego_cm_fcta_st">IN PROGRESS</span></div>
+                </div>
+              </div>
+              <div class="rego_cm_fcta_cell rego_cm_fcta_cell_wide">
+                <strong>Manage Risk</strong>
+                <div class="rego_cm_fcta_risk">
+                  <div><span>POTENTIAL SAVINGS</span><strong>$0k</strong></div>
+                  <div><span>RISK BY RESIDUAL<br/>RISK STATUS</span>
+                    <div class="rego_cm_fcta_bars rego_cm_fcta_bars_v">
+                      <span style="height:30%;background:#842573"></span>
+                      <span style="height:55%;background:#842573"></span>
+                      <span style="height:75%;background:#842573"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="rego_footer_mount"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/continuous-monitoring-built-on-oscal.js"></script>
+
+</body>
+</html>
