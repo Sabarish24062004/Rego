@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Govern your controls landscape with Rego — workflows, reports, exception, change management, and real-time alerts." />
+  <title>Controls Governance – Rego</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/controls-governance.css" />
+</head>
+<body>
+
+  <div id="rego_header_mount"></div>
+
+  <main id="rego_main">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="rego_cg_hero">
+      <div class="rego_container rego_cg_hero_inner">
+        <div class="rego_cg_hero_text">
+          <span class="rego_cg_eyebrow">GOVERNANCE</span>
+          <h1 class="rego_cg_hero_title">
+            Govern Your Controls <span class="rego_cg_accent">Landscape</span>
+          </h1>
+          <p class="rego_cg_hero_desc">
+            Rego provides you with robust governance mechanisms for real-time visibility and
+            management over every phase of the controls lifecycle, ensuring meticulous
+            decision-making, risk acceptance, and change management.
+          </p>
+          <a href="#" class="rego_cg_btn rego_cg_btn_primary">Get a Demo</a>
+        </div>
+
+        <div class="rego_cg_hero_visual" aria-hidden="true">
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_orange"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_blue"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_teal"></div>
+          <div class="rego_cg_hero_donut">
+            <img src="images/rego-logo.png" alt="Rego" />
+          </div>
+          <div class="rego_cg_workflow">
+            <div class="rego_cg_workflow_head">
+              <strong>Workflow</strong>
+              <span class="rego_cg_workflow_add">+ Add Test</span>
+            </div>
+            <div class="rego_cg_workflow_steps">
+              <div class="rego_cg_wf_step">
+                <span class="rego_cg_wf_num rego_cg_wf_done">✓</span>
+                <span class="rego_cg_wf_label">SELECTING A<br/>SECURITY POLICY</span>
+              </div>
+              <span class="rego_cg_wf_line"></span>
+              <div class="rego_cg_wf_step">
+                <span class="rego_cg_wf_num rego_cg_wf_done">✓</span>
+                <span class="rego_cg_wf_label">ADD<br/>CONTROLS</span>
+              </div>
+              <span class="rego_cg_wf_line"></span>
+              <div class="rego_cg_wf_step">
+                <span class="rego_cg_wf_num rego_cg_wf_current">3</span>
+                <span class="rego_cg_wf_label">REVIEW AND<br/>FINISH</span>
+              </div>
+            </div>
+            <div class="rego_cg_wf_lines"><span></span><span></span></div>
+            <div class="rego_cg_wf_progress">
+              <div class="rego_cg_wf_progress_row">
+                <span class="rego_cg_wf_progress_label">PROGRESS</span>
+                <span class="rego_cg_wf_progress_pct">43%</span>
+                <svg viewBox="0 0 80 50" width="70" height="42">
+                  <path d="M8,42 A32,32 0 0 1 72,42" stroke="#e4e6f1" stroke-width="8" fill="none"/>
+                  <path d="M8,42 A32,32 0 0 1 48,16" stroke="#3db9e5" stroke-width="8" fill="none" stroke-linecap="round"/>
+                </svg>
+                <span class="rego_cg_wf_progress_nums"><em>34</em><em>2572</em></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TRUSTED ==================== -->
+    <section class="rego_cg_trusted">
+      <div class="rego_container">
+        <p class="rego_cg_trusted_title">Trusted by the most secure and compliant organizations on the planet</p>
+      </div>
+      <div class="rego_cg_trusted_viewport">
+        <div class="rego_cg_trusted_marquee">
+          <div class="rego_cg_trusted_group">
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/12/TTM-Technologies-.png" alt="TTM Technologies"/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2026/03/zelvin-security-logo-300x133.png" alt="Zelvin Security"/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/BMC-Logo-300x132.png" alt="BMC"/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Brookhaven-National-Lab-Logo-300x132.png" alt="Brookhaven National Lab"/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Cornerstone-OnDemand-Inc-Logo-300x132.png" alt="Cornerstone"/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Department-of-Energy-Logo-300x132.png" alt="Department of Energy"/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/DHCF-Logo-300x132.png" alt="DHCF"/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Dragos-Logo-300x132.png" alt="Dragos"/>
+          </div>
+          <div class="rego_cg_trusted_group" aria-hidden="true">
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/12/TTM-Technologies-.png" alt=""/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2026/03/zelvin-security-logo-300x133.png" alt=""/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/BMC-Logo-300x132.png" alt=""/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Brookhaven-National-Lab-Logo-300x132.png" alt=""/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Cornerstone-OnDemand-Inc-Logo-300x132.png" alt=""/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Department-of-Energy-Logo-300x132.png" alt=""/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/DHCF-Logo-300x132.png" alt=""/>
+            <img class="rego_cg_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Dragos-Logo-300x132.png" alt=""/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GOVERNANCE INTEGRATION ==================== -->
+    <section class="rego_cg_intro">
+      <div class="rego_container">
+        <h2 class="rego_cg_section_title rego_cg_center">
+          <span class="rego_cg_accent">Governance integration:</span> gain visibility into every phase
+        </h2>
+        <p class="rego_cg_section_desc rego_cg_center">
+          From reports to workflows, issues, and alerts, governance is ingrained in every aspect of the
+          control lifecycle. In each step, decisions need to be made, risks need to be accepted,
+          exceptions and changes need to be approved, and management needs to be made aware of
+          shifts in their security, risk, and compliance posture.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== REPORTS & DASHBOARDS ==================== -->
+    <section class="rego_cg_split_sec">
+      <div class="rego_container rego_cg_split">
+        <div class="rego_cg_feat_visual" aria-hidden="true">
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_orange"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_blue"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_teal"></div>
+          <div class="rego_cg_dash">
+            <div class="rego_cg_dash_head">
+              <span class="rego_cg_dash_brand"><img src="images/rego-logo.png" alt="Rego" />Rego</span>
+              <strong class="rego_cg_dash_title">Dashboard</strong>
+              <span class="rego_cg_dash_user">⚡ 🔔 <span class="rego_cg_dash_avatar"></span></span>
+            </div>
+            <div class="rego_cg_dash_tabs_row">
+              <span class="rego_cg_dash_side rego_cg_dash_side_g">DHS MARS-E</span>
+              <div class="rego_cg_dash_tabs">
+                <span>Basic Info</span><span class="rego_cg_is_active">Scorecard</span>
+                <span>Gantt Chart</span><span>Categorization</span><span>Key Dates</span>
+                <span>Integrations</span><span>Profiles</span><span>Custom Fields</span>
+              </div>
+            </div>
+            <div class="rego_cg_dash_tabs_row">
+              <span class="rego_cg_dash_side"></span>
+              <div class="rego_cg_dash_subtabs">
+                <span>Components</span><span>Summary</span><span>Ports and Protocols</span>
+                <span>Stakeholders and Users</span><span>CMMC</span><span>Descriptions</span>
+              </div>
+            </div>
+            <div class="rego_cg_dash_body">
+              <div class="rego_cg_dash_col">
+                <span class="rego_cg_dash_side rego_cg_dash_side_b">Explorer</span>
+                <div class="rego_cg_dash_widget">
+                  <div class="rego_cg_dash_widget_title">Overall Compliance</div>
+                  <div class="rego_cg_dash_gauge_row">
+                    <span>Compliance Score</span>
+                    <svg viewBox="0 0 80 50" width="60" height="40"><path d="M8,42 A32,32 0 0 1 72,42" stroke="#e4e6f1" stroke-width="8" fill="none"/><path d="M8,42 A32,32 0 0 1 52,13" stroke="#3db9e5" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
+                    <span class="rego_cg_dash_pct">27%</span>
+                  </div>
+                  <div class="rego_cg_dash_metric"><span>Total Controls</span><span class="rego_cg_dash_badge">1</span></div>
+                  <div class="rego_cg_dash_metric"><span>Total Assessments</span><span class="rego_cg_dash_badge rego_cg_dash_badge_t">4</span></div>
+                </div>
+                <span class="rego_cg_dash_side rego_cg_dash_side_p">Utilities</span>
+                <div class="rego_cg_dash_chat">
+                  <div class="rego_cg_dash_chat_head"><strong>Comments &amp; Message</strong><span>See All</span></div>
+                  <div class="rego_cg_dash_chat_row">
+                    <span class="rego_cg_dash_avatar_s"></span>
+                    <span>Alfredo Torres · 1 Minute Ago</span>
+                    <span class="rego_cg_dash_reply">Reply</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rego_cg_dash_col">
+                <div class="rego_cg_dash_widget">
+                  <div class="rego_cg_dash_widget_title">Identify Critical Assets</div>
+                  <div class="rego_cg_dash_bars">
+                    <span style="height:60%;background:#4a569e"></span>
+                    <span style="height:30%;background:#3db9e5"></span>
+                    <span style="height:48%;background:#4a569e"></span>
+                    <span style="height:70%;background:#842573"></span>
+                    <span style="height:40%;background:#3db9e5"></span>
+                  </div>
+                  <div class="rego_cg_dash_bar_labels">
+                    <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+                  </div>
+                </div>
+                <div class="rego_cg_dash_widget">
+                  <div class="rego_cg_dash_widget_title">Visualizations</div>
+                  <div class="rego_cg_dash_lines">
+                    <div><span>By Status</span><span class="rego_cg_dash_line"><i style="width:70%"></i></span></div>
+                    <div><span>By Last Assessments Status</span><span class="rego_cg_dash_line"><i style="width:50%"></i></span></div>
+                  </div>
+                  <div class="rego_cg_dash_ring">
+                    <span class="rego_cg_dash_ring_label">By Owner</span>
+                    <div class="rego_cg_dash_donut"><span>240</span></div>
+                    <div class="rego_cg_dash_legend"><span>• Not Assessed</span><span>• Not Implemented</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rego_cg_feat_text">
+          <h2 class="rego_cg_section_title">
+            Reports and <span class="rego_cg_accent">Dashboards</span>
+          </h2>
+          <p class="rego_cg_section_desc">
+            Out-of-the-box reporting, dashboards, and scorecards help you visualize real-time
+            security, risk, and compliance posture, ensuring that everyone has the best information
+            to make the best decisions. Extend to BI tools using Graph and APIs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EVENT-DRIVEN WORKFLOWS ==================== -->
+    <section class="rego_cg_split_sec rego_cg_split_sec_alt">
+      <div class="rego_container rego_cg_split">
+        <div class="rego_cg_feat_text">
+          <h2 class="rego_cg_section_title">
+            Event-Driven <span class="rego_cg_accent">Workflows</span>
+          </h2>
+          <p class="rego_cg_section_desc">
+            Compliance and risk processes do not execute in isolation. Provide real-time integrations
+            to broader organizational business tools and processes using our real-time, event-driven
+            architecture and advanced workflow automation.
+          </p>
+        </div>
+
+        <div class="rego_cg_steps_visual" aria-hidden="true">
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_orange rego_cg_feat_orb_orange_r"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_blue rego_cg_feat_orb_blue_b"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_teal"></div>
+
+          <div class="rego_cg_step_card rego_cg_step_card_3">
+            <div class="rego_cg_step_head">
+              <span class="rego_cg_step_num">STEP 3</span>
+              <span class="rego_cg_step_col">STATUS</span>
+              <span class="rego_cg_step_col">START</span>
+              <span class="rego_cg_step_col">END</span>
+              <span class="rego_cg_step_col">PROGRESS</span>
+            </div>
+            <div class="rego_cg_step_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_cancel">CANCELED</span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+          </div>
+
+          <div class="rego_cg_step_card rego_cg_step_card_2">
+            <div class="rego_cg_step_head">
+              <span class="rego_cg_step_num">STEP 2</span>
+              <span class="rego_cg_step_col">STATUS</span>
+              <span class="rego_cg_step_col">START</span>
+              <span class="rego_cg_step_col">END</span>
+              <span class="rego_cg_step_col">PROGRESS</span>
+            </div>
+            <div class="rego_cg_step_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_progress">IN PROGRESS</span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_bar"><i style="width:60%"></i></span>
+            </div>
+          </div>
+
+          <div class="rego_cg_step_card rego_cg_step_card_1">
+            <div class="rego_cg_step_head">
+              <span class="rego_cg_step_num">STEP 1</span>
+              <span class="rego_cg_step_col">STATUS</span>
+              <span class="rego_cg_step_col">START</span>
+              <span class="rego_cg_step_col">END</span>
+              <span class="rego_cg_step_col">PROGRESS</span>
+            </div>
+            <div class="rego_cg_step_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_complete">COMPLETE</span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_bar"><i style="width:100%"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STREAMLINE CTA CARD ==================== -->
+    <section class="rego_cg_cardcta">
+      <div class="rego_container">
+        <div class="rego_cg_cardcta_card">
+          <div class="rego_cg_cardcta_orb rego_cg_cardcta_orb_orange"></div>
+          <div class="rego_cg_cardcta_orb rego_cg_cardcta_orb_blue"></div>
+          <div class="rego_cg_cardcta_orb rego_cg_cardcta_orb_teal"></div>
+          <div class="rego_cg_cardcta_inner">
+            <div class="rego_cg_cardcta_copy">
+              <h2 class="rego_cg_cardcta_title">
+                See what Rego can <span class="rego_cg_accent">streamline for you</span>
+              </h2>
+              <p class="rego_cg_cardcta_desc">
+                Book a demo now for a quick walkthrough of how our continuous controls monitoring
+                can solve your security, risk, and compliance challenges.
+              </p>
+            </div>
+            <a href="#" class="rego_cg_btn rego_cg_btn_primary">Get a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXCEPTION MANAGEMENT ==================== -->
+    <section class="rego_cg_split_sec">
+      <div class="rego_container rego_cg_split">
+        <div class="rego_cg_feat_text">
+          <h2 class="rego_cg_section_title">
+            Exception <span class="rego_cg_accent">Management</span>
+          </h2>
+          <p class="rego_cg_section_desc">
+            Sometimes there's no way around it; you have to deviate from policy. Our exception
+            management process allows you to document the potential risk, establish durations for
+            the exception, and ensure strong governance that remains transparent across the
+            organization.
+          </p>
+        </div>
+        <div class="rego_cg_steps_visual" aria-hidden="true">
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_orange rego_cg_feat_orb_orange_r"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_blue rego_cg_feat_orb_blue_b"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_teal"></div>
+
+          <div class="rego_cg_step_card rego_cg_step_card_3">
+            <div class="rego_cg_step_head">
+              <span class="rego_cg_step_num">STEP 3</span>
+              <span class="rego_cg_step_col">TYPE</span>
+              <span class="rego_cg_step_col">START</span>
+              <span class="rego_cg_step_col">END</span>
+              <span class="rego_cg_step_col">DURATION</span>
+            </div>
+            <div class="rego_cg_step_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_except">EXCEPTION</span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+          </div>
+
+          <div class="rego_cg_step_card rego_cg_step_card_2">
+            <div class="rego_cg_step_head">
+              <span class="rego_cg_step_num">STEP 2</span>
+              <span class="rego_cg_step_col">TYPE</span>
+              <span class="rego_cg_step_col">START</span>
+              <span class="rego_cg_step_col">END</span>
+              <span class="rego_cg_step_col">DURATION</span>
+            </div>
+            <div class="rego_cg_step_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_except">EXCEPTION</span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+          </div>
+
+          <div class="rego_cg_step_card rego_cg_step_card_1">
+            <div class="rego_cg_step_head">
+              <span class="rego_cg_step_num">STEP 1</span>
+              <span class="rego_cg_step_col">TYPE</span>
+              <span class="rego_cg_step_col">START</span>
+              <span class="rego_cg_step_col">END</span>
+              <span class="rego_cg_step_col">DURATION</span>
+            </div>
+            <div class="rego_cg_step_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_except">EXCEPTION</span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CHANGE MANAGEMENT ==================== -->
+    <section class="rego_cg_split_sec rego_cg_split_sec_alt">
+      <div class="rego_container rego_cg_split">
+        <div class="rego_cg_change_visual" aria-hidden="true">
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_orange"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_blue"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_teal"></div>
+          <div class="rego_cg_table">
+            <div class="rego_cg_table_head">
+              <span>CONTROLS</span><span>STATUS</span><span>PROGRESS</span><span>OWNER</span>
+            </div>
+            <div class="rego_cg_table_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_complete">COMPLETE</span>
+              <span class="rego_cg_bar"><i style="width:80%"></i></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+            <div class="rego_cg_table_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_complete">COMPLETE</span>
+              <span class="rego_cg_bar"><i style="width:70%"></i></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+            <div class="rego_cg_table_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_cancel">CANCELED</span>
+              <span class="rego_cg_bar"><i style="width:40%"></i></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+            <div class="rego_cg_table_row">
+              <span class="rego_cg_ph"></span>
+              <span class="rego_cg_chip rego_cg_chip_progress">IN PROGRESS</span>
+              <span class="rego_cg_bar"><i style="width:55%"></i></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+            <div class="rego_cg_table_row">
+              <span class="rego_cg_ph"></span>
+              <span></span>
+              <span class="rego_cg_bar"><i style="width:30%"></i></span>
+              <span class="rego_cg_ph"></span>
+            </div>
+          </div>
+        </div>
+        <div class="rego_cg_feat_text">
+          <h2 class="rego_cg_section_title">
+            Change <span class="rego_cg_accent">Management</span>
+          </h2>
+          <p class="rego_cg_section_desc">
+            Maintaining your security, risk, and compliance posture over time takes discipline and
+            attention to detail. Our change management process documents every difference so you
+            can stay always audit-ready.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ALERTS & NOTIFICATIONS ==================== -->
+    <section class="rego_cg_split_sec">
+      <div class="rego_container rego_cg_split">
+        <div class="rego_cg_feat_text">
+          <h2 class="rego_cg_section_title">
+            Alerts and <span class="rego_cg_accent">Notifications</span>
+          </h2>
+          <p class="rego_cg_section_desc">
+            Never get surprised in an audit again. Our real-time alerts integrate with Teams, Slack,
+            and email to ensure your employees get notified in real-time as issues arise, before
+            deliverables are due.
+          </p>
+        </div>
+        <div class="rego_cg_notif_visual" aria-hidden="true">
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_blue"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_orange"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_teal"></div>
+
+          <div class="rego_cg_notif rego_cg_notif_slack">
+            <span class="rego_cg_notif_ico rego_cg_notif_ico_slack">#</span>
+            <strong>slack</strong>
+            <span class="rego_cg_notif_msg">this is ready for review</span>
+            <span class="rego_cg_notif_line"></span>
+          </div>
+          <div class="rego_cg_notif rego_cg_notif_teams">
+            <span class="rego_cg_notif_ico rego_cg_notif_ico_teams">T</span>
+            <strong>Microsoft Teams</strong>
+            <span class="rego_cg_notif_line"></span>
+          </div>
+          <div class="rego_cg_notif rego_cg_notif_outlook">
+            <span class="rego_cg_notif_ico rego_cg_notif_ico_outlook">O</span>
+            <strong>Outlook</strong>
+            <span class="rego_cg_notif_msg">this is due</span>
+            <span class="rego_cg_notif_line"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CASE STUDY SLIDER ==================== -->
+    <section class="rego_cg_case">
+      <div class="rego_container">
+        <div class="rego_cg_case_slider">
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <defs>
+              <linearGradient id="rego_cg_case_grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4a569e"/>
+                <stop offset="100%" stop-color="#842573"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <article class="rego_cg_case_card rego_cg_case_active" data-slide="0">
+            <div class="rego_cg_case_copy">
+              <h2 class="rego_cg_case_title">Operation StormBreaker <span class="rego_cg_accent">Enables Mission-Speed Technology Delivery</span></h2>
+              <p class="rego_cg_case_desc">See how USMC-MCCS achieved 99.97% faster ATO with Agile ATO, rapid RMF automation, and continuous authorization to deliver mission-ready technology in minutes.</p>
+              <a href="#" class="rego_cg_btn rego_cg_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cg_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>$100,000</strong><p>Saved per system per month</p>
+            </div>
+          </article>
+
+          <article class="rego_cg_case_card" data-slide="1">
+            <div class="rego_cg_case_copy">
+              <h2 class="rego_cg_case_title">Government Services Provider <span class="rego_cg_accent">Centralizes Control Management and Enables Enterprise-Wide Collaboration</span></h2>
+              <p class="rego_cg_case_desc">See how a major government services company unified its control libraries, automated control inheritance, and eliminated manual mapping with Rego.</p>
+              <a href="#" class="rego_cg_btn rego_cg_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cg_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Streamlined documentation</strong><p>Faster, more efficient security plan development</p>
+            </div>
+          </article>
+
+          <article class="rego_cg_case_card" data-slide="2">
+            <div class="rego_cg_case_copy">
+              <h2 class="rego_cg_case_title">Global Law Firm Streamlines Documentation and <span class="rego_cg_accent">Centralizes Compliance with Rego</span></h2>
+              <p class="rego_cg_case_desc">Learn how a global law firm eliminated scattered spreadsheets, automated customer security responses, and unified its framework management with Rego.</p>
+              <a href="#" class="rego_cg_btn rego_cg_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cg_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Reduced response time</strong><p>Less manual work to respond to questionnaires and audits</p>
+            </div>
+          </article>
+
+          <article class="rego_cg_case_card" data-slide="3">
+            <div class="rego_cg_case_copy">
+              <h2 class="rego_cg_case_title">Major Healthcare Company Centralizes Compliance and <span class="rego_cg_accent">Eliminates Manual Risk Tracking</span></h2>
+              <p class="rego_cg_case_desc">See how a major healthcare company consolidated scattered compliance data into one platform, automated evidence collection, and gained real-time visibility across multiple frameworks.</p>
+              <a href="#" class="rego_cg_btn rego_cg_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cg_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>One Platform</strong><p>Single pane of glass for all compliance operations</p>
+            </div>
+          </article>
+
+          <article class="rego_cg_case_card" data-slide="4">
+            <div class="rego_cg_case_copy">
+              <h2 class="rego_cg_case_title">US Government Agency Automates Evidence Collection and <span class="rego_cg_accent">Reduces Authorization Timelines</span></h2>
+              <p class="rego_cg_case_desc">Learn how a US government agency eliminated manual evidence collection, integrated with CSAM, and achieved rapid security plan maintenance with Rego.</p>
+              <a href="#" class="rego_cg_btn rego_cg_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cg_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cg_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Automated Evidence</strong><p>Integration-driven collection from AWS and QRadar</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="rego_cg_case_dots">
+          <button class="rego_cg_case_dot rego_cg_case_dot_active" data-dot="0" type="button"></button>
+          <button class="rego_cg_case_dot" data-dot="1" type="button"></button>
+          <button class="rego_cg_case_dot" data-dot="2" type="button"></button>
+          <button class="rego_cg_case_dot" data-dot="3" type="button"></button>
+          <button class="rego_cg_case_dot" data-dot="4" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="rego_cg_final">
+      <div class="rego_container rego_cg_split">
+        <div class="rego_cg_feat_text">
+          <h2 class="rego_cg_section_title">
+            Ready to fast track your compliance?
+            <span class="rego_cg_accent">Let us show you how it's done</span>
+          </h2>
+          <p class="rego_cg_section_desc">
+            Reading can only get you so far. That's why we'd like to give you a quick live
+            walkthrough of Rego to show you exactly what we can do for your organization.
+          </p>
+          <a href="#" class="rego_cg_btn rego_cg_btn_primary">Get a Demo</a>
+        </div>
+        <div class="rego_cg_final_visual" aria-hidden="true">
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_blue"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_orange"></div>
+          <div class="rego_cg_feat_orb rego_cg_feat_orb_teal"></div>
+          <div class="rego_cg_final_dash">
+            <div class="rego_cg_dash_head">
+              <span class="rego_cg_dash_brand"><img src="images/rego-logo.png" alt="Rego" />Rego</span>
+            </div>
+            <div class="rego_cg_final_grid">
+              <div class="rego_cg_final_cell">
+                <strong>Build Program</strong>
+                <span class="rego_cg_dash_pct">12%</span>
+                <span class="rego_cg_final_nums">17  2443</span>
+                <div class="rego_cg_final_bars"><div style="width:60%"></div><div style="width:40%;background:#842573"></div><div style="width:50%"></div></div>
+              </div>
+              <div class="rego_cg_final_cell">
+                <strong>Fix Problems</strong>
+                <div class="rego_cg_final_ring"><span>Total<br/><strong>118</strong></span></div>
+                <div class="rego_cg_final_legend"><span>• Open 95%</span><span>• Closed 5%</span></div>
+              </div>
+              <div class="rego_cg_final_cell rego_cg_final_cell_wide">
+                <strong>Assess Program</strong>
+                <div class="rego_cg_final_rows">
+                  <div><span>ASSESSMENTS</span><span class="rego_cg_final_st">IN PROGRESS</span></div>
+                  <div><span>STATUS</span><span class="rego_cg_final_st">IN PROGRESS</span></div>
+                  <div><span>PROGRESS</span><span class="rego_cg_final_st">IN PROGRESS</span></div>
+                </div>
+              </div>
+              <div class="rego_cg_final_cell rego_cg_final_cell_wide">
+                <strong>Manage Risk</strong>
+                <div class="rego_cg_final_risk">
+                  <div><span>POTENTIAL SAVINGS</span><strong>$0k</strong></div>
+                  <div><span>RISK BY RESIDUAL<br/>RISK STATUS</span>
+                    <div class="rego_cg_final_bars rego_cg_final_bars_v">
+                      <span style="height:30%"></span><span style="height:55%"></span><span style="height:75%"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="rego_footer_mount"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/controls-governance.js"></script>
+
+</body>
+</html>
