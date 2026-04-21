@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rego – Shift Left Security with Compliance as Code. Automated DevSecOps compliance integrated into CI/CD." />
+  <title>Continuous Compliance for DevSecOps – Rego</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/continuous-compliance-for-devsecops.css" />
+</head>
+<body>
+
+  <div id="rego_header_mount"></div>
+
+  <main id="rego_main">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="rego_cd_hero">
+      <div class="rego_container rego_cd_hero_inner">
+        <div class="rego_cd_hero_text">
+          <span class="rego_cd_eyebrow">AUTOMATED DEVSECOPS COMPLIANCE</span>
+          <h1 class="rego_cd_hero_title">
+            Shift Left Security with
+            <span class="rego_cd_accent">Compliance as Code</span>
+          </h1>
+          <p class="rego_cd_hero_desc">
+            Rego integrates compliance as code into DevSecOps processes to demonstrate
+            compliance requirements across the product development and delivery life cycles stages.
+          </p>
+          <a href="#" class="rego_cd_btn rego_cd_btn_primary">Get a Demo</a>
+        </div>
+
+        <div class="rego_cd_hero_visual" aria-hidden="true">
+          <div class="rego_cd_hero_infinity">
+            <svg viewBox="0 0 120 60" fill="none">
+              <path d="M30 30 C30 15 50 15 60 30 C70 45 90 45 90 30 C90 15 70 15 60 30 C50 45 30 45 30 30 Z"
+                    stroke="url(#rego_cd_infinity_grad)" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="rego_cd_infinity_grad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#4a569e"/>
+                  <stop offset="100%" stop-color="#842573"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="rego_cd_dot rego_cd_dot_1"></span>
+            <span class="rego_cd_dot rego_cd_dot_2"></span>
+            <span class="rego_cd_dot rego_cd_dot_3"></span>
+          </div>
+
+          <div class="rego_cd_dash rego_cd_hero_dash">
+            <div class="rego_cd_dash_head">
+              <span class="rego_cd_dash_brand"><img src="images/rego-logo.png" alt="Rego" />Rego</span>
+              <span class="rego_cd_dash_nav">Workspace · Status Boards · Modules · reports</span>
+            </div>
+            <div class="rego_cd_dash_row">
+              <span class="rego_cd_dash_side rego_cd_dash_side_g">MARS-E</span>
+              <div class="rego_cd_dash_tabs">
+                <span>Basic Info</span>
+                <span class="rego_cd_is_active">Scorecard</span>
+                <span>Gantt Chart</span>
+                <span>Categorization</span>
+                <span>Key Dates</span>
+                <span>Integrations</span>
+                <span>Profiles</span>
+                <span>Custom Fields</span>
+              </div>
+            </div>
+            <div class="rego_cd_dash_row">
+              <span class="rego_cd_dash_side"></span>
+              <div class="rego_cd_dash_subtabs">
+                <span>Components</span><span>Summary</span><span>Ports and Protocols</span>
+                <span>Stakeholders and Users</span><span>CMMC</span><span>Descriptions</span>
+              </div>
+            </div>
+            <div class="rego_cd_dash_body">
+              <div class="rego_cd_dash_left">
+                <span class="rego_cd_dash_side rego_cd_dash_side_b">Explorer</span>
+                <div class="rego_cd_dash_widget">
+                  <div class="rego_cd_dash_widget_title">Overall Compliance</div>
+                  <div class="rego_cd_dash_gauge_row">
+                    <span class="rego_cd_dash_gauge_label">Compliance Score</span>
+                    <svg viewBox="0 0 80 50" width="70" height="44">
+                      <path d="M8,42 A32,32 0 0 1 72,42" stroke="#e4e6f1" stroke-width="8" fill="none" stroke-linecap="round"/>
+                      <path d="M8,42 A32,32 0 0 1 52,13" stroke="#3db9e5" stroke-width="8" fill="none" stroke-linecap="round"/>
+                      <line x1="40" y1="42" x2="60" y2="22" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="rego_cd_dash_pct">27%</span>
+                  </div>
+                  <div class="rego_cd_dash_metric">
+                    <span>Total Controls</span><span class="rego_cd_dash_badge">1</span>
+                  </div>
+                  <div class="rego_cd_dash_metric">
+                    <span>Total Assessments</span><span class="rego_cd_dash_badge rego_cd_dash_badge_2">4</span>
+                  </div>
+                </div>
+                <span class="rego_cd_dash_side rego_cd_dash_side_p">Utilities</span>
+                <div class="rego_cd_dash_chat">
+                  <div class="rego_cd_dash_chat_head">
+                    <strong>Comments &amp; Message</strong>
+                    <span class="rego_cd_dash_chat_link">See All</span>
+                  </div>
+                  <div class="rego_cd_dash_chat_row">
+                    <span class="rego_cd_dash_avatar"></span>
+                    <div class="rego_cd_dash_chat_msg">
+                      <strong>Alfredo Torres</strong>
+                      <span class="rego_cd_dash_chat_meta">1 Minute Ago</span>
+                    </div>
+                    <span class="rego_cd_dash_reply">Reply</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rego_cd_dash_right">
+                <div class="rego_cd_dash_widget">
+                  <div class="rego_cd_dash_widget_title">Identify Critical Assets</div>
+                  <div class="rego_cd_dash_bars">
+                    <span style="height:60%;background:#4a569e"></span>
+                    <span style="height:30%;background:#3db9e5"></span>
+                    <span style="height:48%;background:#4a569e"></span>
+                    <span style="height:70%;background:#842573"></span>
+                    <span style="height:40%;background:#3db9e5"></span>
+                  </div>
+                  <div class="rego_cd_dash_bar_labels">
+                    <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+                  </div>
+                </div>
+                <div class="rego_cd_dash_widget">
+                  <div class="rego_cd_dash_widget_title">Visualizations</div>
+                  <div class="rego_cd_dash_lines">
+                    <div><span>By Status</span><span class="rego_cd_dash_line"><i style="width:60%"></i></span></div>
+                    <div><span>By Last Assessments Status</span><span class="rego_cd_dash_line"><i style="width:40%"></i></span></div>
+                  </div>
+                  <div class="rego_cd_dash_ring">
+                    <span class="rego_cd_dash_ring_label">By Owner</span>
+                    <div class="rego_cd_dash_donut">
+                      <span class="rego_cd_dash_donut_total">240</span>
+                    </div>
+                    <div class="rego_cd_dash_legend">
+                      <span><i class="rego_cd_dot_p"></i>Not Assessed</span>
+                      <span><i class="rego_cd_dot_t"></i>Not Implemented</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TRUSTED MARQUEE ==================== -->
+    <section class="rego_cd_trusted">
+      <div class="rego_container">
+        <p class="rego_cd_trusted_title">Trusted by the most secure and compliant organizations on the planet</p>
+      </div>
+      <div class="rego_cd_trusted_viewport">
+        <div class="rego_cd_trusted_marquee">
+          <div class="rego_cd_trusted_group">
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Department-of-Energy-Logo-300x132.png" alt="Department of Energy" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/DHCF-Logo-300x132.png" alt="DHCF" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Dragos-Logo-300x132.png" alt="Dragos" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Idaho-National-Laboratory-Logo-300x132.png" alt="Idaho National Laboratory" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/KeyBank-Logo-300x132.png" alt="KeyBank" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Qualys-Logo-300x132.png" alt="Qualys" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/BMC-Logo-300x132.png" alt="BMC" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Brookhaven-National-Lab-Logo-300x132.png" alt="Brookhaven National Lab" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Oak-Ridge-National-Lab-Logo-300x132.png" alt="Oak Ridge National Lab" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/NATO-SEASPARROW-Logo-300x132.png" alt="NATO SEASPARROW" />
+          </div>
+          <div class="rego_cd_trusted_group" aria-hidden="true">
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Department-of-Energy-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/DHCF-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Dragos-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Idaho-National-Laboratory-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/KeyBank-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Qualys-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/BMC-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Brookhaven-National-Lab-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/Oak-Ridge-National-Lab-Logo-300x132.png" alt="" />
+            <img class="rego_cd_logo_img" src="https://regscale.com/wp-content/uploads/2025/05/NATO-SEASPARROW-Logo-300x132.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== OSCAL-NATIVE ==================== -->
+    <section class="rego_cd_split_sec">
+      <div class="rego_container rego_cd_split">
+        <div class="rego_cd_feat_visual" aria-hidden="true">
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_blue"></div>
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_teal"></div>
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_purple"></div>
+          <div class="rego_cd_feat_dashcard">
+            <div class="rego_cd_feat_dash_head">
+              <span class="rego_cd_dash_brand"><img src="images/rego-logo.png" alt="Rego" />Rego</span>
+            </div>
+            <div class="rego_cd_feat_tabs">
+              <span>Basic Info</span><span class="rego_cd_is_active">Scorecard</span>
+              <span>Gantt Chart</span><span>Categorization</span>
+            </div>
+            <div class="rego_cd_feat_body">
+              <div class="rego_cd_feat_card_left">
+                <strong>DHS MARS-E</strong>
+                <div class="rego_cd_feat_overall">
+                  <div class="rego_cd_feat_overall_title">Overall Compliance</div>
+                  <div class="rego_cd_dash_gauge_row">
+                    <span>Compliance Score</span>
+                    <svg viewBox="0 0 80 50" width="60" height="40">
+                      <path d="M8,42 A32,32 0 0 1 72,42" stroke="#e4e6f1" stroke-width="8" fill="none"/>
+                      <path d="M8,42 A32,32 0 0 1 52,13" stroke="#3db9e5" stroke-width="8" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <span class="rego_cd_dash_pct">27%</span>
+                  </div>
+                  <div class="rego_cd_dash_metric"><span>Total Controls</span><span class="rego_cd_dash_badge">1</span></div>
+                  <div class="rego_cd_dash_metric"><span>Total Assessments</span><span class="rego_cd_dash_badge rego_cd_dash_badge_2">4</span></div>
+                </div>
+              </div>
+              <div class="rego_cd_feat_card_right">
+                <div class="rego_cd_feat_oscal">
+                  <span class="rego_cd_feat_oscal_label">&lt;/&gt; OSCAL</span>
+                  <div class="rego_cd_feat_oscal_lines">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rego_cd_feat_extras">
+              <span class="rego_cd_feat_excel">X</span>
+              <span class="rego_cd_feat_word">W</span>
+              <span class="rego_cd_feat_pdf">PDF</span>
+            </div>
+          </div>
+        </div>
+        <div class="rego_cd_feat_text">
+          <h2 class="rego_cd_section_title">
+            First <span class="rego_cd_accent">OSCAL-Native</span> Compliance as Code Platform
+          </h2>
+          <p class="rego_cd_section_desc">
+            Generate all artifacts in machine-readable formats (XML/JSON) to perform automated
+            security and compliance checks that eliminate manual labor and improve release
+            velocity at every stage of the SLDC.
+          </p>
+          <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SBOM ==================== -->
+    <section class="rego_cd_split_sec rego_cd_split_sec_alt">
+      <div class="rego_container rego_cd_split">
+        <div class="rego_cd_feat_text">
+          <h2 class="rego_cd_section_title">
+            Automated <span class="rego_cd_accent">SBOM</span> Generation
+          </h2>
+          <p class="rego_cd_section_desc">
+            Generate and store the Software Bill of Materials (SBOM) for every build as part of your
+            Secure Software Development Framework (SSDF).
+          </p>
+          <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read More</a>
+        </div>
+        <div class="rego_cd_feat_visual" aria-hidden="true">
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_blue"></div>
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_teal rego_cd_feat_orb_teal_sm"></div>
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_purple"></div>
+          <div class="rego_cd_feat_dashcard">
+            <div class="rego_cd_sbom_badge">SBOM</div>
+            <div class="rego_cd_feat_dash_head">
+              <span class="rego_cd_dash_brand"><img src="images/rego-logo.png" alt="Rego" />Rego</span>
+              <span class="rego_cd_dash_nav">Workspace · Status Boards · Modules · reports</span>
+            </div>
+            <div class="rego_cd_feat_tabs">
+              <span>Basic Info</span><span class="rego_cd_is_active">Scorecard</span>
+              <span>Gantt Chart</span><span>Categorization</span>
+            </div>
+            <div class="rego_cd_feat_body">
+              <div class="rego_cd_feat_card_left">
+                <strong>MARS-E</strong>
+                <div class="rego_cd_dash_metric"><span>Overall Compliance</span><span class="rego_cd_dash_pct rego_cd_dash_pct_sm">27%</span></div>
+                <div class="rego_cd_dash_metric"><span>Total Controls</span><span class="rego_cd_dash_badge">1</span></div>
+                <div class="rego_cd_dash_metric"><span>Total Assessments</span><span class="rego_cd_dash_badge rego_cd_dash_badge_2">4</span></div>
+              </div>
+              <div class="rego_cd_feat_card_right">
+                <div class="rego_cd_feat_overall_title">Identify Critical Assets</div>
+                <div class="rego_cd_dash_bars rego_cd_dash_bars_sm">
+                  <span style="height:60%;background:#4a569e"></span>
+                  <span style="height:30%;background:#3db9e5"></span>
+                  <span style="height:48%;background:#4a569e"></span>
+                  <span style="height:70%;background:#842573"></span>
+                </div>
+                <div class="rego_cd_dash_ring rego_cd_dash_ring_sm">
+                  <div class="rego_cd_dash_donut"><span class="rego_cd_dash_donut_total">240</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DEV FOCUS CARD ==================== -->
+    <section class="rego_cd_cardcta">
+      <div class="rego_container">
+        <div class="rego_cd_cardcta_card">
+          <div class="rego_cd_cardcta_orb rego_cd_cardcta_orb_orange"></div>
+          <div class="rego_cd_cardcta_orb rego_cd_cardcta_orb_blue"></div>
+          <div class="rego_cd_cardcta_orb rego_cd_cardcta_orb_teal"></div>
+          <div class="rego_cd_cardcta_inner">
+            <div class="rego_cd_cardcta_copy">
+              <h2 class="rego_cd_cardcta_title">
+                Let developers focus on coding,
+                <span class="rego_cd_accent">not compliance</span>
+              </h2>
+              <p class="rego_cd_cardcta_desc">
+                The only GRC (Governance, Risk, and Compliance) solution designed to run headless
+                with a focus on developer productivity. Rego enables DevSecOps teams to embed
+                checks directly into the CI/CD pipeline so developers can just run their code and
+                the compliance and risk paperwork can take care of itself.
+              </p>
+            </div>
+            <a href="#" class="rego_cd_btn rego_cd_btn_primary">Get a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEAMLESS CI/CD ==================== -->
+    <section class="rego_cd_split_sec">
+      <div class="rego_container rego_cd_split">
+        <div class="rego_cd_hub" aria-hidden="true">
+          <svg class="rego_cd_hub_lines" viewBox="0 0 500 500">
+            <line x1="250" y1="250" x2="105" y2="170" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="220" y2="80"  stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="350" y2="80"  stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="430" y2="140" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="440" y2="290" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="410" y2="400" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="300" y2="440" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="70"  y2="350" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+          </svg>
+          <div class="rego_cd_hub_bg_big"></div>
+          <div class="rego_cd_hub_bg_sm rego_cd_hub_bg_sm_teal"></div>
+          <div class="rego_cd_hub_bg_sm rego_cd_hub_bg_sm_orange"></div>
+          <div class="rego_cd_hub_gear">
+            <div class="rego_cd_hub_gear_ring"></div>
+            <div class="rego_cd_hub_gear_shield"><img src="images/rego-logo.png" alt="" /></div>
+          </div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_servicenow"><span>O</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_wiz"><span>WIZ<sup>+</sup></span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_excel"><span>X</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_azure"><span></span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_aws"><span>aws</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_qualys"><span>Q</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_jira"><span></span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_sonar"><span></span></div>
+        </div>
+
+        <div class="rego_cd_feat_text">
+          <h2 class="rego_cd_section_title">
+            Seamless Integration into <span class="rego_cd_accent">CI/CD</span>
+          </h2>
+          <p class="rego_cd_section_desc">
+            Integrate Rego's CLI into your continuous integration and continuous delivery (CI/CD)
+            pipelines to provide automated updates to your risk and compliance posture as new
+            code is developed.
+          </p>
+          <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INCIDENT + CHANGE ==================== -->
+    <section class="rego_cd_split_sec rego_cd_split_sec_alt">
+      <div class="rego_container rego_cd_split">
+        <div class="rego_cd_feat_text">
+          <h2 class="rego_cd_section_title">
+            Integrated <span class="rego_cd_accent">Incident</span> and <span class="rego_cd_accent">Change</span> Management
+          </h2>
+          <p class="rego_cd_section_desc">
+            Automated processing of static and dynamic code scans along with container scans to
+            generate incident tickets; auto-generate change tickets in your ITIL tool for every
+            build/release.
+          </p>
+          <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read More</a>
+        </div>
+
+        <div class="rego_cd_table_wrap" aria-hidden="true">
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_blue"></div>
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_purple rego_cd_feat_orb_purple_l"></div>
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_teal"></div>
+          <div class="rego_cd_table">
+            <div class="rego_cd_table_head">
+              <span>CONTROLS</span><span>STATUS</span><span>PROGRESS</span><span>OWNER</span>
+            </div>
+            <div class="rego_cd_table_row">
+              <span class="rego_cd_line_ph"></span>
+              <span class="rego_cd_chip rego_cd_chip_complete">COMPLETE</span>
+              <span class="rego_cd_progress"><i style="width:80%"></i></span>
+              <span class="rego_cd_line_ph"></span>
+            </div>
+            <div class="rego_cd_table_row">
+              <span class="rego_cd_line_ph"></span>
+              <span class="rego_cd_chip rego_cd_chip_complete">COMPLETE</span>
+              <span class="rego_cd_progress"><i style="width:70%"></i></span>
+              <span class="rego_cd_line_ph"></span>
+            </div>
+            <div class="rego_cd_table_row">
+              <span class="rego_cd_line_ph"></span>
+              <span class="rego_cd_chip rego_cd_chip_cancel">CANCELED</span>
+              <span class="rego_cd_progress"><i style="width:60%"></i></span>
+              <span class="rego_cd_line_ph"></span>
+            </div>
+            <div class="rego_cd_table_row">
+              <span class="rego_cd_line_ph"></span>
+              <span class="rego_cd_chip rego_cd_chip_progress">IN PROGRESS</span>
+              <span class="rego_cd_progress"><i style="width:55%"></i></span>
+              <span class="rego_cd_line_ph"></span>
+            </div>
+            <div class="rego_cd_table_row">
+              <span class="rego_cd_line_ph"></span>
+              <span></span>
+              <span class="rego_cd_progress"><i style="width:35%"></i></span>
+              <span class="rego_cd_line_ph"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GARTNER ==================== -->
+    <section class="rego_cd_split_sec">
+      <div class="rego_container rego_cd_split">
+        <div class="rego_cd_gartner_card" aria-hidden="true">
+          <div class="rego_cd_gartner_inner">
+            <div class="rego_cd_gartner_title">
+              Rego Named in the<br/>
+              <strong>2024 Gartner® Market</strong><br/>
+              <strong>Guide for DevOps</strong><br/>
+              <strong>Continuous Compliance</strong><br/>
+              <strong>Automation Tools</strong>
+            </div>
+            <div class="rego_cd_gartner_art">
+              <svg viewBox="0 0 140 140" fill="none">
+                <rect x="28" y="40" width="84" height="56" rx="6" fill="#fff"/>
+                <rect x="34" y="46" width="72" height="10" rx="2" fill="#4a569e"/>
+                <rect x="34" y="60" width="50" height="8" rx="2" fill="#dbeeff"/>
+                <rect x="34" y="72" width="60" height="8" rx="2" fill="#dbeeff"/>
+                <rect x="34" y="84" width="40" height="8" rx="2" fill="#dbeeff"/>
+                <circle cx="96" cy="88" r="12" fill="#17b8a6"/>
+                <path d="M90 88 L95 93 L103 84" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="18" cy="36" r="4" fill="#fbbf24"/>
+                <circle cx="126" cy="32" r="3" fill="#17b8a6"/>
+              </svg>
+            </div>
+            <div class="rego_cd_gartner_brand">
+              <img src="images/rego-logo.png" alt="" /><span>Rego</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rego_cd_feat_text">
+          <h2 class="rego_cd_section_title">
+            Find Rego in the<br/>
+            <span class="rego_cd_accent">2024 Gartner® Market Guide</span>
+          </h2>
+          <p class="rego_cd_section_desc">
+            Rego was recognized as a Representative Vendor in the 2024 Gartner Market Guide
+            for DevOps Continuous Compliance Automation Tools Report— for the second
+            consecutive year!
+          </p>
+          <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CASE STUDY SLIDER ==================== -->
+    <section class="rego_cd_case">
+      <div class="rego_container">
+        <div class="rego_cd_case_slider">
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <defs>
+              <linearGradient id="rego_cd_case_grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4a569e"/>
+                <stop offset="100%" stop-color="#842573"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <article class="rego_cd_case_card rego_cd_case_active" data-slide="0">
+            <div class="rego_cd_case_copy">
+              <h2 class="rego_cd_case_title">Operation StormBreaker <span class="rego_cd_accent">Enables Mission-Speed Technology Delivery</span></h2>
+              <p class="rego_cd_case_desc">See how USMC-MCCS achieved 99.97% faster ATO with Agile ATO, rapid RMF automation, and continuous authorization to deliver mission-ready technology in minutes.</p>
+              <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cd_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>$100,000</strong>
+              <p>Saved per system per month</p>
+            </div>
+          </article>
+
+          <article class="rego_cd_case_card" data-slide="1">
+            <div class="rego_cd_case_copy">
+              <h2 class="rego_cd_case_title">Government Services Provider <span class="rego_cd_accent">Centralizes Control Management and Enables Enterprise-Wide Collaboration</span></h2>
+              <p class="rego_cd_case_desc">See how a major government services company unified its control libraries, automated control inheritance, and eliminated manual mapping with Rego.</p>
+              <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cd_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Streamlined documentation</strong>
+              <p>Faster, more efficient security plan development</p>
+            </div>
+          </article>
+
+          <article class="rego_cd_case_card" data-slide="2">
+            <div class="rego_cd_case_copy">
+              <h2 class="rego_cd_case_title">Global Law Firm Streamlines Documentation and <span class="rego_cd_accent">Centralizes Compliance with Rego</span></h2>
+              <p class="rego_cd_case_desc">Learn how a global law firm eliminated scattered spreadsheets, automated customer security responses, and unified its framework management with Rego.</p>
+              <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cd_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Reduced response time</strong>
+              <p>Less manual work to respond to questionnaires and audits</p>
+            </div>
+          </article>
+
+          <article class="rego_cd_case_card" data-slide="3">
+            <div class="rego_cd_case_copy">
+              <h2 class="rego_cd_case_title">Major Healthcare Company Centralizes Compliance and <span class="rego_cd_accent">Eliminates Manual Risk Tracking</span></h2>
+              <p class="rego_cd_case_desc">See how a major healthcare company consolidated scattered compliance data into one platform, automated evidence collection, and gained real-time visibility across multiple frameworks.</p>
+              <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cd_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>One Platform</strong>
+              <p>Single pane of glass for all compliance operations</p>
+            </div>
+          </article>
+
+          <article class="rego_cd_case_card" data-slide="4">
+            <div class="rego_cd_case_copy">
+              <h2 class="rego_cd_case_title">US Government Agency Automates Evidence Collection and <span class="rego_cd_accent">Reduces Authorization Timelines</span></h2>
+              <p class="rego_cd_case_desc">Learn how a US government agency eliminated manual evidence collection, integrated with CSAM, and achieved rapid security plan maintenance with Rego.</p>
+              <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read Success Story</a>
+            </div>
+            <div class="rego_cd_case_side">
+              <svg viewBox="0 0 80 80" width="80" height="80"><circle cx="40" cy="40" r="34" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="5"/><path d="M26 42 L36 52 L56 30" fill="none" stroke="url(#rego_cd_case_grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <strong>Automated Evidence</strong>
+              <p>Integration-driven collection from AWS and QRadar</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="rego_cd_case_dots" role="tablist">
+          <button class="rego_cd_case_dot rego_cd_case_dot_active" data-dot="0" type="button"></button>
+          <button class="rego_cd_case_dot" data-dot="1" type="button"></button>
+          <button class="rego_cd_case_dot" data-dot="2" type="button"></button>
+          <button class="rego_cd_case_dot" data-dot="3" type="button"></button>
+          <button class="rego_cd_case_dot" data-dot="4" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SSDF HUB ==================== -->
+    <section class="rego_cd_split_sec">
+      <div class="rego_container rego_cd_split">
+        <div class="rego_cd_hub" aria-hidden="true">
+          <svg class="rego_cd_hub_lines" viewBox="0 0 500 500">
+            <line x1="250" y1="250" x2="105" y2="170" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="220" y2="80"  stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="350" y2="80"  stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="430" y2="140" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="440" y2="290" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="410" y2="400" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="300" y2="440" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="250" y1="250" x2="70"  y2="350" stroke="#4a569e" stroke-width="1.5" stroke-dasharray="4 4"/>
+          </svg>
+          <div class="rego_cd_hub_bg_big"></div>
+          <div class="rego_cd_hub_bg_sm rego_cd_hub_bg_sm_teal"></div>
+          <div class="rego_cd_hub_bg_sm rego_cd_hub_bg_sm_orange"></div>
+          <div class="rego_cd_hub_gear">
+            <div class="rego_cd_hub_gear_ring"></div>
+            <div class="rego_cd_hub_gear_shield"><img src="images/rego-logo.png" alt="" /></div>
+          </div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_servicenow"><span>O</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_wiz"><span>npm</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_excel"><span>sonar</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_azure"><span>A</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_aws"><span>Scn</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_qualys"><span>Q</span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_jira"><span></span></div>
+          <div class="rego_cd_hub_node rego_cd_hub_n_sonar"><span>sf</span></div>
+        </div>
+
+        <div class="rego_cd_feat_text">
+          <h2 class="rego_cd_section_title">
+            Integrations with Every Stage of the
+            <span class="rego_cd_accent">Secure Software Development Framework</span> (SSDF)
+          </h2>
+          <p class="rego_cd_section_desc">
+            Automated tools to prioritize and remediate vulnerabilities and security issues,
+            integrations with CI/CD, scanners, cloud, and ITIL tools as well as AI-based
+            compliance and risk assessment tools.
+          </p>
+          <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== REPORTING ==================== -->
+    <section class="rego_cd_split_sec rego_cd_split_sec_alt">
+      <div class="rego_container rego_cd_split">
+        <div class="rego_cd_feat_text">
+          <h2 class="rego_cd_section_title">Automated <span class="rego_cd_accent">Reporting</span></h2>
+          <p class="rego_cd_section_desc">
+            Generate risk and compliance reports and dashboards in human-readable (Microsoft
+            Office formats), machine-readable (OSCAL/SBOM), and interactive dashboards and
+            reporting.
+          </p>
+          <a href="#" class="rego_cd_btn rego_cd_btn_outline">Read More</a>
+        </div>
+        <div class="rego_cd_feat_visual" aria-hidden="true">
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_blue"></div>
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_purple"></div>
+          <div class="rego_cd_feat_orb rego_cd_feat_orb_teal"></div>
+          <div class="rego_cd_feat_dashcard rego_cd_report_dash">
+            <div class="rego_cd_feat_dash_head">
+              <span class="rego_cd_dash_brand"><img src="images/rego-logo.png" alt="Rego" />Rego</span>
+            </div>
+            <div class="rego_cd_report_grid">
+              <div class="rego_cd_report_cell">
+                <strong>Build Program</strong>
+                <span class="rego_cd_dash_pct rego_cd_dash_pct_sm">63%</span>
+                <span class="rego_cd_report_nums">22 | 1924</span>
+                <div class="rego_cd_dash_bars_h">
+                  <div style="width:72%;background:#4a569e"></div>
+                  <div style="width:45%;background:#842573"></div>
+                  <div style="width:60%;background:#4a569e"></div>
+                </div>
+              </div>
+              <div class="rego_cd_report_cell">
+                <strong>Assess Program</strong>
+                <div class="rego_cd_dash_bars_h">
+                  <div style="width:60%;background:#4a569e"></div>
+                  <div style="width:40%;background:#842573"></div>
+                  <div style="width:55%;background:#4a569e"></div>
+                </div>
+              </div>
+              <div class="rego_cd_report_cell">
+                <strong>Fix Problems</strong>
+                <div class="rego_cd_cta_ring">
+                  <span>Total<br/><strong>433</strong></span>
+                </div>
+                <div class="rego_cd_cta_legend">
+                  <span><i class="rego_cd_dot_open"></i>Open 95%</span>
+                  <span><i class="rego_cd_dot_closed"></i>Closed 5%</span>
+                </div>
+              </div>
+              <div class="rego_cd_report_cell rego_cd_report_cell_risk">
+                <strong>Risk by Asset</strong>
+                <div class="rego_cd_report_risk_val">
+                  <span>Total Potential Savings</span>
+                  <strong>$48.8k</strong>
+                  <em>3.4%</em>
+                </div>
+                <div class="rego_cd_dash_bars rego_cd_dash_bars_sm">
+                  <span style="height:30%;background:#842573"></span>
+                  <span style="height:50%;background:#842573"></span>
+                  <span style="height:70%;background:#842573"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FACTORY CTA CARD ==================== -->
+    <section class="rego_cd_cardcta">
+      <div class="rego_container">
+        <div class="rego_cd_cardcta_card">
+          <div class="rego_cd_cardcta_orb rego_cd_cardcta_orb_orange"></div>
+          <div class="rego_cd_cardcta_orb rego_cd_cardcta_orb_blue"></div>
+          <div class="rego_cd_cardcta_orb rego_cd_cardcta_orb_teal"></div>
+          <div class="rego_cd_cardcta_inner">
+            <div class="rego_cd_cardcta_copy">
+              <h2 class="rego_cd_cardcta_title">
+                <span class="rego_cd_accent">Automate risk &amp; compliance</span>
+                processes for your software factory
+              </h2>
+              <p class="rego_cd_cardcta_desc">
+                Integrate Rego into your software factory and CI/CD workflows to provide fully
+                automated risk and compliance solutions that enable better security with higher
+                developer productivity.
+              </p>
+            </div>
+            <a href="#" class="rego_cd_btn rego_cd_btn_primary">Get a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STAY UP TO DATE ==================== -->
+    <section class="rego_cd_stay">
+      <div class="rego_container">
+        <h2 class="rego_cd_section_title rego_cd_center">
+          More ways to <span class="rego_cd_accent">stay up to date</span>
+        </h2>
+
+        <div class="rego_cd_stay_grid">
+          <div class="rego_cd_stay_posts">
+            <article class="rego_cd_post">
+              <div class="rego_cd_post_img rego_cd_post_img_1">
+                <span class="rego_cd_post_badge">BLOG</span>
+                <span class="rego_cd_post_brand"><span class="rego_cd_post_brand_r">R</span>Rego</span>
+                <span class="rego_cd_post_headline">The Ultimate Guide to<br/>Compliance Automation:<br/>Benefits, Implementation,<br/>and More</span>
+              </div>
+              <div class="rego_cd_post_meta">
+                <span class="rego_cd_post_tag">BLOG</span>
+                <h3 class="rego_cd_post_title">The Ultimate Guide to Compliance Automation: Benefits, Implementation, and More</h3>
+              </div>
+            </article>
+
+            <article class="rego_cd_post">
+              <div class="rego_cd_post_img rego_cd_post_img_2">
+                <span class="rego_cd_post_badge">BLOG</span>
+                <span class="rego_cd_post_brand_b"><span class="rego_cd_post_brand_r">R</span>Rego</span>
+                <span class="rego_cd_post_headline">FedRAMP Baseline<br/>Transition Points to OSCAL-<br/>Native Tools</span>
+              </div>
+              <div class="rego_cd_post_meta">
+                <span class="rego_cd_post_tag">BLOG</span>
+                <h3 class="rego_cd_post_title">FedRAMP Baseline Transition Points to OSCAL-Native Tools</h3>
+              </div>
+            </article>
+
+            <article class="rego_cd_post">
+              <div class="rego_cd_post_img rego_cd_post_img_3">
+                <span class="rego_cd_post_badge">BLOG</span>
+                <span class="rego_cd_post_brand_b"><span class="rego_cd_post_brand_r">R</span>Rego</span>
+                <span class="rego_cd_post_headline_alt">3 Ways AI Can<br/>Streamline Your<br/>Regulatory<br/>Compliance 🪄</span>
+              </div>
+              <div class="rego_cd_post_meta">
+                <span class="rego_cd_post_tag">BLOG</span>
+                <h3 class="rego_cd_post_title">3 Ways AI Can Streamline Your Regulatory Compliance</h3>
+              </div>
+            </article>
+          </div>
+
+          <aside class="rego_cd_newsletter">
+            <h3 class="rego_cd_newsletter_title">Get insights delivered to your inbox</h3>
+            <p class="rego_cd_newsletter_sub">Receive platform tips, release updates, news and more</p>
+            <form class="rego_cd_newsletter_form" novalidate>
+              <input type="text" class="rego_cd_nl_input" placeholder="First Name*" required />
+              <input type="text" class="rego_cd_nl_input" placeholder="Last Name*" required />
+              <input type="text" class="rego_cd_nl_input" placeholder="Job title*" required />
+              <input type="text" class="rego_cd_nl_input" placeholder="Company*" required />
+              <input type="email" class="rego_cd_nl_input" placeholder="Email*" required />
+              <label class="rego_cd_nl_consent">
+                <input type="checkbox" required />
+                <span>I consent to receive Rego emails. Rego may process my data and I may unsubscribe per their <a href="#" class="rego_cd_nl_link">Privacy Policy.</a> *</span>
+              </label>
+              <button type="submit" class="rego_cd_btn rego_cd_btn_primary rego_cd_nl_submit">Submit</button>
+            </form>
+          </aside>
+        </div>
+
+        <p class="rego_cd_footnote">
+          *Gartner, Market Guide for DevOps Continuous Compliance Automation Tools, 2 March 2026, Daniel Betts, George Spafford, Chris Saunderson, and Hassan Ennaciri.<br/>
+          GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permission. All rights reserved.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="rego_footer_mount"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/continuous-compliance-for-devsecops.js"></script>
+
+</body>
+</html>
