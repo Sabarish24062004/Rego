@@ -1,0 +1,91 @@
+/* ================================================================
+   REGO – ENTERPRISE SOFTWARE LICENSE AGREEMENT
+   Plain legal document layout — light tinted background,
+   Inter font, centered article column with flowing paragraphs.
+================================================================ */
+
+.rego_eula_page {
+  background: #eff3fb;
+  padding: 72px 24px 96px;
+  min-height: 100vh;
+}
+
+.rego_eula_doc {
+  max-width: 920px;
+  margin: 0 auto;
+  color: var(--rego-text);
+  font-family: var(--rego-font);
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+/* ── Title ─────────────────────────────────────────────────── */
+.rego_eula_doc_title {
+  font-size: clamp(36px, 4.6vw, 54px);
+  font-weight: 800;
+  color: var(--rego-text);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 40px;
+}
+
+/* ── Date of last revision ─────────────────────────────────── */
+.rego_eula_doc_date {
+  font-size: 17px;
+  color: var(--rego-text);
+  margin: 0 0 44px;
+}
+.rego_eula_doc_date strong { font-weight: 700; color: var(--rego-text); }
+
+/* ── Paragraphs ────────────────────────────────────────────── */
+.rego_eula_doc p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--rego-text-muted);
+  margin: 0 0 24px;
+}
+.rego_eula_doc p strong { color: var(--rego-text); font-weight: 700; }
+.rego_eula_doc p u { text-decoration-thickness: 1px; text-underline-offset: 3px; color: var(--rego-text); font-weight: 600; }
+
+/* Links inside the document */
+.rego_eula_doc a {
+  color: var(--rego-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--rego-transition);
+}
+.rego_eula_doc a:hover { color: var(--rego-secondary); }
+
+/* ── Section titles ────────────────────────────────────────── */
+.rego_eula_s {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 56px 0 26px;
+}
+
+/* Print-friendly tweaks */
+@media print {
+  .rego_eula_page {
+    background: #ffffff;
+    padding: 24px;
+  }
+  .rego_eula_doc {
+    max-width: none;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .rego_eula_doc p { color: #000; margin-bottom: 12px; }
+  .rego_eula_s { margin: 24px 0 12px; }
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .rego_eula_page { padding: 48px 20px 64px; }
+  .rego_eula_doc { font-size: 15.5px; line-height: 1.75; }
+  .rego_eula_doc p { font-size: 15.5px; }
+  .rego_eula_doc_title { font-size: 30px; margin-bottom: 28px; }
+  .rego_eula_s { font-size: 24px; margin: 40px 0 18px; }
+}
