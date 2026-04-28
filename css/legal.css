@@ -1,0 +1,245 @@
+/* ================================================================
+   REGO – LEGAL PAGE STYLESHEET
+   File: css/legal.css
+   Prefix: rego_legal_
+   Theme: Brand purple gradient (#4a569e -> #842573) on light/blue
+          backgrounds. Mirrors the styling language of
+          industry-solutions and the rest of the RegO site.
+   Load order: common.css -> layout.css -> this file
+================================================================ */
+
+/* ==== Brand purple gradient accent (matches industry-solutions) ==== */
+.rego_legal_accent {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==== Reveal helper used by legal.js ==== */
+.rego_reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.rego_revealed { opacity: 1; transform: translateY(0); }
+
+/* ================================================================
+   1. HERO – Title + Subtitle
+================================================================ */
+.rego_legal_hero {
+  background: linear-gradient(180deg, #ffffff 0%, #eef3ff 100%);
+  padding: 96px 0 72px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rego_legal_hero_title {
+  font-size: clamp(34px, 4.4vw, 56px);
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 auto 22px;
+  max-width: 980px;
+}
+
+.rego_legal_hero_sub {
+  font-size: 17px;
+  color: var(--rego-text-muted);
+  line-height: 1.7;
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+/* ================================================================
+   2. AGREEMENT CARDS GRID
+================================================================ */
+.rego_legal_docs {
+  background: linear-gradient(180deg, #eef3ff 0%, #ffffff 100%);
+  padding: 64px 0 96px;
+}
+
+.rego_legal_doc_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.rego_legal_doc_card {
+  background: #ffffff;
+  border: 1px solid var(--rego-border-light);
+  border-radius: 16px;
+  padding: 36px 36px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--rego-shadow-xs);
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition), border-color var(--rego-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_legal_doc_card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(74, 86, 158, 0.04), rgba(132, 37, 115, 0.04));
+  opacity: 0;
+  transition: opacity var(--rego-transition);
+}
+
+.rego_legal_doc_card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--rego-shadow-lg);
+  border-color: rgba(74, 86, 158, 0.25);
+}
+
+.rego_legal_doc_card:hover::before { opacity: 1; }
+
+.rego_legal_doc_card_solo {
+  grid-column: 1;
+}
+
+.rego_legal_doc_top {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_legal_doc_icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1d4ed8 0%, #4a569e 60%, #842573 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 18px rgba(74, 86, 158, 0.30);
+}
+
+.rego_legal_doc_title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 8px 0 0;
+}
+
+.rego_legal_doc_desc {
+  font-size: 15.5px;
+  color: var(--rego-text-muted);
+  line-height: 1.75;
+  margin: 0 0 28px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_legal_doc_desc_caps {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 13.5px;
+  line-height: 1.85;
+}
+
+.rego_legal_inline_link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.rego_legal_inline_link:hover { text-decoration: underline; }
+
+.rego_legal_doc_link {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--rego-border-light);
+  font-size: 15px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap var(--rego-transition), color var(--rego-transition);
+  position: relative;
+  z-index: 1;
+}
+
+.rego_legal_doc_link:hover {
+  gap: 12px;
+  color: var(--rego-primary);
+}
+
+/* ================================================================
+   3. CTA – Ready to accelerate
+================================================================ */
+.rego_legal_cta {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f7ff 100%);
+  padding: 96px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_legal_cta::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #38bdf8 0%, #4a569e 50%, #842573 100%);
+}
+
+.rego_legal_cta_inner {
+  max-width: 720px;
+}
+
+.rego_legal_cta_title {
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin: 0 0 20px;
+}
+
+.rego_legal_cta_desc {
+  font-size: 17px;
+  color: var(--rego-text-muted);
+  line-height: 1.7;
+  margin: 0 0 32px;
+  max-width: 640px;
+}
+
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 1024px) {
+  .rego_legal_hero { padding: 72px 0 56px; }
+  .rego_legal_doc_grid { grid-template-columns: 1fr; }
+  .rego_legal_doc_card_solo { grid-column: 1; }
+}
+
+@media (max-width: 768px) {
+  .rego_legal_hero { padding: 56px 0 40px; }
+  .rego_legal_docs { padding: 48px 0 72px; }
+  .rego_legal_doc_card { padding: 28px 24px 22px; }
+  .rego_legal_doc_top { gap: 14px; }
+  .rego_legal_doc_icon { width: 46px; height: 46px; }
+  .rego_legal_doc_title { font-size: 19px; }
+  .rego_legal_cta { padding: 64px 0; }
+}
+
+@media (max-width: 480px) {
+  .rego_legal_hero_title { font-size: 30px; }
+  .rego_legal_hero_sub { font-size: 15px; }
+  .rego_legal_doc_top { flex-direction: column; gap: 12px; }
+  .rego_legal_doc_desc { font-size: 14.5px; }
+}
