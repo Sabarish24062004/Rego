@@ -1,0 +1,3619 @@
+/* ================================================================
+   REGO – NEWSROOM PAGE STYLESHEET
+   File: css/newsroom.css
+   Prefix: rego_news_
+   Theme: Brand purple gradient (#4a569e -> #842573) on light/blue
+          backgrounds. Mirrors the styling language of
+          industry-solutions and the rest of the RegO site.
+   Load order: common.css -> layout.css -> this file
+================================================================ */
+
+/* ==== Brand purple gradient accent ==== */
+.rego_news_accent {
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==== Reveal helper ==== */
+.rego_reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.rego_revealed { opacity: 1; transform: translateY(0); }
+
+/* ================================================================
+   1. HERO – Title + Featured Slideshow
+================================================================ */
+.rego_news_hero {
+  background: linear-gradient(180deg, #ffffff 0%, #eef3ff 100%);
+  padding: 80px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_news_hero_title {
+  font-size: clamp(34px, 4.4vw, 56px);
+  font-weight: 800;
+  text-align: center;
+  color: var(--rego-text);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0 0 48px;
+}
+
+.rego_news_slider { position: relative; }
+
+.rego_news_slider_track {
+  position: relative;
+  min-height: 320px;
+}
+
+.rego_news_slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: opacity .6s ease, transform .6s ease, visibility 0s linear .6s;
+}
+
+.rego_news_slide_active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition: opacity .6s ease, transform .6s ease, visibility 0s linear 0s;
+}
+
+.rego_news_feat_card {
+  background: #ffffff;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(74, 86, 158, 0.18);
+  border: 1px solid var(--rego-border-light);
+  min-height: 320px;
+}
+
+.rego_news_feat_thumb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  overflow: hidden;
+  background: #ffffff;
+  border-right: 1px solid var(--rego-border-light);
+}
+
+.rego_news_feat_thumb_bw {
+  background: linear-gradient(135deg, #ffffff, #f6f7ff);
+}
+
+.rego_news_feat_thumb_pr {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  color: #ffffff;
+}
+
+.rego_news_feat_thumb_align {
+  background: #ffffff;
+}
+
+.rego_news_feat_logo_pill {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #1e3a8a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rego_news_feat_logo_pill::before {
+  content: '';
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  background: #1e3a8a;
+  border-radius: 50%;
+  margin-right: 8px;
+  background-image: radial-gradient(circle at 30% 30%, #ffffff 8%, transparent 8%);
+}
+
+.rego_news_feat_logo_sub {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--rego-text-muted);
+  margin-top: 6px;
+}
+
+.rego_news_feat_logo_pr {
+  font-size: 38px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.rego_news_feat_logo_pr::after {
+  content: '®';
+  font-size: 14px;
+  vertical-align: super;
+}
+
+.rego_news_feat_logo_align {
+  font-size: 36px;
+  font-weight: 900;
+  color: #000000;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rego_news_feat_logo_align::before {
+  content: '';
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background:
+    linear-gradient(135deg, #000 50%, transparent 50%),
+    linear-gradient(45deg, #000 50%, transparent 50%);
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(45deg);
+  border: 2px solid #000;
+}
+
+.rego_news_feat_body {
+  padding: 48px 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rego_news_feat_kicker {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: 0.18em;
+  margin-bottom: 18px;
+}
+
+.rego_news_feat_title {
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 700;
+  color: var(--rego-text-muted);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  margin: 0 0 32px;
+}
+
+.rego_news_feat_link {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #2563eb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap var(--rego-transition), color var(--rego-transition);
+}
+
+.rego_news_feat_link:hover { gap: 12px; color: var(--rego-primary); }
+
+.rego_news_slider_dots {
+  position: absolute;
+  bottom: 24px;
+  right: 32px;
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.rego_news_slider_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(74, 86, 158, 0.20);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--rego-transition), transform var(--rego-transition);
+}
+
+.rego_news_slider_dot:hover { background: rgba(74, 86, 158, 0.45); }
+.rego_news_slider_dot_active { background: var(--rego-primary); transform: scale(1.2); }
+
+/* ================================================================
+   2. FILTER BAR – Types + Topics + Search
+================================================================ */
+.rego_news_filters {
+  background: #ffffff;
+  padding: 56px 0 32px;
+}
+
+.rego_news_types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.rego_news_type {
+  background: #ffffff;
+  color: var(--rego-text);
+  border: 1px solid var(--rego-border);
+  border-radius: 12px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--rego-transition);
+}
+
+.rego_news_type:hover {
+  border-color: var(--rego-primary);
+  color: var(--rego-primary);
+  background: var(--rego-bg-light);
+}
+
+.rego_news_type_active {
+  background: var(--rego-primary);
+  border-color: var(--rego-primary);
+  color: #ffffff;
+  box-shadow: var(--rego-shadow-sm);
+}
+
+.rego_news_type_active:hover {
+  background: var(--rego-primary-dark);
+  border-color: var(--rego-primary-dark);
+  color: #ffffff;
+}
+
+.rego_news_topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.rego_news_topic {
+  background: transparent;
+  border: 0;
+  padding: 6px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--rego-text);
+  cursor: pointer;
+  position: relative;
+  transition: color var(--rego-transition);
+}
+
+.rego_news_topic:hover { color: var(--rego-primary); }
+
+.rego_news_topic_active { color: var(--rego-primary); }
+
+.rego_news_topic_active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--rego-primary);
+  border-radius: 2px;
+}
+
+.rego_news_search_form {
+  display: flex;
+  align-items: center;
+  max-width: 420px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--rego-border);
+  border-radius: 9999px;
+  padding: 6px 6px 6px 24px;
+  box-shadow: var(--rego-shadow-xs);
+}
+
+.rego_news_search_input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  color: var(--rego-text);
+  padding: 12px 8px;
+  font-family: inherit;
+}
+
+.rego_news_search_input::placeholder { color: var(--rego-text-soft); }
+
+.rego_news_search_btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: var(--rego-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--rego-transition), color var(--rego-transition);
+}
+
+.rego_news_search_btn:hover {
+  background: var(--rego-bg-light);
+  color: var(--rego-primary);
+}
+
+/* ================================================================
+   3. NEWS CARDS GRID
+================================================================ */
+.rego_news_grid_section {
+  background: #ffffff;
+  padding: 32px 0 80px;
+}
+
+.rego_news_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.rego_news_card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--rego-border-light);
+  overflow: hidden;
+  box-shadow: var(--rego-shadow-sm);
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.rego_news_card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--rego-shadow-lg);
+}
+
+.rego_news_card_thumb {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--rego-border-light);
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* BusinessWire thumb */
+.rego_news_thumb_bw { background: linear-gradient(180deg, #ffffff 0%, #f6f7ff 100%); }
+
+.rego_news_thumb_logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e3a8a;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.rego_news_thumb_logo::before {
+  content: '';
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.rego_news_thumb_logo small {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--rego-text-muted);
+}
+
+/* PR Newswire thumb */
+.rego_news_thumb_pr { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%); }
+
+.rego_news_thumb_pr_logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.rego_news_thumb_pr_logo::after {
+  content: '®';
+  font-size: 11px;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+/* A-LIGN thumb */
+.rego_news_thumb_align { background: #ffffff; }
+
+.rego_news_thumb_align_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 0.04em;
+}
+
+.rego_news_align_diamond {
+  width: 28px;
+  height: 28px;
+  background: #000;
+  transform: rotate(45deg);
+}
+
+/* Intellyx thumb */
+.rego_news_thumb_intellyx { background: #ffffff; }
+
+.rego_news_thumb_intellyx_logo {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--rego-text);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+.rego_news_thumb_intellyx_logo::before {
+  content: '';
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #93c5fd, #cbd5e1);
+}
+
+.rego_news_thumb_intellyx_logo::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 60px;
+  width: 130px;
+  height: 4px;
+  background: #fde047;
+  border-radius: 2px;
+}
+
+/* Security Week thumb */
+.rego_news_thumb_secweek { background: #ffffff; }
+
+.rego_news_thumb_secweek_logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 0.02em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.rego_news_thumb_secweek_logo::first-letter { color: #2563eb; }
+
+.rego_news_thumb_secweek_logo small {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--rego-text-muted);
+}
+
+/* VC News Daily thumb */
+.rego_news_thumb_vc { background: #ffffff; }
+
+.rego_news_thumb_vc_logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--rego-text);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rego_news_vc_box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 2px solid #16a34a;
+  color: #16a34a;
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+/* Channel Insider thumb */
+.rego_news_thumb_channel { background: #ffffff; }
+
+.rego_news_thumb_channel_logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rego-text);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rego_news_thumb_channel_logo span {
+  border-left: 1px solid var(--rego-border);
+  padding-left: 8px;
+  font-style: italic;
+  color: var(--rego-text-muted);
+}
+
+/* Federal News Network thumb */
+.rego_news_thumb_fnn { background: #ffffff; }
+
+.rego_news_thumb_fnn_logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.rego_news_fnn_mark {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background:
+    conic-gradient(#dc2626 0 90deg, #1e3a8a 90deg 180deg, #4b5563 180deg 270deg, #dc2626 270deg 360deg);
+  border-radius: 4px;
+}
+
+/* citybiz thumb */
+.rego_news_thumb_citybiz { background: #ffffff; }
+.rego_news_thumb_citybiz_logo {
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+}
+.rego_news_citybiz_pri { color: #0f1c4a; }
+.rego_news_citybiz_sec { color: #d94d20; }
+
+/* citybuzz thumb */
+.rego_news_thumb_citybuzz { background: #ffffff; }
+.rego_news_thumb_citybuzz_logo {
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+}
+.rego_news_citybuzz_pri { color: #0f1c4a; }
+.rego_news_citybuzz_sec { color: #2dd4bf; }
+
+/* Investors Hangout thumb */
+.rego_news_thumb_invhang { background: #4a7299; }
+.rego_news_thumb_invhang_logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  line-height: 1.1;
+}
+.rego_news_invhang_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: Georgia, 'Times New Roman', serif;
+  flex-shrink: 0;
+}
+
+/* NEXTGOV/FCW thumb */
+.rego_news_thumb_nextgov { background: #ffffff; }
+.rego_news_thumb_nextgov_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.rego_news_nextgov_top { color: #1e3a8a; font-size: 26px; }
+.rego_news_nextgov_bot { color: #14b8a6; font-size: 26px; margin-top: -4px; }
+
+/* Technical.ly thumb */
+.rego_news_thumb_techly { background: #0a1628; }
+.rego_news_thumb_techly_logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rego_news_techly_dot { color: #16a34a; }
+.rego_news_thumb_techly_logo small {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 4px;
+}
+
+/* National CIO Review thumb */
+.rego_news_thumb_ncio { background: #ffffff; }
+.rego_news_thumb_ncio_logo {
+  font-size: 18px;
+  font-weight: 900;
+  color: #000;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* N2K Cyberwire thumb */
+.rego_news_thumb_n2k { background: #0a0a0a; }
+.rego_news_thumb_n2k_logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rego_news_n2k_box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 18px;
+}
+.rego_news_n2k_word {
+  font-size: 22px;
+  font-weight: 900;
+  color: #f97316;
+  letter-spacing: 0.02em;
+}
+
+/* Global Risk Community thumb */
+.rego_news_thumb_grc { background: #ffffff; }
+.rego_news_thumb_grc_logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+.rego_news_grc_globe { font-size: 38px; line-height: 1; }
+.rego_news_grc_text {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0a0a0a;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+.rego_news_grc_red { color: #dc2626; }
+.rego_news_grc_text span { font-weight: 800; }
+
+/* ============= ADDITIONAL PUBLISHER THUMBS (pages 3, 4, 5) ============= */
+
+/* Cyber Protection Magazine */
+.rego_news_thumb_cpm { background: #e5e7eb; }
+.rego_news_thumb_cpm_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Times New Roman', Georgia, serif;
+}
+.rego_news_cpm_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #1e3a8a;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #1e3a8a;
+  letter-spacing: -0.04em;
+}
+.rego_news_cpm_word {
+  font-size: 22px;
+  font-weight: 900;
+  color: #1e3a8a;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.rego_news_cpm_word strong { color: #1e3a8a; font-weight: 900; }
+.rego_news_cpm_word small { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #475569; margin-top: 2px; }
+
+/* Tines (purple) */
+.rego_news_thumb_tines { background: #8b5cf6; }
+.rego_news_thumb_tines_logo {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.rego_news_tines_mark {
+  display: inline-block;
+  width: 48px;
+  height: 36px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+}
+
+/* SC Media (CRA Resource & CyberRisk Alliance) */
+.rego_news_thumb_scm { background: #ffffff; }
+.rego_news_thumb_scm_logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.rego_news_scm_circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.rego_news_scm_word {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.rego_news_scm_word small {
+  font-size: 9px;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.02em;
+  margin-top: 6px;
+  font-style: italic;
+  text-transform: none;
+}
+
+/* Destination CRM */
+.rego_news_thumb_dcrm { background: #ffffff; }
+.rego_news_thumb_dcrm_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+}
+.rego_news_dcrm_dest {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+.rego_news_dcrm_crm {
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #38bdf8 0%, #1e3a8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.rego_news_thumb_dcrm_logo small {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  color: var(--rego-text-muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* Cyber Defense Magazine */
+.rego_news_thumb_cdm { background: #ffffff; }
+.rego_news_thumb_cdm_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.rego_news_cdm_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 56px;
+  background: linear-gradient(180deg, #1e3a8a, #0e7490);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.rego_news_cdm_word {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e3a8a;
+  letter-spacing: 0.02em;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.rego_news_cdm_word small {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  letter-spacing: 0;
+  margin-top: 4px;
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+/* The Entrepreneur Gene */
+.rego_news_thumb_eg {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+.rego_news_thumb_eg_logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  text-align: center;
+  line-height: 1.1;
+}
+.rego_news_thumb_eg_logo strong {
+  display: block;
+  font-size: 30px;
+  font-weight: 900;
+  color: #65a30d;
+  font-style: italic;
+  margin: 4px 0;
+}
+
+/* CyberTech Insights */
+.rego_news_thumb_ctech { background: #ffffff; }
+.rego_news_thumb_ctech_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.rego_news_ctech_mark {
+  display: inline-block;
+  width: 36px;
+  height: 32px;
+  background: linear-gradient(135deg, #c4b5fd, #4a569e);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.rego_news_ctech_word {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: 0.04em;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.rego_news_ctech_word sup { font-size: 9px; font-weight: 700; }
+.rego_news_ctech_word small {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--rego-text-muted);
+  letter-spacing: 0.18em;
+  margin-top: 4px;
+}
+
+/* vmblog.com */
+.rego_news_thumb_vmblog { background: #ffffff; }
+.rego_news_thumb_vmblog_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.rego_news_vmblog_mark {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+}
+.rego_news_vmblog_mark::before,
+.rego_news_vmblog_mark::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+.rego_news_vmblog_mark::before {
+  top: 0; left: 0;
+  background: linear-gradient(135deg, #93c5fd, #60a5fa);
+}
+.rego_news_vmblog_mark::after {
+  bottom: 0; right: 0;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+.rego_news_vmblog_word {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+.rego_news_vmblog_word strong { font-weight: 900; }
+
+/* Security Magazine (red) */
+.rego_news_thumb_secmag { background: #ffffff; }
+.rego_news_thumb_secmag_logo {
+  font-size: 30px;
+  font-weight: 900;
+  color: #dc2626;
+  letter-spacing: -0.01em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rego_news_thumb_secmag_logo small {
+  font-size: 8px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.10em;
+  background: #f3f4f6;
+  padding: 4px 8px;
+  margin-top: 6px;
+}
+
+/* Risk Management Show + GRC (stacked composition) */
+.rego_news_thumb_rms { background: #ffffff; padding: 12px; }
+.rego_news_thumb_rms_logo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 200px;
+  gap: 4px;
+}
+.rego_news_rms_top {
+  background: #dc2626;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 14px;
+  text-align: center;
+  padding: 16px 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+}
+.rego_news_rms_bot {
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  padding: 8px;
+  letter-spacing: -0.01em;
+}
+.rego_news_rms_bot strong { font-weight: 900; }
+
+/* Washington Exec */
+.rego_news_thumb_wexec { background: #ffffff; }
+.rego_news_thumb_wexec_logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e3a8a;
+  letter-spacing: 0.02em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.rego_news_wexec_x {
+  display: inline-block;
+}
+.rego_news_thumb_wexec_logo small {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--rego-text-muted);
+  letter-spacing: 0.16em;
+  margin-top: 4px;
+}
+
+/* Techstrong TV */
+.rego_news_thumb_tstv { background: #ffffff; }
+.rego_news_thumb_tstv_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 30px;
+  font-weight: 700;
+}
+.rego_news_tstv_word { color: #1e293b; letter-spacing: -0.03em; }
+.rego_news_tstv_tv {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.30);
+}
+
+/* Knoxville Voyager */
+.rego_news_thumb_kvoy { background: #4b5563; }
+.rego_news_thumb_kvoy_logo em {
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+/* Beta News */
+.rego_news_thumb_betanews { background: #ffffff; }
+.rego_news_thumb_betanews_logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: -0.02em;
+}
+.rego_news_thumb_betanews_logo strong { font-weight: 900; }
+
+/* Carahsoft */
+.rego_news_thumb_carah { background: #ffffff; }
+.rego_news_thumb_carah_logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a8a;
+  letter-spacing: -0.02em;
+}
+.rego_news_thumb_carah_logo sup { font-size: 12px; }
+
+/* Malware.News */
+.rego_news_thumb_malware { background: #ffffff; }
+.rego_news_thumb_malware_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  flex-direction: row;
+}
+.rego_news_malware_word {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.rego_news_malware_word strong {
+  color: #f97316;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+}
+.rego_news_malware_mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fb923c, #f97316);
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 900;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.35);
+}
+
+/* Manufacturing Business Technology */
+.rego_news_thumb_mbt { background: #ffffff; }
+.rego_news_thumb_mbt_logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #1e1b4b;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-align: left;
+  font-family: 'Arial Black', 'Helvetica Neue', sans-serif;
+}
+
+/* The Last Watchdog */
+.rego_news_thumb_lwd { background: #f1f5f9; }
+.rego_news_thumb_lwd_logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #0f172a;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+.rego_news_thumb_lwd_logo small {
+  font-size: 11px;
+  font-style: italic;
+  color: #dc2626;
+  font-weight: 600;
+  margin-top: 4px;
+  letter-spacing: 0;
+}
+
+/* Fortune */
+.rego_news_thumb_fortune { background: #ffffff; }
+.rego_news_thumb_fortune_logo {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #0f172a;
+}
+
+/* Channel Vision */
+.rego_news_thumb_chvision { background: #ffffff; }
+.rego_news_thumb_chvision_logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: 0.04em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.rego_news_chvision_v {
+  font-weight: 300;
+  font-style: italic;
+  color: #94a3b8;
+  margin-left: 8px;
+}
+.rego_news_thumb_chvision_logo small {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--rego-text-muted);
+  letter-spacing: 0.18em;
+  margin-top: 2px;
+  font-style: italic;
+}
+
+/* ============= ADDITIONAL PUBLISHER THUMBS (pages 6-10) ============= */
+
+/* Global Security Mag */
+.rego_news_thumb_gsmag { background: #ffffff; }
+.rego_news_thumb_gsmag_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.rego_news_gsmag_word {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 700;
+  color: #b8860b;
+}
+.rego_news_gsmag_sec { color: #c0a060; }
+.rego_news_gsmag_third { color: #c0392b; font-style: italic; }
+.rego_news_thumb_gsmag_logo small {
+  background: #c0392b;
+  color: #ffffff;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  padding: 3px 8px;
+  margin-top: 4px;
+}
+
+/* Security Brief (purple banner) */
+.rego_news_thumb_secbrief { background: #ffffff; }
+.rego_news_thumb_secbrief_logo {
+  background: linear-gradient(90deg, #7c2d92 0%, #a855f7 75%, #c084fc 100%);
+  color: #ffffff;
+  padding: 14px 22px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
+}
+.rego_news_thumb_secbrief_logo strong { font-weight: 900; }
+.rego_news_thumb_secbrief_logo small {
+  color: var(--rego-text);
+  background: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin-top: 6px;
+  padding: 2px 6px;
+}
+
+/* The ChannelPro Network */
+.rego_news_thumb_chpro { background: #185a7d; }
+.rego_news_thumb_chpro_logo {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.1;
+}
+.rego_news_thumb_chpro_logo strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 900;
+  margin: 4px 0;
+}
+
+/* NVTC TECH100 Honoree */
+.rego_news_thumb_nvtc { background: #ffffff; }
+.rego_news_thumb_nvtc_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.rego_news_nvtc_word {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1e40af;
+  letter-spacing: -0.02em;
+}
+.rego_news_thumb_nvtc_logo strong {
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  background: #1e40af;
+  padding: 4px 12px;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+.rego_news_thumb_nvtc_logo em {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 22px;
+  color: #1e40af;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* GRC Outlook */
+.rego_news_thumb_grcout { background: #ffffff; }
+.rego_news_thumb_grcout_logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rego_news_grcout_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #1f2937, #4b5563);
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.rego_news_grcout_word {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f766e;
+  letter-spacing: -0.02em;
+}
+
+/* Cybersecurity Readiness Podcast */
+.rego_news_thumb_csrp { background: #0a1628; }
+.rego_news_thumb_csrp_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+.rego_news_thumb_csrp_logo strong {
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 800;
+}
+.rego_news_thumb_csrp_logo span {
+  display: block;
+  font-size: 16px;
+  color: #38bdf8;
+  font-weight: 800;
+  margin: 2px 0;
+}
+.rego_news_thumb_csrp_logo em {
+  font-style: normal;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.10em;
+  font-size: 11px;
+  margin-top: 4px;
+}
+.rego_news_thumb_csrp_logo small {
+  font-size: 7px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.16em;
+  margin-top: 4px;
+}
+
+/* teknovation.biz */
+.rego_news_thumb_tekn { background: #166534; }
+.rego_news_thumb_tekn_logo {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+.rego_news_tekn_dot { color: #ffffff; }
+
+/* Cybersecurity Breakthrough Awards */
+.rego_news_thumb_csbreak { background: #ffffff; }
+.rego_news_thumb_csbreak_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.rego_news_csbreak_mark {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background:
+    conic-gradient(#3b82f6 0 90deg, #ec4899 90deg 180deg, #fbbf24 180deg 270deg, #10b981 270deg 360deg);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin-bottom: 4px;
+}
+.rego_news_csbreak_word {
+  font-size: 12px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+/* NVTC Northern Virginia Technology Council */
+.rego_news_thumb_nvtc2 { background: #ffffff; }
+.rego_news_thumb_nvtc2_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.rego_news_nvtc2_word {
+  font-size: 36px;
+  font-weight: 900;
+  color: #1e40af;
+  letter-spacing: -0.02em;
+}
+.rego_news_thumb_nvtc2_logo small {
+  font-size: 9px;
+  font-weight: 800;
+  color: #1e40af;
+  letter-spacing: 0.10em;
+  margin-top: 4px;
+}
+
+/* Information Security Buzz */
+.rego_news_thumb_isb { background: #ffffff; }
+.rego_news_thumb_isb_logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rego_news_isb_mark {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #064e3b, #047857);
+  border-radius: 4px;
+}
+.rego_news_isb_word {
+  font-size: 13px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  text-align: left;
+}
+
+/* Compliance Podcast Network */
+.rego_news_thumb_cpn { background: #0a0a0a; }
+.rego_news_thumb_cpn_logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.1;
+  position: relative;
+}
+.rego_news_cpn_three {
+  display: block;
+  font-size: 32px;
+  font-weight: 900;
+  color: #ffffff;
+  font-family: 'Times New Roman', Georgia, serif;
+  margin-top: 4px;
+}
+
+/* ITSP Magazine */
+.rego_news_thumb_itsp { background: #ffffff; }
+.rego_news_thumb_itsp_logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 36px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+.rego_news_thumb_itsp_logo em {
+  font-style: italic;
+  font-weight: 700;
+  color: #f97316;
+  font-size: 22px;
+  margin-left: 4px;
+}
+
+/* Real Leaders Podcast */
+.rego_news_thumb_rlp { background: #dc2626; position: relative; }
+.rego_news_thumb_rlp::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-top: 30px solid #1f2937;
+}
+.rego_news_thumb_rlp_logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+.rego_news_thumb_rlp_logo strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+}
+.rego_news_thumb_rlp_logo sup { font-size: 10px; }
+.rego_news_thumb_rlp_logo em {
+  display: block;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  font-size: 10px;
+  margin-top: 6px;
+}
+
+/* Connect The Knox */
+.rego_news_thumb_ctk { background: #ffffff; }
+.rego_news_thumb_ctk_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+.rego_news_ctk_map { font-size: 30px; line-height: 1; }
+.rego_news_thumb_ctk_logo strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  font-style: italic;
+}
+.rego_news_ctk_red { color: #dc2626; margin: 0 2px; }
+
+/* Solutions Review (red bg) */
+.rego_news_thumb_solr { background: #dc2626; }
+.rego_news_thumb_solr_logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  font-style: italic;
+}
+
+/* Help Net Security */
+.rego_news_thumb_hns { background: #ffffff; }
+.rego_news_thumb_hns_logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rego_news_hns_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #facc15;
+  color: #0f172a;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+}
+.rego_news_thumb_hns_logo strong {
+  font-size: 18px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+/* CSA Cloud Security Alliance */
+.rego_news_thumb_csa { background: #ffffff; }
+.rego_news_thumb_csa_logo {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.rego_news_csa_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 36px;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+.rego_news_csa_word {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  color: #f97316;
+  font-style: italic;
+  line-height: 1.05;
+  font-weight: 600;
+}
+.rego_news_csa_word em { font-style: italic; display: block; }
+.rego_news_csa_word sup { font-size: 8px; vertical-align: super; }
+
+/* Cyber Security Tribe */
+.rego_news_thumb_cst { background: #ffffff; }
+.rego_news_thumb_cst_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.rego_news_cst_mark {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background:
+    conic-gradient(from 45deg, #1e40af, #06b6d4, #1e40af);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.rego_news_cst_word {
+  font-size: 14px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  text-align: left;
+}
+
+/* Techopedia */
+.rego_news_thumb_techo { background: #ffffff; }
+.rego_news_thumb_techo_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+.rego_news_techo_mark {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #1d4ed8, #06b6d4);
+  border-radius: 4px;
+  position: relative;
+}
+.rego_news_techo_mark::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px;
+  width: 10px;
+  height: 14px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+/* ALM | LAW.COM */
+.rego_news_thumb_almlaw { background: #ffffff; }
+.rego_news_thumb_almlaw_logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 24px;
+}
+.rego_news_almlaw_alm {
+  background: linear-gradient(180deg, #93c5fd, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+.rego_news_almlaw_pipe {
+  color: #94a3b8;
+  font-weight: 300;
+  margin: 0 4px;
+}
+.rego_news_thumb_almlaw_logo strong {
+  color: #1e3a8a;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+/* CSO */
+.rego_news_thumb_cso { background: #ffffff; }
+.rego_news_thumb_cso_logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* Hub Scale Podcast */
+.rego_news_thumb_hubsc { background: linear-gradient(135deg, #ffffff 0%, #dbeafe 100%); }
+.rego_news_thumb_hubsc_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.rego_news_hubsc_top {
+  font-size: 24px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.rego_news_hubsc_mic { font-size: 18px; }
+.rego_news_hubsc_mid {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0f172a;
+  margin-top: -4px;
+}
+.rego_news_thumb_hubsc_logo em {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.10em;
+  margin-top: 4px;
+}
+
+/* Accounting TODAY */
+.rego_news_thumb_actoday { background: #ffffff; }
+.rego_news_thumb_actoday_logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.rego_news_actoday_acc { color: #16a34a; font-weight: 700; }
+.rego_news_actoday_today { color: #0ea5e9; font-weight: 900; }
+
+/* Enterprise Security Tech */
+.rego_news_thumb_est { background: #ffffff; }
+.rego_news_thumb_est_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+.rego_news_est_mark { font-size: 32px; line-height: 1; }
+.rego_news_thumb_est_logo strong {
+  font-size: 18px;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.05;
+}
+
+/* Digital Journal */
+.rego_news_thumb_dj { background: #0a0a0a; }
+.rego_news_thumb_dj_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+.rego_news_dj_mark {
+  display: inline-block;
+  width: 4px;
+  height: 28px;
+  background: #dc2626;
+}
+.rego_news_thumb_dj_logo strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+/* cybernews */
+.rego_news_thumb_cybnews { background: #0a0a0a; }
+.rego_news_thumb_cybnews_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+.rego_news_cybnews_mark {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 4px;
+  position: relative;
+}
+.rego_news_cybnews_mark::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  background: #0a0a0a;
+  border-radius: 2px;
+}
+.rego_news_thumb_cybnews_logo strong {
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* ============= ADDITIONAL PUBLISHER THUMBS (pages 11–15) ============= */
+
+/* CISO Series */
+.rego_news_thumb_ciso { background: #000000; }
+.rego_news_thumb_ciso_logo {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.rego_news_ciso_pri { color: #ffffff; }
+.rego_news_ciso_sec {
+  color: #14b8a6;
+  font-style: italic;
+  border-bottom: 4px solid #14b8a6;
+  padding-bottom: 2px;
+}
+
+/* Government Huddle Podcast */
+.rego_news_thumb_ghuddle { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+.rego_news_thumb_ghuddle_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.05;
+}
+.rego_news_ghuddle_top {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.rego_news_ghuddle_mid {
+  font-size: 36px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  margin: 2px 0;
+}
+.rego_news_ghuddle_bot {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+}
+
+/* Pivot Point Security */
+.rego_news_thumb_pivot { background: #ffffff; }
+.rego_news_thumb_pivot_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.rego_news_pivot_top {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f1c4a;
+  letter-spacing: -0.01em;
+}
+.rego_news_pivot_bot {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  color: #ffffff;
+  background: #9ca3af;
+  padding: 3px 10px;
+  margin-top: 4px;
+}
+.rego_news_pivot_tri {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 22px solid #facc15;
+}
+
+/* Connected World */
+.rego_news_thumb_connw { background: #ffffff; }
+.rego_news_thumb_connw_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.rego_news_connw_top {
+  font-size: 26px;
+  color: #0a0a0a;
+}
+.rego_news_connw_top span { color: #dc2626; }
+.rego_news_connw_bot {
+  font-size: 16px;
+  color: #dc2626;
+  letter-spacing: 0.2em;
+  margin-top: 2px;
+}
+
+/* Infosecurity Magazine */
+.rego_news_thumb_infosec { background: #ffffff; }
+.rego_news_thumb_infosec_logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0a0a0a;
+  letter-spacing: -0.01em;
+}
+.rego_news_thumb_infosec_logo em {
+  font-style: italic;
+  font-weight: 400;
+  color: #4b5563;
+  margin-left: 4px;
+}
+
+/* the cyberwire (orange/gray) */
+.rego_news_thumb_cwire { background: #ffffff; }
+.rego_news_thumb_cwire_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+.rego_news_cwire_top {
+  font-size: 11px;
+  font-weight: 400;
+  font-style: italic;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+.rego_news_cwire_word {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.rego_news_cwire_pri { color: #f97316; }
+.rego_news_cwire_sec { color: #9ca3af; }
+
+/* The Cyberhub Podcast */
+.rego_news_thumb_cyhub { background: #ffffff; }
+.rego_news_thumb_cyhub_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.05;
+}
+.rego_news_cyhub_the {
+  font-size: 12px;
+  font-weight: 800;
+  background: #0a0a0a;
+  color: #ffffff;
+  padding: 1px 8px;
+  letter-spacing: 0.16em;
+}
+.rego_news_cyhub_mid {
+  font-size: 28px;
+  font-weight: 900;
+  color: #0a0a0a;
+  letter-spacing: -0.01em;
+  margin-top: 2px;
+}
+.rego_news_cyhub_dot { color: #dc2626; }
+.rego_news_cyhub_bot {
+  font-size: 18px;
+  font-weight: 900;
+  color: #dc2626;
+  letter-spacing: 0.18em;
+  margin-top: 2px;
+}
+
+/* CIO Influence */
+.rego_news_thumb_cioinf { background: #ffffff; }
+.rego_news_thumb_cioinf_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+}
+.rego_news_cioinf_top {
+  font-size: 30px;
+  font-weight: 800;
+  color: #4b5563;
+  letter-spacing: -0.01em;
+}
+.rego_news_cioinf_top span { color: #f97316; }
+.rego_news_cioinf_bot {
+  font-size: 11px;
+  font-weight: 800;
+  color: #f43f5e;
+  letter-spacing: 0.18em;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+/* Category Visionaries */
+.rego_news_thumb_catvis { background: #0a0a0a; }
+.rego_news_thumb_catvis_logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* CPO Magazine */
+.rego_news_thumb_cpomag { background: #ffffff; }
+.rego_news_thumb_cpomag_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+  font-weight: 900;
+  color: #0a0a0a;
+  letter-spacing: -0.02em;
+}
+.rego_news_cpomag_top { font-size: 56px; }
+.rego_news_cpomag_bot {
+  font-size: 14px;
+  letter-spacing: 0.32em;
+  margin-top: 4px;
+}
+
+/* Tripwire (Fortra) */
+.rego_news_thumb_tripw { background: #064e3b; position: relative; overflow: hidden; }
+.rego_news_thumb_tripw_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  z-index: 1;
+}
+.rego_news_tripw_top {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  align-self: flex-end;
+  margin-bottom: 8px;
+}
+.rego_news_tripw_mid {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-style: italic;
+}
+.rego_news_tripw_bot {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  margin-top: 2px;
+}
+.rego_news_tripw_tri {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid rgba(167, 243, 208, 0.6);
+}
+
+/* Innovation in Compliance with Tom Fox */
+.rego_news_thumb_innov { background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 50%, #ffffff 50%, #ffffff 100%); }
+.rego_news_thumb_innov_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.rego_news_innov_top {
+  font-size: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+.rego_news_innov_bulb { font-size: 36px; line-height: 1; margin: 4px 0; }
+.rego_news_innov_mid {
+  font-size: 16px;
+  color: #0a0a0a;
+  font-style: italic;
+}
+.rego_news_innov_bot {
+  font-size: 11px;
+  color: #6b7280;
+  letter-spacing: 0.04em;
+  font-style: italic;
+}
+
+/* All Things Compliance */
+.rego_news_thumb_atc { background: #ffffff; }
+.rego_news_thumb_atc_logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #0a0a0a;
+  line-height: 1;
+}
+.rego_news_atc_c {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+}
+.rego_news_atc_text {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+}
+
+/* Startup Bubble */
+.rego_news_thumb_sbubble { background: #ffffff; }
+.rego_news_thumb_sbubble_logo {
+  font-size: 38px;
+  font-weight: 900;
+  color: #60a5fa;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* CIO (big red) */
+.rego_news_thumb_cio { background: #dc2626; }
+.rego_news_thumb_cio_logo {
+  font-size: 84px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* Dark Reading */
+.rego_news_thumb_darkr { background: #0a0a0a; }
+.rego_news_thumb_darkr_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1;
+}
+.rego_news_darkr_top {
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+.rego_news_darkr_bot {
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* Pulse 2.0 */
+.rego_news_thumb_pulse { background: #ffffff; }
+.rego_news_thumb_pulse_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.rego_news_pulse_word { color: #1f2937; }
+.rego_news_pulse_num { color: #f97316; }
+
+/* Cyber Lock (image-style placeholder) */
+.rego_news_thumb_lockimg {
+  background: linear-gradient(135deg, #0c1e3d 0%, #1e3a8a 60%, #1d4ed8 100%);
+  position: relative;
+  overflow: hidden;
+}
+.rego_news_thumb_lockimg::before {
+  content: '🔒';
+  font-size: 96px;
+  color: #60a5fa;
+  filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.7));
+}
+
+/* government technology */
+.rego_news_thumb_govtech { background: #ffffff; }
+.rego_news_thumb_govtech_logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rego_news_govtech_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 56px;
+  background: #ea580c;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 900;
+  font-style: italic;
+}
+.rego_news_govtech_text {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  font-family: 'Times New Roman', Georgia, serif;
+}
+
+/* the cyberwire (signal/noise) — black bg variant */
+.rego_news_thumb_cwireb { background: #0a0a0a; }
+.rego_news_thumb_cwireb_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+.rego_news_cwireb_word {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.rego_news_cwireb_pri { color: #f97316; }
+.rego_news_cwireb_sec { color: #9ca3af; }
+.rego_news_cwireb_bot {
+  font-size: 9px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.16em;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* Cyber Jack Podcast */
+.rego_news_thumb_cyjack { background: #0a0a0a; }
+.rego_news_thumb_cyjack_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  transform: skew(-6deg);
+}
+.rego_news_cyjack_the { font-size: 14px; }
+.rego_news_cyjack_mid { font-size: 36px; font-weight: 900; }
+.rego_news_cyjack_bot {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  margin-top: 2px;
+}
+
+/* 2023 SC Awards Finalists */
+.rego_news_thumb_scawards { background: #0a0a0a; }
+.rego_news_thumb_scawards_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.05;
+  color: #ffffff;
+}
+.rego_news_scawards_yr {
+  font-size: 14px;
+  font-weight: 800;
+  align-self: flex-end;
+  margin-bottom: 2px;
+}
+.rego_news_scawards_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rego_news_scawards_circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #dc2626;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 14px;
+}
+.rego_news_scawards_word {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+.rego_news_scawards_sub {
+  font-size: 8px;
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 0.16em;
+  margin-top: 2px;
+}
+.rego_news_scawards_finalists {
+  font-size: 16px;
+  font-weight: 900;
+  color: #d4af37;
+  letter-spacing: 0.32em;
+  margin-top: 4px;
+}
+
+/* Digital CxO */
+.rego_news_thumb_digcxo { background: #ffffff; }
+.rego_news_thumb_digcxo_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+}
+.rego_news_digcxo_mark {
+  font-size: 38px;
+  color: #f59e0b;
+  margin-bottom: 4px;
+}
+.rego_news_digcxo_word {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e3a8a;
+  letter-spacing: -0.01em;
+}
+
+/* SECURITY Magazine (red banner) */
+.rego_news_thumb_secred { background: #ffffff; }
+.rego_news_thumb_secred_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+}
+.rego_news_secred_word {
+  font-size: 38px;
+  font-weight: 900;
+  color: #dc2626;
+  letter-spacing: 0.04em;
+}
+.rego_news_secred_sub {
+  font-size: 8px;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: 0.08em;
+  border-top: 2px solid #0a0a0a;
+  padding-top: 4px;
+  margin-top: 4px;
+}
+
+/* InformationWeek */
+.rego_news_thumb_iweek { background: #1e3a8a; }
+.rego_news_thumb_iweek_logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+/* TechBeacon */
+.rego_news_thumb_tbcn { background: #ffffff; }
+.rego_news_thumb_tbcn_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rego_news_tbcn_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 18px;
+  border-radius: 4px;
+}
+.rego_news_tbcn_word {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0a0a0a;
+  letter-spacing: -0.01em;
+}
+
+/* Product Spotlight RSA */
+.rego_news_thumb_prodsp { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%); position: relative; }
+.rego_news_thumb_prodsp_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  line-height: 1.1;
+}
+.rego_news_prodsp_top {
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.rego_news_prodsp_bot {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  background: #0a0a0a;
+  color: #ffffff;
+  padding: 3px 8px;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* Security Boulevard */
+.rego_news_thumb_secboul { background: #ffffff; }
+.rego_news_thumb_secboul_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rego_news_secboul_mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #1e3a8a;
+  color: #1e3a8a;
+  font-weight: 900;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.rego_news_secboul_text {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.rego_news_secboul_pri { color: #1e3a8a; }
+.rego_news_secboul_sec { color: #60a5fa; }
+
+/* ITProToday */
+.rego_news_thumb_itpro { background: #ffffff; }
+.rego_news_thumb_itpro_logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.rego_news_itpro_pri { color: #2563eb; }
+.rego_news_itpro_sec { color: #2563eb; }
+.rego_news_itpro_today { color: #9ca3af; }
+.rego_news_itpro_tm {
+  font-size: 11px;
+  vertical-align: super;
+  color: #9ca3af;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+/* ============= ADDITIONAL PUBLISHER THUMBS (pages 16–19) ============= */
+
+/* WTOP News */
+.rego_news_thumb_wtop { background: #ffffff; }
+.rego_news_thumb_wtop_logo {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #1e3a8a;
+}
+.rego_news_wtop_news {
+  font-size: 28px;
+  color: #6b7280;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Washington Business Journal — two-person photo style */
+.rego_news_thumb_wbjphoto {
+  background:
+    linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
+  position: relative;
+}
+.rego_news_thumb_wbjphoto::before,
+.rego_news_thumb_wbjphoto::after {
+  content: '👤';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 84px;
+  filter: grayscale(0.3);
+}
+.rego_news_thumb_wbjphoto::before { left: 24%; }
+.rego_news_thumb_wbjphoto::after  { right: 24%; }
+
+/* WBJ rocket illustration */
+.rego_news_thumb_wbjrocket {
+  background: linear-gradient(180deg, #0a1f4d 0%, #1e3a8a 100%);
+  position: relative;
+}
+.rego_news_thumb_wbjrocket::before {
+  content: '🚀';
+  font-size: 88px;
+  filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.6));
+}
+
+/* Knowledia */
+.rego_news_thumb_knowledia { background: #ffffff; }
+.rego_news_thumb_knowledia_logo {
+  font-size: 96px;
+  font-weight: 900;
+  color: #38bdf8;
+  letter-spacing: -0.04em;
+}
+
+/* WATE-TV */
+.rego_news_thumb_wate {
+  background: linear-gradient(180deg, #0c1e3d 0%, #1d4ed8 60%, #dc2626 100%);
+  position: relative;
+}
+.rego_news_thumb_wate_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+.rego_news_wate_top {
+  font-size: 16px;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2px 12px;
+}
+.rego_news_wate_mid {
+  font-size: 38px;
+  font-weight: 900;
+  margin-top: 4px;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* RealLIST DC honoree */
+.rego_news_thumb_reallist { background: #0a1628; }
+.rego_news_thumb_reallist_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  line-height: 1.05;
+}
+.rego_news_reallist_top {
+  font-size: 26px;
+  font-weight: 800;
+}
+.rego_news_reallist_top span { color: #16a34a; }
+.rego_news_reallist_mid {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+  border-bottom: 1px solid #4b5563;
+  padding-bottom: 4px;
+}
+.rego_news_reallist_dc {
+  font-size: 26px;
+  font-weight: 900;
+  color: #16a34a;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+.rego_news_reallist_pill {
+  display: inline-block;
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-top: 8px;
+}
+
+/* FOX 43 WTNZ */
+.rego_news_thumb_fox43 { background: #d1d5db; }
+.rego_news_thumb_fox43_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+}
+.rego_news_fox43_row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.rego_news_fox43_fox {
+  background: linear-gradient(180deg, #ffffff, #6b7280);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 38px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 1px #1f2937;
+}
+.rego_news_fox43_43 {
+  background: #facc15;
+  color: #1f2937;
+  font-size: 38px;
+  font-weight: 900;
+  font-style: italic;
+  padding: 2px 6px;
+  letter-spacing: -0.02em;
+}
+.rego_news_fox43_bar {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  padding: 2px 14px;
+  margin-top: 4px;
+}
+
+/* B&W handshake */
+.rego_news_thumb_handshake {
+  background: linear-gradient(135deg, #6b7280 0%, #1f2937 100%);
+  position: relative;
+}
+.rego_news_thumb_handshake::before {
+  content: '🤝';
+  font-size: 88px;
+  filter: grayscale(1);
+}
+
+/* teknovation.biz – big white-on-green block */
+.rego_news_thumb_teknbig { background: #166534; }
+.rego_news_thumb_teknbig_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.rego_news_teknbig_top { font-size: 30px; }
+.rego_news_teknbig_mid { font-size: 30px; margin-top: 2px; }
+.rego_news_teknbig_bot { font-size: 22px; margin-top: 2px; }
+
+/* teknovation.biz dark teal "powered by PYA" */
+.rego_news_thumb_teknpya { background: linear-gradient(180deg, #0f3a3a 0%, #134e4a 100%); }
+.rego_news_thumb_teknpya_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  line-height: 1.1;
+}
+.rego_news_teknpya_top {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  background: linear-gradient(180deg, #ffffff, #cbd5e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.rego_news_teknpya_mid {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #a3e635;
+  margin-top: 2px;
+}
+.rego_news_teknpya_pya {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 12px;
+  letter-spacing: 0.04em;
+}
+
+/* Generic Info Security family — base + variants */
+.rego_news_thumb_infofam { background: #ffffff; padding: 12px; }
+.rego_news_thumb_infofam_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e3a8a;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.rego_news_infofam_yellow {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #facc15;
+  border-radius: 50%;
+}
+.rego_news_infofam_top {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937;
+  font-style: italic;
+}
+.rego_news_infofam_main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.rego_news_infofam_word {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.rego_news_infofam_today {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-top: 2px;
+  letter-spacing: 0.16em;
+}
+
+/* Data Breach Today (yellow underline) */
+.rego_news_thumb_databr { background: #ffffff; padding: 14px; }
+.rego_news_thumb_databr_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #1e3a8a;
+  font-family: 'Times New Roman', Georgia, serif;
+  line-height: 1.05;
+}
+.rego_news_databr_top {
+  font-size: 22px;
+  font-weight: 700;
+  border-bottom: 3px solid #facc15;
+  padding-bottom: 4px;
+}
+.rego_news_databr_bot {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 4px;
+  letter-spacing: 0.08em;
+}
+
+/* CityBiz "tyb" big logo */
+.rego_news_thumb_citybigtyb { background: #ffffff; }
+.rego_news_thumb_citybigtyb_logo {
+  display: flex;
+  align-items: baseline;
+  font-size: 92px;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+.rego_news_citybigtyb_pri { color: #0f1c4a; }
+.rego_news_citybigtyb_sec { color: #ef4444; }
+
+/* Enterprise Security Tech */
+.rego_news_thumb_estech { background: #ffffff; }
+.rego_news_thumb_estech_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 900;
+  color: #0a0a0a;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.rego_news_estech_robot { font-size: 38px; }
+.rego_news_estech_word { font-size: 22px; margin-top: 4px; }
+
+/* WBIR 10+ */
+.rego_news_thumb_wbir { background: #1d4ed8; position: relative; }
+.rego_news_thumb_wbir_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  line-height: 1;
+}
+.rego_news_wbir_circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  position: relative;
+}
+.rego_news_wbir_circle::after {
+  content: '♥';
+  font-size: 14px;
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+}
+.rego_news_wbir_word {
+  font-size: 18px;
+  font-weight: 900;
+  margin-top: 4px;
+  letter-spacing: 0.08em;
+}
+
+/* knox news */
+.rego_news_thumb_knoxnews { background: #ffffff; }
+.rego_news_thumb_knoxnews_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+.rego_news_knoxnews_top {
+  display: flex;
+  align-items: baseline;
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+.rego_news_knoxnews_pri { color: #2563eb; }
+.rego_news_knoxnews_sec { color: #1f2937; margin-left: 6px; }
+.rego_news_knoxnews_bot {
+  font-size: 9px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 0.16em;
+  margin-top: 2px;
+}
+
+/* Two men B&W photo */
+.rego_news_thumb_menphoto {
+  background: linear-gradient(135deg, #4b5563 0%, #1f2937 100%);
+  position: relative;
+}
+.rego_news_thumb_menphoto::before,
+.rego_news_thumb_menphoto::after {
+  content: '👤';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 84px;
+  filter: grayscale(1);
+}
+.rego_news_thumb_menphoto::before { left: 22%; }
+.rego_news_thumb_menphoto::after  { right: 22%; }
+
+/* Innovation Compliance — Tom Fox green DL variant */
+.rego_news_thumb_innovdl { background: #ffffff; }
+.rego_news_thumb_innovdl_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+}
+.rego_news_innovdl_letters {
+  font-size: 96px;
+  font-weight: 900;
+  color: #16a34a;
+  letter-spacing: 0.08em;
+}
+.rego_news_innovdl_sub {
+  font-size: 11px;
+  font-weight: 800;
+  color: #6b7280;
+  letter-spacing: 0.16em;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* MeriTalk */
+.rego_news_thumb_meritalk { background: #ffffff; }
+.rego_news_thumb_meritalk_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.05;
+}
+.rego_news_meritalk_word {
+  display: inline-flex;
+  align-items: baseline;
+}
+.rego_news_meritalk_meri {
+  font-size: 36px;
+  font-weight: 800;
+  color: #be185d;
+  letter-spacing: -0.02em;
+}
+.rego_news_meritalk_talk {
+  font-size: 30px;
+  font-weight: 800;
+  color: #ffffff;
+  background: #1e3a8a;
+  padding: 2px 8px 4px;
+  border-radius: 0 16px 0 0;
+  margin-left: 2px;
+  position: relative;
+}
+.rego_news_meritalk_talk::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 12px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-top: 10px solid #1e3a8a;
+}
+.rego_news_meritalk_sub {
+  font-size: 9px;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.08em;
+  margin-top: 10px;
+}
+
+/* Potomac Officers Club */
+.rego_news_thumb_potomac { background: #ffffff; position: relative; }
+.rego_news_thumb_potomac_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #1f2937;
+  position: relative;
+  z-index: 1;
+}
+.rego_news_potomac_word {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  border-top: 1px solid #1f2937;
+  border-bottom: 1px solid #1f2937;
+  padding: 4px 0;
+}
+.rego_news_potomac_leaf {
+  position: absolute;
+  font-size: 80px;
+  color: #cbd5e1;
+  opacity: 0.5;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Generic NEWS-style placeholder */
+.rego_news_thumb_newsy { background: #d1d5db; }
+.rego_news_thumb_newsy_logo {
+  font-size: 56px;
+  font-weight: 900;
+  color: #1f2937;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* RegScale + Wiz */
+.rego_news_thumb_wiz { background: #1d4ed8; }
+.rego_news_thumb_wiz_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+.rego_news_wiz_rs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.rego_news_wiz_rs_mark {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: #f97316;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
+}
+.rego_news_wiz_plus { font-size: 22px; }
+.rego_news_wiz_word {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+.rego_news_wiz_word::after {
+  content: ' ✦';
+  color: #facc15;
+  font-size: 16px;
+}
+
+/* Group team photo */
+.rego_news_thumb_team {
+  background:
+    linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+  position: relative;
+}
+.rego_news_thumb_team::before {
+  content: '👥';
+  font-size: 88px;
+}
+
+/* Finextra */
+.rego_news_thumb_finextra { background: linear-gradient(180deg, #053547 0%, #0f3a4a 100%); }
+.rego_news_thumb_finextra_logo {
+  display: flex;
+  align-items: baseline;
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+.rego_news_finextra_pri { color: #ffffff; }
+.rego_news_finextra_sec {
+  background: linear-gradient(180deg, #ffffff 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* TCN */
+.rego_news_thumb_tcn { background: #38bdf8; }
+.rego_news_thumb_tcn_logo {
+  font-size: 96px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+/* FINTECH magazine */
+.rego_news_thumb_fintech { background: #ffffff; }
+.rego_news_thumb_fintech_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+}
+.rego_news_fintech_arc {
+  font-size: 40px;
+  color: #16a34a;
+}
+.rego_news_fintech_word {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin-top: 2px;
+}
+.rego_news_fintech_pri { color: #1f2937; }
+.rego_news_fintech_sec { color: #16a34a; }
+
+/* CCi */
+.rego_news_thumb_cci { background: #ffffff; }
+.rego_news_thumb_cci_logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 84px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.rego_news_cci_o { color: #f97316; }
+.rego_news_cci_d { color: #0f1c4a; }
+.rego_news_cci_i {
+  color: #9ca3af;
+  position: relative;
+}
+.rego_news_cci_i::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: #f97316;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* EV blue */
+.rego_news_thumb_evblue { background: #ffffff; }
+.rego_news_thumb_evblue_logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 56px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.06em;
+}
+
+/* ITPro Today already defined above — no duplicate */
+
+/* Generic photo-card placeholders for image-only thumbs */
+.rego_news_thumb_photo1 {
+  background: linear-gradient(135deg, #5b3a1c 0%, #8a5a2b 50%, #c79a5e 100%);
+}
+.rego_news_thumb_photo2 {
+  background: radial-gradient(circle at 50% 40%, #d4d4d8 0%, #71717a 60%, #3f3f46 100%);
+}
+.rego_news_thumb_photo3 {
+  background:
+    linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  position: relative;
+  overflow: hidden;
+}
+.rego_news_thumb_photo3::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 26px, transparent 26px 28px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 26px, transparent 26px 28px);
+}
+
+.rego_news_card_body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.rego_news_card_kicker {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: 0.18em;
+  margin-bottom: 12px;
+}
+
+.rego_news_card_title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--rego-text-muted);
+  line-height: 1.35;
+  margin: 0 0 28px;
+  flex: 1;
+}
+
+.rego_news_card_link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--rego-transition), color var(--rego-transition);
+}
+
+.rego_news_card_link:hover { gap: 10px; color: var(--rego-primary); }
+
+/* ---- Pagination ---- */
+.rego_news_pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.rego_news_page,
+.rego_news_page_next {
+  background: transparent;
+  border: 0;
+  font-family: var(--rego-font);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--rego-text);
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 50%;
+  min-width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--rego-transition);
+}
+
+.rego_news_page:hover { color: var(--rego-primary); background: var(--rego-bg-light); }
+
+.rego_news_page_active {
+  background: var(--rego-primary);
+  color: #ffffff;
+}
+
+.rego_news_page_active:hover {
+  background: var(--rego-primary-dark);
+  color: #ffffff;
+}
+
+.rego_news_page_dots {
+  font-weight: 600;
+  color: var(--rego-text-muted);
+  padding: 0 6px;
+}
+
+.rego_news_page_next,
+.rego_news_page_prev {
+  background: transparent;
+  border: 0;
+  font-family: var(--rego-font);
+  border-radius: 9999px;
+  padding: 10px 18px;
+  width: auto;
+  height: 44px;
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--rego-transition);
+}
+
+.rego_news_page_next:hover,
+.rego_news_page_prev:hover {
+  background: var(--rego-bg-light);
+  color: var(--rego-primary);
+}
+
+/* ================================================================
+   4. STAY UP TO DATE – Feed + Newsletter
+================================================================ */
+.rego_news_stay {
+  background: linear-gradient(180deg, #f6f7ff 0%, #ffffff 100%);
+  padding: 96px 0;
+}
+
+.rego_news_stay_title {
+  text-align: center;
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin: 0 0 56px;
+}
+
+.rego_news_stay_grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.rego_news_stay_feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rego_news_feed_card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid var(--rego-border-light);
+  box-shadow: var(--rego-shadow-xs);
+  overflow: hidden;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+}
+
+.rego_news_feed_card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--rego-shadow-md);
+}
+
+.rego_news_feed_card_h {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-items: stretch;
+}
+
+.rego_news_feed_thumb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  min-height: 160px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.rego_news_feed_thumb_webinar {
+  background: linear-gradient(135deg, #14b8a6 0%, #0e7490 100%);
+}
+
+.rego_news_feed_thumb_brief {
+  background: linear-gradient(135deg, #1d4ed8 0%, #4a569e 100%);
+}
+
+.rego_news_feed_thumb_blog {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  position: relative;
+}
+
+.rego_news_feed_kicker_pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 8px;
+}
+
+.rego_news_feed_thumb_title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 8px;
+}
+
+.rego_news_feed_thumb_title strong {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.rego_news_feed_thumb_sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 8px;
+}
+
+.rego_news_feed_thumb_logo {
+  position: absolute;
+  bottom: 14px;
+  left: 24px;
+  font-size: 13px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.95);
+  background: var(--rego-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rego_news_feed_shield {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  font-size: 22px;
+}
+
+.rego_news_feed_body {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rego_news_feed_kicker {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: 0.18em;
+  margin-bottom: 10px;
+}
+
+.rego_news_feed_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--rego-text-muted);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Newsletter signup (purple/blue gradient — matches industry-solutions) */
+.rego_news_signup {
+  background: linear-gradient(135deg, #2e3a8a 0%, #4a569e 50%, #842573 100%);
+  border-radius: 16px;
+  padding: 36px 32px;
+  color: #ffffff;
+  position: sticky;
+  top: 96px;
+  box-shadow: 0 20px 50px rgba(74, 86, 158, 0.25);
+}
+
+.rego_news_signup_title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.rego_news_signup_sub {
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0 0 26px;
+}
+
+.rego_news_signup_form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rego_news_signup_input {
+  background: #ffffff;
+  border: 0;
+  border-radius: 9999px;
+  padding: 14px 22px;
+  font-size: 14px;
+  color: var(--rego-text);
+  font-family: inherit;
+  outline: 0;
+}
+
+.rego_news_signup_input::placeholder { color: var(--rego-text-soft); }
+.rego_news_signup_input:focus { box-shadow: 0 0 0 3px rgba(74, 86, 158, 0.25); }
+
+.rego_news_signup_consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+}
+
+.rego_news_signup_consent input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; }
+
+.rego_news_signup_consent a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.rego_news_signup_submit {
+  align-self: center;
+  margin-top: 6px;
+  background: var(--rego-gradient);
+  border: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 44px;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(74, 86, 158, 0.35);
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition), background var(--rego-transition);
+}
+
+.rego_news_signup_submit:hover {
+  background: var(--rego-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(74, 86, 158, 0.45);
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 1024px) {
+  .rego_news_feat_card { grid-template-columns: 1fr; }
+  .rego_news_feat_thumb { min-height: 220px; border-right: 0; border-bottom: 1px solid var(--rego-border-light); }
+
+  .rego_news_grid       { grid-template-columns: repeat(2, 1fr); }
+  .rego_news_stay_grid  { grid-template-columns: 1fr; }
+  .rego_news_signup     { position: static; }
+  .rego_news_feed_card_h { grid-template-columns: 200px 1fr; }
+}
+
+@media (max-width: 768px) {
+  .rego_news_hero { padding: 56px 0 40px; }
+  .rego_news_feat_thumb,
+  .rego_news_feat_body { padding: 28px; }
+
+  .rego_news_grid       { grid-template-columns: 1fr; }
+  .rego_news_topics     { gap: 8px 16px; }
+  .rego_news_topic      { font-size: 13px; }
+
+  .rego_news_feed_card_h { grid-template-columns: 1fr; }
+  .rego_news_feed_thumb  { min-height: 160px; }
+}
+
+@media (max-width: 480px) {
+  .rego_news_types { gap: 6px; }
+  .rego_news_type  { padding: 9px 14px; font-size: 13px; }
+  .rego_news_signup { padding: 28px 22px; }
+  .rego_news_slider_dots { right: 16px; bottom: 14px; }
+  .rego_news_pagination { gap: 4px; }
+  .rego_news_page, .rego_news_page_next { font-size: 14px; min-width: 36px; height: 36px; padding: 8px 10px; }
+}
