@@ -1,0 +1,79 @@
+/* ================================================================
+   REGO – PRODUCT SIMPLIFIED RISK PAGE STYLESHEET
+   File: css/product-simplified-risk.css
+   Prefix: rego_psr_
+   Loads after: industry-solutions.css → product-devsecops.css →
+                proactive-risk-management.css
+   Purpose: page-specific overrides only. Most styles come from the
+            stylesheets loaded earlier; this file tweaks the hero
+            isometric (orange = Simplified Risk Mgmt, not CCA),
+            the Gartner highlight color, and the food-service feed
+            card thumb.
+================================================================ */
+
+/* ----- Hero isometric overrides ----- */
+/* Reset the per-position height rules from product-devsecops.css that
+   assumed the orange tower was the third child. Now the orange tower
+   is the first child ("Simplified Risk Mgmt") and the rest are blue. */
+.rego_dvs_iso_towers .rego_dvs_tower_blue:nth-child(1),
+.rego_dvs_iso_towers .rego_dvs_tower_blue:nth-child(2),
+.rego_dvs_iso_towers .rego_dvs_tower_blue:nth-child(4) { height: 200px; }
+
+.rego_dvs_iso_towers .rego_dvs_tower:nth-child(1) { height: 240px; }
+.rego_dvs_iso_towers .rego_dvs_tower:nth-child(2) { height: 220px; }
+.rego_dvs_iso_towers .rego_dvs_tower:nth-child(3) { height: 200px; }
+.rego_dvs_iso_towers .rego_dvs_tower:nth-child(4) { height: 180px; }
+
+/* The orange tower now holds multi-line "Simplified Risk Mgmt" text —
+   scale the font down so it doesn't overflow the column. */
+.rego_dvs_iso_towers .rego_dvs_tower_orange {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* ----- Gartner highlighted phrase ----- */
+.rego_psr_gartner_accent {
+  color: #c4b5fd;
+}
+
+/* ----- Feed card extras ----- */
+.rego_psr_feed_shield {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 32px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+/* Food Service success-story thumb */
+.rego_psr_feed_thumb_food {
+  background: linear-gradient(135deg, #1d4ed8 0%, #312e81 100%);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.rego_psr_food_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 14px 22px;
+  border-radius: 4px;
+}
+
+.rego_psr_food_icons {
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.rego_psr_food_logo strong {
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  line-height: 1.05;
+}
