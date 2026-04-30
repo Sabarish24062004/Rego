@@ -1,0 +1,506 @@
+/* ================================================================
+   REGO – SECURITY PAGE STYLESHEET
+   File: css/security.css
+   Prefix: rego_sec_
+   Theme: Mirrors industry-solutions.css + product-devsecops.css —
+          light backgrounds, brand purple→magenta gradient accents,
+          Inter font. Reuses schedule-demo classes for the inline
+          "Report A Security Vulnerability" form.
+   Load order: common.css -> layout.css -> industry-solutions.css ->
+              product-devsecops.css -> schedule-demo.css -> this file
+================================================================ */
+
+/* ================================================================
+   SECTION 1 — HERO ORBIT VISUALIZATION (framework badges)
+================================================================ */
+.rego_sec_hero { padding: 80px 0 80px; }
+
+.rego_sec_orbit {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.rego_sec_orbit_ring {
+  position: absolute;
+  border: 1px solid rgba(74, 86, 158, 0.18);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rego_sec_orbit_r1 { width: 38%; height: 38%; }
+.rego_sec_orbit_r2 { width: 64%; height: 64%; }
+.rego_sec_orbit_r3 { width: 92%; height: 92%; }
+
+.rego_sec_shield {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 14px 24px rgba(29, 78, 216, 0.30));
+  z-index: 3;
+}
+
+.rego_sec_shield svg { width: 80px; height: 100px; }
+
+.rego_sec_badge {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 900;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 10px 22px rgba(15, 28, 74, 0.16);
+  letter-spacing: -0.01em;
+  z-index: 2;
+}
+
+.rego_sec_badge small {
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+  opacity: 0.95;
+}
+
+.rego_sec_b_nist  { width: 64px; height: 64px; background: #14b8a6; top: 4%;  left: 50%; transform: translateX(-50%); }
+.rego_sec_b_sox   { width: 56px; height: 56px; background: #1e3a8a; top: 14%; right: 12%; }
+.rego_sec_b_ccpa  { width: 64px; height: 64px; background: #1f2a44; top: 38%; right: 0%; }
+.rego_sec_b_iso   { width: 60px; height: 60px; background: #1d4ed8; bottom: 16%; right: 8%; font-size: 10px; }
+.rego_sec_b_pci   { width: 56px; height: 56px; background: #14b8a6; bottom: 8%; right: 32%; }
+.rego_sec_b_gdpr  { width: 68px; height: 68px; background: #1d4ed8; bottom: 14%; left: 22%; font-size: 11px; }
+.rego_sec_b_fr    { width: 64px; height: 64px; background: #ffffff; color: #1f2a44; top: 36%; left: 0%; border: 2px solid #1f2a44; font-size: 11px; }
+.rego_sec_b_fr small { color: #1f2a44; }
+.rego_sec_b_hipaa { width: 60px; height: 60px; background: #14b8a6; top: 24%; left: 30%; font-size: 11px; }
+.rego_sec_b_soc   { width: 56px; height: 56px; background: #4338ca; top: 32%; right: 22%; font-size: 11px; }
+
+.rego_sec_dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #4a569e, #842573);
+  z-index: 2;
+}
+
+.rego_sec_dot::before {
+  content: 'R';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.rego_sec_dot_1 { top: 16%; left: 36%; }
+.rego_sec_dot_2 { top: 50%; right: 22%; transform: rotate(8deg); }
+.rego_sec_dot_3 { bottom: 22%; left: 8%; transform: rotate(-6deg); }
+.rego_sec_dot_4 { bottom: 38%; right: 36%; transform: rotate(4deg); }
+
+/* ================================================================
+   SECTION 2 — Trust RegO Pillar Cards (3 cards, white)
+================================================================ */
+.rego_sec_pillars {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f7ff 100%);
+  padding: 0 0 96px;
+}
+
+.rego_sec_pillar_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.rego_sec_pillar {
+  background: #ffffff;
+  border: 1px solid var(--rego-border-light);
+  border-radius: 18px;
+  padding: 40px 32px 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 24px rgba(15, 28, 74, 0.06);
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+}
+
+.rego_sec_pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 36px rgba(15, 28, 74, 0.12);
+}
+
+.rego_sec_pillar_icon {
+  width: 110px;
+  height: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.rego_sec_pillar_title {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0 0 18px;
+  max-width: 340px;
+}
+
+.rego_sec_pillar_desc {
+  font-size: 15px;
+  color: var(--rego-text-muted);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 340px;
+}
+
+/* ================================================================
+   SECTIONS 5/6/7/9 — Certification / Framework cards
+================================================================ */
+.rego_sec_certs {
+  background: linear-gradient(180deg, #f6f7ff 0%, #ffffff 100%);
+  padding: 0 0 32px;
+}
+
+.rego_sec_certs:first-of-type { padding-top: 24px; }
+
+.rego_sec_cert_banner {
+  display: block;
+  width: max-content;
+  margin: 0 auto 28px;
+  background: linear-gradient(135deg, #4a569e 0%, #842573 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  padding: 10px 28px;
+  border-radius: 6px;
+  box-shadow: 0 12px 22px rgba(132, 37, 115, 0.25);
+}
+
+.rego_sec_cert_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.rego_sec_cert_grid_2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.rego_sec_cert_card {
+  background: #ffffff;
+  border: 1px solid var(--rego-border-light);
+  border-radius: 18px;
+  padding: 28px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 24px rgba(15, 28, 74, 0.05);
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+}
+
+.rego_sec_cert_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 36px rgba(15, 28, 74, 0.10);
+}
+
+.rego_sec_cert_head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.rego_sec_cert_seal {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+
+.rego_sec_cert_seal small {
+  font-size: 6px;
+  font-weight: 700;
+  margin-top: 2px;
+  opacity: 0.85;
+}
+
+.rego_sec_seal_soc   { background: #38bdf8; }
+.rego_sec_seal_fr    { background: #1e3a8a; font-size: 12px; }
+.rego_sec_seal_dod   { background: #0f1c4a; font-size: 10px; }
+.rego_sec_seal_tx    { background: #0ea5e9; font-size: 7px; }
+.rego_sec_seal_sbom  { background: #1d4ed8; font-size: 9px; }
+.rego_sec_seal_star  { background: #1d4ed8; font-size: 7px; }
+.rego_sec_seal_hipaa { background: #14b8a6; }
+.rego_sec_seal_ccpa  { background: #1f2a44; font-size: 10px; }
+.rego_sec_seal_nist  { background: #14b8a6; font-size: 8px; }
+.rego_sec_seal_gdpr  { background: #1d4ed8; font-size: 9px; }
+.rego_sec_seal_iso   { background: #1d4ed8; font-size: 8px; }
+
+.rego_sec_cert_title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.rego_sec_cert_title small {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rego-text-muted);
+  letter-spacing: 0.04em;
+  margin-left: 8px;
+}
+
+.rego_sec_cert_title sup { font-size: 0.55em; }
+
+.rego_sec_cert_subtitle {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  color: var(--rego-text-muted);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.rego_sec_cert_pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: max-content;
+}
+
+.rego_sec_cert_pill_authorized {
+  background: linear-gradient(135deg, #4a569e 0%, #842573 100%);
+  color: #ffffff;
+}
+
+.rego_sec_cert_pill_inprocess {
+  background: linear-gradient(135deg, #4a569e 0%, #842573 100%);
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.rego_sec_cert_body {
+  font-size: 14.5px;
+  color: var(--rego-text-muted);
+  line-height: 1.7;
+  margin: 0 0 20px;
+  flex: 1;
+}
+
+.rego_sec_cert_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--rego-border-light);
+  transition: gap var(--rego-transition), color var(--rego-transition);
+}
+
+.rego_sec_cert_link:hover { gap: 12px; color: #1d4ed8; }
+
+/* ================================================================
+   SECTION 8 — Director quote banner (deep blue gradient)
+================================================================ */
+.rego_sec_quote {
+  background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #312e81 100%);
+  padding: 96px 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.rego_sec_quote_logo { margin-bottom: 28px; display: flex; justify-content: center; }
+
+.rego_sec_quote_body {
+  max-width: 1080px;
+  margin: 0 auto 36px;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+
+.rego_sec_quote_author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.rego_sec_quote_avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  margin-bottom: 8px;
+  box-shadow: 0 8px 18px rgba(15, 28, 74, 0.30);
+  background: #ffffff;
+}
+
+.rego_sec_quote_name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.rego_sec_quote_role {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ================================================================
+   SECTION 9 — Frameworks intro "More" link
+================================================================ */
+.rego_sec_more_link_wrap {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.rego_sec_more_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  transition: gap var(--rego-transition), color var(--rego-transition);
+}
+
+.rego_sec_more_link:hover { gap: 12px; color: #1d4ed8; }
+
+.rego_sec_frameworks { padding: 0 0 32px; }
+.rego_sec_frameworks:last-of-type { padding-bottom: 96px; }
+
+/* ================================================================
+   SECTION 10 — Report a Vulnerability (reuses .rego_sd_* form)
+================================================================ */
+.rego_sec_report {
+  background: linear-gradient(180deg, #f6f7ff 0%, #ffffff 100%);
+  padding: 96px 0;
+}
+
+.rego_sec_textarea {
+  border-radius: 18px !important;
+  resize: vertical;
+  min-height: 110px;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+/* ================================================================
+   SECTION 11 — Ready to fast track CTA (deep blue gradient)
+================================================================ */
+.rego_sec_cta {
+  background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #312e81 100%);
+  padding: 96px 0;
+}
+
+.rego_sec_cta .rego_ins_cta_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.rego_sec_cta_title {
+  color: #ffffff !important;
+}
+
+.rego_sec_cta_accent {
+  background: linear-gradient(90deg, #c4b5fd, #f0abfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rego_sec_cta_desc {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.rego_sec_cta_btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #4a569e 0%, #842573 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+  box-shadow: 0 14px 24px rgba(132, 37, 115, 0.35);
+}
+
+.rego_sec_cta_btn:hover {
+  background: linear-gradient(135deg, #3a4588 0%, #6d1d5f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 28px rgba(132, 37, 115, 0.50);
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 980px) {
+  .rego_sec_pillar_grid { grid-template-columns: 1fr; }
+  .rego_sec_cert_grid { grid-template-columns: 1fr; }
+  .rego_sec_cert_grid_2 { grid-template-columns: 1fr; }
+  .rego_sec_cta .rego_ins_cta_inner { grid-template-columns: 1fr; gap: 40px; }
+  .rego_sec_orbit { max-width: 380px; }
+}
+
+@media (max-width: 640px) {
+  .rego_sec_quote { padding: 64px 0; }
+  .rego_sec_cta { padding: 64px 0; }
+  .rego_sec_report { padding: 64px 0; }
+}
