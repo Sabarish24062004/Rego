@@ -1,0 +1,423 @@
+/* ================================================================
+   REGO – PRODUCTS / CCM PAGE STYLESHEET
+   File: css/products-ccm.css
+   Prefix: rego_ccm_
+   Theme: Mirrors industry-solutions.css + product-devsecops.css —
+          light backgrounds, brand purple/orange accents, Inter font.
+   Load order: common.css -> layout.css -> industry-solutions.css ->
+              product-devsecops.css -> this file
+================================================================ */
+
+/* ================================================================
+   HERO ISOMETRIC – Per-product tower color overrides
+   (uses same .rego_dvs_iso geometry as devsecops page)
+================================================================ */
+.rego_ccm_iso .rego_dvs_iso_towers .rego_dvs_tower {
+  height: 200px;
+}
+
+.rego_ccm_tower_orange_short {
+  height: 180px !important;
+  background: linear-gradient(180deg, #fb923c 0%, #f97316 100%);
+}
+
+.rego_ccm_tower_orange_tall {
+  height: 240px !important;
+  background: linear-gradient(180deg, #fb923c 0%, #f97316 100%);
+}
+
+.rego_ccm_tower_blue_mid {
+  height: 200px !important;
+  background: linear-gradient(180deg, #1e3a8a 0%, #0f1c4a 100%);
+}
+
+.rego_ccm_tower_navy_tall {
+  height: 230px !important;
+  background: linear-gradient(180deg, #1e3a8a 0%, #0f1c4a 100%);
+}
+
+/* ================================================================
+   SECTION 4 — PRODUCT CARDS GRID (2x2)
+================================================================ */
+.rego_ccm_products {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f7ff 100%);
+}
+
+.rego_ccm_prod_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.rego_ccm_prod_card {
+  background: #ffffff;
+  border: 1px solid var(--rego-border-light);
+  border-radius: 18px;
+  padding: 48px 40px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 24px rgba(15, 28, 74, 0.05);
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+}
+
+.rego_ccm_prod_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 36px rgba(15, 28, 74, 0.10);
+}
+
+.rego_ccm_prod_icon {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.rego_ccm_prod_icon::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  background: #e3edf7;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.rego_ccm_prod_icon svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative dots scattered around the icon */
+.rego_ccm_prod_icon_dot {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.rego_ccm_prod_dot_orange {
+  width: 8px;
+  height: 8px;
+  background: #f97316;
+  top: 6px;
+  right: 18px;
+}
+
+.rego_ccm_prod_dot_red {
+  width: 5px;
+  height: 5px;
+  background: #ef4444;
+  top: 22px;
+  right: 6px;
+}
+
+.rego_ccm_prod_dot_blue {
+  width: 6px;
+  height: 6px;
+  background: #2563eb;
+  bottom: 16px;
+  left: 8px;
+}
+
+.rego_ccm_prod_icon_risk .rego_ccm_prod_dot_orange { top: -2px; right: 26px; }
+.rego_ccm_prod_icon_risk .rego_ccm_prod_dot_blue { bottom: 6px; left: 4px; width: 4px; height: 4px; }
+
+.rego_ccm_prod_icon_cca .rego_ccm_prod_dot_blue { top: 10px; right: 14px; }
+
+.rego_ccm_prod_icon_tprm .rego_ccm_prod_dot_blue { top: 6px; right: 10px; }
+
+.rego_ccm_prod_title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+  line-height: 1.25;
+}
+
+.rego_ccm_prod_desc {
+  font-size: 15px;
+  color: var(--rego-text-muted);
+  line-height: 1.75;
+  margin: 0 0 24px;
+  max-width: 460px;
+}
+
+.rego_ccm_prod_link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  transition: color var(--rego-transition), gap var(--rego-transition);
+}
+
+.rego_ccm_prod_link:hover {
+  color: #1d4ed8;
+  gap: 12px;
+}
+
+/* ================================================================
+   SECTION 5 — STATS BANNER (blue gradient)
+================================================================ */
+.rego_ccm_stats_banner {
+  background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #312e81 100%);
+  padding: 96px 0 110px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_ccm_stats_title {
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  max-width: 900px;
+  margin: 0 auto 56px;
+}
+
+.rego_ccm_stats_accent { color: #f97316; }
+
+.rego_ccm_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.rego_ccm_stat_card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 220px;
+  box-shadow: 0 24px 40px rgba(15, 28, 74, 0.18);
+}
+
+.rego_ccm_stat_value {
+  font-size: clamp(48px, 5.6vw, 72px);
+  font-weight: 900;
+  color: #1d4ed8;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.rego_ccm_stat_label {
+  font-size: 16px;
+  color: var(--rego-text);
+  line-height: 1.55;
+  margin: 0;
+  font-weight: 500;
+  max-width: 240px;
+}
+
+/* ================================================================
+   SECTION 7 — RELATED RESOURCES (Success Story Cards)
+================================================================ */
+.rego_ccm_resources {
+  background: linear-gradient(180deg, #f6f7ff 0%, #ffffff 100%);
+}
+
+.rego_ccm_res_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.rego_ccm_res_card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(15, 28, 74, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+}
+
+.rego_ccm_res_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 36px rgba(15, 28, 74, 0.14);
+}
+
+.rego_ccm_res_thumb {
+  position: relative;
+  height: 240px;
+  background: linear-gradient(180deg, #2563eb 0%, #1e3a8a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rego_ccm_res_military { background: linear-gradient(180deg, #1d4ed8 0%, #1e3a8a 100%); }
+.rego_ccm_res_food     { background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%); }
+.rego_ccm_res_pe       { background: linear-gradient(180deg, #1d4ed8 0%, #312e81 100%); }
+
+.rego_ccm_res_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+}
+
+.rego_ccm_res_logo_text {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+/* Food Service logo */
+.rego_ccm_res_logo_food {
+  border: 2px solid #ffffff;
+  padding: 10px 16px;
+  align-items: stretch;
+}
+
+.rego_ccm_res_food_marks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 4px;
+  width: 36px;
+  border-right: 2px solid #ffffff;
+  padding-right: 10px;
+}
+
+.rego_ccm_res_food_marks i {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.rego_ccm_res_food_marks i:nth-child(1) {
+  background: radial-gradient(circle at 50% 65%, #ffffff 5px, transparent 5.5px);
+}
+.rego_ccm_res_food_marks i:nth-child(2) {
+  background: radial-gradient(circle at 50% 50%, #ffffff 5px, transparent 5.5px);
+}
+.rego_ccm_res_food_marks i:nth-child(3) {
+  background:
+    radial-gradient(circle at 30% 65%, #ffffff 3px, transparent 3.5px),
+    radial-gradient(circle at 70% 65%, #ffffff 3px, transparent 3.5px);
+}
+.rego_ccm_res_food_marks i:nth-child(4) {
+  background: #ffffff;
+  border-radius: 50% 50% 3px 3px;
+}
+
+.rego_ccm_res_food_text {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: #ffffff;
+  align-self: center;
+}
+
+/* Private Equity logo (simplified abstract mark) */
+.rego_ccm_res_pe_mark {
+  display: inline-block;
+  width: 38px;
+  height: 30px;
+  background:
+    linear-gradient(135deg, transparent 0 8%, #ffffff 8% 14%, transparent 14% 36%, #ffffff 36% 42%, transparent 42% 64%, #ffffff 64% 70%, transparent 70%);
+  position: relative;
+}
+
+.rego_ccm_res_pe_mark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid #ffffff;
+  border-bottom: 0;
+  border-right: 0;
+  width: 38px;
+  height: 30px;
+}
+
+.rego_ccm_res_pe_text {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.rego_ccm_res_body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.rego_ccm_res_kicker {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.rego_ccm_res_title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--rego-text);
+  line-height: 1.4;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.rego_ccm_res_link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  transition: color var(--rego-transition), gap var(--rego-transition);
+}
+
+.rego_ccm_res_link:hover {
+  color: #1d4ed8;
+  gap: 12px;
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 980px) {
+  .rego_ccm_prod_grid { grid-template-columns: 1fr; }
+  .rego_ccm_prod_card { padding: 36px 28px 28px; }
+
+  .rego_ccm_stats_grid { grid-template-columns: 1fr; gap: 20px; }
+  .rego_ccm_stats_banner { padding: 64px 0 80px; }
+
+  .rego_ccm_res_grid { grid-template-columns: 1fr; }
+  .rego_ccm_res_thumb { height: 200px; }
+}
+
+@media (max-width: 640px) {
+  .rego_ccm_prod_title { font-size: 19px; }
+  .rego_ccm_prod_desc { font-size: 14px; }
+
+  .rego_ccm_stat_card { padding: 32px 22px; min-height: 180px; }
+}
