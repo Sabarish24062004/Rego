@@ -1,0 +1,548 @@
+/* ================================================================
+   REGO – SCHEDULE A DEMO PAGE STYLESHEET
+   File: css/schedule-demo.css
+   Prefix: rego_sd_
+   Theme: Mirrors industry-solutions.css + product-devsecops.css —
+          light blue/white backgrounds, brand purple/orange accents,
+          Inter font.
+   Load order: common.css -> layout.css -> industry-solutions.css ->
+              product-devsecops.css -> this file
+================================================================ */
+
+/* Trim the bottom of the trusted marquee since it sits flush above the form */
+.rego_sd_trusted_top {
+  padding: 56px 0 32px;
+}
+
+/* ================================================================
+   SECTION 2 — HERO + GET STARTED FORM
+================================================================ */
+.rego_sd_hero {
+  background: linear-gradient(180deg, #ffffff 0%, #eef3ff 100%);
+  padding: 24px 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_sd_hero_inner {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.rego_sd_title {
+  font-size: clamp(34px, 4.4vw, 56px);
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 14px 0 22px;
+}
+
+.rego_sd_sub {
+  font-size: 17px;
+  color: var(--rego-text-muted);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 0 28px;
+}
+
+.rego_sd_bullets {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.rego_sd_bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 16px;
+  color: var(--rego-text);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.rego_sd_check {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a569e 0%, #842573 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: 1px;
+  box-shadow: 0 4px 10px rgba(132, 37, 115, 0.25);
+}
+
+/* ----- Gartner highlight card on left ----- */
+.rego_sd_gartner_card {
+  background: #ffffff;
+  border: 1px solid var(--rego-border-light);
+  border-radius: 14px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 22px;
+  align-items: center;
+  box-shadow: 0 12px 24px rgba(15, 28, 74, 0.06);
+}
+
+.rego_sd_gartner_thumb {
+  display: flex;
+  justify-content: center;
+}
+
+.rego_sd_gartner_paper {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  width: 110px;
+  min-height: 150px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 6px;
+  color: #1f2937;
+  box-shadow: 0 8px 16px rgba(15, 28, 74, 0.10);
+}
+
+.rego_sd_gartner_paper_logo {
+  font-size: 8px;
+  font-weight: 800;
+  color: #1f2937;
+  letter-spacing: -0.02em;
+}
+
+.rego_sd_gartner_paper_title {
+  font-size: 7px;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1.3;
+  margin: 4px 0 2px;
+}
+
+.rego_sd_gartner_paper_kicker {
+  font-size: 6px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-top: 2px;
+}
+
+.rego_sd_gartner_paper_lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rego_sd_gartner_paper_lines i {
+  display: block;
+  height: 2px;
+  background: #e5e7eb;
+  border-radius: 1px;
+}
+
+.rego_sd_gartner_paper_lines i:nth-child(2) { width: 75%; }
+.rego_sd_gartner_paper_lines i:nth-child(3) { width: 60%; }
+
+.rego_sd_gartner_title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+.rego_sd_gartner_title sup { font-size: 0.6em; }
+
+.rego_sd_gartner_desc {
+  font-size: 14px;
+  color: var(--rego-text-muted);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.rego_sd_gartner_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap var(--rego-transition), color var(--rego-transition);
+}
+
+.rego_sd_gartner_link:hover { gap: 10px; color: #1d4ed8; }
+
+/* ----- Get Started form card on right ----- */
+.rego_sd_form_card {
+  position: sticky;
+  top: 100px;
+  background: linear-gradient(180deg, #1d4ed8 0%, #312e81 100%);
+  border-radius: 22px;
+  padding: 36px 32px 32px;
+  box-shadow: 0 28px 50px rgba(15, 28, 74, 0.22);
+  color: #ffffff;
+}
+
+.rego_sd_form_title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 22px;
+  letter-spacing: -0.01em;
+}
+
+.rego_sd_form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rego_sd_field { display: block; }
+
+.rego_sd_input {
+  width: 100%;
+  background: #ffffff;
+  border: 0;
+  border-radius: 9999px;
+  padding: 14px 22px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--rego-text);
+  outline: none;
+  transition: box-shadow var(--rego-transition);
+}
+
+.rego_sd_input::placeholder { color: var(--rego-text-soft); }
+
+.rego_sd_input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.40);
+}
+
+.rego_sd_select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path fill='%231a1b2e' d='M0 0l6 8 6-8z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+  background-size: 12px 8px;
+  padding-right: 48px;
+  cursor: pointer;
+}
+
+.rego_sd_usecase {
+  border: 0;
+  margin: 8px 0 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+.rego_sd_usecase_legend {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.rego_sd_usecase_legend sup { color: rgba(255, 255, 255, 0.85); font-size: 0.9em; }
+
+.rego_sd_check_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 6px 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rego_sd_check_row input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: background var(--rego-transition), border-color var(--rego-transition);
+  flex-shrink: 0;
+}
+
+.rego_sd_check_row input[type="checkbox"]:checked {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.rego_sd_check_row input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: -1px;
+  width: 5px;
+  height: 9px;
+  border: solid #1d4ed8;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.rego_sd_consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.rego_sd_consent input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.rego_sd_consent input[type="checkbox"]:checked {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.rego_sd_consent input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: -1px;
+  width: 5px;
+  height: 9px;
+  border: solid #1d4ed8;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.rego_sd_consent a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.rego_sd_consent sup { color: rgba(255, 255, 255, 0.85); }
+
+.rego_sd_submit {
+  margin-top: 14px;
+  background: linear-gradient(135deg, #4a569e 0%, #842573 100%);
+  color: #ffffff;
+  border: 0;
+  border-radius: 9999px;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  align-self: center;
+  width: 140px;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+  box-shadow: 0 14px 24px rgba(132, 37, 115, 0.40);
+}
+
+.rego_sd_submit:hover {
+  background: linear-gradient(135deg, #3a4588 0%, #6d1d5f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 28px rgba(132, 37, 115, 0.50);
+}
+
+/* ================================================================
+   SECTION 3 — POWER OF REGO CCM (stats banner)
+================================================================ */
+.rego_sd_power {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f7ff 100%);
+  padding: 96px 0 110px;
+  text-align: center;
+}
+
+.rego_sd_power_title {
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 auto 56px;
+  max-width: 900px;
+}
+
+.rego_sd_power_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.rego_sd_power_card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 220px;
+  box-shadow: 0 24px 40px rgba(15, 28, 74, 0.08);
+  border: 1px solid var(--rego-border-light);
+}
+
+.rego_sd_power_value {
+  font-size: clamp(48px, 5.6vw, 72px);
+  font-weight: 900;
+  background: linear-gradient(90deg, #4a569e, #842573);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.rego_sd_power_label {
+  font-size: 16px;
+  color: var(--rego-text);
+  line-height: 1.55;
+  margin: 0;
+  font-weight: 500;
+  max-width: 240px;
+}
+
+/* ================================================================
+   SECTION 5 — Stay-up-to-date custom thumbs (BusinessWire / WP)
+================================================================ */
+.rego_sd_feed_thumb_bw {
+  background: linear-gradient(135deg, #ffffff 0%, #f6f7ff 100%) !important;
+  color: #1f2937 !important;
+}
+
+.rego_sd_feed_thumb_bw .rego_dvs_feed_pill {
+  background: rgba(74, 86, 158, 0.12);
+  border-color: rgba(74, 86, 158, 0.3);
+  color: #1f2937;
+}
+
+.rego_sd_bw_logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e3a8a;
+  letter-spacing: -0.02em;
+  margin: 8px 0 4px;
+}
+
+.rego_sd_bw_dot {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  flex-shrink: 0;
+}
+
+.rego_sd_bw_text { color: #1e3a8a; }
+
+.rego_sd_bw_sub {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #6b7280;
+}
+
+.rego_sd_feed_thumb_wp {
+  background: linear-gradient(135deg, #0f1c4a 0%, #1e3a8a 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_sd_feed_thumb_wp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.16), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(132, 37, 115, 0.20), transparent 50%);
+  pointer-events: none;
+}
+
+.rego_sd_feed_wp_brand {
+  position: relative;
+  z-index: 1;
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 6px 0 0;
+}
+
+.rego_sd_feed_thumb_wp .rego_dvs_feed_thumb_title {
+  position: relative;
+  z-index: 1;
+}
+
+.rego_sd_feed_thumb_wp .rego_dvs_feed_logo_bottom {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 980px) {
+  .rego_sd_hero_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rego_sd_form_card { position: static; }
+
+  .rego_sd_gartner_card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .rego_sd_gartner_thumb { display: none; }
+
+  .rego_sd_power_grid { grid-template-columns: 1fr; gap: 20px; }
+  .rego_sd_power { padding: 64px 0 80px; }
+}
+
+@media (max-width: 640px) {
+  .rego_sd_form_card { padding: 28px 22px 24px; border-radius: 18px; }
+  .rego_sd_form_title { font-size: 22px; }
+  .rego_sd_submit { width: 100%; }
+}
