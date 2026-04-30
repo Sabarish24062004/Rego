@@ -1,0 +1,1146 @@
+/* ================================================================
+   REGO – PRODUCT THIRD-PARTY RISK MANAGEMENT (TPRM) PAGE STYLES
+   File: css/product-third-party-risk-management.css
+   Prefix: rego_tprm_
+   Theme: Mirrors industry-solutions.css + product-devsecops.css —
+          light backgrounds, brand purple/orange accents, Inter font.
+   Load order: common.css -> layout.css -> industry-solutions.css ->
+              product-devsecops.css -> this file
+================================================================ */
+
+/* ================================================================
+   SECTION 4 — CENTRALIZED THIRD-PARTY RISK ASSESSMENT CARD
+================================================================ */
+.rego_tprm_central_card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px 22px 18px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 18px 32px rgba(15, 28, 74, 0.10);
+  margin-left: auto;
+}
+
+.rego_tprm_central_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f1c4a;
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+.rego_tprm_central_grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* Potential savings card */
+.rego_tprm_savings {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rego_tprm_savings_lbl {
+  font-size: 10px;
+  font-weight: 800;
+  color: #1f2937;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+}
+
+.rego_tprm_savings_row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.rego_tprm_savings_val {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0f1c4a;
+  letter-spacing: -0.02em;
+}
+
+.rego_tprm_savings_delta {
+  font-size: 11px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* Vendor type bar chart */
+.rego_tprm_vendor_chart {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rego_tprm_vendor_lbl {
+  font-size: 10px;
+  font-weight: 800;
+  color: #1f2937;
+  letter-spacing: 0.12em;
+}
+
+.rego_tprm_vendor_axis {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 110px;
+  border-left: 1px solid #d1d5db;
+  border-bottom: 1px solid #d1d5db;
+  padding: 0 6px 0 22px;
+}
+
+.rego_tprm_vendor_y_lbl {
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  transform: rotate(-90deg) translate(-50%, -100%);
+  transform-origin: 0 0;
+  font-size: 8px;
+  font-weight: 800;
+  color: #6b7280;
+  letter-spacing: 0.12em;
+}
+
+.rego_tprm_vendor_bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 14px;
+  flex: 1;
+  height: 100%;
+}
+
+.rego_tprm_vendor_bar {
+  width: 22px;
+  border-radius: 2px 2px 0 0;
+  display: block;
+}
+
+.rego_tprm_vbar_orange { background: #f97316; }
+.rego_tprm_vbar_blue   { background: #1e3a8a; }
+.rego_tprm_vbar_teal   { background: #14b8a6; }
+
+.rego_tprm_vendor_xlabels {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 22px;
+  padding-right: 6px;
+  font-size: 8px;
+  font-weight: 800;
+  color: #1f2937;
+  letter-spacing: 0.06em;
+}
+
+/* Risk by trend pie + legend */
+.rego_tprm_trend {
+  margin-top: 14px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+}
+
+.rego_tprm_trend_lbl {
+  font-size: 10px;
+  font-weight: 800;
+  color: #1f2937;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.rego_tprm_trend_row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rego_tprm_trend_pie {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #f97316 0 35%,
+    #1e3a8a 35% 70%,
+    #14b8a6 70% 100%
+  );
+  flex-shrink: 0;
+}
+
+.rego_tprm_trend_legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.rego_tprm_trend_legend i {
+  display: block;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.rego_tprm_trend_legend i::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.rego_tprm_trend_legend i:nth-child(1)::before { background: #f97316; }
+.rego_tprm_trend_legend i:nth-child(2)::before { background: #1e3a8a; }
+.rego_tprm_trend_legend i:nth-child(3)::before { background: #14b8a6; }
+
+.rego_tprm_trend_legend i:nth-child(1) { width: 80%; }
+.rego_tprm_trend_legend i:nth-child(2) { width: 60%; }
+.rego_tprm_trend_legend i:nth-child(3) { width: 50%; }
+
+/* ================================================================
+   SECTION 5 — AUTOMATED EVIDENCE COLLECTION
+================================================================ */
+.rego_tprm_evidence_card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 18px 32px rgba(15, 28, 74, 0.10);
+}
+
+.rego_tprm_evidence_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f1c4a;
+  margin: 0 0 14px;
+}
+
+.rego_tprm_evidence_tabs {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.rego_tprm_evidence_tabs span {
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.rego_tprm_evidence_tab_active {
+  color: #2563eb !important;
+  font-weight: 800 !important;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 8px;
+  margin-bottom: -10px;
+}
+
+.rego_tprm_evidence_subhd {
+  font-size: 10px;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: 0.16em;
+  margin-bottom: 10px;
+}
+
+.rego_tprm_evidence_table { display: flex; flex-direction: column; }
+
+.rego_tprm_evidence_thead,
+.rego_tprm_evidence_row {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr 0.6fr 1.2fr;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 10px;
+}
+
+.rego_tprm_evidence_thead {
+  font-weight: 800;
+  color: #6b7280;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rego_tprm_evidence_row {
+  border-bottom: 1px solid #f3f4f6;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.rego_tprm_evidence_row:last-child { border-bottom: 0; }
+
+.rego_tprm_ev_status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.rego_tprm_ev_pass { background: #14b8a6; }
+.rego_tprm_ev_fail { background: #ef4444; }
+
+.rego_tprm_ev_pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: max-content;
+  justify-self: end;
+}
+
+.rego_tprm_ev_pill em {
+  font-style: normal;
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 8px;
+}
+
+.rego_tprm_ev_pill_pass { background: #d1fae5; color: #047857; }
+.rego_tprm_ev_pill_fail { background: #fee2e2; color: #b91c1c; }
+
+/* Owner card (overlay top-right) */
+.rego_tprm_owner_card {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: -30px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  width: 180px;
+  box-shadow: 0 12px 22px rgba(15, 28, 74, 0.12);
+}
+
+.rego_tprm_owner_card h5 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f1c4a;
+}
+
+.rego_tprm_owner_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rego_tprm_owner_donut {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background:
+    conic-gradient(#f97316 0 30%, #ef4444 30% 55%, #2563eb 55% 80%, #14b8a6 80% 100%);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.rego_tprm_owner_donut::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.rego_tprm_owner_legend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.rego_tprm_owner_legend i {
+  display: block;
+  height: 5px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.rego_tprm_owner_legend i:nth-child(2) { width: 70%; }
+
+/* Evidence Source overlay (bottom-right) */
+.rego_tprm_source_card {
+  position: absolute;
+  z-index: 3;
+  bottom: -16px;
+  right: -30px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  width: 220px;
+  box-shadow: 0 12px 22px rgba(15, 28, 74, 0.12);
+}
+
+.rego_tprm_source_card h5 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f1c4a;
+}
+
+.rego_tprm_source_head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 5px;
+  margin-bottom: 6px;
+}
+
+.rego_tprm_source_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.rego_tprm_source_logo {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.rego_tprm_logo_wiz { color: #1e40af; }
+.rego_tprm_logo_wiz sup { color: #fb923c; }
+.rego_tprm_logo_servicenow { color: #14b8a6; }
+.rego_tprm_logo_sonar { color: #1e2040; }
+
+.rego_tprm_source_bar {
+  display: block;
+  height: 6px;
+  background: #fed7aa;
+  border-radius: 3px;
+}
+
+/* ================================================================
+   SECTION 6 — REAL-TIME RISK MONITORING DASHBOARD
+================================================================ */
+.rego_tprm_rt_dash {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 580px;
+  box-shadow: 0 18px 32px rgba(15, 28, 74, 0.12);
+  overflow: hidden;
+  font-size: 10px;
+}
+
+.rego_tprm_rt_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.rego_tprm_rt_brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 800;
+  font-size: 11px;
+  color: #1f2937;
+}
+
+.rego_tprm_rt_brand i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #4a569e, #842573);
+  color: #ffffff;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.rego_tprm_rt_nav {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+
+.rego_tprm_rt_nav em {
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.rego_tprm_rt_user {
+  font-size: 9px;
+  font-weight: 700;
+  color: #ef4444;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rego_tprm_rt_user i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+}
+
+.rego_tprm_rt_body {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+.rego_tprm_rt_side {
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rego_tprm_rt_side_pill {
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rego_tprm_rt_side_orange { background: linear-gradient(90deg, #f97316, #ea580c); }
+.rego_tprm_rt_side_red    { background: linear-gradient(90deg, #ef4444, #b91c1c); }
+
+.rego_tprm_rt_side_skel {
+  height: 5px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  margin-left: 6px;
+}
+
+.rego_tprm_rt_side_skel:nth-of-type(2n) { width: 70%; }
+
+.rego_tprm_rt_main {
+  padding: 10px 12px;
+}
+
+.rego_tprm_rt_tabs {
+  display: flex;
+  gap: 10px;
+  font-size: 8px;
+  font-weight: 700;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.rego_tprm_rt_tab_active {
+  color: #2563eb !important;
+}
+
+.rego_tprm_rt_subtabs {
+  display: flex;
+  gap: 10px;
+  font-size: 8px;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 6px 0 10px;
+  flex-wrap: wrap;
+}
+
+.rego_tprm_rt_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.rego_tprm_rt_panel {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.rego_tprm_rt_panel h5 {
+  margin: 0 0 8px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #0f1c4a;
+}
+
+.rego_tprm_rt_score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rego_tprm_rt_gauge {
+  width: 50px;
+  height: 28px;
+  background: conic-gradient(from -90deg at 50% 100%, #1e3a8a 0 calc(27% * 1.8deg), #e5e7eb 0 100%);
+  border-radius: 50px 50px 0 0;
+  position: relative;
+}
+
+.rego_tprm_rt_gauge::before {
+  content: '';
+  position: absolute;
+  inset: 6px 6px 0 6px;
+  background: #ffffff;
+  border-radius: 50px 50px 0 0;
+}
+
+.rego_tprm_rt_score_val {
+  font-size: 16px;
+  font-weight: 900;
+  color: #0f1c4a;
+}
+
+.rego_tprm_rt_score_lbl {
+  display: block;
+  font-size: 8px;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.06em;
+  margin: 4px 0 8px;
+}
+
+.rego_tprm_rt_metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: #1f2937;
+  padding: 4px 0;
+  border-top: 1px solid #f3f4f6;
+}
+
+.rego_tprm_rt_chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  padding: 1px 6px;
+  border-radius: 9999px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.rego_tprm_rt_chip_blue { background: #dbeafe; color: #1d4ed8; }
+
+.rego_tprm_rt_chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 6px;
+  height: 70px;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 4px;
+}
+
+.rego_tprm_rt_b {
+  display: block;
+  width: 12px;
+  background: linear-gradient(180deg, #f97316, #ea580c);
+  border-radius: 2px 2px 0 0;
+}
+
+.rego_tprm_rt_b:nth-child(1) { background: linear-gradient(180deg, #14b8a6, #0d9488); }
+.rego_tprm_rt_b:nth-child(2) { background: linear-gradient(180deg, #1e3a8a, #1e40af); }
+.rego_tprm_rt_b:nth-child(3) { background: linear-gradient(180deg, #f97316, #ea580c); }
+.rego_tprm_rt_b:nth-child(4) { background: linear-gradient(180deg, #b91c1c, #7f1d1d); }
+
+.rego_tprm_rt_xlbl {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4px;
+  font-size: 7px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.rego_tprm_rt_lower {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.rego_tprm_rt_comments,
+.rego_tprm_rt_visualizations {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.rego_tprm_rt_comments h5,
+.rego_tprm_rt_visualizations h5 {
+  margin: 0 0 8px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #0f1c4a;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rego_tprm_rt_comments h5 em {
+  font-style: normal;
+  font-size: 8px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.rego_tprm_rt_comment {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  gap: 6px;
+  align-items: center;
+}
+
+.rego_tprm_rt_avatar {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a569e, #842573);
+}
+
+.rego_tprm_rt_comment_meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.rego_tprm_rt_comment_meta strong {
+  font-size: 9px;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.rego_tprm_rt_comment_meta small {
+  font-size: 7px;
+  color: #6b7280;
+}
+
+.rego_tprm_rt_reply {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.rego_tprm_rt_viz_row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.rego_tprm_rt_viz_row span { font-weight: 600; flex: 0 0 auto; min-width: 60px; }
+
+.rego_tprm_rt_viz_row i {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  flex: 1;
+}
+
+.rego_tprm_rt_bar1 { background: linear-gradient(90deg, #ef4444, transparent); }
+.rego_tprm_rt_bar2 { background: linear-gradient(90deg, #ef4444, #f97316); }
+
+.rego_tprm_rt_owner {
+  display: grid;
+  grid-template-columns: 32px auto 1fr;
+  gap: 6px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.rego_tprm_rt_owner_donut {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: conic-gradient(#14b8a6 0 75%, #ef4444 75% 100%);
+  position: relative;
+}
+
+.rego_tprm_rt_owner_donut::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.rego_tprm_rt_owner_val {
+  font-size: 11px;
+  font-weight: 900;
+  color: #0f1c4a;
+}
+
+.rego_tprm_rt_owner_legend {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rego_tprm_rt_owner_legend em {
+  font-style: normal;
+  font-size: 7px;
+  font-weight: 700;
+  color: #1f2937;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rego_tprm_rt_owner_legend i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.rego_tprm_dot_red  { background: #ef4444; }
+.rego_tprm_dot_blue { background: #1e3a8a; }
+
+/* ================================================================
+   SECTION 7 — STREAMLINED RISK SCORING & REPORTING
+================================================================ */
+.rego_tprm_score_card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 18px 32px rgba(15, 28, 74, 0.10);
+}
+
+.rego_tprm_score_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f1c4a;
+  margin: 0 0 16px;
+}
+
+.rego_tprm_score_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.rego_tprm_matrix_lbl {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.rego_tprm_matrix {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+}
+
+.rego_tprm_m {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f1c4a;
+}
+
+.rego_tprm_m_g { background: #99f6e4; }
+.rego_tprm_m_y { background: #fde68a; }
+.rego_tprm_m_o { background: #fdba74; }
+.rego_tprm_m_r { background: #fca5a5; }
+
+.rego_tprm_matrix .rego_tprm_m:last-child {
+  background: #ffffff;
+  border: 2px solid #0f1c4a;
+  border-radius: 50%;
+}
+
+.rego_tprm_vendors_title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f1c4a;
+  margin: 0 0 10px;
+}
+
+.rego_tprm_vendors_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rego_tprm_vendor_pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f1c4a;
+  letter-spacing: -0.01em;
+  padding: 4px 0;
+}
+
+.rego_tprm_vendor_pill b { font-weight: 900; }
+
+/* ================================================================
+   SECTION 8 — COMPLIANCE MAPPING
+================================================================ */
+.rego_tprm_map_card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 18px 32px rgba(15, 28, 74, 0.10);
+  margin-left: auto;
+}
+
+.rego_tprm_map_head {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f1c4a;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.rego_tprm_map_row {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.rego_tprm_map_row:last-of-type { border-bottom: 0; }
+
+.rego_tprm_map_check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.rego_tprm_map_skel {
+  display: block;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+}
+
+.rego_tprm_map_badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rego_tprm_fb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 7px;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  font-style: normal;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.rego_tprm_fb_sspa  { background: #d97706; }
+.rego_tprm_fb_nist  { background: #14b8a6; font-size: 6px; }
+.rego_tprm_fb_soc   { background: #1e40af; font-size: 6px; }
+.rego_tprm_fb_ccpa  { background: #1f2937; font-size: 7px; }
+.rego_tprm_fb_gdpr  { background: #1e40af; font-size: 6px; }
+.rego_tprm_fb_hipaa { background: #14b8a6; font-size: 6px; }
+.rego_tprm_fb_dark  { background: #0f1c4a; font-size: 6px; line-height: 1.1; }
+.rego_tprm_fb_fr    { background: #14b8a6; font-size: 5px; line-height: 1.1; }
+.rego_tprm_fb_pci   { background: #16a34a; font-size: 7px; }
+.rego_tprm_fb_scf   { background: #14b8a6; font-size: 6px; }
+.rego_tprm_fb_blue  { background: #1d4ed8; font-size: 9px; }
+
+.rego_tprm_map_done {
+  position: absolute;
+  bottom: -22px;
+  right: 18px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2937;
+  box-shadow: 0 12px 22px rgba(15, 28, 74, 0.12);
+}
+
+.rego_tprm_map_done_check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #14b8a6;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+/* ================================================================
+   SECTION 9 — INTEGRATIONS HUB (custom node positions)
+================================================================ */
+.rego_tprm_hub .rego_tprm_n_wiz        { top: 10%; left: 12%; border: 2px solid #4a569e; }
+.rego_tprm_hub .rego_tprm_n_splunk     { top: 10%; right: 12%; border: 2px solid #65a30d; }
+.rego_tprm_hub .rego_tprm_n_servicenow { top: 44%; left: 2%; border: 2px solid #14b8a6; }
+.rego_tprm_hub .rego_tprm_n_jira       { top: 44%; right: 2%; border: 2px solid #2563eb; }
+.rego_tprm_hub .rego_tprm_n_qualys     { bottom: 10%; left: 12%; border: 2px solid #1e40af; background: #1e40af; }
+.rego_tprm_hub .rego_tprm_n_salesforce { bottom: 10%; right: 12%; border: 2px solid #00a1e0; }
+
+.rego_tprm_splunk {
+  color: #0a0a0a;
+  font-weight: 900;
+  font-size: 10px;
+  letter-spacing: -0.02em;
+}
+
+.rego_tprm_splunk i {
+  font-style: normal;
+  color: #65a30d;
+  font-weight: 900;
+}
+
+.rego_tprm_qualys {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 26px;
+}
+
+.rego_tprm_salesforce {
+  color: #00a1e0;
+  font-weight: 900;
+  font-size: 10px;
+  letter-spacing: -0.02em;
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 980px) {
+  .rego_tprm_owner_card,
+  .rego_tprm_source_card { right: 0; }
+
+  .rego_tprm_central_grid { grid-template-columns: 1fr; }
+
+  .rego_tprm_score_grid { grid-template-columns: 1fr; }
+
+  .rego_tprm_rt_body { grid-template-columns: 1fr; }
+  .rego_tprm_rt_side { display: none; }
+  .rego_tprm_rt_lower { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .rego_tprm_evidence_thead,
+  .rego_tprm_evidence_row { grid-template-columns: 0.4fr 1fr 0.5fr 1fr; }
+
+  .rego_tprm_owner_card { width: 150px; }
+  .rego_tprm_source_card { width: 180px; }
+
+  .rego_tprm_rt_grid { grid-template-columns: 1fr; }
+}
