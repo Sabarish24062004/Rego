@@ -1,0 +1,1378 @@
+/* ================================================================
+   REGO – RESOURCE CENTER PAGE STYLESHEET
+   File: css/resource-center.css
+   Prefix: rego_rc_
+   Theme: Mirrors newsroom.css (which is loaded BEFORE this file).
+          Adds the orange "Center" accent, the Gartner banner, and
+          the mixed-type card thumbnails (Solution Brief, White Paper,
+          Blog, Infographic, Knowledge Hub, eBook).
+   Load order: common.css -> layout.css -> newsroom.css -> this file
+================================================================ */
+
+/* ==== Orange accent ("Center", "stay up to date") ==== */
+.rego_rc_accent_orange { color: #f97316; }
+
+/* ================================================================
+   FEATURED HERO SLIDER – Resource thumbnails (one-pager / blog / wp)
+================================================================ */
+/* Solution Brief paper-on-blue background */
+.rego_rc_feat_thumb_brief {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #312e81 100%) !important;
+  border-right: 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_rc_feat_thumb_brief::before,
+.rego_rc_feat_thumb_brief::after {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 6px;
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.22);
+}
+
+.rego_rc_feat_thumb_brief::before {
+  top: 30px;
+  right: 18%;
+  transform: rotate(-6deg);
+}
+
+.rego_rc_feat_thumb_brief::after {
+  top: 60px;
+  right: 6%;
+  transform: rotate(6deg);
+  opacity: 0.5;
+}
+
+.rego_rc_feat_paper {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  width: 240px;
+  min-height: 320px;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.28);
+}
+
+.rego_rc_feat_paper_logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.rego_rc_feat_paper_logo::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #4a569e, #842573);
+}
+
+.rego_rc_feat_paper_pill {
+  align-self: flex-end;
+  background: #eef3ff;
+  color: #1f2937;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  border: 1px solid #cbd5e1;
+}
+
+.rego_rc_feat_paper_title {
+  font-size: 13px;
+  font-weight: 900;
+  color: #f97316;
+  line-height: 1.25;
+  margin: 6px 0 2px;
+}
+
+.rego_rc_feat_paper_sub {
+  font-size: 9px;
+  font-weight: 700;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.rego_rc_feat_paper_lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.rego_rc_feat_paper_lines i {
+  display: block;
+  height: 4px;
+  background: #14b8a6;
+  border-radius: 2px;
+}
+
+.rego_rc_feat_paper_lines i:nth-child(2) { background: #1e3a8a; width: 70%; }
+.rego_rc_feat_paper_lines i:nth-child(3) { background: #14b8a6; width: 86%; }
+.rego_rc_feat_paper_lines i:nth-child(4) { background: #f97316; width: 60%; }
+.rego_rc_feat_paper_lines i:nth-child(5) { background: #1e3a8a; width: 78%; }
+.rego_rc_feat_paper_lines i:nth-child(6) { background: #14b8a6; width: 50%; }
+
+/* Featured slide: blog */
+.rego_rc_feat_thumb_blog {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 70%, #312e81 100%) !important;
+  position: relative;
+  border-right: 0 !important;
+  color: #ffffff;
+  text-align: left !important;
+  align-items: stretch !important;
+  padding: 36px !important;
+}
+
+.rego_rc_feat_blog_pill {
+  display: inline-block;
+  background: #ffffff;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  width: max-content;
+  margin-bottom: 18px;
+}
+
+.rego_rc_feat_blog_title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+
+.rego_rc_feat_blog_sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 16px;
+}
+
+.rego_rc_feat_blog_logo {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Featured slide: white paper */
+.rego_rc_feat_thumb_wp {
+  background: linear-gradient(135deg, #0f1c4a 0%, #1e3a8a 100%) !important;
+  position: relative;
+  border-right: 0 !important;
+  color: #ffffff;
+  align-items: stretch !important;
+  text-align: left !important;
+  padding: 36px !important;
+  overflow: hidden;
+}
+
+.rego_rc_feat_thumb_wp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.18), transparent 40%),
+    radial-gradient(circle at 30% 90%, rgba(132, 37, 115, 0.18), transparent 40%);
+  pointer-events: none;
+}
+
+.rego_rc_feat_wp_pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  width: max-content;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_rc_feat_wp_title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_rc_feat_wp_logo {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+/* ================================================================
+   GARTNER MARKET GUIDE BANNER (between hero and filters)
+================================================================ */
+.rego_rc_gartner {
+  background: #ffffff;
+  padding: 32px 0 16px;
+}
+
+.rego_rc_gartner_card {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 50%, #312e81 100%);
+  border-radius: 22px;
+  padding: 56px 56px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 56px;
+  align-items: center;
+  box-shadow: 0 24px 48px rgba(15, 28, 74, 0.20);
+}
+
+.rego_rc_gartner_thumb {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.rego_rc_gartner_paper {
+  background: #ffffff;
+  border-radius: 4px;
+  width: 240px;
+  min-height: 300px;
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.30);
+  position: relative;
+  font-size: 8px;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.rego_rc_gartner_paper_logo {
+  font-size: 11px;
+  font-weight: 800;
+  color: #1f2937;
+  letter-spacing: -0.02em;
+}
+
+.rego_rc_gartner_paper_title {
+  font-size: 11px;
+  font-weight: 900;
+  color: #1f2937;
+  line-height: 1.3;
+  margin: 4px 0 2px;
+}
+
+.rego_rc_gartner_paper_sub {
+  font-size: 7px;
+  color: #6b7280;
+}
+
+.rego_rc_gartner_paper_body {
+  font-size: 7px;
+  color: #374151;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+.rego_rc_gartner_paper_kicker {
+  font-size: 8px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-top: 4px;
+}
+
+.rego_rc_gartner_paper_lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rego_rc_gartner_paper_lines i {
+  display: block;
+  height: 3px;
+  background: #e5e7eb;
+  border-radius: 2px;
+}
+
+.rego_rc_gartner_paper_lines i:nth-child(2) { width: 80%; }
+.rego_rc_gartner_paper_lines i:nth-child(3) { width: 60%; }
+
+.rego_rc_gartner_paper_unlock {
+  position: absolute;
+  top: 18px;
+  right: -34px;
+  width: 80px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+  font-size: 6px;
+  line-height: 1.3;
+}
+
+.rego_rc_gartner_paper_unlock strong {
+  font-size: 7px;
+  font-weight: 900;
+  color: #1f2937;
+}
+
+.rego_rc_gartner_paper_unlock small { font-size: 5.5px; color: #6b7280; }
+
+.rego_rc_gartner_paper_unlock_btn {
+  display: inline-block;
+  background: #1d4ed8;
+  color: #ffffff;
+  font-size: 6px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 3px;
+  width: max-content;
+  margin-top: 2px;
+}
+
+.rego_rc_gartner_body { color: #ffffff; }
+
+.rego_rc_gartner_title {
+  font-size: clamp(24px, 2.6vw, 36px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+
+.rego_rc_gartner_title sup { font-size: 0.6em; }
+
+.rego_rc_gartner_desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.65;
+  margin: 0 0 28px;
+  max-width: 720px;
+}
+
+.rego_rc_gartner_btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform var(--rego-transition), box-shadow var(--rego-transition);
+  box-shadow: 0 14px 24px rgba(249, 115, 22, 0.35);
+}
+
+.rego_rc_gartner_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 28px rgba(249, 115, 22, 0.45);
+}
+
+/* ================================================================
+   CARD GRID THUMBNAILS – Resource-specific styles
+================================================================ */
+
+/* Solution Brief / One-Pager card thumb */
+.rego_rc_thumb_brief {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #312e81 100%) !important;
+  position: relative;
+  overflow: hidden;
+  padding: 16px !important;
+}
+
+.rego_rc_thumb_brief::before,
+.rego_rc_thumb_brief::after {
+  content: '';
+  position: absolute;
+  width: 130px;
+  height: 170px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+}
+
+.rego_rc_thumb_brief::before {
+  top: 18px;
+  right: 28%;
+  transform: rotate(-7deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+
+.rego_rc_thumb_brief::after {
+  top: 30px;
+  right: 8%;
+  transform: rotate(7deg);
+  opacity: 0.5;
+}
+
+.rego_rc_thumb_paper {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  width: 134px;
+  min-height: 168px;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
+}
+
+.rego_rc_thumb_paper_logo {
+  font-size: 8px;
+  font-weight: 800;
+  color: #1f2937;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rego_rc_thumb_paper_logo::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #4a569e, #842573);
+}
+
+.rego_rc_thumb_paper_pill {
+  align-self: flex-end;
+  background: #eef3ff;
+  color: #1f2937;
+  font-size: 5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 2px 5px;
+  border-radius: 9999px;
+  border: 1px solid #cbd5e1;
+}
+
+.rego_rc_thumb_paper h4 {
+  margin: 4px 0 2px;
+  font-size: 9px;
+  font-weight: 900;
+  color: #f97316;
+  line-height: 1.25;
+}
+
+.rego_rc_thumb_paper_lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.rego_rc_thumb_paper_lines i {
+  display: block;
+  height: 3px;
+  background: #14b8a6;
+  border-radius: 2px;
+}
+
+.rego_rc_thumb_paper_lines i:nth-child(2) { background: #1e3a8a; width: 70%; }
+.rego_rc_thumb_paper_lines i:nth-child(3) { background: #f97316; width: 50%; }
+
+/* White Paper card thumb */
+.rego_rc_thumb_wp {
+  background: linear-gradient(135deg, #0f1c4a 0%, #1e3a8a 100%) !important;
+  position: relative;
+  overflow: hidden;
+  padding: 18px !important;
+  align-items: stretch !important;
+  text-align: left !important;
+}
+
+.rego_rc_thumb_wp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(20, 184, 166, 0.18), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(132, 37, 115, 0.20), transparent 50%);
+  pointer-events: none;
+}
+
+.rego_rc_thumb_wp_inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+}
+
+.rego_rc_thumb_wp_brand {
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.rego_rc_thumb_wp_kicker {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  width: max-content;
+}
+
+.rego_rc_thumb_wp_inner h4 {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.rego_rc_thumb_wp_logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Generic blog/news card thumb (gradient backgrounds) */
+.rego_rc_thumb_blog {
+  position: relative;
+  overflow: hidden;
+  padding: 22px !important;
+  align-items: stretch !important;
+  text-align: left !important;
+  flex-direction: column;
+  justify-content: space-between !important;
+}
+
+.rego_rc_thumb_blog_purple { background: linear-gradient(135deg, #4a569e 0%, #842573 100%) !important; }
+.rego_rc_thumb_blog_navy   { background: linear-gradient(135deg, #1e40af 0%, #312e81 100%) !important; }
+.rego_rc_thumb_blog_navy2  { background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%) !important; }
+.rego_rc_thumb_blog_teal   { background: linear-gradient(135deg, #0e7490 0%, #0f766e 50%, #134e4a 100%) !important; }
+.rego_rc_thumb_blog_teal2  { background: linear-gradient(135deg, #1e3a8a 0%, #0e7490 100%) !important; }
+.rego_rc_thumb_blog_aiblue { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%) !important; }
+
+.rego_rc_thumb_blog_pill {
+  display: inline-block;
+  background: #38bdf8;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  width: max-content;
+}
+
+.rego_rc_thumb_blog_logo,
+.rego_rc_thumb_blog_logo_top {
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  width: max-content;
+}
+
+.rego_rc_thumb_blog_logo {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+}
+
+.rego_rc_thumb_blog_logo_top {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.rego_rc_thumb_blog h4 {
+  margin: 4px 0;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.rego_rc_thumb_blog_h_white { color: #ffffff; }
+.rego_rc_thumb_blog_h_dark  { color: #ffffff; }
+
+.rego_rc_thumb_blog_h_dark strong { color: #f97316; }
+
+.rego_rc_thumb_blog_p_white {
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rego_rc_thumb_ai_mark {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  font-size: 36px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
+}
+
+/* eBook card thumb */
+.rego_rc_thumb_ebook {
+  background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%) !important;
+  position: relative;
+  overflow: hidden;
+  padding: 22px !important;
+  align-items: stretch !important;
+  text-align: left !important;
+  flex-direction: column;
+  justify-content: space-between !important;
+}
+
+.rego_rc_thumb_ebook_pill {
+  display: inline-block;
+  background: #ffffff;
+  color: #1d4ed8;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  width: max-content;
+  align-self: flex-end;
+}
+
+.rego_rc_thumb_ebook h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 6px 0 0;
+  line-height: 1.2;
+}
+
+.rego_rc_thumb_ebook_sub {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 4px 0 0;
+}
+
+.rego_rc_thumb_ebook_logo {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Knowledge Hub card thumb (isometric assets/controls/evidence boxes) */
+.rego_rc_thumb_kh {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f7ff 100%) !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.rego_rc_thumb_kh_iso {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.rego_rc_thumb_kh_box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 22px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  transform: skewX(-14deg);
+  box-shadow: 0 8px 16px rgba(15, 28, 74, 0.18);
+}
+
+.rego_rc_thumb_kh_box_blue   { background: linear-gradient(180deg, #38bdf8, #0284c7); }
+.rego_rc_thumb_kh_box_orange { background: linear-gradient(180deg, #fb923c, #ea580c); width: 100px; }
+.rego_rc_thumb_kh_box_navy   { background: linear-gradient(180deg, #1e40af, #1e3a8a); width: 110px; }
+
+.rego_rc_thumb_kh_base {
+  margin-top: 10px;
+  padding: 4px 28px;
+  font-size: 11px;
+  font-weight: 900;
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
+  border-radius: 4px;
+  transform: rotateX(50deg) skewX(-14deg);
+  box-shadow: 0 6px 12px rgba(15, 28, 74, 0.25);
+}
+
+/* Infographic card thumb (CCM Culture Shift) */
+.rego_rc_thumb_ig {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%) !important;
+  position: relative;
+  overflow: hidden;
+  padding: 16px !important;
+  text-align: left !important;
+  align-items: stretch !important;
+  color: #ffffff;
+  flex-direction: column;
+}
+
+.rego_rc_thumb_ig_pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  width: max-content;
+}
+
+.rego_rc_thumb_ig_seal {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1d4ed8, #312e81);
+  border: 2px solid #fbbf24;
+  font-size: 6px;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.1;
+  padding: 4px;
+}
+
+.rego_rc_thumb_ig h4 {
+  margin: 8px 0 4px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.rego_rc_thumb_ig_sub {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+.rego_rc_thumb_ig_stats {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.rego_rc_thumb_ig_stats span {
+  flex: 1;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 4px;
+  padding: 5px 6px;
+  display: flex;
+  flex-direction: column;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.rego_rc_thumb_ig_stats em {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 900;
+  color: #1d4ed8;
+  margin-top: 1px;
+}
+
+.rego_rc_thumb_ig_logo {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ================================================================
+   PAGE 2 — Extra paper variant (Infographic with seal + dark title)
+================================================================ */
+.rego_rc_thumb_paper_ig h4.rego_rc_thumb_paper_h_dark {
+  color: #1f2937 !important;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 4px 0 2px;
+}
+
+.rego_rc_thumb_paper_h_dark { color: #1f2937 !important; }
+
+.rego_rc_thumb_paper_p {
+  font-size: 6px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 4px 0;
+}
+
+.rego_rc_thumb_paper_kicker {
+  font-size: 6px;
+  font-weight: 800;
+  color: #1d4ed8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.rego_rc_thumb_paper_chip {
+  display: inline-block;
+  background: #ecfeff;
+  border: 1px solid #99f6e4;
+  color: #0f766e;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 6px;
+  border-radius: 3px;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+.rego_rc_thumb_paper_seal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1d4ed8, #312e81);
+  border: 2px solid #fbbf24;
+  color: #ffffff;
+  font-size: 5px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.1;
+  padding: 3px;
+}
+
+.rego_rc_thumb_paper_logo_br {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 8px;
+  font-weight: 800;
+  color: #1f2937;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rego_rc_thumb_paper_logo_br::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #4a569e, #842573);
+}
+
+.rego_rc_thumb_paper { position: relative; }
+
+/* ================================================================
+   PAGE 2 — Operation StormBreaker success-story thumb
+================================================================ */
+.rego_rc_thumb_stormbreaker {
+  background: linear-gradient(135deg, #1e3a8a 0%, #312e81 50%, #1d4ed8 100%) !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.rego_rc_thumb_sb_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.rego_rc_thumb_sb_circle {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background:
+    radial-gradient(circle, transparent 60%, rgba(255, 255, 255, 0.05) 60% 70%, transparent 70%);
+}
+
+.rego_rc_thumb_sb_circle::before,
+.rego_rc_thumb_sb_circle::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.rego_rc_thumb_sb_circle::before { transform: scale(1.18); }
+.rego_rc_thumb_sb_circle::after  { transform: scale(0.82); }
+
+.rego_rc_thumb_sb_bolt {
+  font-size: 38px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.rego_rc_thumb_sb_top,
+.rego_rc_thumb_sb_bot {
+  font-size: 10px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.18em;
+  margin-top: 4px;
+}
+
+.rego_rc_thumb_sb_top { font-size: 9px; opacity: 0.9; }
+
+/* ================================================================
+   PAGE 2 — Blog gradient variants
+================================================================ */
+.rego_rc_thumb_blog_redteal {
+  background:
+    linear-gradient(135deg, rgba(20, 184, 166, 0.4), rgba(132, 37, 115, 0.5) 50%, rgba(220, 38, 38, 0.6) 100%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 12px),
+    linear-gradient(135deg, #0e7490 0%, #7c3aed 50%, #b91c1c 100%) !important;
+}
+
+.rego_rc_thumb_blog_3t {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.10), transparent 40%),
+    repeating-linear-gradient(105deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 14px),
+    linear-gradient(135deg, #0e7490 0%, #1d4ed8 60%, #312e81 100%) !important;
+}
+
+.rego_rc_thumb_blog_frameworks {
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.30)),
+    linear-gradient(135deg, #0e7490 0%, #1e40af 50%, #312e81 100%) !important;
+  position: relative;
+}
+
+.rego_rc_thumb_blog_frameworks::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.10) 0 70px, transparent 71px),
+    radial-gradient(circle at 75% 60%, rgba(255, 255, 255, 0.06) 0 30px, transparent 31px);
+  pointer-events: none;
+}
+
+.rego_rc_thumb_blog_stars {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.12) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.18) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.14) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.18) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 55% 45%, rgba(255, 255, 255, 0.10) 0 2px, transparent 2.5px),
+    linear-gradient(135deg, #4338ca 0%, #1e40af 50%, #312e81 100%) !important;
+  position: relative;
+}
+
+.rego_rc_thumb_blog_stars::before {
+  content: '★ ★ ★';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.16);
+  letter-spacing: 0.4em;
+  pointer-events: none;
+}
+
+/* ================================================================
+   PAGE 2 — PR Newswire news thumb
+================================================================ */
+.rego_rc_thumb_prnews {
+  background: linear-gradient(135deg, #1e3a8a 0%, #0f1c4a 100%) !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.rego_rc_thumb_prnews_logo {
+  font-size: 30px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.rego_rc_thumb_prnews_logo sup { font-size: 12px; }
+
+/* ================================================================
+   PAGE 2 — Leidos solution-brief thumb
+================================================================ */
+.rego_rc_thumb_leidos {
+  background:
+    radial-gradient(circle at 80% 30%, rgba(56, 189, 248, 0.25), transparent 50%),
+    linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%) !important;
+  align-items: stretch !important;
+  text-align: left !important;
+  padding: 22px !important;
+  flex-direction: column;
+  justify-content: space-between !important;
+  position: relative;
+}
+
+.rego_rc_thumb_leidos_kicker {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.rego_rc_thumb_leidos_sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 4px;
+  display: block;
+}
+
+.rego_rc_thumb_leidos_logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  width: max-content;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.rego_rc_thumb_leidos_l {
+  font-size: 14px;
+  font-weight: 800;
+  color: #000000;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.rego_rc_thumb_leidos_sep {
+  font-size: 16px;
+  color: #d1d5db;
+  font-style: normal;
+}
+
+.rego_rc_thumb_leidos_r {
+  font-size: 12px;
+  font-weight: 800;
+  color: #1f2937;
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rego_rc_thumb_leidos_r::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #4a569e, #842573);
+}
+
+/* ================================================================
+   PAGE 2 — American Government Services Co. thumb
+================================================================ */
+.rego_rc_thumb_govt {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 60%, #312e81 100%) !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.rego_rc_thumb_govt_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.rego_rc_thumb_govt_building {
+  display: inline-block;
+  width: 56px;
+  height: 36px;
+  position: relative;
+}
+
+.rego_rc_thumb_govt_building::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-bottom: 12px solid #ffffff;
+}
+
+.rego_rc_thumb_govt_building::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background:
+    linear-gradient(90deg, #ffffff 12%, transparent 12% 22%, #ffffff 22% 34%, transparent 34% 44%, #ffffff 44% 56%, transparent 56% 66%, #ffffff 66% 78%, transparent 78% 88%, #ffffff 88%);
+  border-bottom: 3px solid #ffffff;
+}
+
+.rego_rc_thumb_govt_text {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ================================================================
+   PAGES 3-10 — Additional thumbnail variants
+================================================================ */
+
+/* Industry success-story (generic blue card with industry name) */
+.rego_rc_thumb_industry {
+  position: relative;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 22px !important;
+}
+
+.rego_rc_thumb_industry_text {
+  font-size: 19px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  max-width: 220px;
+  text-align: center;
+}
+
+.rego_rc_thumb_ind_it       { background: linear-gradient(135deg, #0e7490 0%, #1d4ed8 100%) !important; }
+.rego_rc_thumb_ind_cloud    { background: linear-gradient(135deg, #1d4ed8 0%, #312e81 100%) !important; }
+.rego_rc_thumb_ind_energy   { background: linear-gradient(135deg, #b45309 0%, #1e3a8a 100%) !important; }
+.rego_rc_thumb_ind_finserv  { background: linear-gradient(135deg, #047857 0%, #1e3a8a 100%) !important; }
+.rego_rc_thumb_ind_health   { background: linear-gradient(135deg, #be185d 0%, #1e3a8a 100%) !important; }
+.rego_rc_thumb_ind_federal  { background: linear-gradient(135deg, #1e3a8a 0%, #0f1c4a 100%) !important; }
+.rego_rc_thumb_ind_nuclear  { background: linear-gradient(135deg, #0e7490 0%, #134e4a 100%) !important; }
+
+/* Report cover (data-viz teal/blue) */
+.rego_rc_thumb_report {
+  background: linear-gradient(135deg, #0e7490 0%, #1d4ed8 100%) !important;
+  position: relative;
+  overflow: hidden;
+  align-items: stretch !important;
+  text-align: left !important;
+  padding: 22px !important;
+  flex-direction: column;
+  justify-content: space-between !important;
+}
+
+.rego_rc_thumb_report::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 14px);
+  pointer-events: none;
+}
+
+.rego_rc_thumb_report_pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.20);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  width: max-content;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_rc_thumb_report_title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 6px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.rego_rc_thumb_report_logo {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* Extra blog gradient variants */
+.rego_rc_thumb_blog_orange {
+  background: linear-gradient(135deg, #ea580c 0%, #b91c1c 50%, #7c2d12 100%) !important;
+}
+
+.rego_rc_thumb_blog_dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%) !important;
+}
+
+.rego_rc_thumb_blog_emerald {
+  background: linear-gradient(135deg, #047857 0%, #1e40af 100%) !important;
+}
+
+.rego_rc_thumb_blog_slate {
+  background: linear-gradient(135deg, #334155 0%, #1e3a8a 100%) !important;
+}
+
+.rego_rc_thumb_blog_skyblue {
+  background: linear-gradient(135deg, #0284c7 0%, #1e40af 100%) !important;
+}
+
+/* News thumb variants for pages 3-10 (BusinessWire / PR Newswire reuse) */
+.rego_rc_thumb_bw {
+  background: linear-gradient(135deg, #ffffff 0%, #f6f7ff 100%) !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.rego_rc_thumb_bw_logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e3a8a;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.rego_rc_thumb_bw_logo::before {
+  content: '';
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.rego_rc_thumb_bw_logo small {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--rego-text-muted);
+}
+
+/* RESPONSIVE
+================================================================ */
+@media (max-width: 980px) {
+  .rego_rc_gartner_card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 36px 28px;
+    text-align: center;
+  }
+
+  .rego_rc_gartner_thumb { display: none; }
+
+  .rego_rc_feat_thumb_brief::before,
+  .rego_rc_feat_thumb_brief::after { display: none; }
+}
+
+@media (max-width: 640px) {
+  .rego_rc_gartner_btn { width: 100%; text-align: center; }
+}
