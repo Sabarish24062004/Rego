@@ -1,0 +1,116 @@
+/* ================================================================
+   REGO – TERMS OF SERVICE PAGE STYLESHEET
+   File: css/terms-of-service.css
+   Prefix: rego_tos_
+   Theme: Mirrors product-devsecops / industry-solutions / security —
+          light blue gradient surface, Inter font, brand purple→magenta
+          gradient (#4a569e → #842573) accents on links. No orange or
+          red is used.
+   Load order: common.css -> layout.css -> industry-solutions.css ->
+              product-devsecops.css -> this file
+================================================================ */
+
+/* ================================================================
+   SECTION 1 — Hero
+================================================================ */
+.rego_tos_hero {
+  background: linear-gradient(180deg, #ffffff 0%, #eef3ff 100%);
+  padding: 96px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rego_tos_hero_title {
+  font-size: clamp(40px, 5.4vw, 72px);
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.rego_tos_hero_effective {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--rego-text-muted);
+  margin: 56px 0 0;
+}
+
+/* ================================================================
+   SECTION 2 — Body
+================================================================ */
+.rego_tos_body {
+  background: linear-gradient(180deg, #eef3ff 0%, #f6f7ff 60%, #ffffff 100%);
+  padding: 24px 0 96px;
+}
+
+.rego_tos_container {
+  max-width: 980px;
+}
+
+.rego_tos_section {
+  padding: 40px 0 8px;
+}
+
+.rego_tos_section + .rego_tos_section {
+  border-top: 1px solid var(--rego-border-light);
+  margin-top: 8px;
+}
+
+.rego_tos_h {
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 800;
+  color: var(--rego-text);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 0 0 24px;
+}
+
+.rego_tos_p {
+  font-size: 17px;
+  color: var(--rego-text-muted);
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.rego_tos_p:last-child { margin-bottom: 0; }
+
+.rego_tos_p_caps {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 14.5px;
+  line-height: 1.95;
+}
+
+.rego_tos_link {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--rego-transition);
+}
+
+.rego_tos_link:hover {
+  color: var(--rego-primary);
+  text-decoration: underline;
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 1024px) {
+  .rego_tos_hero { padding: 72px 0 56px; }
+  .rego_tos_hero_effective { margin-top: 40px; }
+}
+
+@media (max-width: 768px) {
+  .rego_tos_hero { padding: 56px 0 40px; }
+  .rego_tos_body { padding: 16px 0 64px; }
+  .rego_tos_section { padding: 32px 0 4px; }
+  .rego_tos_p { font-size: 15.5px; line-height: 1.8; }
+  .rego_tos_p_caps { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .rego_tos_hero_title { font-size: 36px; }
+  .rego_tos_hero_effective { font-size: 15px; margin-top: 32px; }
+}
